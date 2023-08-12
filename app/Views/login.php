@@ -25,13 +25,13 @@
   <!--     Fonts and icons     -->
   <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700" rel="stylesheet" />
   <!-- Nucleo Icons -->
-  <link href="<?= base_url(); ?>assets/css/nucleo-icons.css" rel="stylesheet" />
-  <link href="<?= base_url(); ?>assets/css/nucleo-svg.css" rel="stylesheet" />
+  <link href="<?= base_url(); ?>/assets/css/nucleo-icons.css" rel="stylesheet" />
+  <link href="<?= base_url(); ?>/assets/css/nucleo-svg.css" rel="stylesheet" />
   <!-- Font Awesome Icons -->
   <script src="https://kit.fontawesome.com/42d5adcbca.js" crossorigin="anonymous"></script>
-  <link href="<?= base_url(); ?>assets/css/nucleo-svg.css" rel="stylesheet" />
+  <link href="<?= base_url(); ?>/assets/css/nucleo-svg.css" rel="stylesheet" />
   <!-- CSS Files -->
-  <link id="pagestyle" href="<?= base_url(); ?>assets/css/soft-ui-dashboard.css?v=1.0.7" rel="stylesheet" />
+  <link id="pagestyle" href="<?= base_url(); ?>/assets/css/soft-ui-dashboard.css?v=1.0.7" rel="stylesheet" />
 </head>
 
 <body class="g-sidenav-show  bg-gray-100">
@@ -39,7 +39,7 @@
     <div class="sidenav-header">
       <i class="fas fa-times p-3 cursor-pointer text-secondary opacity-5 position-absolute end-0 top-0 d-none d-xl-none" aria-hidden="true" id="iconSidenav"></i>
       <a class="navbar-brand m-0" href=" https://demos.creative-tim.com/soft-ui-dashboard/pages/dashboard.html " target="_blank">
-        <img src="<?= base_url();?>assets/img/logo_main.jpeg" class="navbar-brand-img h-100" alt="logo">
+        <img src="<?= base_url(); ?>/assets/img/logo_main.jpeg" class="navbar-brand-img h-100" alt="logo">
         <span class="ms-1 font-weight-bold">SD Negeri 3 Haurkuning</span>
       </a>
     </div>
@@ -238,7 +238,7 @@
     </div>
     <div class="sidenav-footer mx-3 ">
       <!-- <div class="card card-background shadow-none card-background-mask-secondary" id="sidenavCard">
-        <div class="full-background" style="background-image: url('<?= base_url(); ?>assets/img/curved-images/white-curved.jpg')"></div>
+        <div class="full-background" style="background-image: url('<?= base_url(); ?>/assets/img/curved-images/white-curved.jpg')"></div>
         <div class="card-body text-start p-3 w-100">
           <div class="icon icon-shape icon-sm bg-white shadow text-center mb-3 d-flex align-items-center justify-content-center border-radius-md">
             <i class="ni ni-diamond text-dark text-gradient text-lg top-0" aria-hidden="true" id="sidenavCardIcon"></i>
@@ -301,7 +301,7 @@
                   <a class="dropdown-item border-radius-md" href="javascript:;">
                     <div class="d-flex py-1">
                       <div class="my-auto">
-                        <img src="<?= base_url(); ?>assets/img/team-2.jpg" class="avatar avatar-sm  me-3 ">
+                        <img src="<?= base_url(); ?>/assets/img/team-2.jpg" class="avatar avatar-sm  me-3 ">
                       </div>
                       <div class="d-flex flex-column justify-content-center">
                         <h6 class="text-sm font-weight-normal mb-1">
@@ -319,7 +319,7 @@
                   <a class="dropdown-item border-radius-md" href="javascript:;">
                     <div class="d-flex py-1">
                       <div class="my-auto">
-                        <img src="<?= base_url(); ?>assets/img/small-logos/logo-spotify.svg" class="avatar avatar-sm bg-gradient-dark  me-3 ">
+                        <img src="<?= base_url(); ?>/assets/img/small-logos/logo-spotify.svg" class="avatar avatar-sm bg-gradient-dark  me-3 ">
                       </div>
                       <div class="d-flex flex-column justify-content-center">
                         <h6 class="text-sm font-weight-normal mb-1">
@@ -479,9 +479,9 @@
                 </div>
                 <div class="col-lg-5 ms-auto text-center mt-5 mt-lg-0">
                   <div class="bg-gradient-primary border-radius-lg h-100">
-                    <img src="<?= base_url(); ?>assets/img/shapes/waves-white.svg" class="position-absolute h-100 w-50 top-0 d-lg-block d-none" alt="waves">
+                    <img src="<?= base_url(); ?>/assets/img/shapes/waves-white.svg" class="position-absolute h-100 w-50 top-0 d-lg-block d-none" alt="waves">
                     <div class="position-relative d-flex align-items-center justify-content-center h-100">
-                      <img class="w-100 position-relative z-index-2 pt-4" src="<?= base_url(); ?>assets/img/illustrations/rocket-white.png" alt="rocket">
+                      <img class="w-100 position-relative z-index-2 pt-4" src="<?= base_url(); ?>/assets/img/illustrations/rocket-white.png" alt="rocket">
                     </div>
                   </div>
                 </div>
@@ -491,7 +491,7 @@
         </div>
         <div class="col-lg-5">
           <div class="card h-100 p-3">
-            <div class="overflow-hidden position-relative border-radius-lg bg-cover h-100" style="background-image: url('<?= base_url(); ?>assets/img/ivancik.jpg');">
+            <div class="overflow-hidden position-relative border-radius-lg bg-cover h-100" style="background-image: url('<?= base_url(); ?>/assets/img/ivancik.jpg');">
               <span class="mask bg-gradient-dark"></span>
               <div class="card-body position-relative z-index-1 d-flex flex-column h-100 p-3">
                 <h5 class="text-white font-weight-bolder mb-4 pt-2">Work with the rockets</h5>
@@ -717,11 +717,11 @@
     </div>
   </main>
   <!--   Core JS Files   -->
-  <script src="<?= base_url(); ?>assets/js/core/popper.min.js"></script>
-  <script src="<?= base_url(); ?>assets/js/core/bootstrap.min.js"></script>
-  <script src="<?= base_url(); ?>assets/js/plugins/perfect-scrollbar.min.js"></script>
-  <script src="<?= base_url(); ?>assets/js/plugins/smooth-scrollbar.min.js"></script>
-  <script src="<?= base_url(); ?>assets/js/plugins/chartjs.min.js"></script>
+  <script src="<?= base_url(); ?>/assets/js/core/popper.min.js"></script>
+  <script src="<?= base_url(); ?>/assets/js/core/bootstrap.min.js"></script>
+  <script src="<?= base_url(); ?>/assets/js/plugins/perfect-scrollbar.min.js"></script>
+  <script src="<?= base_url(); ?>/assets/js/plugins/smooth-scrollbar.min.js"></script>
+  <script src="<?= base_url(); ?>/assets/js/plugins/chartjs.min.js"></script>
   <script>
     var ctx = document.getElementById("chart-bars").getContext("2d");
 
@@ -904,7 +904,7 @@
   <!-- Github buttons -->
   <script async defer src="https://buttons.github.io/buttons.js"></script>
   <!-- Control Center for Soft Dashboard: parallax effects, scripts for the example pages etc -->
-  <script src="<?= base_url(); ?>assets/js/soft-ui-dashboard.min.js?v=1.0.7"></script>
+  <script src="<?= base_url(); ?>/assets/js/soft-ui-dashboard.min.js?v=1.0.7"></script>
 </body>
 
 </html>
