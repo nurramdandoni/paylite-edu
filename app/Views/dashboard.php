@@ -33,7 +33,39 @@
   <!-- CSS Files -->
   <link id="pagestyle" href="<?= base_url(); ?>assets/css/soft-ui-dashboard.css?v=1.0.7" rel="stylesheet" />
 </head>
+<script>
+  const socket = new WebSocket('ws://broadcast.paylite.co.id/socket'); // Ganti URL server sesuai dengan kebutuhan
 
+// Event saat koneksi terbuka
+socket.addEventListener('open', (event) => {
+console.log('Koneksi terbuka');
+
+// Kirim pesan ke server saat koneksi terbuka (opsional)
+const message = {
+    id: '2342',
+    pesan: 'Hello server!'
+};
+socket.send("Hello Server saya telah terhubung!");
+});
+
+// Event saat menerima pesan dari server
+socket.addEventListener('message', (event) => {
+const message = JSON.parse(event.data);
+console.log('Menerima pesan:', message);
+
+// Tindakan yang sesuai dengan pesan yang diterima
+if (message.id == '2342') {
+    alert('Pembayaran berhasil!');
+}
+});
+
+// Event saat koneksi ditutup
+socket.addEventListener('close', (event) => {
+console.log('Koneksi ditutup');
+});
+
+alert("sampe sini");
+</script>
 <body class="g-sidenav-show  bg-gray-100">
   <aside class="sidenav navbar navbar-vertical navbar-expand-xs border-0 border-radius-xl my-3 fixed-start ms-3 " id="sidenav-main">
     <div class="sidenav-header">
@@ -854,37 +886,7 @@
         },
       },
     });
-    const socket = new WebSocket('ws://broadcast.paylite.co.id/socket'); // Ganti URL server sesuai dengan kebutuhan
-
-    // Event saat koneksi terbuka
-    socket.addEventListener('open', (event) => {
-    console.log('Koneksi terbuka');
     
-    // Kirim pesan ke server saat koneksi terbuka (opsional)
-    const message = {
-        id: '2342',
-        pesan: 'Hello server!'
-    };
-    socket.send("Hello Server saya telah terhubung!");
-    });
-
-    // Event saat menerima pesan dari server
-    socket.addEventListener('message', (event) => {
-    const message = JSON.parse(event.data);
-    console.log('Menerima pesan:', message);
-
-    // Tindakan yang sesuai dengan pesan yang diterima
-    if (message.id == '2342') {
-        alert('Pembayaran berhasil!');
-    }
-    });
-
-    // Event saat koneksi ditutup
-    socket.addEventListener('close', (event) => {
-    console.log('Koneksi ditutup');
-    });
-
-    alert("sampe sini");
   </script>
   <script>
     var win = navigator.platform.indexOf('Win') > -1;
