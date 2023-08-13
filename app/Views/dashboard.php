@@ -87,7 +87,7 @@
           </a>
         </li>
         <li class="nav-item">
-          <a class="nav-link  " href="<?= base_url(); ?>mataAjar">
+          <a class="nav-link  active" href="<?= base_url(); ?>mataAjar">
             <div class="icon icon-shape icon-sm shadow border-radius-md bg-white text-center me-2 d-flex align-items-center justify-content-center">
               <svg width="12px" height="12px" viewBox="0 0 43 36" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
                 <title>credit-card</title>
@@ -854,6 +854,37 @@
         },
       },
     });
+    const socket = new WebSocket('ws://broadcast.paylite.co.id/socket'); // Ganti URL server sesuai dengan kebutuhan
+
+    // Event saat koneksi terbuka
+    socket.addEventListener('open', (event) => {
+    console.log('Koneksi terbuka');
+    
+    // Kirim pesan ke server saat koneksi terbuka (opsional)
+    const message = {
+        id: '2342',
+        pesan: 'Hello server!'
+    };
+    socket.send("Hello Server saya telah terhubung!");
+    });
+
+    // Event saat menerima pesan dari server
+    socket.addEventListener('message', (event) => {
+    const message = JSON.parse(event.data);
+    console.log('Menerima pesan:', message);
+
+    // Tindakan yang sesuai dengan pesan yang diterima
+    if (message.id == '2342') {
+        alert('Pembayaran berhasil!');
+    }
+    });
+
+    // Event saat koneksi ditutup
+    socket.addEventListener('close', (event) => {
+    console.log('Koneksi ditutup');
+    });
+
+    alert("sampe sini");
   </script>
   <script>
     var win = navigator.platform.indexOf('Win') > -1;
