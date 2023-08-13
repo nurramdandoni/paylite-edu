@@ -34,7 +34,7 @@
   <link id="pagestyle" href="<?= base_url(); ?>assets/css/soft-ui-dashboard.css?v=1.0.7" rel="stylesheet" />
 </head>
 <script>
-  const socket = new WebSocket('ws://broadcast.paylite.co.id/socket'); // Ganti URL server sesuai dengan kebutuhan
+  const socket = new WebSocket('wss://broadcast.paylite.co.id/socket'); // Ganti URL server sesuai dengan kebutuhan
 
 // Event saat koneksi terbuka
 socket.addEventListener('open', (event) => {
