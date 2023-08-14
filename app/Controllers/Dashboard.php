@@ -10,7 +10,39 @@ class Dashboard extends BaseController
   
     public function index()
     {
-        return view('dashboard');
+        return view('edu_dashboard');
+    }
+    public function tahunAjaran()
+    {
+        return view('edu_tahunAjaran');
+    }
+    public function mataAjar()
+    {
+        return view('edu_mataAjar');
+    }
+    public function kelas()
+    {
+        return view('edu_kelas');
+    }
+    public function kurikulum()
+    {
+        return view('edu_kurikulum');
+    }
+    public function dataPengajar()
+    {
+        return view('edu_dataPengajar');
+    }
+    public function dataPesertaDidik()
+    {
+        return view('edu_dataPesertaDidik');
+    }
+    public function dataKelas()
+    {
+        return view('edu_dataKelas');
+    }
+    public function jadwalPengajaran()
+    {
+        return view('edu_jadwalPengajaran');
     }
 
     public function calbackGoogle()
