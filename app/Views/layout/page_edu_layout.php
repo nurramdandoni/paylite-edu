@@ -382,7 +382,7 @@ console.log('Koneksi ditutup');
                 Paylite -->
               </div>
             </div>
-            <div class="col-lg-6">
+            <div>
               <ul class="nav nav-footer justify-content-center justify-content-lg-end">
                
                 <li class="nav-item">
@@ -398,6 +398,19 @@ console.log('Koneksi ditutup');
       </footer>
     </div>
   </main>
+  <style>
+    /* Ganti nilai tinggi sesuai kebutuhan */
+   
+
+    /* Biarkan footer tetap di bawah */
+    footer.footer {
+      position: fixed;
+      bottom: 0;
+      right: 0;
+      background-color: #f8f9fa; /* Ganti sesuai kebutuhan */
+    }
+
+  </style>
   <!--   Core JS Files   -->
   <script src="<?= base_url(); ?>assets/js/core/popper.min.js"></script>
   <script src="<?= base_url(); ?>assets/js/core/bootstrap.min.js"></script>
