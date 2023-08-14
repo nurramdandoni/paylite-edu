@@ -373,7 +373,7 @@ console.log('Koneksi ditutup');
     <?= $this->renderSection('content') ?>
   </div>
 </main>
-<footer class="footer pt-3  ">
+<footer class="footer pt-3 wraper ">
   <div class="container-fluid">
     <div class="row align-items-center justify-content-lg-between">
       
@@ -393,7 +393,10 @@ console.log('Koneksi ditutup');
 </footer>
   <style>
     /* Ganti nilai tinggi sesuai kebutuhan */
-
+.wraper {
+  position: relative;
+  bottom: 0;
+}
 
   </style>
   <!--   Core JS Files   -->
