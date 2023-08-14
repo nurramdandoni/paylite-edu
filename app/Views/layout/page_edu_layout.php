@@ -369,44 +369,45 @@ console.log('Koneksi ditutup');
       </div>
     </nav>
     <!-- End Navbar -->
-    <div class="container-fluid py-4">
+    <div class="container-fluid py-4 wraper">
     <?= $this->renderSection('content') ?>
-      <footer class="footer pt-3  ">
-        <div class="container-fluid">
-          <div class="row align-items-center justify-content-lg-between">
-            <div class="col-lg-6 mb-lg-0 mb-4">
-              <div class="copyright text-center text-sm text-muted text-lg-start">
-                <!-- © <script>
-                  document.write(new Date().getFullYear())
-                </script>,
-                Paylite -->
-              </div>
-            </div>
-            <div>
-              <ul class="nav nav-footer justify-content-center justify-content-lg-end">
-               
-                <li class="nav-item">
-                © <script>
-                  document.write(new Date().getFullYear())
-                </script>,
-                Paylite
-                </li>
-              </ul>
-            </div>
-          </div>
+  </div>
+</main>
+<footer class="footer pt-3  ">
+  <div class="container-fluid">
+    <div class="row align-items-center justify-content-lg-between">
+      <div class="col-lg-6 mb-lg-0 mb-4">
+        <div class="copyright text-center text-sm text-muted text-lg-start">
+          <!-- © <script>
+            document.write(new Date().getFullYear())
+          </script>,
+          Paylite -->
         </div>
-      </footer>
+      </div>
+      <div>
+        <ul class="nav nav-footer justify-content-center justify-content-lg-end">
+         
+          <li class="nav-item">
+          © <script>
+            document.write(new Date().getFullYear())
+          </script>,
+          Paylite
+          </li>
+        </ul>
+      </div>
     </div>
-  </main>
+  </div>
+</footer>
   <style>
     /* Ganti nilai tinggi sesuai kebutuhan */
-   
+   .wraper {
+    min-height: 80vh;
+   }
 
     /* Biarkan footer tetap di bawah */
     footer.footer {
-      position: fixed;
-      bottom: 0;
-      right: 0;
+      position: absolute;
+      right: 40%;
       width: 200px;
       background-color: #f8f9fa; /* Ganti sesuai kebutuhan */
     }
