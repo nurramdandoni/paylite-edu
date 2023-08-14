@@ -369,36 +369,28 @@ console.log('Koneksi ditutup');
       </div>
     </nav>
     <!-- End Navbar -->
-    <div class="container-fluid py-4">
+    <div style="min-height:100vh" class="container-fluid py-4">
     <?= $this->renderSection('content') ?>
+    <footer class="footer pt-3">
+      <div class="container-fluid">
+        <div class="row align-items-center justify-content-lg-between">
+          
+          <div class="col-lg-12">
+            <ul class="nav nav-footer justify-content-center justify-content-lg-end">
+             
+              <li class="nav-item">
+              © <script>
+                document.write(new Date().getFullYear())
+              </script>,
+              Paylite
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </footer>
   </div>
 </main>
-<footer class="footer pt-3 wraper ">
-  <div class="container-fluid">
-    <div class="row align-items-center justify-content-lg-between">
-      
-      <div class="col-lg-12">
-        <ul class="nav nav-footer justify-content-center justify-content-lg-end">
-         
-          <li class="nav-item">
-          © <script>
-            document.write(new Date().getFullYear())
-          </script>,
-          Paylite
-          </li>
-        </ul>
-      </div>
-    </div>
-  </div>
-</footer>
-  <style>
-    /* Ganti nilai tinggi sesuai kebutuhan */
-.wraper {
-  position: relative;
-  bottom: 0;
-}
-
-  </style>
   <!--   Core JS Files   -->
   <script src="<?= base_url(); ?>assets/js/core/popper.min.js"></script>
   <script src="<?= base_url(); ?>assets/js/core/bootstrap.min.js"></script>
