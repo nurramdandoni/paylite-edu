@@ -286,7 +286,7 @@ console.log('Koneksi ditutup');
           </a>
         </li>
         <li class="nav-item">
-          <a class="nav-link  " href="<?= base_url(); ?>absensi">
+          <a class="nav-link  " href="<?= base_url(); ?>nilai">
             <div class="icon icon-shape icon-sm shadow border-radius-md bg-white text-center me-2 d-flex align-items-center justify-content-center">
               <svg width="12px" height="12px" viewBox="0 0 40 44" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
                 <title>document</title>
@@ -302,7 +302,7 @@ console.log('Koneksi ditutup');
                 </g>
               </svg>
             </div>
-            <span class="nav-link-text ms-1">Penilaian</span>
+            <span class="nav-link-text ms-1">Nilai</span>
           </a>
         </li>
       </ul>
@@ -351,7 +351,7 @@ console.log('Koneksi ditutup');
             </li>
             &nbsp
             <li class="nav-item px-3 d-flex align-items-center">
-              <a href="javascript:;" class="nav-link text-body p-0">
+              <a href="<?= base_url(); ?>account" class="nav-link text-body p-0">
                 <i class="fa fa-cog fixed-plugin-button-nav cursor-pointer"></i>
               </a>
             </li>
