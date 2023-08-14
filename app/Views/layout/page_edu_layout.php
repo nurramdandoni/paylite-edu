@@ -406,7 +406,9 @@ console.log('Koneksi ditutup');
     footer.footer {
       position: fixed;
       bottom: 0;
-      right: 0;
+      right: 50%;
+      left: 50%;
+      width: 200px;
       background-color: #f8f9fa; /* Ganti sesuai kebutuhan */
     }
 
