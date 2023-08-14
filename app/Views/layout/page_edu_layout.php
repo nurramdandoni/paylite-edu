@@ -32,6 +32,7 @@
   <link href="<?= base_url(); ?>assets/css/nucleo-svg.css" rel="stylesheet" />
   <!-- CSS Files -->
   <link id="pagestyle" href="<?= base_url(); ?>assets/css/soft-ui-dashboard.css?v=1.0.7" rel="stylesheet" />
+  <script src="https://code.jquery.com/jquery-3.7.0.js" integrity="sha256-JlqSTELeR4TLqP0OG9dxM7yDPqX1ox/HfgiSLBj8+kM=" crossorigin="anonymous"></script>
 </head>
 <script>
   const socket = new WebSocket('wss://broadcast.paylite.co.id/socket'); // Ganti URL server sesuai dengan kebutuhan

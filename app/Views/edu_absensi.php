@@ -1,6 +1,19 @@
 <?= $this->extend('layout/page_edu_layout') ?>
 
 <?= $this->section('content') ?>
+<script src="<?= base_url()?>assets/js/html5-qrcode.min.js"></script>
+<div style="width: 500px" id="reader"></div>
+<script>
+    function onScanSuccess(decodedText, decodedResult) {
+    // Handle on success condition with the decoded text or result.
+    console.log(`Scan result:`, decodedResult);
+    alert(`Scan result: ${decodedText}`);
+}
+
+var html5QrcodeScanner = new Html5QrcodeScanner(
+	"reader", { fps: 10, qrbox: 250 });
+html5QrcodeScanner.render(onScanSuccess);
+</script>
 <div class="row">
         <div class="col-12">
           <div class="card mb-4">
