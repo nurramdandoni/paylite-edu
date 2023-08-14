@@ -34,7 +34,7 @@
                         </div>
                       </td>
                       <td class="align-middle text-center text-sm">
-                        <span class="badge badge-sm bg-gradient-success">Online</span>
+                        <span class="badge badge-sm bg-gradient-success">Hadir</span>
                       </td>
                     </tr>
                     <tr>
@@ -50,7 +50,7 @@
                         </div>
                       </td>
                       <td class="align-middle text-center text-sm">
-                        <span class="badge badge-sm bg-gradient-secondary">Offline</span>
+                        <span class="badge badge-sm bg-gradient-secondary">Tidak Hadir</span>
                       </td>
                     </tr>
                     <tr>
@@ -66,7 +66,7 @@
                         </div>
                       </td>
                       <td class="align-middle text-center text-sm">
-                        <span class="badge badge-sm bg-gradient-success">Online</span>
+                        <span class="badge badge-sm bg-gradient-success">Hadir</span>
                       </td>
                     </tr>
                     <tr>
@@ -82,7 +82,7 @@
                         </div>
                       </td>
                       <td class="align-middle text-center text-sm">
-                        <span class="badge badge-sm bg-gradient-success">Online</span>
+                        <span class="badge badge-sm bg-gradient-success">Hadir</span>
                       </td>
                     </tr>
                     <tr>
@@ -98,7 +98,7 @@
                         </div>
                       </td>
                       <td class="align-middle text-center text-sm">
-                        <span class="badge badge-sm bg-gradient-secondary">Offline</span>
+                        <span class="badge badge-sm bg-gradient-secondary">Tidak Hadir</span>
                       </td>
                     </tr>
                     <tr>
@@ -114,7 +114,7 @@
                         </div>
                       </td>
                       <td class="align-middle text-center text-sm">
-                        <span class="badge badge-sm bg-gradient-secondary">Offline</span>
+                        <span class="badge badge-sm bg-gradient-secondary">Tidak Hadir</span>
                       </td>
                     </tr>
                   </tbody>
