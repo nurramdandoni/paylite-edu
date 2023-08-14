@@ -12,6 +12,10 @@ class Dashboard extends BaseController
     {
         return view('edu_dashboard');
     }
+    public function account()
+    {
+        return view('edu_account');
+    }
     public function tahunAjaran()
     {
         return view('edu_tahunAjaran');
@@ -43,6 +47,18 @@ class Dashboard extends BaseController
     public function jadwalPengajaran()
     {
         return view('edu_jadwalPengajaran');
+    }
+    public function absensi()
+    {
+        return view('edu_absensi');
+    }
+    public function nilai()
+    {
+        return view('edu_nilai');
+    }
+    public function aktivasi()
+    {
+        return view('edu_aktivasi');
     }
 
     public function calbackGoogle()

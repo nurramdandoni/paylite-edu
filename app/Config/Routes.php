@@ -31,7 +31,18 @@ $routes->set404Override();
 // route since we don't have to scan directories.
 $routes->get('/', 'Dashboard::index');
 $routes->get('/dashboard', 'Dashboard::index');
-$routes->get('/account', 'Dashboard::index');
+$routes->get('/account', 'Dashboard::account');
+$routes->get('/tahunAjaran', 'Dashboard::tahunAjaran');
+$routes->get('/mataAjar', 'Dashboard::mataAjar');
+$routes->get('/kelas', 'Dashboard::kelas');
+$routes->get('/kurikulum', 'Dashboard::kurikulum');
+$routes->get('/dataPengajar', 'Dashboard::dataPengajar');
+$routes->get('/dataPesertaDidik', 'Dashboard::dataPesertaDidik');
+$routes->get('/dataKelas', 'Dashboard::dataKelas');
+$routes->get('/jadwalPengajaran', 'Dashboard::jadwalPengajaran');
+$routes->get('/absensi', 'Dashboard::absensi');
+$routes->get('/nilai', 'Dashboard::nilai');
+$routes->get('/aktivasi', 'Dashboard::aktivasi');
 
 /*
  * --------------------------------------------------------------------
