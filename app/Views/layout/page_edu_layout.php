@@ -369,7 +369,7 @@ console.log('Koneksi ditutup');
       </div>
     </nav>
     <!-- End Navbar -->
-    <div style="min-height:100vh" class="container-fluid py-4">
+    <div class="container-fluid py-4 wraper">
     <?= $this->renderSection('content') ?>
     <footer class="footer pt-3">
       <div class="container-fluid">
@@ -391,6 +391,17 @@ console.log('Koneksi ditutup');
     </footer>
   </div>
 </main>
+<style>
+  .wraper {
+  display: flex;
+  flex-direction: column;
+  min-height: calc(100vh - 100px);
+}
+.footer {
+  margin-top: auto;
+}
+
+</style>
   <!--   Core JS Files   -->
   <script src="<?= base_url(); ?>assets/js/core/popper.min.js"></script>
   <script src="<?= base_url(); ?>assets/js/core/bootstrap.min.js"></script>
