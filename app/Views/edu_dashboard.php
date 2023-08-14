@@ -270,4 +270,18 @@
           </div>
         </div>
       </div>
+      <script>
+        $("#dashboard").addClass("active");
+        $("#account").removeClass("active");
+        $("#tahunAjaran").removeClass("active");
+        $("#mataAjar").removeClass("active");
+        $("#kelas").removeClass("active");
+        $("#kurikulum").removeClass("active");
+        $("#dataPengajar").removeClass("active");
+        $("#dataPesertaDidik").removeClass("active");
+        $("#dataKelas").removeClass("active");
+        $("#jadwalPengajaran").removeClass("active");
+        $("#absensi").removeClass("active");
+        $("#nilai").removeClass("active");
+      </script>
       <?= $this->endSection() ?>

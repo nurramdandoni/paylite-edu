@@ -142,4 +142,18 @@
         border-color: #cb0c9f;
     }
 </style>
+<script>
+        $("#dashboard").removeClass("active");
+        $("#account").removeClass("active");
+        $("#tahunAjaran").removeClass("active");
+        $("#mataAjar").removeClass("active");
+        $("#kelas").removeClass("active");
+        $("#kurikulum").removeClass("active");
+        $("#dataPengajar").removeClass("active");
+        $("#dataPesertaDidik").removeClass("active");
+        $("#dataKelas").removeClass("active");
+        $("#jadwalPengajaran").removeClass("active");
+        $("#absensi").addClass("active");
+        $("#nilai").removeClass("active");
+      </script>
 <?= $this->endSection() ?>

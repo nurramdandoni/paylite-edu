@@ -79,7 +79,7 @@ console.log('Koneksi ditutup');
     <div>
       <ul class="navbar-nav">
         <li class="nav-item">
-          <a class="nav-link  active" href="<?= base_url(); ?>dashboard">
+          <a id="dashboard" class="nav-link  active" href="<?= base_url(); ?>dashboard">
             <div class="icon icon-shape icon-sm shadow border-radius-md bg-white text-center me-2 d-flex align-items-center justify-content-center">
               <svg width="12px" height="12px" viewBox="0 0 45 40" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
                 <title>shop </title>
@@ -99,7 +99,7 @@ console.log('Koneksi ditutup');
           </a>
         </li>
         <li class="nav-item">
-          <a class="nav-link  " href="<?= base_url(); ?>tahunAjaran">
+          <a id="tahunAjaran" class="nav-link  " href="<?= base_url(); ?>tahunAjaran">
             <div class="icon icon-shape icon-sm shadow border-radius-md bg-white text-center me-2 d-flex align-items-center justify-content-center">
               <svg width="12px" height="12px" viewBox="0 0 42 42" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
                 <title>office</title>
@@ -119,7 +119,7 @@ console.log('Koneksi ditutup');
           </a>
         </li>
         <li class="nav-item">
-          <a class="nav-link  active" href="<?= base_url(); ?>mataAjar">
+          <a id="mataAjar" class="nav-link" href="<?= base_url(); ?>mataAjar">
             <div class="icon icon-shape icon-sm shadow border-radius-md bg-white text-center me-2 d-flex align-items-center justify-content-center">
               <svg width="12px" height="12px" viewBox="0 0 43 36" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
                 <title>credit-card</title>
@@ -139,7 +139,7 @@ console.log('Koneksi ditutup');
           </a>
         </li>
         <li class="nav-item">
-          <a class="nav-link  " href="<?= base_url(); ?>kelas">
+          <a id="kelas" class="nav-link  " href="<?= base_url(); ?>kelas">
             <div class="icon icon-shape icon-sm shadow border-radius-md bg-white text-center me-2 d-flex align-items-center justify-content-center">
               <svg width="12px" height="12px" viewBox="0 0 43 36" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
                 <title>credit-card</title>
@@ -159,7 +159,7 @@ console.log('Koneksi ditutup');
           </a>
         </li>
         <li class="nav-item">
-          <a class="nav-link  " href="<?= base_url(); ?>kurikulum">
+          <a id="kurikulum" class="nav-link  " href="<?= base_url(); ?>kurikulum">
             <div class="icon icon-shape icon-sm shadow border-radius-md bg-white text-center me-2 d-flex align-items-center justify-content-center">
               <svg width="12px" height="12px" viewBox="0 0 42 42" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
                 <title>box-3d-50</title>
@@ -180,7 +180,7 @@ console.log('Koneksi ditutup');
           </a>
         </li>
         <li class="nav-item">
-          <a class="nav-link  " href="<?= base_url(); ?>dataPengajar">
+          <a id="dataPengajar" class="nav-link  " href="<?= base_url(); ?>dataPengajar">
             <div class="icon icon-shape icon-sm shadow border-radius-md bg-white text-center me-2 d-flex align-items-center justify-content-center">
                 <svg width="12px" height="12px" viewBox="0 0 46 42" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
                   <title>customer-support</title>
@@ -201,7 +201,7 @@ console.log('Koneksi ditutup');
           </a>
         </li>
         <li class="nav-item">
-          <a class="nav-link  " href="<?= base_url(); ?>dataPesertaDidik">
+          <a id="dataPesertaDidik" class="nav-link  " href="<?= base_url(); ?>dataPesertaDidik">
             <div class="icon icon-shape icon-sm shadow border-radius-md bg-white text-center me-2 d-flex align-items-center justify-content-center">
                 <svg width="12px" height="12px" viewBox="0 0 46 42" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
                   <title>customer-support</title>
@@ -222,7 +222,7 @@ console.log('Koneksi ditutup');
           </a>
         </li>
         <li class="nav-item">
-          <a class="nav-link  " href="<?= base_url(); ?>dataKelas">
+          <a id="dataKelas" class="nav-link  " href="<?= base_url(); ?>dataKelas">
             <div class="icon icon-shape icon-sm shadow border-radius-md bg-white text-center me-2 d-flex align-items-center justify-content-center">
               <svg width="12px" height="12px" viewBox="0 0 43 36" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
                 <title>credit-card</title>
@@ -242,7 +242,7 @@ console.log('Koneksi ditutup');
           </a>
         </li>
         <li class="nav-item">
-          <a class="nav-link  " href="<?= base_url(); ?>jadwalPengajaran">
+          <a id="jadwalPengajaran" class="nav-link  " href="<?= base_url(); ?>jadwalPengajaran">
             <div class="icon icon-shape icon-sm shadow border-radius-md bg-white text-center me-2 d-flex align-items-center justify-content-center">
               <svg width="12px" height="12px" viewBox="0 0 40 40" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
                 <title>settings</title>
@@ -266,7 +266,7 @@ console.log('Koneksi ditutup');
           <h6 class="ps-4 ms-2 text-uppercase text-xs font-weight-bolder opacity-6">Fasilitas</h6>
         </li>
         <li class="nav-item">
-          <a class="nav-link  " href="<?= base_url(); ?>absensi">
+          <a id="absensi" class="nav-link  " href="<?= base_url(); ?>absensi">
             <div class="icon icon-shape icon-sm shadow border-radius-md bg-white text-center me-2 d-flex align-items-center justify-content-center">
               <svg width="12px" height="12px" viewBox="0 0 46 42" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
                 <title>customer-support</title>
@@ -287,7 +287,7 @@ console.log('Koneksi ditutup');
           </a>
         </li>
         <li class="nav-item">
-          <a class="nav-link  " href="<?= base_url(); ?>nilai">
+          <a id="nilai" class="nav-link  " href="<?= base_url(); ?>nilai">
             <div class="icon icon-shape icon-sm shadow border-radius-md bg-white text-center me-2 d-flex align-items-center justify-content-center">
               <svg width="12px" height="12px" viewBox="0 0 40 44" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
                 <title>document</title>
