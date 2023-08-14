@@ -369,7 +369,7 @@ console.log('Koneksi ditutup');
       </div>
     </nav>
     <!-- End Navbar -->
-    <div class="container-fluid py-4 wraper">
+    <div class="container-fluid py-4">
     <?= $this->renderSection('content') ?>
   </div>
 </main>
@@ -393,9 +393,7 @@ console.log('Koneksi ditutup');
 </footer>
   <style>
     /* Ganti nilai tinggi sesuai kebutuhan */
-   .wraper {
-    min-height: 80vh;
-   }
+
 
   </style>
   <!--   Core JS Files   -->
