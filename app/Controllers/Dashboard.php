@@ -116,6 +116,12 @@ class Dashboard extends BaseController
     {
             return view('edu_preparation');
     }
+    public function registerCh()
+    {
+        setcookie("statusProduk","success",time() + (60 * 60 * 24),"/", ".paylite.co.id");
+        echo "berhasil";
+            // return view('edu_preparation');
+    }
 
     public function calbackGoogle()
     {
