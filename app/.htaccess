@@ -1,6 +1,13 @@
-<IfModule authz_core_module>
-    Require all denied
-</IfModule>
-<IfModule !authz_core_module>
-    Deny from all
-</IfModule>
+# Atur RewriteEngine
+RewriteEngine On
+
+# Atur base URL
+# RewriteBase /paylite-account/public
+
+# Hilangkan tanda '#' di bawah jika Anda mengatur CodeIgniter di subfolder
+# RewriteBase /subfolder_anda
+RewriteCond $1 !^(index\.php|images|assets|css|js|robots\.txt|favicon\.ico)
+# Redirect semua permintaan ke index.php
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^(.*)$ index.php/$1 [L]
