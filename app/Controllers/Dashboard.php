@@ -11,7 +11,7 @@ class Dashboard extends BaseController
     public function index()
     {
         if($_COOKIE['statusProduk'] == 'prepareSubscriberRegister'){
-            return redirect()->route('/register');
+            return redirect()->route('register');
         }else{
             return view('edu_dashboard');
         }
