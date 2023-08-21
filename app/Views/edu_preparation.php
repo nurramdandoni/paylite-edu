@@ -205,9 +205,44 @@
                 console.log(data);
                 let stat = data.data.length;
                 if(stat > 0){
-                    alert("Sekolah Dengan NPSN "+formNpsn+" Sudah Memiliki Admin!, Silahkan Mendaftarkan Role Lain.")
+                    // cek lembaga
+                    // alert("Sekolah Dengan NPSN "+formNpsn+" Sudah Memiliki Admin!, Silahkan Mendaftarkan Role Lain.")
                 }else{
-                    alert("Proses inser subscriber, lembaga, edu user dan siswa/guru");
+                    // alert("Proses inser subscriber, edu user dan siswa/guru, lembaga");
+                    // insert subscriber
+                    const postDataInsertSubscriber = {
+                        user_id: user_idCookie,
+                        paylite_produk_id: idProduk,
+                        role_produk_id: formRoleProduk,
+                        status_pay: "not pay"
+                    }
+                    const requestOptionsPre = {
+                    method: 'POST', // Metode permintaan
+                    headers: {
+                        'Content-Type': 'application/json', // Jenis konten yang dikirim
+                        // 'Authorization': 'Bearer YOUR_ACCESS_TOKEN' // Header otorisasi jika diperlukan
+                    },
+                    body: JSON.stringify(postDataInsertSubscriber) // Mengubah data menjadi bentuk JSON
+                    };
+                    fetch('https://api.paylite.co.id/subscriber',requestOptionsPre)
+                    .then(response => {
+                        if (!response.ok) {
+                        throw new Error('Network response was not ok');
+                        }
+                        return response.json(); // Parse the response body as JSON
+                    })
+                    .then(data => {
+                        // Handle the JSON data  
+                        let id_subscriber = data.subscriber_id;
+                        console.log("ini id subscribernya : "+ id_subscriber);
+
+                    })
+                    .catch(error => {
+                        console.error('Fetch error:', error);
+                        // Handle errors here
+                    });
+                    // insert edu user
+                    // insert lembaga
                 }
                 
 
