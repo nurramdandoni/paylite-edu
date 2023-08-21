@@ -193,23 +193,23 @@
                     }
                 }
 
-                // Contoh penggunaan
-                const postDataCekSubscriberRole = {
-                    user_id: user_idCookie,
-                    paylite_produk_id: idProduk,
-                    role_produk_id: formRoleProduk,
-                };
-
-                const requestOptions = {
-                    method: 'POST', // Metode permintaan
-                    headers: {
-                        'Content-Type': 'application/json', // Jenis konten yang dikirim
-                        // 'Authorization': 'Bearer YOUR_ACCESS_TOKEN' // Header otorisasi jika diperlukan
-                    },
-                    body: JSON.stringify(postDataCekSubscriberRole), // Mengubah data menjadi bentuk JSON
-                };
-
+                
                 async function main() {
+                    // Contoh penggunaan
+                    const postDataCekSubscriberRole = {
+                        user_id: user_idCookie,
+                        paylite_produk_id: idProduk,
+                        role_produk_id: formRoleProduk,
+                    };
+    
+                    const requestOptions = {
+                        method: 'POST', // Metode permintaan
+                        headers: {
+                            'Content-Type': 'application/json', // Jenis konten yang dikirim
+                            // 'Authorization': 'Bearer YOUR_ACCESS_TOKEN' // Header otorisasi jika diperlukan
+                        },
+                        body: JSON.stringify(postDataCekSubscriberRole), // Mengubah data menjadi bentuk JSON
+                    };
                     try {
                         const data = await fetchData('https://api.paylite.co.id/subscriberWhere', requestOptions);
                         console.log(data);
