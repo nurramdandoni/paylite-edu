@@ -278,17 +278,13 @@
                                 if(formNpsn == ''){
                                     alert("NPSN Wajib Diisi!");
                                 }else{
-                                    try{
-                                        const statusAdmin = await cekAdminLembaga();
-                                        console.log("hasil cek admin");
-                                        console.log(statusAdmin);
-                                    }catch(err){
-                                        // insert lembaga pendidikan
-                                        console.log("hasil insert lembaga");
+                                    const statusAdmin = await cekAdminLembaga();
+                                    if(statusAdmin.status == 200){
+                                        alert("NPSN Telah Didaftarkan, Anda tidak dapat mendaftar sebagai Admin Pada NPSN Tersebut!");
+                                    }else{
                                         const dataLembaga = await insertLembagaPendidikan();
-                                        console.log(dataLembaga);
-                                        // insert edu_users
                                     }
+                                    
                                 }
                             }else{
                                 // insert edu_users
