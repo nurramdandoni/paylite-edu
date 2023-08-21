@@ -192,6 +192,24 @@
                         throw error;
                     }
                 }
+                async function insertSubscriber(){
+                    const postDataInsertSubscriber = {
+                            user_id: user_idCookie,
+                            paylite_produk_id: idProduk,
+                            role_produk_id: formRoleProduk,
+                            status_pay: "not pay"
+                        };
+                    const requestOptionsPre = {
+                            method: 'POST', // Metode permintaan
+                            headers: {
+                                'Content-Type': 'application/json', // Jenis konten yang dikirim
+                                // 'Authorization': 'Bearer YOUR_ACCESS_TOKEN' // Header otorisasi jika diperlukan
+                            },
+                            body: JSON.stringify(postDataInsertSubscriber) // Mengubah data menjadi bentuk JSON
+                        };
+                        const data = await fetchData('https://api.paylite.co.id/subscriber', requestOptionsPre);
+                        return data;
+                }
 
                 
                 async function main() {
@@ -221,6 +239,9 @@
                         } else {
                             // ...
                             alert("not exist");
+                            console.log("ini selepas insert subscriber");
+                            const res_subscriber = await insertSubscriber();
+                            console.log(res_subscriber);
                         }
                     } catch (error) {
                         // Handle errors here
