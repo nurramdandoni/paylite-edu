@@ -207,7 +207,7 @@
                 let stat = data.data.length;
                 if(stat > 0){
                     // cek lembaga
-                    id_subscriber = data.data[0].subscriber_id;
+                    // id_subscriber = data.data[0].subscriber_id;
                     alert("exist");
                     // alert("Sekolah Dengan NPSN "+formNpsn+" Sudah Memiliki Admin!, Silahkan Mendaftarkan Role Lain.")
                 }else{
