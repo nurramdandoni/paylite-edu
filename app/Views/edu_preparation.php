@@ -228,7 +228,7 @@
                 }
 
                 main(); // Memanggil fungsi asinkron
-
+            });
             
       </script>
       <?= $this->endSection() ?>
