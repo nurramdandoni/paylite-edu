@@ -66,6 +66,15 @@
         let idProduk = "1";
         let user_idCookie = '<?= $_COOKIE["user_id"]; ?>';
         let id_subscriber = '';
+        let formRoleProduk = '';
+        let formNpsn = '';
+        let formNisNisnNip = '';
+        let formJenjangPendidikan = '';
+        let formSkAkreditasi = '';
+        let formNamaLembaga = '';
+        let formNamaKepalaSekolah = '';
+        let formWebsite = '';
+        let formNoSekolah = '';
         $("#nonAdmin").hide();
         // Role Produk
         // Data yang akan dikirim dalam permintaan GET
@@ -155,15 +164,15 @@
         $("#aktivasiAkunAdmin").click(function() {
                 console.log("ok");
                 console.log("ok");
-                let formRoleProduk = $("#formRoleProduk").val();
-                let formNpsn = $("#formNpsn").val();
-                let formNisNisnNip = $("#formNisNisnNip").val();
-                let formJenjangPendidikan = $("#formJenjangPendidikan").val();
-                let formSkAkreditasi = $("#formSkAkreditasi").val();
-                let formNamaLembaga = $("#formNamaLembaga").val();
-                let formNamaKepalaSekolah = $("#formNamaKepalaSekolah").val();
-                let formWebsite = $("#formWebsite").val();
-                let formNoSekolah = $("#formNoSekolah").val();
+                formRoleProduk = $("#formRoleProduk").val();
+                formNpsn = $("#formNpsn").val();
+                formNisNisnNip = $("#formNisNisnNip").val();
+                formJenjangPendidikan = $("#formJenjangPendidikan").val();
+                formSkAkreditasi = $("#formSkAkreditasi").val();
+                formNamaLembaga = $("#formNamaLembaga").val();
+                formNamaKepalaSekolah = $("#formNamaKepalaSekolah").val();
+                formWebsite = $("#formWebsite").val();
+                formNoSekolah = $("#formNoSekolah").val();
                 const data = {
                     formRoleProduk,
                     formNisNisnNip,
