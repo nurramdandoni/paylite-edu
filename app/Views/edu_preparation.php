@@ -210,6 +210,18 @@
                         const data = await fetchData('https://api.paylite.co.id/subscriber', requestOptionsPre);
                         return data;
                 }
+                async function cekAdminLembaga(npsn){
+                    const requestCek = {
+                            method: 'GET', // Metode permintaan
+                            headers: {
+                                'Content-Type': 'application/json', // Jenis konten yang dikirim
+                                // 'Authorization': 'Bearer YOUR_ACCESS_TOKEN' // Header otorisasi jika diperlukan
+                            },
+                            body: JSON.stringify(cekLembagaData) // Mengubah data menjadi bentuk JSON
+                        };
+                        const data = await fetchData('https://api.paylite.co.id/cekAdminLembaga/'+npsn, requestCek);
+                        return data;
+                }
 
                 
                 async function main() {
@@ -237,12 +249,16 @@
                             // ...
                             alert("exist");
                             console.log(data.data[0].subscriber_id);
+                            const statusAdmin = await cekAdminLembaga(formNpsn);
+                            console.log(statusAdmin);
                         } else {
                             // ...
                             alert("not exist");
                             console.log("ini selepas insert subscriber");
                             const res_subscriber = await insertSubscriber();
                             console.log(res_subscriber.data.subscriber_id);
+                            const statusAdmin = await cekAdminLembaga(formNpsn);
+                            console.log(statusAdmin);
                         }
                     } catch (error) {
                         // Handle errors here
