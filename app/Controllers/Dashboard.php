@@ -24,98 +24,153 @@ class Dashboard extends BaseController
     }
     public function account()
     {
-        if($_COOKIE['statusProduk'] == 'prepareSubscriberRegister'){
-            return redirect()->route('register');
+        if(isset($_COOKIE['statusProduk'])){
+            if($_COOKIE['statusProduk'] == 'prepareSubscriberRegister'){
+                return redirect()->route('register');
+            }else{
+                return view('edu_account');
+            }
         }else{
-            return view('edu_account');
+            return redirect()->route('register');
         }
     }
     public function tahunAjaran()
     {
-        if($_COOKIE['statusProduk'] == 'prepareSubscriberRegister'){
-            return redirect()->route('register');
+        if(isset($_COOKIE['statusProduk'])){
+            if($_COOKIE['statusProduk'] == 'prepareSubscriberRegister'){
+                return redirect()->route('register');
+            }else{
+                return view('edu_tahunAjaran');
+            }
         }else{
-            return view('edu_tahunAjaran');
+            return redirect()->route('register');
+
         }
     }
     public function mataAjar()
     {
-        if($_COOKIE['statusProduk'] == 'prepareSubscriberRegister'){
-            return redirect()->route('register');
+        if(isset($_COOKIE['statusProduk'])){
+            if($_COOKIE['statusProduk'] == 'prepareSubscriberRegister'){
+                return redirect()->route('register');
+            }else{
+                return view('edu_mataAjar');
+            }
         }else{
-            return view('edu_mataAjar');
+            return redirect()->route('register');
+
         }
     }
     public function kelas()
     {
-        if($_COOKIE['statusProduk'] == 'prepareSubscriberRegister'){
-            return redirect()->route('register');
+        if(isset($_COOKIE['statusProduk'])){
+            if($_COOKIE['statusProduk'] == 'prepareSubscriberRegister'){
+                return redirect()->route('register');
+            }else{
+                return view('edu_kelas');
+            }
         }else{
-            return view('edu_kelas');
+            
+            return redirect()->route('register');
         }
     }
     public function kurikulum()
     {
-        if($_COOKIE['statusProduk'] == 'prepareSubscriberRegister'){
-            return redirect()->route('register');
+        if(isset($_COOKIE['statusProduk'])){
+            if($_COOKIE['statusProduk'] == 'prepareSubscriberRegister'){
+                return redirect()->route('register');
+            }else{
+                return view('edu_kurikulum');
+            }
         }else{
-            return view('edu_kurikulum');
+            return redirect()->route('register');
+
         }
     }
     public function dataPengajar()
     {
-        if($_COOKIE['statusProduk'] == 'prepareSubscriberRegister'){
-            return redirect()->route('register');
+        if(isset($_COOKIE['statusProduk'])){
+            if($_COOKIE['statusProduk'] == 'prepareSubscriberRegister'){
+                return redirect()->route('register');
+            }else{
+                return view('edu_dataPengajar');
+            }
         }else{
-            return view('edu_dataPengajar');
+            return redirect()->route('register');
         }
     }
     public function dataPesertaDidik()
     {
-        if($_COOKIE['statusProduk'] == 'prepareSubscriberRegister'){
-            return redirect()->route('register');
+        if(isset($_COOKIE['statusProduk'])){
+            if($_COOKIE['statusProduk'] == 'prepareSubscriberRegister'){
+                return redirect()->route('register');
+            }else{
+                return view('edu_dataPesertaDidik');
+            }
         }else{
-            return view('edu_dataPesertaDidik');
+            return redirect()->route('register');
         }
     }
     public function dataKelas()
     {
-        if($_COOKIE['statusProduk'] == 'prepareSubscriberRegister'){
-            return redirect()->route('register');
+        if(isset($_COOKIE['statusProduk'])){
+            if($_COOKIE['statusProduk'] == 'prepareSubscriberRegister'){
+                return redirect()->route('register');
+            }else{
+                return view('edu_dataKelas');
+            }
         }else{
-            return view('edu_dataKelas');
+            return redirect()->route('register');
+
         }
     }
     public function jadwalPengajaran()
     {
-        if($_COOKIE['statusProduk'] == 'prepareSubscriberRegister'){
-            return redirect()->route('register');
+        if(isset($_COOKIE['statusProduk'])){
+            if($_COOKIE['statusProduk'] == 'prepareSubscriberRegister'){
+                return redirect()->route('register');
+            }else{
+                return view('edu_jadwalPengajaran');
+            }
         }else{
-            return view('edu_jadwalPengajaran');
+            return redirect()->route('register');
         }
     }
     public function absensi()
     {
-        if($_COOKIE['statusProduk'] == 'prepareSubscriberRegister'){
-            return redirect()->route('register');
+        if(isset($_COOKIE['statusProduk'])){
+            if($_COOKIE['statusProduk'] == 'prepareSubscriberRegister'){
+                return redirect()->route('register');
+            }else{
+                return view('edu_absensi');
+            }
         }else{
-            return view('edu_absensi');
+            return redirect()->route('register');
+
         }
     }
     public function nilai()
     {
-        if($_COOKIE['statusProduk'] == 'prepareSubscriberRegister'){
-            return redirect()->route('register');
+        if(isset($_COOKIE['statusProduk'])){
+            if($_COOKIE['statusProduk'] == 'prepareSubscriberRegister'){
+                return redirect()->route('register');
+            }else{
+                return view('edu_nilai');
+            }
         }else{
-            return view('edu_nilai');
+            return redirect()->route('register');
+
         }
     }
     public function aktivasi()
     {
-        if($_COOKIE['statusProduk'] == 'prepareSubscriberRegister'){
-            return view('edu_preparation');
+        if(isset($_COOKIE['statusProduk'])){
+            if($_COOKIE['statusProduk'] == 'prepareSubscriberRegister'){
+                return redirect()->route('register');
+            }else{
+                return view('edu_aktivasi');
+            }
         }else{
-            return view('edu_aktivasi');
+            return redirect()->route('register');
         }
     }
     public function register()
