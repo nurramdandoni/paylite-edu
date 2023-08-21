@@ -236,6 +236,7 @@
                         if (stat > 0) {
                             // ...
                             alert("exist");
+                            console.log(data.data[0].subscriber_id);
                         } else {
                             // ...
                             alert("not exist");
