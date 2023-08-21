@@ -213,13 +213,14 @@
                 async function insertLembagaPendidikan(){
                     const postDataInsertLembagaPendidikan = {
                         nomor_legalitas:formNpsn,
-                        jenjang_pendidikan:formJenjangPendidikan,
+                        jenjang_pendidikan_id:formJenjangPendidikan,
                         sk_akreditasi:formSkAkreditasi,
                         nama_lembaga:formNamaLembaga,
                         nama_kepala_sekolah:formNamaKepalaSekolah,
                         website:formWebsite,
                         nomor_telepon:formNoSekolah
                         };
+                        console.log("data sebelum insert lembaga", postDataInsertLembagaPendidikan);
                     const requestOptionsPre = {
                             method: 'POST', // Metode permintaan
                             headers: {
