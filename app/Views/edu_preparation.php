@@ -245,7 +245,7 @@
                 async function cekAdminLembaga(){
                     
                         const data = await fetchData('https://api.paylite.co.id/cekAdminLembaga/'+formNpsn+'');
-                        return data;
+                        return data.status;
                 }
 
                 
