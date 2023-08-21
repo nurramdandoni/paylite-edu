@@ -18,8 +18,7 @@ class Dashboard extends BaseController
                 return view('edu_dashboard');
             }
         }else{
-            return redirect()->route('register');
-            
+            return redirect('https://account.paylite.co.id');  
         }
     }
     public function account()
@@ -31,7 +30,7 @@ class Dashboard extends BaseController
                 return view('edu_account');
             }
         }else{
-            return redirect()->route('register');
+            return redirect('https://account.paylite.co.id');
         }
     }
     public function tahunAjaran()
@@ -43,8 +42,7 @@ class Dashboard extends BaseController
                 return view('edu_tahunAjaran');
             }
         }else{
-            return redirect()->route('register');
-
+            return redirect('https://account.paylite.co.id');
         }
     }
     public function mataAjar()
@@ -56,8 +54,7 @@ class Dashboard extends BaseController
                 return view('edu_mataAjar');
             }
         }else{
-            return redirect()->route('register');
-
+            return redirect('https://account.paylite.co.id');
         }
     }
     public function kelas()
@@ -69,8 +66,7 @@ class Dashboard extends BaseController
                 return view('edu_kelas');
             }
         }else{
-            
-            return redirect()->route('register');
+            return redirect('https://account.paylite.co.id');
         }
     }
     public function kurikulum()
@@ -82,8 +78,7 @@ class Dashboard extends BaseController
                 return view('edu_kurikulum');
             }
         }else{
-            return redirect()->route('register');
-
+            return redirect('https://account.paylite.co.id');
         }
     }
     public function dataPengajar()
@@ -95,7 +90,7 @@ class Dashboard extends BaseController
                 return view('edu_dataPengajar');
             }
         }else{
-            return redirect()->route('register');
+            return redirect('https://account.paylite.co.id');
         }
     }
     public function dataPesertaDidik()
@@ -107,7 +102,7 @@ class Dashboard extends BaseController
                 return view('edu_dataPesertaDidik');
             }
         }else{
-            return redirect()->route('register');
+            return redirect('https://account.paylite.co.id');
         }
     }
     public function dataKelas()
@@ -119,8 +114,7 @@ class Dashboard extends BaseController
                 return view('edu_dataKelas');
             }
         }else{
-            return redirect()->route('register');
-
+            return redirect('https://account.paylite.co.id');
         }
     }
     public function jadwalPengajaran()
@@ -132,7 +126,7 @@ class Dashboard extends BaseController
                 return view('edu_jadwalPengajaran');
             }
         }else{
-            return redirect()->route('register');
+            return redirect('https://account.paylite.co.id');
         }
     }
     public function absensi()
@@ -144,8 +138,7 @@ class Dashboard extends BaseController
                 return view('edu_absensi');
             }
         }else{
-            return redirect()->route('register');
-
+            return redirect('https://account.paylite.co.id');
         }
     }
     public function nilai()
@@ -157,8 +150,7 @@ class Dashboard extends BaseController
                 return view('edu_nilai');
             }
         }else{
-            return redirect()->route('register');
-
+            return redirect('https://account.paylite.co.id');
         }
     }
     public function aktivasi()
@@ -170,7 +162,7 @@ class Dashboard extends BaseController
                 return view('edu_aktivasi');
             }
         }else{
-            return redirect()->route('register');
+            return redirect('https://account.paylite.co.id');
         }
     }
     public function register()
