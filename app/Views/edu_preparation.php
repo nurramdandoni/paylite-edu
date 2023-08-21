@@ -66,6 +66,8 @@
         let idProduk = "1";
         let user_idCookie = '<?= $_COOKIE["user_id"]; ?>';
         let id_subscriber = '';
+        let id_lembaga_pendidikan = '';
+
         let formRoleProduk = '';
         let formNpsn = '';
         let formNisNisnNip = '';
@@ -274,6 +276,7 @@
                             // ...
                             alert("exist");
                             console.log(data.data[0].subscriber_id);
+                            id_subscriber = data.data[0].subscriber_id;
                             if(formRoleProduk == 1){
                                 if(formNpsn == ''){
                                     alert("NPSN Wajib Diisi!");
@@ -284,6 +287,7 @@
                                         alert("NPSN Telah Didaftarkan, Anda tidak dapat mendaftar sebagai Admin Pada NPSN Tersebut!");
                                     }else{
                                         const dataLembaga = await insertLembagaPendidikan();
+                                        console.log("log 1", dataLembaga);
                                     }
                                     
                                 }
@@ -297,6 +301,7 @@
                             console.log("ini selepas insert subscriber");
                             const res_subscriber = await insertSubscriber();
                             console.log(res_subscriber.data.subscriber_id);
+                            id_subscriber = res_subscriber.data.subscriber_id;
                             if(formRoleProduk == 1){
                                 if(formNpsn == ''){
                                     alert("NPSN Wajib Diisi!");
@@ -307,6 +312,7 @@
                                         alert("NPSN Telah Didaftarkan, Anda tidak dapat mendaftar sebagai Admin Pada NPSN Tersebut!");
                                     }else{
                                         const dataLembaga = await insertLembagaPendidikan();
+                                        console.log("log 2", dataLembaga);
                                     }
                                     
                                 }
