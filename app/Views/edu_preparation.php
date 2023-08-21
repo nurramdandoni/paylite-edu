@@ -241,7 +241,7 @@
                             alert("not exist");
                             console.log("ini selepas insert subscriber");
                             const res_subscriber = await insertSubscriber();
-                            console.log(res_subscriber);
+                            console.log(res_subscriber.data.subscriber_id);
                         }
                     } catch (error) {
                         // Handle errors here
