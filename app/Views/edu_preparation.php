@@ -280,7 +280,7 @@
                                 }else{
                                     const statusAdmin = await cekAdminLembaga();
                                     console.log("status admin : ",statusAdmin);
-                                    if(statusAdmin === 200){
+                                    if(statusAdmin == 'Sukses'){
                                         alert("NPSN Telah Didaftarkan, Anda tidak dapat mendaftar sebagai Admin Pada NPSN Tersebut!");
                                     }else{
                                         const dataLembaga = await insertLembagaPendidikan();
