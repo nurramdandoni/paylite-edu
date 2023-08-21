@@ -65,6 +65,7 @@
       <script>
         let idProduk = "1";
         let user_idCookie = '<?= $_COOKIE["user_id"]; ?>';
+        let id_subscriber = '';
         $("#nonAdmin").hide();
         // Role Produk
         // Data yang akan dikirim dalam permintaan GET
@@ -206,6 +207,8 @@
                 let stat = data.data.length;
                 if(stat > 0){
                     // cek lembaga
+                    id_subscriber = data.data[0].subscriber_id;
+                    cekLembaga("exist");
                     // alert("Sekolah Dengan NPSN "+formNpsn+" Sudah Memiliki Admin!, Silahkan Mendaftarkan Role Lain.")
                 }else{
                     // alert("Proses inser subscriber, edu user dan siswa/guru, lembaga");
@@ -234,8 +237,10 @@
                     .then(data => {
                         // Handle the JSON data  
                         console.log(data);
-                        let id_subscriber = data.data.subscriber_id;
+                        id_subscriber = data.data.subscriber_id;
                         console.log("ini id subscribernya : "+ id_subscriber);
+
+                        cekLembaga("not exist");
 
                     })
                     .catch(error => {
@@ -258,5 +263,8 @@
                 // cek edu user insert jika tidak ada
                 // cek 
             });
+            function cekLembaga(i){
+                alert(i);
+            }
       </script>
       <?= $this->endSection() ?>
