@@ -212,7 +212,7 @@
                 }
                 async function cekAdminLembaga(npsn){
                     
-                        const data = await fetchData('https://api.paylite.co.id/cekAdminLembaga/'+npsn+'');
+                        const data = await fetchData('https://api.paylite.co.id/cekAdminLembaga/777');
                         return data;
                 }
 
@@ -242,8 +242,8 @@
                             // ...
                             alert("exist");
                             console.log(data.data[0].subscriber_id);
+                            const statusAdmin = await cekAdminLembaga();
                             console.log("hasil cek admin");
-                            const statusAdmin = await cekAdminLembaga(formNpsn);
                             console.log(statusAdmin);
                         } else {
                             // ...
@@ -252,7 +252,7 @@
                             const res_subscriber = await insertSubscriber();
                             console.log(res_subscriber.data.subscriber_id);
                             console.log("hasil cek admin");
-                            const statusAdmin = await cekAdminLembaga(formNpsn);
+                            const statusAdmin = await cekAdminLembaga();
                             console.log(statusAdmin);
                         }
                     } catch (error) {
