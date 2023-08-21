@@ -210,7 +210,7 @@
                         const data = await fetchData('https://api.paylite.co.id/subscriber', requestOptionsPre);
                         return data;
                 }
-                async function cekAdminLembaga(npsn){
+                async function cekAdminLembaga(){
                     
                         const data = await fetchData('https://api.paylite.co.id/cekAdminLembaga/777');
                         return data;
