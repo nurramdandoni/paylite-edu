@@ -242,18 +242,42 @@
                             // ...
                             alert("exist");
                             console.log(data.data[0].subscriber_id);
-                            const statusAdmin = await cekAdminLembaga();
-                            console.log("hasil cek admin");
-                            console.log(statusAdmin);
+                            if(formRoleProduk == 1){
+                                if(formNpsn == ''){
+                                    alert("NPSN Wajib Diisi!");
+                                }else{
+                                    try{
+                                        const statusAdmin = await cekAdminLembaga();
+                                        console.log("hasil cek admin");
+                                        console.log(statusAdmin);
+                                    }catch(err){
+                                        alert("NPSN Tidak Terdaftar!");
+                                    }
+                                }
+                            }else{
+                                // cek guru siswa ortu
+                            }
                         } else {
                             // ...
                             alert("not exist");
                             console.log("ini selepas insert subscriber");
                             const res_subscriber = await insertSubscriber();
                             console.log(res_subscriber.data.subscriber_id);
-                            console.log("hasil cek admin");
-                            const statusAdmin = await cekAdminLembaga();
-                            console.log(statusAdmin);
+                            if(formRoleProduk == 1){
+                                if(formNpsn == ''){
+                                    alert("NPSN Wajib Diisi!");
+                                }else{
+                                    try{
+                                        const statusAdmin = await cekAdminLembaga();
+                                        console.log("hasil cek admin");
+                                        console.log(statusAdmin);
+                                    }catch(err){
+                                        alert("NPSN Tidak Terdaftar!");
+                                    }
+                                }
+                            }else{
+                                // cek guru siswa ortu
+                            }
                         }
                     } catch (error) {
                         // Handle errors here
