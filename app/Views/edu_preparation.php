@@ -63,12 +63,13 @@
 
       </div>
       <script>
+        let idProduk = "1";
         let user_idCookie = '<?= $_COOKIE["user_id"]; ?>';
         $("#nonAdmin").hide();
         // Role Produk
         // Data yang akan dikirim dalam permintaan GET
         const postDataRole = {
-                paylite_produk_id: "1",
+                paylite_produk_id: idProduk,
             };
 
             // Objek opsi untuk konfigurasi permintaan
@@ -106,21 +107,6 @@
 
         // jenjang pendidikan
         // Data yang akan dikirim dalam permintaan GET
-        const postData = {
-                user_id: 1,
-                paylite_produk_id: 1,
-            };
-
-            // Objek opsi untuk konfigurasi permintaan
-            console.log(postData);
-            const requestOptions = {
-            method: 'GET', // Metode permintaan
-            headers: {
-                'Content-Type': 'application/json', // Jenis konten yang dikirim
-                // 'Authorization': 'Bearer YOUR_ACCESS_TOKEN' // Header otorisasi jika diperlukan
-            },
-            body: JSON.stringify(postData) // Mengubah data menjadi bentuk JSON
-            };
             fetch('https://api.paylite.co.id/jenjangPendidikan')
             .then(response => {
                 if (!response.ok) {
