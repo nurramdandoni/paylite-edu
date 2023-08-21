@@ -63,6 +63,7 @@
 
       </div>
       <script>
+        let user_idCookie = '<?= $_COOKIE["user_id"]; ?>';
         $("#nonAdmin").hide();
         // Role Produk
         // Data yang akan dikirim dalam permintaan GET
