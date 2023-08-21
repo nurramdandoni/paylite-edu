@@ -279,7 +279,7 @@
                                     alert("NPSN Wajib Diisi!");
                                 }else{
                                     const statusAdmin = await cekAdminLembaga();
-                                    if(statusAdmin.status == 200){
+                                    if(statusAdmin == 200){
                                         alert("NPSN Telah Didaftarkan, Anda tidak dapat mendaftar sebagai Admin Pada NPSN Tersebut!");
                                     }else{
                                         const dataLembaga = await insertLembagaPendidikan();
