@@ -208,7 +208,7 @@
                 if(stat > 0){
                     // cek lembaga
                     id_subscriber = data.data[0].subscriber_id;
-                    cekLembaga("exist");
+                    alert("exist");
                     // alert("Sekolah Dengan NPSN "+formNpsn+" Sudah Memiliki Admin!, Silahkan Mendaftarkan Role Lain.")
                 }else{
                     // alert("Proses inser subscriber, edu user dan siswa/guru, lembaga");
@@ -240,7 +240,7 @@
                         id_subscriber = data.data.subscriber_id;
                         console.log("ini id subscribernya : "+ id_subscriber);
 
-                        cekLembaga("not exist");
+                        alert("not exist");
 
                     })
                     .catch(error => {
@@ -263,8 +263,6 @@
                 // cek edu user insert jika tidak ada
                 // cek 
             });
-            function cekLembaga(i){
-                alert(i);
-            }
+            
       </script>
       <?= $this->endSection() ?>
