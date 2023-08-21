@@ -167,7 +167,11 @@ class Dashboard extends BaseController
     }
     public function register()
     {
+        if(isset($_COOKIE['statusProduk'])){
             return view('edu_preparation');
+        }else{
+            return redirect('https://account.paylite.co.id');
+        }
     }
     public function registerCh()
     {
