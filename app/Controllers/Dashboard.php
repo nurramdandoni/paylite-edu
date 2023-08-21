@@ -168,7 +168,11 @@ class Dashboard extends BaseController
     public function register()
     {
         if(isset($_COOKIE['statusProduk'])){
-            return view('edu_preparation');
+            if($_COOKIE['statusProduk'] == 'prepareSubscriberRegister'){
+                return view('edu_preparation');
+            }else{
+                return view('edu_dashboard');
+            }
         }else{
             return $this->response->redirect('https://account.paylite.co.id');
         }
