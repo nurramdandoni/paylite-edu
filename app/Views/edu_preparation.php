@@ -233,6 +233,9 @@
                     })
                     .then(data => {
                         // Handle the JSON data  
+                        console.log(data);
+                        console.log(data.data);
+                        console.log(data.data.subscriber_id);
                         let id_subscriber = data.data.subscriber_id;
                         console.log("ini id subscribernya : "+ id_subscriber);
 
