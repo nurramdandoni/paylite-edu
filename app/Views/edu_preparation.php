@@ -176,6 +176,7 @@
                 let formNoSekolah = $("#formNoSekolah").val();
                 const data = {
                     formRoleProduk,
+                    formNisNisnNip,
                     formNpsn,
                     formJenjangPendidikan,
                     formSkAkreditasi,
