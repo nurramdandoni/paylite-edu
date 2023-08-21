@@ -210,6 +210,27 @@
                         const data = await fetchData('https://api.paylite.co.id/subscriber', requestOptionsPre);
                         return data;
                 }
+                async function insertLembagaPendidikan(){
+                    const postDataInsertLembagaPendidikan = {
+                        nomor_legalitas:formNpsn,
+                        jenjang_pendidikan:formJenjangPendidikan,
+                        sk_akreditasi:formSkAkreditasi,
+                        nama_lembaga:formNamaLembaga,
+                        nama_kepala_sekolah:formNamaKepalaSekolah,
+                        website:formWebsite,
+                        nomor_telepon:formNoSekolah
+                        };
+                    const requestOptionsPre = {
+                            method: 'POST', // Metode permintaan
+                            headers: {
+                                'Content-Type': 'application/json', // Jenis konten yang dikirim
+                                // 'Authorization': 'Bearer YOUR_ACCESS_TOKEN' // Header otorisasi jika diperlukan
+                            },
+                            body: JSON.stringify(postDataInsertLembagaPendidikan) // Mengubah data menjadi bentuk JSON
+                        };
+                        const data = await fetchData('https://api.paylite.co.id/lembagaPendidikan', requestOptionsPre);
+                        return data;
+                }
                 async function cekAdminLembaga(){
                     
                         const data = await fetchData('https://api.paylite.co.id/cekAdminLembaga/'+formNpsn+'');
@@ -251,11 +272,16 @@
                                         console.log("hasil cek admin");
                                         console.log(statusAdmin);
                                     }catch(err){
-                                        alert("NPSN Tidak Terdaftar!");
+                                        // insert lembaga pendidikan
+                                        console.log("hasil insert lembaga");
+                                        const dataLembaga = await insertLembagaPendidikan();
+                                        console.log(dataLembaga);
+                                        // insert edu_users
                                     }
                                 }
                             }else{
-                                // cek guru siswa ortu
+                                // insert edu_users
+                                // insert siswa/guru/siswa
                             }
                         } else {
                             // ...
@@ -272,11 +298,16 @@
                                         console.log("hasil cek admin");
                                         console.log(statusAdmin);
                                     }catch(err){
-                                        alert("NPSN Tidak Terdaftar!");
+                                        // insert lembaga pendidikan
+                                        console.log("hasil insert lembaga");
+                                        const dataLembaga = await insertLembagaPendidikan();
+                                        console.log(dataLembaga);
+                                        // insert edu_users
                                     }
                                 }
                             }else{
-                                // cek guru siswa ortu
+                                // insert edu_users
+                                // insert siswa/guru/siswa
                             }
                         }
                     } catch (error) {
