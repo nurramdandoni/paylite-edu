@@ -10,6 +10,11 @@
                   <small id="formRoleProduktext" class="form-text text-muted">Pilih Status Pengguna Anda</small>
               </div>
             <!-- <form> -->
+              <div id="nonAdmin" class="form-group">
+                  <label for="formNisNisnNip">Nomor Induk (NISN/NIS/NIP)</label>
+                  <input type="text" class="form-control" id="formNisNisnNip" aria-describedby="formNisNisnNip" placeholder="NISN/ NIS/ NIP">
+                  <small id="formNisNisnNiptext" class="form-text text-muted">Masukan Nomor Induk</small>
+              </div>
               <div class="form-group">
                   <label for="formNpsn">Nomor Legalitas (NPSN)</label>
                   <input type="text" class="form-control" id="formNpsn" aria-describedby="formNpsn" placeholder="NPSN">
@@ -47,10 +52,10 @@
                   <input type="text" class="form-control" id="formNoSekolah" aria-describedby="formNoSekolah" placeholder="Nomor Telepon Sekolah">
                   <small id="formNoSekolahtext" class="form-text text-muted">Masukan Nomor Telepon Sekolah</small>
               </div>
-              <div class="form-group">
+              <!-- <div class="form-group">
                   <label for="formLogoSekolah">Logo Sekolah</label>
                   <input type="file" class="form-control-file" id="formLogoSekolah">
-              </div>
+              </div> -->
               <!-- <button id="latlon" class="btn btn-primary">Daftarkan Koordinat Sekolah</button> -->
               <span id="aktivasiAkunAdmin" class="btn btn-primary">Aktivasi Akun Admin</span>
               <!-- </form> -->
@@ -58,6 +63,7 @@
 
       </div>
       <script>
+        $("#nonAdmin").hide();
         // Role Produk
         // Data yang akan dikirim dalam permintaan GET
         const postDataRole = {
@@ -139,14 +145,14 @@
         $("#formRoleProduk").change(function(){
             let role = $("#formRoleProduk").val();
             if(role != 1){
-                $("#formNpsn").prop("disabled", true);
-                $("#formJenjangPendidikan").prop("disabled", true);
+                $("#nonAdmin").show();
                 $("#formSkAkreditasi").prop("disabled", true);
                 $("#formNamaLembaga").prop("disabled", true);
                 $("#formNamaKepalaSekolah").prop("disabled", true);
                 $("#formWebsite").prop("disabled", true);
                 $("#formNoSekolah").prop("disabled", true);
             }else{
+                $("#nonAdmin").hide();
                 $("#formNpsn").prop("disabled", false);
                 $("#formJenjangPendidikan").prop("disabled", false);
                 $("#formSkAkreditasi").prop("disabled", false);
@@ -161,6 +167,7 @@
                 console.log("ok");
                 let formRoleProduk = $("#formRoleProduk").val();
                 let formNpsn = $("#formNpsn").val();
+                let formNisNisnNip = $("#formNisNisnNip").val();
                 let formJenjangPendidikan = $("#formJenjangPendidikan").val();
                 let formSkAkreditasi = $("#formSkAkreditasi").val();
                 let formNamaLembaga = $("#formNamaLembaga").val();
