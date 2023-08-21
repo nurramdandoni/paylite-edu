@@ -218,7 +218,8 @@
                         nama_lembaga:formNamaLembaga,
                         nama_kepala_sekolah:formNamaKepalaSekolah,
                         website:formWebsite,
-                        nomor_telepon:formNoSekolah
+                        nomor_telepon:formNoSekolah,
+                        email_sekolah:"-"
                         };
                         console.log("data sebelum insert lembaga", postDataInsertLembagaPendidikan);
                     const requestOptionsPre = {
