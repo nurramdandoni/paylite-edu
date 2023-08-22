@@ -21,12 +21,12 @@ class Dashboard extends BaseController
                     if(isset($_COOKIE['subscriber_id'])){
 
                         $this->setCookieData2();
-                        if($counter == 0){
-                            $counter++;
-                            echo "<script>location.reload();</script>";
-                        }
                     }
                 }
+                for($counter=0;$counter<1;$counter++){
+                        echo "<script>location.reload();</script>";
+                }
+                echo $counter."<br>";
                 echo "sampai sini";
                 // return view('edu_dashboard');
             }
