@@ -99,7 +99,7 @@
         }
       </style>
       <script>
-        let id_lembaga_pendidikan = '<?= $_COOKIE['id_lembaga_pendidikan']; ?>';
+        let lembaga_pendidikan_id = '<?= $_COOKIE['lembaga_pendidikan_id']; ?>';
         new DataTable('#example');
         var previousLink = document.querySelector('#example_previous a');
   
@@ -134,21 +134,20 @@
         }
 
         async function getTahunAjaran(){
-                    const postDatagetTahunAjaran = {
-                        lembaga_pendidikan_id: id_lembaga_pendidikan
-                    };
-    
-                    const requestOptions = {
-                        method: 'POST', // Metode permintaan
-                        headers: {
+          const postDatagetTahunAjaran = {
+                  lembaga_pendidikan_id: lembaga_pendidikan_id
+                }
+          const requestOptions = {
+                  method: 'POST', // Metode permintaan
+                  headers: {
                             'Content-Type': 'application/json', // Jenis konten yang dikirim
                             // 'Authorization': 'Bearer YOUR_ACCESS_TOKEN' // Header otorisasi jika diperlukan
-                        },
-                        body: JSON.stringify(postDatagetTahunAjaran), // Mengubah data menjadi bentuk JSON
-                    };
+                  },
+                  body: JSON.stringify(postDatagetTahunAjaran), // Mengubah data menjadi bentuk JSON
+                };
                     const data = await fetchData('https://api.paylite.co.id/tahunAjaranWhere', requestOptions);
                     console.log(data);
                 }
-                await getTahunAjaran();
+        getTahunAjaran();
       </script>
 <?= $this->endSection() ?>
