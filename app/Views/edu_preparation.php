@@ -322,9 +322,9 @@
 
                                             echo "document.cookie = '$cookieName=$cookieValue; expires=$cookieExpiration; path=$cookiePath; domain=$cookieDomain';";
                                             ?>
-                                             window.location.href = "https://edu.paylite.co.id";
                                         }
                                         console.log("log 1", dataLembaga);
+                                        window.location.href = "https://edu.paylite.co.id";
                                     }
                                     
                                 }
@@ -366,9 +366,9 @@
 
                                             echo "document.cookie = '$cookieName=$cookieValue; expires=$cookieExpiration; path=$cookiePath; domain=$cookieDomain';";
                                             ?>
-                                             window.location.href = "https://edu.paylite.co.id";
                                         }
                                         console.log("log 2", dataLembaga);
+                                        window.location.href = "https://edu.paylite.co.id";
                                     }
                                     
                                 }
