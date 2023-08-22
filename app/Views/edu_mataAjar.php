@@ -99,8 +99,6 @@
         }
       </style>
       <script>
-        let lembaga_pendidikan_id = '<?= $_COOKIE['lembaga_pendidikan_id']; ?>';
-        console.log("ini id : ",lembaga_pendidikan_id);
         new DataTable('#example');
         var previousLink = document.querySelector('#example_previous a');
   
@@ -119,36 +117,6 @@
         $("#jadwalPengajaran").removeClass("active");
         $("#absensi").removeClass("active");
         $("#nilai").removeClass("active");
-        async function fetchData(url, options) {
-            try {
-                const response = await fetch(url, options);
-                if (!response.ok) {
-                    throw new Error('Network response was not ok');
-                }
-                const data = await response.json();
-                return data;
-            } catch (error) {
-                console.error('Fetch error:', error);
-                // Lakukan penanganan kesalahan di sini, seperti menampilkan pesan kepada pengguna
-                return {status:"gagal"};
-            }
-        }
-
-        async function getTahunAjaran(){
-          const postDatagetTahunAjaran = {
-                  lembaga_pendidikan_id: lembaga_pendidikan_id
-                }
-          const requestOptions = {
-                  method: 'POST', // Metode permintaan
-                  headers: {
-                            'Content-Type': 'application/json', // Jenis konten yang dikirim
-                            // 'Authorization': 'Bearer YOUR_ACCESS_TOKEN' // Header otorisasi jika diperlukan
-                  },
-                  body: JSON.stringify(postDatagetTahunAjaran), // Mengubah data menjadi bentuk JSON
-                };
-                    const data = await fetchData('https://api.paylite.co.id/tahunAjaranWhere', requestOptions);
-                    console.log(data);
-                }
-        getTahunAjaran();
+        
       </script>
 <?= $this->endSection() ?>
