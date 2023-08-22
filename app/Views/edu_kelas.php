@@ -25,6 +25,19 @@
           </div>
         </div>
       </div>
+      <style>
+        .custom-select.custom-select-sm.form-control.form-control-sm {
+            width: 80px;
+        }
+        #example_filter {
+            text-align: right;
+            margin-right: 10px;
+        }
+        #example_info {
+            margin-left: 20px;
+            margin-top: 10px;
+        }
+      </style>
       <script>
         getKelas();
         new DataTable('#example');
