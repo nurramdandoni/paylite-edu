@@ -39,8 +39,6 @@
         }
       </style>
       <script>
-        let lembaga_pendidikan_id = '<?= $_COOKIE['lembaga_pendidikan_id']; ?>';
-        console.log("ini id : ",lembaga_pendidikan_id);
         getMataAjar();
         new DataTable('#example');
         var previousLink = document.querySelector('#example_previous a');

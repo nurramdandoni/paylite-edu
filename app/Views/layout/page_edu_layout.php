@@ -80,7 +80,8 @@ async function fetchData(url, options) {
                 return {status:"gagal"};
             }
         }
-
+        let lembaga_pendidikan_id = '<?= $_COOKIE['lembaga_pendidikan_id']; ?>';
+        console.log("ini id : ",lembaga_pendidikan_id);
 </script>
 <body class="g-sidenav-show  bg-gray-100">
   <aside class="sidenav navbar navbar-vertical navbar-expand-xs border-0 border-radius-xl my-3 fixed-start ms-3 " id="sidenav-main">

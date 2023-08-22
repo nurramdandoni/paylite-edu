@@ -40,8 +40,6 @@
         }
     </style>
       <script>
-        let lembaga_pendidikan_id = '<?= $_COOKIE['lembaga_pendidikan_id']; ?>';
-        console.log("ini id : ",lembaga_pendidikan_id);
         getTahunAjaran();
         new DataTable('#example');
         var previousLink = document.querySelector('#example_previous a');
@@ -63,21 +61,6 @@
         $("#jadwalPengajaran").removeClass("active");
         $("#absensi").removeClass("active");
         $("#nilai").removeClass("active");
-
-        async function fetchData(url, options) {
-            try {
-                const response = await fetch(url, options);
-                if (!response.ok) {
-                    throw new Error('Network response was not ok');
-                }
-                const data = await response.json();
-                return data;
-            } catch (error) {
-                console.error('Fetch error:', error);
-                // Lakukan penanganan kesalahan di sini, seperti menampilkan pesan kepada pengguna
-                return {status:"gagal"};
-            }
-        }
 
         async function getTahunAjaran(){
           const postDatagetTahunAjaran = {
