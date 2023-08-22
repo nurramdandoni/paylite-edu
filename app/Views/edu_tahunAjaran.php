@@ -92,7 +92,7 @@
                     const data = await fetchData('https://api.paylite.co.id/tahunAjaranWhere', requestOptions);
                     console.log(data);
                     let temp = '';
-                    for(item in data.data){
+                    for(item in data.data.data){
                       let icon = 'secondary';
                       if(item.status == 'aktif'){
                         let icon = 'success';
