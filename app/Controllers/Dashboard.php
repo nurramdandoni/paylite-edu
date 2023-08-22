@@ -33,16 +33,16 @@ class Dashboard extends BaseController
                 curl_close($ch);
 
                 $consume = json_decode($data, true);
-                echo var_dump($consume);
-                echo "----------------------<br>";
-                echo ($consume["data"][0]["subscriber_id"]);
+                // echo var_dump($consume);
+                // echo "----------------------<br>";
+                // echo ($consume["data"][0]["subscriber_id"]);
 
-                // setcookie("role_produk_id",$consume["data"]["role_produk_id"],time() + (60 * 60 * 24),"/", ".paylite.co.id");
-                // setcookie("subscriber_status_id",$consume["data"]["subscriber_status_id"],time() + (60 * 60 * 24),"/", ".paylite.co.id");
-                // setcookie("status_pay",$consume["data"]["status_pay"],time() + (60 * 60 * 24),"/", ".paylite.co.id");
-                // setcookie("program_id",$consume["data"]["program_id"],time() + (60 * 60 * 24),"/", ".paylite.co.id");
-                // setcookie("end_subscribe",$consume["data"]["end_subscribe"],time() + (60 * 60 * 24),"/", ".paylite.co.id");
-                // setcookie("subscriber_id",$consume["data"]["subscriber_id"],time() + (60 * 60 * 24),"/", ".paylite.co.id");
+                setcookie("role_produk_id",$consume["data"][0]["role_produk_id"],time() + (60 * 60 * 24),"/", ".paylite.co.id");
+                setcookie("subscriber_status_id",$consume["data"][0]["subscriber_status_id"],time() + (60 * 60 * 24),"/", ".paylite.co.id");
+                setcookie("status_pay",$consume["data"][0]["status_pay"],time() + (60 * 60 * 24),"/", ".paylite.co.id");
+                setcookie("program_id",$consume["data"][0]["program_id"],time() + (60 * 60 * 24),"/", ".paylite.co.id");
+                setcookie("end_subscribe",$consume["data"][0]["end_subscribe"],time() + (60 * 60 * 24),"/", ".paylite.co.id");
+                setcookie("subscriber_id",$consume["data"][0]["subscriber_id"],time() + (60 * 60 * 24),"/", ".paylite.co.id");
 
                 $chs = curl_init();
                 $dataget = array(
@@ -62,9 +62,9 @@ class Dashboard extends BaseController
                 
                 $consume1 = json_decode($dataEduUser, true);
                 echo var_dump($consume1);
-                // setcookie("lembaga_pendidikan_id",$consume1["data"]["lembaga_pendidikan_id"],time() + (60 * 60 * 24),"/", ".paylite.co.id");
+                setcookie("lembaga_pendidikan_id",$consume1["data"][0]["lembaga_pendidikan_id"],time() + (60 * 60 * 24),"/", ".paylite.co.id");
 
-                // return view('edu_dashboard');
+                return view('edu_dashboard');
             }
         }else{
             return $this->response->redirect('https://account.paylite.co.id');  
