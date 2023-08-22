@@ -299,10 +299,6 @@
                         } else {
                             // ...
                             alert("not exist");
-                            console.log("ini selepas insert subscriber");
-                            const res_subscriber = await insertSubscriber();
-                            console.log(res_subscriber.data.subscriber_id);
-                            id_subscriber = res_subscriber.data.subscriber_id;
                             if(formRoleProduk == 1){
                                 if(formNpsn == ''){
                                     alert("NPSN Wajib Diisi!");
@@ -312,6 +308,11 @@
                                     if(statusAdmin == 'Sukses'){
                                         alert("NPSN Telah Didaftarkan, Anda tidak dapat mendaftar sebagai Admin Pada NPSN Tersebut!");
                                     }else{
+                                        console.log("ini selepas insert subscriber");
+                                        const res_subscriber = await insertSubscriber();
+                                        console.log(res_subscriber.data.subscriber_id);
+                                        id_subscriber = res_subscriber.data.subscriber_id;
+
                                         const dataLembaga = await insertLembagaPendidikan();
                                         console.log("log 2", dataLembaga);
                                     }
