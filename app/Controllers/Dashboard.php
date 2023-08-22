@@ -25,8 +25,8 @@ class Dashboard extends BaseController
                 if(!isset($_COOKIE['lembaga_pendidikan_id'])){
                         echo "<script>location.reload();</script>";
                 }
-                echo "sampai sini";
-                // return view('edu_dashboard');
+                // echo "sampai sini";
+                return view('edu_dashboard');
             }
         }else{
             return $this->response->redirect('https://account.paylite.co.id');  
