@@ -95,10 +95,7 @@
                     for(item of data.data){
                       let icon = 'secondary';
                       if(item.status == 'aktif'){
-                        let icon = 'success';
-                      }else{
-                        let icon = 'secondary';
-
+                        icon = 'success';
                       }
                       temp += `
                       <tr>
