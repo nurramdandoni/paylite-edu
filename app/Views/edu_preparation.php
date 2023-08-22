@@ -269,6 +269,60 @@
                         return data.status;
                 }
 
+                async function ceknpsn(){
+                    const postDataCekNpsn = {
+                        nomor_legalitas: formNpsn
+                    };
+    
+                    const requestOptions = {
+                        method: 'POST', // Metode permintaan
+                        headers: {
+                            'Content-Type': 'application/json', // Jenis konten yang dikirim
+                            // 'Authorization': 'Bearer YOUR_ACCESS_TOKEN' // Header otorisasi jika diperlukan
+                        },
+                        body: JSON.stringify(postDataCekNpsn), // Mengubah data menjadi bentuk JSON
+                    };
+                    const data = await fetchData('https://api.paylite.co.id/lembagaPendidikanWhere', requestOptions);
+                    return data;
+                    
+                }
+                async function cekGuru(npsn){
+                    const postDataCekGuru = {
+                        nip: formNisNisnNip,
+                        lembaga_pendidikan_id: npsn
+                    };
+    
+                    const requestOptions = {
+                        method: 'POST', // Metode permintaan
+                        headers: {
+                            'Content-Type': 'application/json', // Jenis konten yang dikirim
+                            // 'Authorization': 'Bearer YOUR_ACCESS_TOKEN' // Header otorisasi jika diperlukan
+                        },
+                        body: JSON.stringify(postDataCekGuru), // Mengubah data menjadi bentuk JSON
+                    };
+                    const data = await fetchData('https://api.paylite.co.id/guruWhere', requestOptions);
+                    return data;
+                    
+                }
+                async function cekSiswa(npsn){
+                    const postDataCekGuru = {
+                        nisn: formNisNisnNip,
+                        lembaga_pendidikan_id: npsn
+                    };
+    
+                    const requestOptions = {
+                        method: 'POST', // Metode permintaan
+                        headers: {
+                            'Content-Type': 'application/json', // Jenis konten yang dikirim
+                            // 'Authorization': 'Bearer YOUR_ACCESS_TOKEN' // Header otorisasi jika diperlukan
+                        },
+                        body: JSON.stringify(postDataCekGuru), // Mengubah data menjadi bentuk JSON
+                    };
+                    const data = await fetchData('https://api.paylite.co.id/siswaWhere', requestOptions);
+                    return data;
+                }
+
+
                 
                 async function main() {
                     // Contoh penggunaan
@@ -376,7 +430,7 @@
                                 // insert subscriber
                                 const res_subscriber = await insertSubscriber();
                                 alert("sampe sini : ");
-                                alert("sampe sini : ", res_subscriber);
+                                alert("sampe sini : ", res_subscriber.status);
                                 console.log(res_subscriber.data.subscriber_id);
                                 id_subscriber = res_subscriber.data.subscriber_id;
                                 // insert edu_users
