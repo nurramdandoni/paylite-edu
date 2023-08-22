@@ -250,7 +250,7 @@
                         subscriber_id: id_subscriber,
                         lembaga_pendidikan_id: id_lembaga_pendidikan
                         };
-                        console.log("data sebelum insert lembaga", postDatainsertEduUsers);
+                        console.log("data sebelum insert Edu Users", postDatainsertEduUsers);
                     const requestOptionsPre = {
                             method: 'POST', // Metode permintaan
                             headers: {
