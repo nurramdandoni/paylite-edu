@@ -321,9 +321,37 @@
                     const data = await fetchData('https://api.paylite.co.id/siswaWhere', requestOptions);
                     return data;
                 }
+                async function cekEduUser(id_lembaga){
+                    const postDataCekEduUser = {
+                        subscriber_id: id_subscriber,
+                        lembaga_pendidikan_id: id_lembaga_pendidikan
+                    };
+    
+                    const requestOptions = {
+                        method: 'POST', // Metode permintaan
+                        headers: {
+                            'Content-Type': 'application/json', // Jenis konten yang dikirim
+                            // 'Authorization': 'Bearer YOUR_ACCESS_TOKEN' // Header otorisasi jika diperlukan
+                        },
+                        body: JSON.stringify(postDataCekEduUser), // Mengubah data menjadi bentuk JSON
+                    };
+                    const data = await fetchData('https://api.paylite.co.id/eduUserWhere', requestOptions);
+                    return data;
+                }
 
 
-                
+                async function redirectToEdu(){
+                    <?php
+                                            $cookieName = "statusProduk";
+                                            $cookieValue = "registered";
+                                            $cookieExpiration = time() + (60 * 60 * 24); // Contoh: kadaluarsa setelah 24 jam
+                                            $cookiePath = "/";
+                                            $cookieDomain = ".paylite.co.id";
+
+                                            echo "document.cookie = '$cookieName=$cookieValue; expires=$cookieExpiration; path=$cookiePath; domain=$cookieDomain';";
+                                            ?>
+                                        window.location.href = "https://edu.paylite.co.id";
+                }
                 async function main() {
                     // Contoh penggunaan
                     const postDataCekSubscriberRole = {
@@ -367,18 +395,9 @@
                                             const eduUserInserted = await insertEduUsers();
                                             console.log("status edu user",eduUserInserted.status);
                                             alert("Selamat Sekolah anda terdaftar!")
-                                            <?php
-                                            $cookieName = "statusProduk";
-                                            $cookieValue = "registered";
-                                            $cookieExpiration = time() + (60 * 60 * 24); // Contoh: kadaluarsa setelah 24 jam
-                                            $cookiePath = "/";
-                                            $cookieDomain = ".paylite.co.id";
-
-                                            echo "document.cookie = '$cookieName=$cookieValue; expires=$cookieExpiration; path=$cookiePath; domain=$cookieDomain';";
-                                            ?>
+                                            redirectToEdu();
                                         }
                                         console.log("log 1", dataLembaga);
-                                        window.location.href = "https://edu.paylite.co.id";
                                     }
                                     
                                 }
@@ -392,26 +411,72 @@
                                         const hasilCekGuru = await cekGuru(id_lembaga_pendidikan);
                                         console.log("hasil cek guru 1 : ",hasilCekGuru);
                                         if(hasilCekGuru.data.length > 0){
-                                            console.log("Tinggal Diredirect 1");
+                                            const exist = await cekEduUser();
+                                            if(exist.data.length > 0){
+                                                
+                                                redirectToEdu();
+                                            }else{
+
+                                                // insert eduUser
+                                                const eduUserInserted = await insertEduUsers();
+                                                redirectToEdu();
+                                                // insert guru oleh admin
+                                            }
                                         }else{
-                                            // insert eduUser
-                                            const eduUserInserted = await insertEduUsers();
-                                            // insert guru
+                                            const exist = await cekEduUser();
+                                            if(exist.data.length > 0){
+                                                
+                                                alert("Anda Tidak Terdaftar silahkan Hubungi Pihak Sekolah!");
+                                            }else{
+
+                                                // insert eduUser
+                                                const eduUserInserted = await insertEduUsers();
+                                                alert("Anda Tidak Terdaftar silahkan Hubungi Pihak Sekolah!");
+                                                // insert guru oleh admin
+                                            }
                                         }
                                     }else if(formRoleProduk == 4){
                                         const hasilCekSiswa = await cekSiswa(id_lembaga_pendidikan);
                                         console.log("hasil cek siswa 1 : ",hasilCekSiswa);
                                         if(hasilCekSiswa.data.length > 0){
-                                            console.log("Tinggal Diredirect 1");
+                                            const exist = await cekEduUser();
+                                            if(exist.data.length > 0){
+                                                
+                                                redirectToEdu()
+                                            }else{
+
+                                                // insert eduUser
+                                                const eduUserInserted = await insertEduUsers();
+                                                redirectToEdu();
+                                                // insert siswa oleh admin
+                                            }
                                         }else{
-                                            // insert eduUser
-                                            const eduUserInserted = await insertEduUsers();
-                                            // insert siswa
+                                            const exist = await cekEduUser();
+                                            if(exist.data.length > 0){
+                                                
+                                                alert("Anda Tidak Terdaftar silahkan Hubungi Pihak Sekolah!");
+                                            }else{
+
+                                                // insert eduUser
+                                                const eduUserInserted = await insertEduUsers();
+                                                alert("Anda Tidak Terdaftar silahkan Hubungi Pihak Sekolah!");
+                                                // insert siswa oleh admin
+                                            }
                                         }
 
                                     }else{
                                         // insert eduUser
-                                        const eduUserInserted = await insertEduUsers();
+                                        const exist = await cekEduUser();
+                                            if(exist.data.length > 0){
+                                                
+                                                redirectToEdu()
+                                            }else{
+
+                                                // insert eduUser
+                                                const eduUserInserted = await insertEduUsers();
+                                                redirectToEdu();
+                                                // insert siswa oleh admin
+                                            }
                                         console.log("ortu");
                                     }
                                 }else{
@@ -443,18 +508,9 @@
                                             const eduUserInserted = await insertEduUsers();
                                             console.log("status edu user 2",eduUserInserted.status);
                                             alert("Selamat Sekolah anda terdaftar!")
-                                            <?php
-                                            $cookieName = "statusProduk";
-                                            $cookieValue = "registered";
-                                            $cookieExpiration = time() + (60 * 60 * 24); // Contoh: kadaluarsa setelah 24 jam
-                                            $cookiePath = "/";
-                                            $cookieDomain = ".paylite.co.id";
-
-                                            echo "document.cookie = '$cookieName=$cookieValue; expires=$cookieExpiration; path=$cookiePath; domain=$cookieDomain';";
-                                            ?>
+                                            redirectToEdu();
                                         }
                                         console.log("log 2", dataLembaga);
-                                        window.location.href = "https://edu.paylite.co.id";
                                     }
                                     
                                 }
@@ -475,26 +531,72 @@
                                         const hasilCekGuru = await cekGuru(id_lembaga_pendidikan);
                                         console.log("hasil cek guru 1 : ",hasilCekGuru);
                                         if(hasilCekGuru.data.length > 0){
-                                            console.log("Tinggal Diredirect 2");
+                                            const exist = await cekEduUser();
+                                            if(exist.data.length > 0){
+                                                
+                                                redirectToEdu()
+                                            }else{
+
+                                                // insert eduUser
+                                                const eduUserInserted = await insertEduUsers();
+                                                redirectToEdu();
+                                                // insert guru oleh admin
+                                            }
                                         }else{
-                                            // insert eduUser
-                                            const eduUserInserted = await insertEduUsers();
-                                            // insert guru
+                                            const exist = await cekEduUser();
+                                            if(exist.data.length > 0){
+                                                
+                                                alert("Anda Tidak Terdaftar silahkan Hubungi Pihak Sekolah!");
+                                            }else{
+
+                                                // insert eduUser
+                                                const eduUserInserted = await insertEduUsers();
+                                                alert("Anda Tidak Terdaftar silahkan Hubungi Pihak Sekolah!");
+                                                // insert guru oleh admin
+                                            }
                                         }
                                     }else if(formRoleProduk == 4){
                                         const hasilCekSiswa = await cekSiswa(id_lembaga_pendidikan);
                                         console.log("hasil cek siswa 1 : ",hasilCekSiswa);
                                         if(hasilCekSiswa.data.length > 0){
-                                            console.log("Tinggal Diredirect 2");
+                                            const exist = await cekEduUser();
+                                            if(exist.data.length > 0){
+                                                
+                                                redirectToEdu()
+                                            }else{
+
+                                                // insert eduUser
+                                                const eduUserInserted = await insertEduUsers();
+                                                redirectToEdu();
+                                                // insert siswa oleh admin
+                                            }
                                         }else{
-                                            // insert eduUser
-                                            const eduUserInserted = await insertEduUsers();
-                                            // insert guru
+                                            const exist = await cekEduUser();
+                                            if(exist.data.length > 0){
+                                                
+                                                alert("Anda Tidak Terdaftar silahkan Hubungi Pihak Sekolah!");
+                                            }else{
+
+                                                // insert eduUser
+                                                const eduUserInserted = await insertEduUsers();
+                                                alert("Anda Tidak Terdaftar silahkan Hubungi Pihak Sekolah!");
+                                                // insert siswa oleh admin
+                                            }
                                         }
 
                                     }else{
                                         // insert eduUser
-                                        const eduUserInserted = await insertEduUsers();
+                                        const exist = await cekEduUser();
+                                            if(exist.data.length > 0){
+                                                
+                                                redirectToEdu()
+                                            }else{
+
+                                                // insert eduUser
+                                                const eduUserInserted = await insertEduUsers();
+                                                redirectToEdu();
+                                                // insert siswa oleh admin
+                                            }
                                         console.log("ortu");
                                     }
                                 }else{
