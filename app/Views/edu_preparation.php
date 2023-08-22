@@ -311,6 +311,7 @@
                                         }else{
                                             id_lembaga_pendidikan =dataLembaga.data.lembaga_pendidikan_id;
                                             const eduUserInserted = await insertEduUsers();
+                                            console.log("status edu user",eduUserInserted.status);
                                             alert("Selamat Sekolah anda terdaftar!")
                                         }
                                         console.log("log 1", dataLembaga);
@@ -344,6 +345,7 @@
                                         }else{
                                             id_lembaga_pendidikan =dataLembaga.data.lembaga_pendidikan_id;
                                             const eduUserInserted = await insertEduUsers();
+                                            console.log("status edu user 2",eduUserInserted.status);
                                             alert("Selamat Sekolah anda terdaftar!")
                                         }
                                         console.log("log 2", dataLembaga);
