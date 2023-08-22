@@ -245,6 +245,23 @@
                         const data = await fetchData('https://api.paylite.co.id/lembagaPendidikan', requestOptionsPre);
                         return data;
                 }
+                async function insertEduUsers(){
+                    const postDatainsertEduUsers = {
+                        subscriber_id: id_subscriber,
+                        lembaga_pendidikan_id: id_lembaga_pendidikan
+                        };
+                        console.log("data sebelum insert lembaga", postDatainsertEduUsers);
+                    const requestOptionsPre = {
+                            method: 'POST', // Metode permintaan
+                            headers: {
+                                'Content-Type': 'application/json', // Jenis konten yang dikirim
+                                // 'Authorization': 'Bearer YOUR_ACCESS_TOKEN' // Header otorisasi jika diperlukan
+                            },
+                            body: JSON.stringify(postDatainsertEduUsers) // Mengubah data menjadi bentuk JSON
+                        };
+                        const data = await fetchData('https://api.paylite.co.id/eduUser', requestOptionsPre);
+                        return data;
+                }
                 async function cekAdminLembaga(){
                         let route = 'https://api.paylite.co.id/cekAdminLembaga/'+formNpsn+'';
                         console.log("route cek : ",route);
