@@ -22,8 +22,8 @@ class Dashboard extends BaseController
                         $this->setCookieData2();
                     }
                 }
-                echo "sampai sini";
-                // return view('edu_dashboard');
+                // echo "sampai sini";
+                return view('edu_dashboard');
             }
         }else{
             return $this->response->redirect('https://account.paylite.co.id');  
