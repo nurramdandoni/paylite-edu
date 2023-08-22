@@ -313,6 +313,16 @@
                                             const eduUserInserted = await insertEduUsers();
                                             console.log("status edu user",eduUserInserted.status);
                                             alert("Selamat Sekolah anda terdaftar!")
+                                            <?php
+                                            $cookieName = "statusProduk";
+                                            $cookieValue = "registered";
+                                            $cookieExpiration = time() + (60 * 60 * 24); // Contoh: kadaluarsa setelah 24 jam
+                                            $cookiePath = "/";
+                                            $cookieDomain = ".paylite.co.id";
+
+                                            echo "document.cookie = '$cookieName=$cookieValue; expires=$cookieExpiration; path=$cookiePath; domain=$cookieDomain';";
+                                            ?>
+                                             window.location.href = "https://edu.paylite.co.id";
                                         }
                                         console.log("log 1", dataLembaga);
                                     }
@@ -347,6 +357,16 @@
                                             const eduUserInserted = await insertEduUsers();
                                             console.log("status edu user 2",eduUserInserted.status);
                                             alert("Selamat Sekolah anda terdaftar!")
+                                            <?php
+                                            $cookieName = "statusProduk";
+                                            $cookieValue = "registered";
+                                            $cookieExpiration = time() + (60 * 60 * 24); // Contoh: kadaluarsa setelah 24 jam
+                                            $cookiePath = "/";
+                                            $cookieDomain = ".paylite.co.id";
+
+                                            echo "document.cookie = '$cookieName=$cookieValue; expires=$cookieExpiration; path=$cookiePath; domain=$cookieDomain';";
+                                            ?>
+                                             window.location.href = "https://edu.paylite.co.id";
                                         }
                                         console.log("log 2", dataLembaga);
                                     }
