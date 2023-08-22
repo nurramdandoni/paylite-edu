@@ -34,6 +34,8 @@ class Dashboard extends BaseController
 
                 $consume = json_decode($data, true);
                 echo var_dump($consume);
+                echo var_dump($consume["data"]["subscriber_id"]);
+
                 // setcookie("role_produk_id",$consume["data"]["role_produk_id"],time() + (60 * 60 * 24),"/", ".paylite.co.id");
                 // setcookie("subscriber_status_id",$consume["data"]["subscriber_status_id"],time() + (60 * 60 * 24),"/", ".paylite.co.id");
                 // setcookie("status_pay",$consume["data"]["status_pay"],time() + (60 * 60 * 24),"/", ".paylite.co.id");
