@@ -166,6 +166,9 @@
         </div>
       </div>
       <script>
+        let lembaga_pendidikan_id = '<?= $_COOKIE['lembaga_pendidikan_id']; ?>';
+        console.log("ini id : ",lembaga_pendidikan_id);
+        getMataAjar();
         $("#liDash").html("Kelas");
         $("#liDash2").html("Kelas");
         $("#dashboard").removeClass("active");

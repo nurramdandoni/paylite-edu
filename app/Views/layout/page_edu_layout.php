@@ -66,6 +66,20 @@ if (message.id == '2342') {
 socket.addEventListener('close', (event) => {
 console.log('Koneksi ditutup');
 });
+async function fetchData(url, options) {
+            try {
+                const response = await fetch(url, options);
+                if (!response.ok) {
+                    throw new Error('Network response was not ok');
+                }
+                const data = await response.json();
+                return data;
+            } catch (error) {
+                console.error('Fetch error:', error);
+                // Lakukan penanganan kesalahan di sini, seperti menampilkan pesan kepada pengguna
+                return {status:"gagal"};
+            }
+        }
 
 </script>
 <body class="g-sidenav-show  bg-gray-100">
