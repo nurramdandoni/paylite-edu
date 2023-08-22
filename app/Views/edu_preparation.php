@@ -246,7 +246,8 @@
                         return data;
                 }
                 async function cekAdminLembaga(){
-                    
+                        let route = 'https://api.paylite.co.id/cekAdminLembaga/'+formNpsn+'';
+                        console.log("route cek : ",route);
                         const data = await fetchData('https://api.paylite.co.id/cekAdminLembaga/'+formNpsn+'');
                         return data.status;
                 }
