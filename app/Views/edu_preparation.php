@@ -466,7 +466,10 @@
 
                                     }else{
                                         // insert eduUser
-                                        const exist = await cekEduUser();
+                                        const hasilCekSiswa = await cekSiswa(id_lembaga_pendidikan);
+                                        console.log("hasil cek siswa ortu 1 : ",hasilCekSiswa);
+                                        if(hasilCekSiswa.data.length > 0){
+                                            const exist = await cekEduUser();
                                             if(exist.data.length > 0){
                                                 
                                                 redirectToEdu()
@@ -477,6 +480,19 @@
                                                 redirectToEdu();
                                                 // insert siswa oleh admin
                                             }
+                                        }else{
+                                            const exist = await cekEduUser();
+                                            if(exist.data.length > 0){
+                                                
+                                                alert("Putra/i Anda Tidak Terdaftar silahkan Hubungi Pihak Sekolah!");
+                                            }else{
+
+                                                // insert eduUser
+                                                const eduUserInserted = await insertEduUsers();
+                                                alert("Putra/i Anda Tidak Terdaftar silahkan Hubungi Pihak Sekolah!");
+                                                // insert siswa oleh admin
+                                            }
+                                        }
                                         console.log("ortu");
                                     }
                                 }else{
@@ -586,7 +602,10 @@
 
                                     }else{
                                         // insert eduUser
-                                        const exist = await cekEduUser();
+                                        const hasilCekSiswa = await cekSiswa(id_lembaga_pendidikan);
+                                        console.log("hasil cek siswa ortu 1 : ",hasilCekSiswa);
+                                        if(hasilCekSiswa.data.length > 0){
+                                            const exist = await cekEduUser();
                                             if(exist.data.length > 0){
                                                 
                                                 redirectToEdu()
@@ -597,6 +616,19 @@
                                                 redirectToEdu();
                                                 // insert siswa oleh admin
                                             }
+                                        }else{
+                                            const exist = await cekEduUser();
+                                            if(exist.data.length > 0){
+                                                
+                                                alert("Putra/i Anda Tidak Terdaftar silahkan Hubungi Pihak Sekolah!");
+                                            }else{
+
+                                                // insert eduUser
+                                                const eduUserInserted = await insertEduUsers();
+                                                alert("Putra/i Anda Tidak Terdaftar silahkan Hubungi Pihak Sekolah!");
+                                                // insert siswa oleh admin
+                                            }
+                                        }
                                         console.log("ortu");
                                     }
                                 }else{
