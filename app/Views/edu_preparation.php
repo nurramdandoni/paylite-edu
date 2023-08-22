@@ -200,7 +200,8 @@
                     } catch (error) {
                         console.error('Fetch error:', error);
                         // Handle errors here
-                        throw error;
+                        // throw error;
+                        return {status:"gagal"};
                     }
                 }
                 async function insertSubscriber(){
