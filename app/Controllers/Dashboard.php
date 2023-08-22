@@ -63,8 +63,8 @@ class Dashboard extends BaseController
                 $consume1 = json_decode($dataEduUser, true);
                 // echo var_dump($consume1);
                 setcookie("lembaga_pendidikan_id",$consume1["data"][0]["lembaga_pendidikan_id"],time() + (60 * 60 * 24),"/", ".paylite.co.id");
-
-                return view('edu_dashboard');
+                echo "sampai sini";
+                // return view('edu_dashboard');
             }
         }else{
             return $this->response->redirect('https://account.paylite.co.id');  
