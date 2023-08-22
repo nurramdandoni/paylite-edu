@@ -373,6 +373,12 @@
                                     
                                 }
                             }else{
+                                // insert subscriber
+                                const res_subscriber = await insertSubscriber();
+                                alert("sampe sini : ");
+                                alert("sampe sini : ", res_subscriber);
+                                console.log(res_subscriber.data.subscriber_id);
+                                id_subscriber = res_subscriber.data.subscriber_id;
                                 // insert edu_users
                                 // insert siswa/guru/siswa
                             }
