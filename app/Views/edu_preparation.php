@@ -385,6 +385,12 @@
                             }else{
                                 const hasilCekNpsn = await ceknpsn();
                                 console.log("st 1 ",hasilCekNpsn);
+                                if(hasilCekNpsn.data.length > 0){
+
+                                    alert("Sekolah anda terdaftar");
+                                }else{
+                                    alert("Mohon maaf Sekolah Anda belur terdaftar, silahkan hubungi pihak sekolah!");
+                                }
                             }
                         } else {
                             // ...
@@ -435,6 +441,12 @@
                                 id_subscriber = res_subscriber.data.subscriber_id;
                                 const hasilCekNpsn = await ceknpsn();
                                 console.log("st 2 ",hasilCekNpsn);
+                                if(hasilCekNpsn.data.length > 0){
+
+                                    alert("Sekolah anda terdaftar");
+                                }else{
+                                    alert("Mohon maaf Sekolah Anda belur terdaftar, silahkan hubungi pihak sekolah!");
+                                }
                                 // insert edu_users
                                 // insert siswa/guru/siswa
                             }
