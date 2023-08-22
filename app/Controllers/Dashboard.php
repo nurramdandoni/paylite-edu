@@ -15,6 +15,51 @@ class Dashboard extends BaseController
             if($_COOKIE['statusProduk'] == 'prepareSubscriberRegister'){
                 return redirect()->route('register');
             }else{
+                $ch = curl_init();
+                $data = array(
+                    'user_id' => $_COOKIE['user_id'],
+                    'paylite_produk_id' => 1
+                );
+                $data_json = json_encode($data);
+
+                curl_setopt($ch, CURLOPT_URL, 'https://api.paylite.co.id/subscriberWhere');
+                // curl_setopt($ch, CURLOPT_URL, 'http://localhost:8080/login');
+                curl_setopt($ch, CURLOPT_POST, 1);
+                curl_setopt($ch, CURLOPT_POSTFIELDS, $data_json);
+                curl_setopt($ch, CURLOPT_HTTPHEADER, array('Content-Type: application/json'));
+                curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
+
+                $data = curl_exec($ch);
+                curl_close($ch);
+
+                $consume = json_decode($data, true);
+                // echo var_dump($consume);
+                setcookie("role_produk_id",$consume["data"]["role_produk_id"],time() + (60 * 60 * 24),"/", ".paylite.co.id");
+                setcookie("subscriber_status_id",$consume["data"]["subscriber_status_id"],time() + (60 * 60 * 24),"/", ".paylite.co.id");
+                setcookie("status_pay",$consume["data"]["status_pay"],time() + (60 * 60 * 24),"/", ".paylite.co.id");
+                setcookie("program_id",$consume["data"]["program_id"],time() + (60 * 60 * 24),"/", ".paylite.co.id");
+                setcookie("end_subscribe",$consume["data"]["end_subscribe"],time() + (60 * 60 * 24),"/", ".paylite.co.id");
+                setcookie("subscriber_id",$consume["data"]["subscriber_id"],time() + (60 * 60 * 24),"/", ".paylite.co.id");
+
+                $chs = curl_init();
+                $dataget = array(
+                    'subscriber_id' => $_COOKIE['subscriber_id']
+                );
+                $data_jsonget = json_encode($dataget);
+
+                curl_setopt($chs, CURLOPT_URL, 'https://api.paylite.co.id/eduUserWhere');
+                // curl_setopt($chs, CURLOPT_URL, 'http://localhost:8080/login');
+                curl_setopt($chs, CURLOPT_POST, 1);
+                curl_setopt($chs, CURLOPT_POSTFIELDS, $data_jsonget);
+                curl_setopt($chs, CURLOPT_HTTPHEADER, array('Content-Type: application/json'));
+                curl_setopt($chs, CURLOPT_RETURNTRANSFER, 1);
+
+                $dataEduUser = curl_exec($chs);
+                curl_close($chs);
+                
+                $consume1 = json_decode($dataEduUser, true);
+                setcookie("lembaga_pendidikan_id",$consume1["data"]["lembaga_pendidikan_id"],time() + (60 * 60 * 24),"/", ".paylite.co.id");
+
                 return view('edu_dashboard');
             }
         }else{
