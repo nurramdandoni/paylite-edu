@@ -48,8 +48,8 @@ class Dashboard extends BaseController
                 curl_close($ch);
 
                 $consume = json_decode($data, true);
-                // echo var_dump($consume);
-                // echo "----------------------<br>";
+                echo var_dump($consume);
+                echo "----------------------<br>";
                 // echo ($consume["data"][0]["subscriber_id"]);
 
                 setcookie("role_produk_id",$consume["data"][0]["role_produk_id"],time() + (60 * 60 * 24),"/", ".paylite.co.id");
@@ -78,7 +78,7 @@ class Dashboard extends BaseController
                 curl_close($chs);
                 
                 $consume1 = json_decode($dataEduUser, true);
-                // echo var_dump($consume1);
+                echo var_dump($consume1);
                 setcookie("lembaga_pendidikan_id",$consume1["data"][0]["lembaga_pendidikan_id"],time() + (60 * 60 * 24),"/", ".paylite.co.id");
                 return true;
     }
