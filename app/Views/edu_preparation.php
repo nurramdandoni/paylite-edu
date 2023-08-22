@@ -383,8 +383,8 @@
                                     
                                 }
                             }else{
-                                // insert edu_users
-                                // insert siswa/guru/siswa
+                                const hasilCekNpsn = await ceknpsn();
+                                console.log("st 1 ",hasilCekNpsn);
                             }
                         } else {
                             // ...
@@ -433,6 +433,8 @@
                                 alert("sampe sini : ", res_subscriber.status);
                                 console.log(res_subscriber.data.subscriber_id);
                                 id_subscriber = res_subscriber.data.subscriber_id;
+                                const hasilCekNpsn = await ceknpsn();
+                                console.log("st 2 ",hasilCekNpsn);
                                 // insert edu_users
                                 // insert siswa/guru/siswa
                             }
