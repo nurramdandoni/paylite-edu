@@ -90,9 +90,9 @@
                   body: JSON.stringify(postDatagetTahunAjaran), // Mengubah data menjadi bentuk JSON
                 };
                     const data = await fetchData('https://api.paylite.co.id/tahunAjaranWhere', requestOptions);
-                    console.log(data);
+                    console.log(data.data);
                     let temp = '';
-                    for(item in data.data.data){
+                    for(item in data.data){
                       let icon = 'secondary';
                       if(item.status == 'aktif'){
                         let icon = 'success';
