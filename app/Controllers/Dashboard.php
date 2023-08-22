@@ -16,11 +16,15 @@ class Dashboard extends BaseController
                 return redirect()->route('register');
             }else{
                 $response = $this->setCookieData();
-                if($response){
-                    if(isset($_COOKIE['subscriber_id'])){
-
-                        $this->setCookieData2();
-                    }
+                if ($response) {
+                    echo '<script>
+                              window.addEventListener("DOMContentLoaded", function() {
+                                  if (document.cookie.indexOf("subscriber_id") !== -1) {
+                                      console.log("Subscriber ID cookie is set. Executing setCookieData2().");
+                                      ' . $this->setCookieData2() . '
+                                  }
+                              });
+                          </script>';
                 }
                 echo "sampai sini";
                 // return view('edu_dashboard');
