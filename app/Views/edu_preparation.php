@@ -375,7 +375,7 @@
                         let stat = data.data.length;
                         if (stat > 0) {
                             // ...
-                            alert("exist");
+                            console.log("exist");
                             console.log(data.data[0].subscriber_id);
                             id_subscriber = data.data[0].subscriber_id;
                             if(formRoleProduk == 1){
@@ -394,7 +394,7 @@
                                             id_lembaga_pendidikan =dataLembaga.data.lembaga_pendidikan_id;
                                             const eduUserInserted = await insertEduUsers();
                                             console.log("status edu user",eduUserInserted.status);
-                                            alert("Selamat Sekolah anda terdaftar!")
+                                            // alert("Selamat Sekolah anda terdaftar!")
                                             redirectToEdu();
                                         }
                                         console.log("log 1", dataLembaga);
@@ -406,7 +406,7 @@
                                 console.log("st 1 ",hasilCekNpsn);
                                 if(hasilCekNpsn.data.length > 0){
                                     id_lembaga_pendidikan = hasilCekNpsn.data[0].lembaga_pendidikan_id;
-                                    alert("Sekolah anda terdaftar");
+                                    // alert("Sekolah anda terdaftar");
                                     if(formRoleProduk == 2){
                                         const hasilCekGuru = await cekGuru(id_lembaga_pendidikan);
                                         console.log("hasil cek guru 1 : ",hasilCekGuru);
@@ -485,7 +485,7 @@
                             }
                         } else {
                             // ...
-                            alert("not exist");
+                            console.log("not exist");
                             if(formRoleProduk == 1){
                                 if(formNpsn == ''){
                                     alert("NPSN Wajib Diisi!");
@@ -507,7 +507,7 @@
                                             id_lembaga_pendidikan =dataLembaga.data.lembaga_pendidikan_id;
                                             const eduUserInserted = await insertEduUsers();
                                             console.log("status edu user 2",eduUserInserted.status);
-                                            alert("Selamat Sekolah anda terdaftar!")
+                                            // alert("Selamat Sekolah anda terdaftar!")
                                             redirectToEdu();
                                         }
                                         console.log("log 2", dataLembaga);
@@ -517,8 +517,8 @@
                             }else{
                                 // insert subscriber
                                 const res_subscriber = await insertSubscriber();
-                                alert("sampe sini : ");
-                                alert("sampe sini : ", res_subscriber.status);
+                                // alert("sampe sini : ");
+                                // alert("sampe sini : ", res_subscriber.status);
                                 console.log(res_subscriber.data.subscriber_id);
                                 id_subscriber = res_subscriber.data.subscriber_id;
                                 const hasilCekNpsn = await ceknpsn();
@@ -526,7 +526,7 @@
                                 if(hasilCekNpsn.data.length > 0){
 
                                     id_lembaga_pendidikan = hasilCekNpsn.data[0].lembaga_pendidikan_id;
-                                    alert("Sekolah anda terdaftar");
+                                    // alert("Sekolah anda terdaftar");
                                     if(formRoleProduk == 2){
                                         const hasilCekGuru = await cekGuru(id_lembaga_pendidikan);
                                         console.log("hasil cek guru 1 : ",hasilCekGuru);
