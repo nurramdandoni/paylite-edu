@@ -321,6 +321,8 @@
                                             $cookieDomain = ".paylite.co.id";
 
                                             echo "document.cookie = '$cookieName=$cookieValue; expires=$cookieExpiration; path=$cookiePath; domain=$cookieDomain';";
+                                            echo "document.cookie = 'roleProduk=1; expires=$cookieExpiration; path=$cookiePath; domain=$cookieDomain';";
+                                            echo "document.cookie = 'subscriberId=' + encodeURIComponent('$id_subscriber') + '; expires=$cookieExpiration; path=$cookiePath; domain=$cookieDomain';";
                                             ?>
                                         }
                                         console.log("log 1", dataLembaga);
@@ -365,6 +367,8 @@
                                             $cookieDomain = ".paylite.co.id";
 
                                             echo "document.cookie = '$cookieName=$cookieValue; expires=$cookieExpiration; path=$cookiePath; domain=$cookieDomain';";
+                                            echo "document.cookie = 'roleProduk=1; expires=$cookieExpiration; path=$cookiePath; domain=$cookieDomain';";
+                                            echo "document.cookie = 'subscriberId=' + encodeURIComponent('$id_subscriber') + '; expires=$cookieExpiration; path=$cookiePath; domain=$cookieDomain';";
                                             ?>
                                         }
                                         console.log("log 2", dataLembaga);
