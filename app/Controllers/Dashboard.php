@@ -15,7 +15,13 @@ class Dashboard extends BaseController
             if($_COOKIE['statusProduk'] == 'prepareSubscriberRegister'){
                 return redirect()->route('register');
             }else{
-                $this->setCookieData();
+                $response = $this->setCookieData();
+                if($response){
+                    if(isset($_COOKIE['subscriber_id'])){
+
+                        $this->setCookieData2();
+                    }
+                }
                 echo "sampai sini";
                 // return view('edu_dashboard');
             }
@@ -52,8 +58,10 @@ class Dashboard extends BaseController
                 setcookie("program_id",$consume["data"][0]["program_id"],time() + (60 * 60 * 24),"/", ".paylite.co.id");
                 setcookie("end_subscribe",$consume["data"][0]["end_subscribe"],time() + (60 * 60 * 24),"/", ".paylite.co.id");
                 setcookie("subscriber_id",$consume["data"][0]["subscriber_id"],time() + (60 * 60 * 24),"/", ".paylite.co.id");
-
-                $chs = curl_init();
+                return true;
+    }
+    public function setCookieData2(){
+        $chs = curl_init();
                 $dataget = array(
                     'subscriber_id' => $_COOKIE['subscriber_id']
                 );
@@ -72,6 +80,7 @@ class Dashboard extends BaseController
                 $consume1 = json_decode($dataEduUser, true);
                 // echo var_dump($consume1);
                 setcookie("lembaga_pendidikan_id",$consume1["data"][0]["lembaga_pendidikan_id"],time() + (60 * 60 * 24),"/", ".paylite.co.id");
+                return true;
     }
     public function account()
     {
