@@ -292,6 +292,7 @@
                                         if(dataLembaga.status == 'gagal'){
                                             alert("Pastikan mengisi data dengan benar!");
                                         }else{
+                                            id_lembaga_pendidikan =dataLembaga.data.lembaga_pendidikan_id;
                                             alert("Selamat Sekolah anda terdaftar!")
                                         }
                                         console.log("log 1", dataLembaga);
@@ -323,6 +324,7 @@
                                         if(dataLembaga.status == 'gagal'){
                                             alert("Pastikan mengisi data dengan benar!");
                                         }else{
+                                            id_lembaga_pendidikan =dataLembaga.data.lembaga_pendidikan_id;
                                             alert("Selamat Sekolah anda terdaftar!")
                                         }
                                         console.log("log 2", dataLembaga);
