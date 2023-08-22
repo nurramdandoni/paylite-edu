@@ -162,7 +162,7 @@
                         <p class="text-xs font-weight-bold mb-0">`+item.description+`</p>
                       </td>
                       <td class="align-middle text-center text-sm">
-                        <span class="badge badge-sm bg-gradient-`+icon+`">`+toUpperCase(item.status)+`</span>
+                        <span class="badge badge-sm bg-gradient-`+icon+`">`+item.status.toUpperCase()+`</span>
                       </td>
                       <td class="align-middle">
                         <a href="javascript:;" class="text-secondary font-weight-bold text-xs" data-toggle="tooltip" data-original-title="Edit user">
