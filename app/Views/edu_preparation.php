@@ -310,6 +310,7 @@
                                             alert("Pastikan mengisi data dengan benar!");
                                         }else{
                                             id_lembaga_pendidikan =dataLembaga.data.lembaga_pendidikan_id;
+                                            const eduUserInserted = await insertEduUsers();
                                             alert("Selamat Sekolah anda terdaftar!")
                                         }
                                         console.log("log 1", dataLembaga);
@@ -342,6 +343,7 @@
                                             alert("Pastikan mengisi data dengan benar!");
                                         }else{
                                             id_lembaga_pendidikan =dataLembaga.data.lembaga_pendidikan_id;
+                                            const eduUserInserted = await insertEduUsers();
                                             alert("Selamat Sekolah anda terdaftar!")
                                         }
                                         console.log("log 2", dataLembaga);
