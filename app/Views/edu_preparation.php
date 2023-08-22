@@ -288,6 +288,9 @@
                                         alert("NPSN Telah Didaftarkan, Anda tidak dapat mendaftar sebagai Admin Pada NPSN Tersebut!");
                                     }else{
                                         const dataLembaga = await insertLembagaPendidikan();
+                                        if(dataLembaga == 'gagal'){
+                                            alert("Pastikan mengisi data dengan benar!");
+                                        }
                                         console.log("log 1", dataLembaga);
                                     }
                                     
@@ -314,6 +317,9 @@
                                         id_subscriber = res_subscriber.data.subscriber_id;
 
                                         const dataLembaga = await insertLembagaPendidikan();
+                                        if(dataLembaga == 'gagal'){
+                                            alert("Pastikan mengisi data dengan benar!");
+                                        }
                                         console.log("log 2", dataLembaga);
                                     }
                                     
