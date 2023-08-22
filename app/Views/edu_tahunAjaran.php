@@ -88,6 +88,7 @@
       <script>
         let lembaga_pendidikan_id = '<?= $_COOKIE['lembaga_pendidikan_id']; ?>';
         console.log("ini id : ",lembaga_pendidikan_id);
+        getTahunAjaran();
         new DataTable('#example');
         var previousLink = document.querySelector('#example_previous a');
   
@@ -137,6 +138,6 @@
                     const data = await fetchData('https://api.paylite.co.id/tahunAjaranWhere', requestOptions);
                     console.log(data);
                 }
-        getTahunAjaran();
+        
       </script>
 <?= $this->endSection() ?>
