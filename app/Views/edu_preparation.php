@@ -386,8 +386,18 @@
                                 const hasilCekNpsn = await ceknpsn();
                                 console.log("st 1 ",hasilCekNpsn);
                                 if(hasilCekNpsn.data.length > 0){
-
+                                    let lembagaid = hasilCekNpsn.data[0].lembaga_pendidikan_id;
                                     alert("Sekolah anda terdaftar");
+                                    if(formRoleProduk == 2){
+                                        const hasilCekGuru = await cekGuru(lembagaid);
+                                        console.log("hasil cek guru 1 : ",hasilCekGuru);
+                                    }else if(formRoleProduk == 4){
+                                        const hasilCekSiswa = await cekSiswa(lembagaid);
+                                        console.log("hasil cek siswa 1 : ",hasilCekSiswa);
+
+                                    }else{
+                                        console.log("ortu");
+                                    }
                                 }else{
                                     alert("Mohon maaf Sekolah Anda belur terdaftar, silahkan hubungi pihak sekolah!");
                                 }
@@ -443,7 +453,18 @@
                                 console.log("st 2 ",hasilCekNpsn);
                                 if(hasilCekNpsn.data.length > 0){
 
+                                    let lembagaid = hasilCekNpsn.data[0].lembaga_pendidikan_id;
                                     alert("Sekolah anda terdaftar");
+                                    if(formRoleProduk == 2){
+                                        const hasilCekGuru = await cekGuru(lembagaid);
+                                        console.log("hasil cek guru 1 : ",hasilCekGuru);
+                                    }else if(formRoleProduk == 4){
+                                        const hasilCekSiswa = await cekSiswa(lembagaid);
+                                        console.log("hasil cek siswa 1 : ",hasilCekSiswa);
+
+                                    }else{
+                                        console.log("ortu");
+                                    }
                                 }else{
                                     alert("Mohon maaf Sekolah Anda belur terdaftar, silahkan hubungi pihak sekolah!");
                                 }
