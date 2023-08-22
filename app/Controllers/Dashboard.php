@@ -16,13 +16,17 @@ class Dashboard extends BaseController
                 return redirect()->route('register');
             }else{
                 $response = $this->setCookieData();
+                $counter = 0;
                 if($response){
                     if(isset($_COOKIE['subscriber_id'])){
 
                         $this->setCookieData2();
+                        if($counter == 0){
+                            $counter++;
+                            echo "<script>location.reload();</script>";
+                        }
                     }
                 }
-                echo "<script>location.reload();</script>";
                 echo "sampai sini";
                 // return view('edu_dashboard');
             }
