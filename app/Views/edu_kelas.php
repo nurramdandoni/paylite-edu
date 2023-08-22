@@ -18,6 +18,9 @@
                     </tr>
                   </thead>
                   <tbody id="list">
+                    <tr>
+                      <td>Data Tidak Ditemukan!<td>
+                    </tr>
                   </tbody>
                 </table>
               </div>
