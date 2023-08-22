@@ -290,6 +290,8 @@
                                         const dataLembaga = await insertLembagaPendidikan();
                                         if(dataLembaga == 'gagal'){
                                             alert("Pastikan mengisi data dengan benar!");
+                                        }else{
+                                            alert("Selamat Sekolah anda terdaftar!")
                                         }
                                         console.log("log 1", dataLembaga);
                                     }
@@ -319,6 +321,8 @@
                                         const dataLembaga = await insertLembagaPendidikan();
                                         if(dataLembaga == 'gagal'){
                                             alert("Pastikan mengisi data dengan benar!");
+                                        }else{
+                                            alert("Selamat Sekolah anda terdaftar!")
                                         }
                                         console.log("log 2", dataLembaga);
                                     }
