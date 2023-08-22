@@ -84,6 +84,8 @@
         </div>
       </div>
       <script>
+        $("#liDash").html("Data Pengajar");
+        $("#liDash2").html("Data Pengajar");
         $("#dashboard").removeClass("active");
         $("#account").removeClass("active");
         $("#tahunAjaran").removeClass("active");

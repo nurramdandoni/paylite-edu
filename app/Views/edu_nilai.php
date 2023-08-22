@@ -58,6 +58,8 @@
         </div>
       </div>
       <script>
+        $("#liDash").html("Nilai");
+        $("#liDash2").html("Nilai");
         $("#dashboard").removeClass("active");
         $("#account").removeClass("active");
         $("#tahunAjaran").removeClass("active");

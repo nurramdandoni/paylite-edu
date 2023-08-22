@@ -143,6 +143,8 @@
     }
 </style>
 <script>
+        $("#liDash").html("Absensi");
+        $("#liDash2").html("Absensi");
         $("#dashboard").removeClass("active");
         $("#account").removeClass("active");
         $("#tahunAjaran").removeClass("active");

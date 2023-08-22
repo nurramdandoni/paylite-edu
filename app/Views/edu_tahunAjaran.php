@@ -49,6 +49,8 @@
         if (previousLink) {
             previousLink.textContent = 'Prev';
         }
+        $("#liDash").html("Tahun Ajaran");
+        $("#liDash2").html("Tahun Ajaran");
         $("#dashboard").removeClass("active");
         $("#account").removeClass("active");
         $("#tahunAjaran").addClass("active");

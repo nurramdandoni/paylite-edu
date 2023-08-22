@@ -3,6 +3,8 @@
 <?= $this->section('content') ?>
 
 <script>
+$("#liDash").html("Account");
+$("#liDash2").html("Account");
 $("#dashboard").removeClass("active");
 $("#account").removeClass("active");
 $("#tahunAjaran").removeClass("active");

@@ -252,6 +252,8 @@
         </div>
       </div>
       <script>
+        $("#liDash").html("Data Kelas");
+        $("#liDash2").html("Data Kelas");
         $("#dashboard").removeClass("active");
         $("#account").removeClass("active");
         $("#tahunAjaran").removeClass("active");

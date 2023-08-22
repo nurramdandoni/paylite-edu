@@ -63,6 +63,8 @@
 
       </div>
       <script>
+        $("#liDash").html("Akun Aktivasi");
+        $("#liDash2").html("Akun Aktivasi");
         let idProduk = "1";
         let user_idCookie = '<?= $_COOKIE["user_id"]; ?>';
         let id_subscriber = '';

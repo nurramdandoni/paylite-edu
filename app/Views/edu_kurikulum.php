@@ -211,6 +211,8 @@
         </div>
       </div>
       <script>
+        $("#liDash").html("Kurikulum");
+        $("#liDash2").html("Kurikulum");
         $("#dashboard").removeClass("active");
         $("#account").removeClass("active");
         $("#tahunAjaran").removeClass("active");

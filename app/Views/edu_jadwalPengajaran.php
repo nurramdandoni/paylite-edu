@@ -103,6 +103,8 @@
         </div>
       </div>
       <script>
+        $("#liDash").html("Jadwal Pengajaran");
+        $("#liDash2").html("Jadwal Pengajaran");
         $("#dashboard").removeClass("active");
         $("#account").removeClass("active");
         $("#tahunAjaran").removeClass("active");

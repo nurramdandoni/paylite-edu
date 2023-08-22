@@ -48,6 +48,8 @@
         if (previousLink) {
             previousLink.textContent = 'Prev';
         }
+        $("#liDash").html("Mata Ajar");
+        $("#liDash2").html("Mata Ajar");
         $("#dashboard").removeClass("active");
         $("#account").removeClass("active");
         $("#tahunAjaran").removeClass("active");

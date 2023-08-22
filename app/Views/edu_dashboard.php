@@ -271,6 +271,8 @@
         </div>
       </div>
       <script>
+        $("#liDash").html("Dashboard");
+        $("#liDash2").html("Dashboard");
         $("#dashboard").addClass("active");
         $("#account").removeClass("active");
         $("#tahunAjaran").removeClass("active");

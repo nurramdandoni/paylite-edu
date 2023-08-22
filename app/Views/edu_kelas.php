@@ -166,6 +166,8 @@
         </div>
       </div>
       <script>
+        $("#liDash").html("Kelas");
+        $("#liDash2").html("Kelas");
         $("#dashboard").removeClass("active");
         $("#account").removeClass("active");
         $("#tahunAjaran").removeClass("active");

@@ -77,6 +77,8 @@
         </div>
       </div>
       <script>
+        $("#liDash").html("Data Peserta Didik");
+        $("#liDash2").html("Data Peserta Didik");
         $("#dashboard").removeClass("active");
         $("#account").removeClass("active");
         $("#tahunAjaran").removeClass("active");

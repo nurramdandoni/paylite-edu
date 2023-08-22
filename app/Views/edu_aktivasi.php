@@ -4,6 +4,8 @@
 Aktivasi
 
 <script>
+        $("#liDash").html("Aktivasi");
+        $("#liDash2").html("Aktivasi");
         $("#dashboard").removeClass("active");
         $("#account").removeClass("active");
         $("#tahunAjaran").removeClass("active");
