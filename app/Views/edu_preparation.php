@@ -391,11 +391,27 @@
                                     if(formRoleProduk == 2){
                                         const hasilCekGuru = await cekGuru(lembagaid);
                                         console.log("hasil cek guru 1 : ",hasilCekGuru);
+                                        if(hasilCekGuru.data.length > 0){
+                                            console.log("Tinggal Diredirect 1");
+                                        }else{
+                                            // insert eduUser
+                                            const eduUserInserted = await insertEduUsers();
+                                            // insert guru
+                                        }
                                     }else if(formRoleProduk == 4){
                                         const hasilCekSiswa = await cekSiswa(lembagaid);
                                         console.log("hasil cek siswa 1 : ",hasilCekSiswa);
+                                        if(hasilCekSiswa.data.length > 0){
+                                            console.log("Tinggal Diredirect 1");
+                                        }else{
+                                            // insert eduUser
+                                            const eduUserInserted = await insertEduUsers();
+                                            // insert siswa
+                                        }
 
                                     }else{
+                                        // insert eduUser
+                                        const eduUserInserted = await insertEduUsers();
                                         console.log("ortu");
                                     }
                                 }else{
@@ -458,11 +474,27 @@
                                     if(formRoleProduk == 2){
                                         const hasilCekGuru = await cekGuru(lembagaid);
                                         console.log("hasil cek guru 1 : ",hasilCekGuru);
+                                        if(hasilCekGuru.data.length > 0){
+                                            console.log("Tinggal Diredirect 2");
+                                        }else{
+                                            // insert eduUser
+                                            const eduUserInserted = await insertEduUsers();
+                                            // insert guru
+                                        }
                                     }else if(formRoleProduk == 4){
                                         const hasilCekSiswa = await cekSiswa(lembagaid);
                                         console.log("hasil cek siswa 1 : ",hasilCekSiswa);
+                                        if(hasilCekSiswa.data.length > 0){
+                                            console.log("Tinggal Diredirect 2");
+                                        }else{
+                                            // insert eduUser
+                                            const eduUserInserted = await insertEduUsers();
+                                            // insert guru
+                                        }
 
                                     }else{
+                                        // insert eduUser
+                                        const eduUserInserted = await insertEduUsers();
                                         console.log("ortu");
                                     }
                                 }else{
