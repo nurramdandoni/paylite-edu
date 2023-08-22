@@ -108,7 +108,9 @@
                     </tr>
                       `;
                     }
-                    $("#list").html(temp);
+                    if(data.data.length > 0){
+                      $("#list").html(temp);
+                    }
                 }
         
       </script>
