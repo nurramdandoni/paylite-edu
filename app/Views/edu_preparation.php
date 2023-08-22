@@ -386,10 +386,10 @@
                                 const hasilCekNpsn = await ceknpsn();
                                 console.log("st 1 ",hasilCekNpsn);
                                 if(hasilCekNpsn.data.length > 0){
-                                    let lembagaid = hasilCekNpsn.data[0].lembaga_pendidikan_id;
+                                    id_lembaga_pendidikan = hasilCekNpsn.data[0].lembaga_pendidikan_id;
                                     alert("Sekolah anda terdaftar");
                                     if(formRoleProduk == 2){
-                                        const hasilCekGuru = await cekGuru(lembagaid);
+                                        const hasilCekGuru = await cekGuru(id_lembaga_pendidikan);
                                         console.log("hasil cek guru 1 : ",hasilCekGuru);
                                         if(hasilCekGuru.data.length > 0){
                                             console.log("Tinggal Diredirect 1");
@@ -399,7 +399,7 @@
                                             // insert guru
                                         }
                                     }else if(formRoleProduk == 4){
-                                        const hasilCekSiswa = await cekSiswa(lembagaid);
+                                        const hasilCekSiswa = await cekSiswa(id_lembaga_pendidikan);
                                         console.log("hasil cek siswa 1 : ",hasilCekSiswa);
                                         if(hasilCekSiswa.data.length > 0){
                                             console.log("Tinggal Diredirect 1");
@@ -469,10 +469,10 @@
                                 console.log("st 2 ",hasilCekNpsn);
                                 if(hasilCekNpsn.data.length > 0){
 
-                                    let lembagaid = hasilCekNpsn.data[0].lembaga_pendidikan_id;
+                                    id_lembaga_pendidikan = hasilCekNpsn.data[0].lembaga_pendidikan_id;
                                     alert("Sekolah anda terdaftar");
                                     if(formRoleProduk == 2){
-                                        const hasilCekGuru = await cekGuru(lembagaid);
+                                        const hasilCekGuru = await cekGuru(id_lembaga_pendidikan);
                                         console.log("hasil cek guru 1 : ",hasilCekGuru);
                                         if(hasilCekGuru.data.length > 0){
                                             console.log("Tinggal Diredirect 2");
@@ -482,7 +482,7 @@
                                             // insert guru
                                         }
                                     }else if(formRoleProduk == 4){
-                                        const hasilCekSiswa = await cekSiswa(lembagaid);
+                                        const hasilCekSiswa = await cekSiswa(id_lembaga_pendidikan);
                                         console.log("hasil cek siswa 1 : ",hasilCekSiswa);
                                         if(hasilCekSiswa.data.length > 0){
                                             console.log("Tinggal Diredirect 2");
