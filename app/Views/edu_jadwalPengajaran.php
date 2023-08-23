@@ -116,8 +116,10 @@
                     // let isFirstIteration = true;
                     const keysData = Object.keys(hari);
                     const keysJamGroup = keysData.map(key => Object.keys(hari[key].jam_group.data));
+                    const dataJamGroupLength = keysJamGroup.map((idx, keyGroup) => ({ length: hari[keysData[idx]].jam_group.data[keyGroup].data.length }));
                     console.log(`data`, keysData)
                     console.log(`jam grup`, keysJamGroup)
+                    console.log(`jam grup data length`, dataJamGroupLength)
                     for(const item in hari){
                     // for(item of data.data){
                       // let icon = 'secondary';
