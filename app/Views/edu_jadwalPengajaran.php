@@ -79,7 +79,14 @@
                     const data = await fetchData('https://api.paylite.co.id/jadwalPelajaranWhereJoin/'+lembaga_pendidikan_id+'');
                     console.log(data.data);
                     let temp = '';
+                    let jadwal[];
+                    for(mapping of data.data){
+                      jadwal["hari"][mapping.nama_hari];
+                      jadwal["hari"]["jam_group"][mapping.jam_mulai];
+                    }
+                    console.log();
                     for(item of data.data){
+                      let before = 0;
                       let icon = 'secondary';
                       if(item.status == 'aktif'){
                         icon = 'success';
@@ -98,7 +105,7 @@
                         </div>
                       </td>
                       <td>
-                        <p class="text-xs font-weight-bold mb-0">07:00 - 08:45</p>
+                        <p class="text-xs font-weight-bold mb-0">`+item.jam_mulai+`</p>
                       </td>
                       <td class="align-middle text-center text-sm">
                         <span class="text-secondary text-xs font-weight-bold">`+item.nama_kelas+`</span>
