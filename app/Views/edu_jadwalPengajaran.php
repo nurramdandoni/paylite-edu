@@ -79,11 +79,28 @@
                     const data = await fetchData('https://api.paylite.co.id/jadwalPelajaranWhereJoin/'+lembaga_pendidikan_id+'');
                     console.log(data.data);
                     let temp = '';
-                    let jadwal[];
-                    for(mapping of data.data){
-                      jadwal["hari"][mapping.nama_hari];
-                      jadwal["hari"]["jam_group"][mapping.jam_mulai];
+                    let jadwal = {}; // Gunakan objek kosong untuk menampung jadwal
+
+                    for (const mapping of data.data) {
+                      const hari = mapping.nama_hari;
+                      const jamMulai = mapping.jam_mulai;
+                      
+                      // Inisialisasi objek jadwal[hari] jika belum ada
+                      if (!jadwal[hari]) {
+                        jadwal[hari] = { jam_group: {} };
+                      }
+                      
+                      // Inisialisasi objek jadwal[hari].jam_group[jamMulai] jika belum ada
+                      if (!jadwal[hari].jam_group[jamMulai]) {
+                        jadwal[hari].jam_group[jamMulai] = [];
+                      }
+                      
+                      // Masukkan data ke dalam jadwal[hari].jam_group[jamMulai]
+                      jadwal[hari].jam_group[jamMulai].push(mapping); 
                     }
+
+                    console.log(jadwal);
+
                     console.log();
                     for(item of data.data){
                       let before = 0;
