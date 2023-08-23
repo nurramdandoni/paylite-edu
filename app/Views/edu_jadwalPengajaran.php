@@ -113,45 +113,35 @@
 
                     console.log("ini hasilnya : ",hari);
                     // const array_loop = ["Senin","Selasa","Rabu","Kamis","Jumat","Sabtu","Minggu"];
-                    // let isFirstIteration = true;
-                    const keysData = Object.keys(hari);
-                    const keysJamGroup = keysData.map(key => Object.keys(hari[key].jam_group.data));
-                    const dataJamGroupLength = keysJamGroup.map((keyGroup, idx) => ({ length: hari[keysData[idx]].jam_group.data[keyGroup].data.length }));
-                    console.log(`data`, keysData)
-                    console.log(`jam grup`, keysJamGroup)
-                    console.log(`jam grup data length`, dataJamGroupLength)
-                    for(const item in hari){
-                    // for(item of data.data){
-                      // let icon = 'secondary';
-                      // if(item.status == 'aktif'){
-                      //   icon = 'success';
-                      // }
-                      temp += `
-                      <tr>`
-                      if(hari[item].count > 1) {
-                      temp += `<td rowspan="`+hari[item].count+`">
-                          <div class="d-flex flex-column justify-content-center">
-                            <span class="badge badge-sm bg-gradient-success">`+item+`</span>
-                          </div>
-                      </td>`
-                      } else {
-                      temp += `<td>
-                          <div class="d-flex flex-column justify-content-center">
-                            <span class="badge badge-sm bg-gradient-success">`+item+`</span>
-                          </div>
-                      </td>`
+                    let isFirstIteration = true;
+                    // const keysData = Object.keys(hari);
+                    // const keysJamGroup = keysData.map(key => Object.keys(hari[key].jam_group.data));
+                    // console.log(`data`, keysData)
+                    // console.log(`jam grup`, keysJamGroup)
+                    // for(const item in hari){
+                    for(item of data.data){
+                      let icon = 'secondary';
+                      if(item.status == 'aktif'){
+                        icon = 'success';
                       }
-                      temp += `<td>
-                        <p class="text-xs font-weight-bold mb-0">`+item+`</p>
+                      temp += `
+                      <tr>
+                      <td>
+                          <div class="d-flex flex-column justify-content-center">
+                            <span class="badge badge-sm bg-gradient-success">`+item.nama_hari+`</span>
+                          </div>
+                      </td>
+                      <td>
+                        <p class="text-xs font-weight-bold mb-0">`+item.nama_hari+`</p>
                       </td>
                       <td class="align-middle text-center text-sm">
-                        <span class="text-secondary text-xs font-weight-bold">`+item+`</span>
+                        <span class="text-secondary text-xs font-weight-bold">`+item.nama_hari+`</span>
                       </td>
                       <td class="align-middle text-center">
-                        <span class="text-secondary text-xs font-weight-bold">`+item+`</span>
+                        <span class="text-secondary text-xs font-weight-bold">`+item.nama_hari+`</span>
                       </td>
                       <td class="align-middle text-center">
-                        <span class="text-secondary text-xs font-weight-bold">`+item+`</span>
+                        <span class="text-secondary text-xs font-weight-bold">`+item.nama_hari+`</span>
                       </td>
                       <td class="align-middle">
                         <a href="javascript:;" class="text-secondary font-weight-bold text-xs" data-toggle="tooltip" data-original-title="Edit user">
@@ -160,11 +150,11 @@
                       </td>
                     </tr>
                       `;
-                      // isFirstIteration = false;
+                      isFirstIteration = false;
                     }
-                    // if(data.data.length > 0){
+                    if(data.data.length > 0){
                       $("#list").html(temp);
-                    // }
+                    }
                 }
       </script>
 <?= $this->endSection() ?>
