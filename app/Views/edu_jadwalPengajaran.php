@@ -130,8 +130,8 @@
                             <span class="badge badge-sm bg-gradient-success">`+item.nama_hari+`</span>
                           </div>
                       </td>
-                      `}
-                      `
+                      `;}
+                      temp += `
                       <td>
                         <p class="text-xs font-weight-bold mb-0">`+item.jam_mulai+`</p>
                       </td>
