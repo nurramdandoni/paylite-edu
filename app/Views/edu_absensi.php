@@ -125,6 +125,9 @@
         </div>
       </div>
 <script>
+  let hariIni = '';
+  let Nisn = '';
+  let Waktu = '';
     function onScanSuccess(decodedText, decodedResult) {
     // Handle on success condition with the decoded text or result.
     console.log(`Scan result:`, decodedResult);
@@ -133,6 +136,7 @@
         const parts = inputString.split(" - "); // Membagi string berdasarkan tanda "-"
 
         const id = parts[0]; // Bagian pertama (ID)
+        Nisn = id;
         const name = parts[1]; // Bagian kedua (Nama)
 
         console.log("ID:", id);
@@ -140,6 +144,7 @@
         const currentTimeFormatted = getCurrentTimeFormatted();
         console.log("Jam saat ini:", currentTimeFormatted);
         const currentDayFormatted = getFormattedDay();
+        hariIni = currentDayFormatted;
         console.log("Hari saat ini (format 1-7, Senin = 1):", currentDayFormatted);
         console.log("id lembaga ", lembaga_pendidikan_id);
     }
@@ -165,6 +170,31 @@
       const formattedDay = (dayIndex === 0) ? 7 : dayIndex; // Konversi agar Senin dimulai dari 1
       return formattedDay;
     }
+
+    async function cekNisnAfterAbsen(){
+          const postGuru = {
+            lembaga_pendidikan_id: lembaga_pendidikan_id,
+            hari_id: hariIni,
+            nisn: Nisn,
+            waktu: Waktu
+                }
+          const requestOptions = {
+                  method: 'POST', // Metode permintaan
+                  headers: {
+                            'Content-Type': 'application/json', // Jenis konten yang dikirim
+                            // 'Authorization': 'Bearer YOUR_ACCESS_TOKEN' // Header otorisasi jika diperlukan
+                  },
+                  body: JSON.stringify(postGuru), // Mengubah data menjadi bentuk JSON
+                };
+                    const data = await fetchData('https://api.paylite.co.id/jadwalPelajaranWhereJoinByKrsNisn', requestOptions);
+                    console.log(data.data);
+                    if(data.data.length > 0){
+                      alert("Nisn Anda Terdaftar Di Sekolah Tim Scanner!");
+                    }else{
+                      alert("Nisn Anda Tidak Terdaftar Di Sekolah Tim Scanner!");
+
+                    }
+                }
 
     var html5QrcodeScanner = new Html5QrcodeScanner(
         "reader", { fps: 10, qrbox: 250 });
