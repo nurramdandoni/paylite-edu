@@ -119,7 +119,6 @@
                       if(item.status == 'aktif'){
                         icon = 'success';
                       }
-                      console.log(item);
                       temp += `
                       <tr>
                       <td>
