@@ -156,17 +156,22 @@
             nisn: Nisn,
             waktu: Waktu
                 }
-                console.log(postCeker);
-        //   const requestOptions = {
-        //           method: 'POST', // Metode permintaan
-        //           headers: {
-        //                     'Content-Type': 'application/json', // Jenis konten yang dikirim
-        //                     // 'Authorization': 'Bearer YOUR_ACCESS_TOKEN' // Header otorisasi jika diperlukan
-        //           },
-        //           body: JSON.stringify(postCeker), // Mengubah data menjadi bentuk JSON
-        //         };
-        //             const data = await fetchData('https://api.paylite.co.id/jadwalPelajaranWhereJoinByKrsNisn', requestOptions);
-        //             console.log(data.data);
+        console.log(postCeker);
+        try{
+
+            const requestOptions = {
+                    method: 'POST', // Metode permintaan
+                    headers: {
+                              'Content-Type': 'application/json', // Jenis konten yang dikirim
+                              // 'Authorization': 'Bearer YOUR_ACCESS_TOKEN' // Header otorisasi jika diperlukan
+                    },
+                    body: JSON.stringify(postCeker), // Mengubah data menjadi bentuk JSON
+                  };
+                      const data = await fetchData('https://api.paylite.co.id/jadwalPelajaranWhereJoinByKrsNisn', requestOptions);
+                      console.log(data.data);
+        }catch(err){
+          console.log(err);
+        }
     }
 
     function getCurrentTimeFormatted() {
