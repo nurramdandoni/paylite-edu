@@ -114,8 +114,11 @@
                     console.log("ini hasilnya : ",hari);
                     // const array_loop = ["Senin","Selasa","Rabu","Kamis","Jumat","Sabtu","Minggu"];
                     // let isFirstIteration = true;
+                    const keysData = Object.keys(hari);
+                    const keysJamGroup = keysData.map(key => Object.keys(hari[key].jam_group.data));
+                    console.log(`data`, keysData)
+                    console.log(`jam grup`, keysJamGroup)
                     for(const item in hari){
-                      console.log(`ini item dalam for in`, item)
                     // for(item of data.data){
                       // let icon = 'secondary';
                       // if(item.status == 'aktif'){
