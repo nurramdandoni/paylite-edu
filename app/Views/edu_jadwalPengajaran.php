@@ -134,7 +134,8 @@
                         hari[data.data[start].nama_hari].count++;
                         if(data.data[start].jam_mulai == data.data[start].jam_mulai){
                           // hari[data.data[start].nama_hari].jam_group.count++;
-                          hari[data.data[start].nama_hari].jam_group.data.push({`${data.data[start].jam_mulai}`:[{nama_kelas:data.data[start].nama_kelas,nama_guru:data.data[start].nama_guru}]});
+                          hari[data.data[start].nama_hari].jam_group.data.push({`${data.data[start].jam_mulai}`:[]});
+                          // {nama_kelas:data.data[start].nama_kelas,nama_guru:data.data[start].nama_guru}
                         }
                       }
                     }
