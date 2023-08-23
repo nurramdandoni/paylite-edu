@@ -122,6 +122,7 @@
                       let jCount = data.data;
                     for(item=0; item<jCount.length;item++){
                       console.log("hari "+jCount[item].nama_hari+" :", hari[jCount[item].nama_hari].count);
+                      console.log("hari jam "+jCount[item].nama_hari.jam_group.data[jCount[item].jam_mulai]+" :", hari[jCount[item].nama_hari].jam_group.data[jCount[item].jam_mulai].count);
                       let icon = 'secondary';
                       if(jCount[item].status == 'aktif'){
                         icon = 'success';
@@ -139,7 +140,11 @@
                             <p class="text-xs font-weight-bold mb-0">`+jCount[item].jam_mulai+`</p>
                           </td>`;
                           }else{
-
+                            if(jCount[item].jam_mulai != jCount[item-1].jam_mulai){
+                              tempCondition2 = `<td rowspan="1">
+                            <p class="text-xs font-weight-bold mb-0">`+jCount[item].jam_mulai+`</p>
+                          </td>`;
+                            }
                           }
                     }else{
                       if(jCount[item].nama_hari != jCount[item-1].nama_hari){
