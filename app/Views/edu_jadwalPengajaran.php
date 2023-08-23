@@ -137,7 +137,7 @@
                           </div>
                       </td>`;
                             tempCondition2 = `<td style="text-align:center;" rowspan="`+hari[jCount[item].nama_hari].jam_group.data[jCount[item].jam_mulai].data.length+`">
-                            <p class="text-xs font-weight-bold mb-0">`+jCount[item].jam_mulai+`</p>
+                            <p class="text-xs font-weight-bold mb-0">`+jCount[item].jam_mulai+` - `+jCount[item].jam_selesai+`</p>
                           </td>`;
                     }else{
                       if(jCount[item].nama_hari != jCount[item-1].nama_hari){
@@ -148,14 +148,14 @@
                         </td>`;
                         // if(jCount[item].jam_mulai != jCount[item-1].jam_mulai){
                                 tempCondition2 = `<td style="text-align:center;" rowspan="`+hari[jCount[item].nama_hari].jam_group.data[jCount[item].jam_mulai].data.length+`">
-                              <p class="text-xs font-weight-bold mb-0">`+jCount[item].jam_mulai+`</p>
+                              <p class="text-xs font-weight-bold mb-0">`+jCount[item].jam_mulai+` - `+jCount[item].jam_selesai+`</p>
                             </td>`;
                           //     }
                         }else{
                           
                           if(jCount[item].jam_mulai != jCount[item-1].jam_mulai){
                                 tempCondition2 = `<td style="text-align:center;" rowspan="`+hari[jCount[item].nama_hari].jam_group.data[jCount[item].jam_mulai].data.length+`">
-                              <p class="text-xs font-weight-bold mb-0">`+jCount[item].jam_mulai+`</p>
+                              <p class="text-xs font-weight-bold mb-0">`+jCount[item].jam_mulai+` - `+jCount[item].jam_selesai+`</p>
                             </td>`;
                               }
                         }
