@@ -127,12 +127,20 @@
                         icon = 'success';
                       }
                       let tempCondition = '';
+                      let tempCondition2 = '';
                       if(isFirstIteration){
                         tempCondition = `<td rowspan="`+hari[jCount[item].nama_hari].count+`">
                           <div class="d-flex flex-column justify-content-center">
                             <span class="badge badge-sm bg-gradient-success">`+jCount[item].nama_hari+`</span>
                           </div>
                       </td>`;
+                          if(isFirstIteration){
+                            tempCondition2 = `<td rowspan="`+hari[jCount[item].nama_hari].jam_group.data[jCount[item].jam_mulai]+`">
+                            <p class="text-xs font-weight-bold mb-0">`+jCount[item].jam_mulai+`</p>
+                          </td>`;
+                          }else{
+
+                          }
                     }else{
                       if(jCount[item].nama_hari != jCount[item-1].nama_hari){
                         tempCondition = `<td rowspan="`+hari[jCount[item].nama_hari].count+`">
@@ -140,15 +148,12 @@
                             <span class="badge badge-sm bg-gradient-success">`+jCount[item].nama_hari+`</span>
                           </div>
                       </td>`;
-                        
                         }
                       }
                       temp += `
                       <tr>
-                      `+tempCondition+`
-                      <td>
-                        <p class="text-xs font-weight-bold mb-0">`+jCount[item].jam_mulai+`</p>
-                      </td>
+                      `+tempCondition+
+                      tempCondition2+`
                       <td class="align-middle text-center text-sm">
                         <span class="text-secondary text-xs font-weight-bold">`+jCount[item].nama_kelas+`</span>
                       </td>
