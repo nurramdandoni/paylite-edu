@@ -185,9 +185,12 @@
       const formattedDay = (dayIndex === 0) ? 7 : dayIndex; // Konversi agar Senin dimulai dari 1
       return formattedDay;
     }
-    function cek(){
-      const waiting = await cekNisnAfterAbsen();
-      console.log(waiting);
+    async function cek() {
+      try {
+        await cekNisnAfterAbsen();
+      } catch (error) {
+        console.error("Error:", error);
+      }
     }
     async function cekNisnAfterAbsen() {
       const postCeker = {
