@@ -175,7 +175,7 @@
     }
 
     async function cekNisnAfterAbsen(){
-          const postGuru = {
+          const postCeker = {
             lembaga_pendidikan_id: lembaga_pendidikan_id,
             hari_id: hariIni,
             nisn: Nisn,
@@ -187,16 +187,16 @@
                             'Content-Type': 'application/json', // Jenis konten yang dikirim
                             // 'Authorization': 'Bearer YOUR_ACCESS_TOKEN' // Header otorisasi jika diperlukan
                   },
-                  body: JSON.stringify(postGuru), // Mengubah data menjadi bentuk JSON
+                  body: JSON.stringify(postCeker), // Mengubah data menjadi bentuk JSON
                 };
                     const data = await fetchData('https://api.paylite.co.id/jadwalPelajaranWhereJoinByKrsNisn', requestOptions);
                     console.log(data.data);
-                    if(data.data.length > 0){
-                      alert("Nisn Anda Terdaftar Di Sekolah Tim Scanner!");
-                    }else{
-                      alert("Nisn Anda Tidak Terdaftar Di Sekolah Tim Scanner!");
+                    // if(data.data.length > 0){
+                    //   alert("Nisn Anda Terdaftar Di Sekolah Tim Scanner!");
+                    // }else{
+                    //   alert("Nisn Anda Tidak Terdaftar Di Sekolah Tim Scanner!");
 
-                    }
+                    // }
                 }
 
     var html5QrcodeScanner = new Html5QrcodeScanner(
