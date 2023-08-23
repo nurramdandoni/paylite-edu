@@ -132,9 +132,9 @@
                       }
                     }
                     for(start=0; start<data.data.length; start++){
-                      if(data.data.nama_hari == hari[data.data.nama_hari]){
-                        hari[data.data.nama_hari].count++;
-                        hari[data.data.nama_hari].jam_group.count++;
+                      if(data.data[start].nama_hari == hari[data.data.nama_hari]){
+                        hari[data.data[start].nama_hari].count++;
+                        hari[data.data[start].nama_hari].jam_group.count++;
                       }
                     }
                     console.log("ini hasilnya : ",hari);
