@@ -122,7 +122,7 @@
                       let jCount = data.data;
                     for(item=0; item<jCount.length;item++){
                       console.log("hari "+jCount[item].nama_hari+" :", hari[jCount[item].nama_hari].count);
-                      console.log("jam : ", hari.Senin.jam_group);
+                      console.log("jam : ", hari.Senin.jam_group.data);
                       // console.log("hari jam "+jCount[item].nama_hari.jam_group.data[jCount[item].jam_mulai]+" :", hari[jCount[item].nama_hari].jam_group.data[jCount[item].jam_mulai].count);
                       let icon = 'secondary';
                       if(jCount[item].status == 'aktif'){
