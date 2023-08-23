@@ -187,7 +187,7 @@
     }
     async function cek() {
       try {
-        await cekNisnAfterAbsen();
+        const datacek = await cekNisnAfterAbsen();
       } catch (error) {
         console.error("Error:", error);
       }
@@ -211,6 +211,11 @@
       try {
         const data = await fetchData('https://api.paylite.co.id/jadwalPelajaranWhereJoinByKrsNisn', requestOptions);
         console.log(data);
+        if(data.status == 'Sukses'){
+          console.log("Processing input data..............");
+        }else{
+          alert("Mohon Maaf NISN Tidak Terdaftar, Hubungi Pihak Sekolah!");
+        }
 
         // Di sini, Anda bisa melanjutkan dengan memproses data sesuai kebutuhan
         // Misalnya, Anda dapat memeriksa panjang data.data dan memberikan respons sesuai dengan itu.
