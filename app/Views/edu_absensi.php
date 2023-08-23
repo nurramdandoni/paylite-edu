@@ -210,7 +210,7 @@
 
       try {
         const data = await fetchData('https://api.paylite.co.id/jadwalPelajaranWhereJoinByKrsNisn', requestOptions);
-        console.log(data.data);
+        console.log(data);
 
         // Di sini, Anda bisa melanjutkan dengan memproses data sesuai kebutuhan
         // Misalnya, Anda dapat memeriksa panjang data.data dan memberikan respons sesuai dengan itu.
