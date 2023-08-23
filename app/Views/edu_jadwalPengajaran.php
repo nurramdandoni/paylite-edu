@@ -148,14 +148,9 @@
                       temp += `
                       <tr>
                       <td>
-                        <div class="d-flex px-2 py-1">
-                          <div>
-                            <img src="../assets/img/team-2.jpg" class="avatar avatar-sm me-3" alt="user1">
-                          </div>
                           <div class="d-flex flex-column justify-content-center">
                             <span class="badge badge-sm bg-gradient-success">`+item.nama_hari+`</span>
                           </div>
-                        </div>
                       </td>
                       <td>
                         <p class="text-xs font-weight-bold mb-0">`+item.jam_mulai+`</p>
