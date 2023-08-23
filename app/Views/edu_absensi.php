@@ -188,31 +188,33 @@
     // function cek(){
     //   const waiting = await cekNisnAfterAbsen();
     // }
-    async function cekNisnAfterAbsen(){
-          const postCeker = {
-            lembaga_pendidikan_id: lembaga_pendidikan_id,
-            hari_id: hariIni,
-            nisn: Nisn,
-            waktu: Waktu
-                }
-          const requestOptions = {
-                  method: 'POST', // Metode permintaan
-                  headers: {
-                            'Content-Type': 'application/json', // Jenis konten yang dikirim
-                            // 'Authorization': 'Bearer YOUR_ACCESS_TOKEN' // Header otorisasi jika diperlukan
-                  },
-                  body: JSON.stringify(postCeker), // Mengubah data menjadi bentuk JSON
-                };
-                    const data = await fetchData('https://api.paylite.co.id/jadwalPelajaranWhereJoinByKrsNisn', requestOptions);
-                    console.log(data.data);
-                    // return true;
-                    // if(data.data.length > 0){
-                    //   alert("Nisn Anda Terdaftar Di Sekolah Tim Scanner!");
-                    // }else{
-                    //   alert("Nisn Anda Tidak Terdaftar Di Sekolah Tim Scanner!");
+    async function cekNisnAfterAbsen() {
+      const postCeker = {
+        lembaga_pendidikan_id: lembaga_pendidikan_id,
+        hari_id: hariIni,
+        nisn: Nisn,
+        waktu: Waktu
+      };
+      
+      const requestOptions = {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(postCeker),
+      };
 
-                    // }
-                }
+      try {
+        const data = await fetchData('https://api.paylite.co.id/jadwalPelajaranWhereJoinByKrsNisn', requestOptions);
+        console.log(data.data);
+
+        // Di sini, Anda bisa melanjutkan dengan memproses data sesuai kebutuhan
+        // Misalnya, Anda dapat memeriksa panjang data.data dan memberikan respons sesuai dengan itu.
+      } catch (error) {
+        console.error("Error:", error);
+      }
+    }
+
 
     
 </script>
