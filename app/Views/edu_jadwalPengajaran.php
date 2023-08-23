@@ -137,12 +137,12 @@
                           </div>
                       </td>`;
                           if(isFirstIteration){
-                            tempCondition2 = `<td rowspan="`+hari[jCount[item].nama_hari].jam_group.data["07:01"].count+`">
+                            tempCondition2 = `<td rowspan="`+hari.Senin.jam_group.data[jCount[item].jam_mulai].data.length+`">
                             <p class="text-xs font-weight-bold mb-0">`+jCount[item].jam_mulai+`</p>
                           </td>`;
                           }else{
                             if(jCount[item].jam_mulai != jCount[item-1].jam_mulai){
-                              tempCondition2 = `<td rowspan="1">
+                              tempCondition2 = `<td rowspan="`+hari.Senin.jam_group.data[jCount[item].jam_mulai].data.length+`">
                             <p class="text-xs font-weight-bold mb-0">`+jCount[item].jam_mulai+`</p>
                           </td>`;
                             }
