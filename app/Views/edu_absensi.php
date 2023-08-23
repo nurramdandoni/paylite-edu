@@ -228,6 +228,7 @@
     }
     async function inputAbsensi(id_jadwal,id_siswa) {
       const postAbsensi = {
+        lembaga_pendidikan_id: lembaga_pendidikan_id,
         jadwal_pelajaran_id: id_jadwal,
         siswa_id: id_siswa,
         status_kehadiran: "hadir"
