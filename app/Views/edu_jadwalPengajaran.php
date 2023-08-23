@@ -123,7 +123,7 @@
                       temp += `
                       <tr>
                       <td>
-                          <div class="d-flex flex-column justify-content-center">
+                          <div rowspan="3" class="d-flex flex-column justify-content-center">
                             <span class="badge badge-sm bg-gradient-success">`+item.nama_hari+`</span>
                           </div>
                       </td>
