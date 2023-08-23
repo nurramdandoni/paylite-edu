@@ -113,7 +113,8 @@
 
                     console.log("ini hasilnya : ",hari);
                     // const array_loop = ["Senin","Selasa","Rabu","Kamis","Jumat","Sabtu","Minggu"];
-                    for(item of data.data){
+                    let isFirstIteration = true;
+                    for(item=0;item<data.data.length;item++){
                       let before = 0;
                       let icon = 'secondary';
                       if(item.status == 'aktif'){
@@ -122,22 +123,29 @@
                       
                       temp += `
                       <tr>
-                      <td>
-                          <div rowspan="" class="d-flex flex-column justify-content-center">
-                            <span class="badge badge-sm bg-gradient-success">`+item.nama_hari+`</span>
+                      ` 
+                    
+                      if(!isFirstIteration && data.data[item].nama_hari != data.data[item-1].nama_hari){`
+                      <td rowspan="`+hari.Senin.count+`">
+                          <div class="d-flex flex-column justify-content-center">
+                            <span class="badge badge-sm bg-gradient-success">`+data.data[item].nama_hari+`</span>
                           </div>
                       </td>
+                      `}
+                      if(){
+                      `
                       <td>
-                        <p class="text-xs font-weight-bold mb-0">`+item.jam_mulai+`</p>
+                        <p class="text-xs font-weight-bold mb-0">`+data.data[item].jam_mulai+`</p>
                       </td>
+                      `}`
                       <td class="align-middle text-center text-sm">
-                        <span class="text-secondary text-xs font-weight-bold">`+item.nama_kelas+`</span>
+                        <span class="text-secondary text-xs font-weight-bold">`+data.data[item].nama_kelas+`</span>
                       </td>
                       <td class="align-middle text-center">
-                        <span class="text-secondary text-xs font-weight-bold">`+item.nama_mata_ajar+`</span>
+                        <span class="text-secondary text-xs font-weight-bold">`+data.data[item].nama_mata_ajar+`</span>
                       </td>
                       <td class="align-middle text-center">
-                        <span class="text-secondary text-xs font-weight-bold">`+item.nama_guru+`</span>
+                        <span class="text-secondary text-xs font-weight-bold">`+data.data[item].nama_guru+`</span>
                       </td>
                       <td class="align-middle">
                         <a href="javascript:;" class="text-secondary font-weight-bold text-xs" data-toggle="tooltip" data-original-title="Edit user">
@@ -146,6 +154,7 @@
                       </td>
                     </tr>
                       `;
+                      isFirstIteration = false;
                     }
                     if(data.data.length > 0){
                       $("#list").html(temp);
