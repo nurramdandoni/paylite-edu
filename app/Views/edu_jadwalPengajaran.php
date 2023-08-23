@@ -141,10 +141,10 @@
                             <p class="text-xs font-weight-bold mb-0">`+jCount[item].jam_mulai+`</p>
                           </td>`;
                           }else{
-                            if(jCount[item].jam_mulai != jCount[item-1].jam_mulai){
-                              tempCondition2 = `<td style="text-align:center;" rowspan="`+hari.Senin.jam_group.data[jCount[item].jam_mulai].data.length+`">
-                            <p class="text-xs font-weight-bold mb-0">`+jCount[item].jam_mulai+`</p>
-                          </td>`;
+                          //   if(jCount[item].jam_mulai != jCount[item-1].jam_mulai){
+                          //     tempCondition2 = `<td style="text-align:center;" rowspan="`+hari.Senin.jam_group.data[jCount[item].jam_mulai].data.length+`">
+                          //   <p class="text-xs font-weight-bold mb-0">`+jCount[item].jam_mulai+`</p>
+                          // </td>`;
                             }
                           }
                     }else{
