@@ -104,7 +104,8 @@
                       hari[namaHari].count++;
                       hari[namaHari].jam_group.data[jamMulai].data.push({
                         nama_kelas: currentData.nama_kelas,
-                        nama_guru: currentData.nama_guru
+                        nama_guru: currentData.nama_guru,
+                        jadwal_pelajaran_id: currentData.jadwal_pelajaran_id
                       });
                     }
 
