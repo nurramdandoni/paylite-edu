@@ -114,7 +114,7 @@
                     console.log("ini hasilnya : ",hari);
                     // const array_loop = ["Senin","Selasa","Rabu","Kamis","Jumat","Sabtu","Minggu"];
                     // let isFirstIteration = true;
-                    for(item in hari){
+                    for(const item in hari){
                       console.log(`ini item dalam for in`, item)
                     // for(item of data.data){
                       // let icon = 'secondary';
