@@ -138,7 +138,9 @@
                           const vari = {[key]: []};
                           // vari.key.push(datajamgroup);
                           // const vari = {start:"nyeleneh"};
-                          hari[data.data[start].nama_hari].jam_group.data.push(vari);
+                          if(!Object.keys(vari).includes(key)){
+                            hari[data.data[start].nama_hari].jam_group.data.push(vari);
+                          }
                           // hari[data.data[start].nama_hari].jam_group.data[data.data[start].jam_mulai].push({start:"hihi"});
                           // d.push(datajamgroup);
                           
