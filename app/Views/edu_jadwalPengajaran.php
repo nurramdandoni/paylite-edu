@@ -79,31 +79,64 @@
                     const data = await fetchData('https://api.paylite.co.id/jadwalPelajaranWhereJoin/'+lembaga_pendidikan_id+'');
                     console.log(data.data);
                     let temp = '';
-                    let jadwal = {}; // Gunakan objek kosong untuk menampung jadwal
 
-                    for (const mapping of data.data) {
-                      const hari = mapping.nama_hari;
-                      const jamMulai = mapping.jam_mulai;
-                      
-                      // Inisialisasi objek jadwal[hari] jika belum ada
-                      if (!jadwal[hari]) {
-                        jadwal[hari] = { jam_group: {} };
+                    hari = {
+                      Senin:{
+                        count:0,
+                        jam_group:{
+                          count:0,
+                          data:[]
+                        }
+                      },
+                      Selasa:{
+                        count:0,
+                        jam_group:{
+                          count:0,
+                          data:[]
+                        }
+                      },
+                      Rabu:{
+                        count:0,
+                        jam_group:{
+                          count:0,
+                          data:[]
+                        }
+                      },
+                      Kamis:{
+                        count:0,
+                        jam_group:{
+                          count:0,
+                          data:[]
+                        }
+                      },
+                      Jumat:{
+                        count:0,
+                        jam_group:{
+                          count:0,
+                          data:[]
+                        }
+                      },
+                      Sabtu:{
+                        count:0,
+                        jam_group:{
+                          count:0,
+                          data:[]
+                        }
+                      },
+                      Minggu:{
+                        count:0,
+                        jam_group:{
+                          count:0,
+                          data:[]
+                        }
                       }
-                      
-                      // Inisialisasi objek jadwal[hari].jam_group[jamMulai] jika belum ada
-                      if (!jadwal[hari].jam_group[jamMulai]) {
-                        jadwal[hari].jam_group[jamMulai] = [];
-                      }
-                      
-                      // Masukkan data ke dalam jadwal[hari].jam_group[jamMulai]
-                      jadwal[hari].jam_group[jamMulai].push(mapping); 
                     }
-                    let obj = Object.keys(jadwal.Senin);
-                    let objChild = Object.keys(jadwal.Senin.jam_group);
-                    console.log(jadwal);
-                    console.log(obj.length);
-                    console.log(objChild.length);
-
+                    for(start=0; start<data.data.length; start++){
+                      if(data.data.nama_hari == hari[data.data.nama_hari]){
+                        hari[data.data.nama_hari].count++;
+                        hari[data.data.nama_hari].jam_group.count++;
+                      }
+                    }
                     console.log();
                     for(item of data.data){
                       let before = 0;
