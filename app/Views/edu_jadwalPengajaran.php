@@ -136,7 +136,7 @@
                           </div>
                       </td>`;
                           if(isFirstIteration){
-                            tempCondition2 = `<td rowspan="2">
+                            tempCondition2 = `<td rowspan="`+hari[jCount[item].nama_hari].jam_group.data["07:00"].count+`">
                             <p class="text-xs font-weight-bold mb-0">`+jCount[item].jam_mulai+`</p>
                           </td>`;
                           }else{
