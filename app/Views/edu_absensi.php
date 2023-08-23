@@ -150,12 +150,13 @@
         console.log("id lembaga ", lembaga_pendidikan_id);
 
         // await cekNisnAfterAbsen();
-        // const postCeker = {
-        //     lembaga_pendidikan_id: lembaga_pendidikan_id,
-        //     hari_id: hariIni,
-        //     nisn: Nisn,
-        //     waktu: Waktu
-        //         }
+        const postCeker = {
+            lembaga_pendidikan_id: lembaga_pendidikan_id,
+            hari_id: hariIni,
+            nisn: Nisn,
+            waktu: Waktu
+                }
+                console.log(postCeker);
         //   const requestOptions = {
         //           method: 'POST', // Metode permintaan
         //           headers: {
