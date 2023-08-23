@@ -100,6 +100,8 @@
                     }
 
                     console.log(jadwal);
+                    console.log(jadwal.senin.length);
+                    console.log(jadwal.senin.jam_group.length);
 
                     console.log();
                     for(item of data.data){
