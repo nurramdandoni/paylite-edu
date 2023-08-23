@@ -123,6 +123,7 @@
                           data:[
                             {"07.00": []},
                             {"08.00": []},
+                            "08.00": [],
                           ]
                         }
                       }
@@ -132,11 +133,13 @@
                         hari[data.data[start].nama_hari].count++;
                         if(data.data[start].jam_mulai == data.data[start].jam_mulai){
                           // hari[data.data[start].nama_hari].jam_group.count++;
-                          // const vari = {`${data.data[start].jam_mulai}`:"hehhe"};
+                          const datajamgroup = {nama_kelas:data.data[start].nama_kelas,nama_guru:data.data[start].nama_guru};
+                          const key = data.data[start].jam_mulai;
+                          const vari = {key:[]};
+                          vari.key.push(datajamgroup);
                           // const vari = {start:"nyeleneh"};
-                          // const datajamgroup = {nama_kelas:data.data[start].nama_kelas,nama_guru:data.data[start].nama_guru};
-                          hari[data.data[start].nama_hari].jam_group.data[data.data[start].jam_mulai];
-                          hari[data.data[start].nama_hari].jam_group.data[data.data[start].jam_mulai].push({start:"hihi"});
+                          hari[data.data[start].nama_hari].jam_group.data.push(vari);
+                          // hari[data.data[start].nama_hari].jam_group.data[data.data[start].jam_mulai].push({start:"hihi"});
                           // d.push(datajamgroup);
                           
                         }
