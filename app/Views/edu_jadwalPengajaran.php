@@ -110,7 +110,6 @@
                     }
 
                     console.log(hari.Senin);
-                    console.log(hari.Senin);
 
                     console.log("ini hasilnya : ",hari);
                     // const array_loop = ["Senin","Selasa","Rabu","Kamis","Jumat","Sabtu","Minggu"];
@@ -123,15 +122,15 @@
                       
                       temp += `
                       <tr>
-                      `
-                      if(!isFirstIteration && item.nama_hari != data.data[data.data.indexOf(item) - 1].nama_hari){`
+                      `+
+                      if(!isFirstIteration && item.nama_hari !== data.data[data.data.indexOf(item) - 1].nama_hari){`
                       <td rowspan="`+hari.Senin.count+`">
                           <div class="d-flex flex-column justify-content-center">
                             <span class="badge badge-sm bg-gradient-success">`+item.nama_hari+`</span>
                           </div>
                       </td>
-                      `;}
-                      temp += `
+                      `+}+
+                      `
                       <td>
                         <p class="text-xs font-weight-bold mb-0">`+item.jam_mulai+`</p>
                       </td>
