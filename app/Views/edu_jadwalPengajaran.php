@@ -120,12 +120,18 @@
                         icon = 'success';
                       }
                       let temprowsapn = '';
-                      if(!isFirstIteration && item.nama_hari !== data.data[data.data.indexOf(item) - 1].nama_hari){
-                        temprowspan = `<td>
+                      if(isFirstIteration){
+                        temprowspan = `<td rowspan="`+hari.item.nama_hari.count+`">
                           <div class="d-flex flex-column justify-content-center">
                             <span class="badge badge-sm bg-gradient-success">`+item.nama_hari+`</span>
                           </div>
-                      </td>`
+                      </td>`;
+                      }else if(!isFirstIteration && item.nama_hari !== data.data[data.data.indexOf(item) - 1].nama_hari){
+                        temprowspan = `<td rowspan="`+hari.item.nama_hari.count+`">
+                          <div class="d-flex flex-column justify-content-center">
+                            <span class="badge badge-sm bg-gradient-success">`+item.nama_hari+`</span>
+                          </div>
+                      </td>`;
                       }
                       temp += `
                       <tr>
