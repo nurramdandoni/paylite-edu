@@ -84,57 +84,58 @@
                       Senin:{
                         count:0,
                         jam_group:{
-                          count:0,
                           data:[]
                         }
                       },
                       Selasa:{
                         count:0,
                         jam_group:{
-                          count:0,
                           data:[]
                         }
                       },
                       Rabu:{
                         count:0,
                         jam_group:{
-                          count:0,
                           data:[]
                         }
                       },
                       Kamis:{
                         count:0,
                         jam_group:{
-                          count:0,
                           data:[]
                         }
                       },
                       Jumat:{
                         count:0,
                         jam_group:{
-                          count:0,
                           data:[]
                         }
                       },
                       Sabtu:{
                         count:0,
                         jam_group:{
-                          count:0,
                           data:[]
                         }
                       },
                       Minggu:{
                         count:0,
                         jam_group:{
-                          count:0,
-                          data:[]
+                          data:[
+                            {"07:00":[{}]
+                            },
+                            {"08:00":[{}]
+                            }
+                          ]
                         }
                       }
                     }
                     for(start=0; start<data.data.length; start++){
                       if(data.data[start].nama_hari == data.data[start].nama_hari){
                         hari[data.data[start].nama_hari].count++;
-                        hari[data.data[start].nama_hari].jam_group.count++;
+                        if(data.data[start].jam_mulai == data.data[start].jam_mulai){
+                          // hari[data.data[start].nama_hari].jam_group.count++;
+                          hari[data.data[start].nama_hari].jam_group.data.push({`${data.data[start].jam_mulai}`:[{nama_kelas:data.data[start].nama_kelas,nama_guru:data.data[start].nama_guru}]});
+                        }
                       }
                     }
                     console.log("ini hasilnya : ",hari);
