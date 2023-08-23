@@ -113,7 +113,7 @@
 
                     console.log("ini hasilnya : ",hari);
                     // const array_loop = ["Senin","Selasa","Rabu","Kamis","Jumat","Sabtu","Minggu"];
-                    for([key, item] of data.data){
+                    for([item, value] of data.data){
                       let before = 0;
                       let icon = 'secondary';
                       if(item.status == 'aktif'){
