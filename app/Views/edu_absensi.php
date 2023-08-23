@@ -205,7 +205,7 @@
                 };
                     const data = await fetchData('https://api.paylite.co.id/jadwalPelajaranWhereJoinByKrsNisn', requestOptions);
                     console.log(data.data);
-                    return true;
+                    // return true;
                     // if(data.data.length > 0){
                     //   alert("Nisn Anda Terdaftar Di Sekolah Tim Scanner!");
                     // }else{
