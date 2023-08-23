@@ -157,21 +157,7 @@
             waktu: Waktu
                 }
         console.log(postCeker);
-        try{
-
-            const requestOptions = {
-                    method: 'POST', // Metode permintaan
-                    headers: {
-                              'Content-Type': 'application/json', // Jenis konten yang dikirim
-                              // 'Authorization': 'Bearer YOUR_ACCESS_TOKEN' // Header otorisasi jika diperlukan
-                    },
-                    body: JSON.stringify(postCeker), // Mengubah data menjadi bentuk JSON
-                  };
-                      const data = await fetchData('https://api.paylite.co.id/jadwalPelajaranWhereJoinByKrsNisn', requestOptions);
-                      console.log(data.data);
-        }catch(err){
-          console.log(err);
-        }
+        cek();
     }
 
     function getCurrentTimeFormatted() {
@@ -195,7 +181,9 @@
       const formattedDay = (dayIndex === 0) ? 7 : dayIndex; // Konversi agar Senin dimulai dari 1
       return formattedDay;
     }
-
+    function cek(){
+      const waiting = await cekNisnAfterAbsen();
+    }
     async function cekNisnAfterAbsen(){
           const postCeker = {
             lembaga_pendidikan_id: lembaga_pendidikan_id,
