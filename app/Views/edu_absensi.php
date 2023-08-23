@@ -128,7 +128,42 @@
     function onScanSuccess(decodedText, decodedResult) {
     // Handle on success condition with the decoded text or result.
     console.log(`Scan result:`, decodedResult);
-        alert(`Scan result: ${decodedText}`);
+        // alert(`Scan result: ${decodedText}`);
+        const inputString = "0155957994 - Adelia Faranisa Azmi";
+        const parts = inputString.split(" - "); // Membagi string berdasarkan tanda "-"
+
+        const id = parts[0]; // Bagian pertama (ID)
+        const name = parts[1]; // Bagian kedua (Nama)
+
+        console.log("ID:", id);
+        console.log("Nama:", name);
+        const currentTimeFormatted = getCurrentTimeFormatted();
+        console.log("Jam saat ini:", currentTimeFormatted);
+        const currentDayFormatted = getFormattedDay();
+        console.log("Hari saat ini (format 1-7, Senin = 1):", currentDayFormatted);
+        console.log("id lembaga ", lembaga_pendidikan_id);
+    }
+
+    function getCurrentTimeFormatted() {
+      const now = new Date();
+      const hours = now.getHours();
+      const minutes = now.getMinutes();
+
+      const formattedHours = hours < 10 ? "0" + hours : hours;
+      const formattedMinutes = minutes < 10 ? "0" + minutes : minutes;
+
+      const formattedTime = `${formattedHours}:${formattedMinutes}`;
+      return formattedTime;
+    }
+
+    function getFormattedDay() {
+      const daysOfWeek = ["Minggu", "Senin", "Selasa", "Rabu", "Kamis", "Jumat", "Sabtu"];
+      
+      const now = new Date();
+      const dayIndex = now.getDay(); // Mengambil nilai 0-6 (Minggu-Sabtu)
+      
+      const formattedDay = (dayIndex === 0) ? 7 : dayIndex; // Konversi agar Senin dimulai dari 1
+      return formattedDay;
     }
 
     var html5QrcodeScanner = new Html5QrcodeScanner(
