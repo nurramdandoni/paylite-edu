@@ -147,6 +147,8 @@
         hariIni = currentDayFormatted;
         console.log("Hari saat ini (format 1-7, Senin = 1):", currentDayFormatted);
         console.log("id lembaga ", lembaga_pendidikan_id);
+
+        cekNisnAfterAbsen();
     }
 
     function getCurrentTimeFormatted() {
