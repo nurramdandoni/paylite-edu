@@ -109,7 +109,7 @@
                       });
                     }
 
-                    console.log(hari);
+                    console.log(hari.Senin);
 
                     console.log("ini hasilnya : ",hari);
                     for(item of data.data){
