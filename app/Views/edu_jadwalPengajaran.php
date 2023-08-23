@@ -122,21 +122,21 @@
                       //   icon = 'success';
                       // }
                       temp += `
-                      <tr>
-                      `if(hari[item].count > 1) {`
-                      <td rowspan="`+hari[item].count+`">
+                      <tr>`
+                      if(hari[item].count > 1) {
+                      `<td rowspan="`+hari[item].count+`">
                           <div class="d-flex flex-column justify-content-center">
                             <span class="badge badge-sm bg-gradient-success">`+item+`</span>
                           </div>
-                      </td>
-                      `} else {`
-                      <td>
+                      </td>`
+                      } else {
+                      `<td>
                           <div class="d-flex flex-column justify-content-center">
                             <span class="badge badge-sm bg-gradient-success">`+item+`</span>
                           </div>
-                      </td>
-                      `}`
-                      <td>
+                      </td>`
+                      }
+                      `<td>
                         <p class="text-xs font-weight-bold mb-0">`+item+`</p>
                       </td>
                       <td class="align-middle text-center text-sm">
