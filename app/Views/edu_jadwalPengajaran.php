@@ -130,23 +130,19 @@
                       }
                       let tempCondition = '';
                       let tempCondition2 = '';
+                      let jmlrow = 1;
                       if(isFirstIteration){
                         tempCondition = `<td rowspan="`+hari[jCount[item].nama_hari].count+`">
                           <div class="d-flex flex-column justify-content-center">
                             <span class="badge badge-sm bg-gradient-success">`+jCount[item].nama_hari+`</span>
                           </div>
                       </td>`;
-                          if(isFirstIteration){
-                            tempCondition2 = `<td style="text-align:center;" rowspan="`+hari[jCount[item].nama_hari].jam_group.data[jCount[item].jam_mulai].data.length+`">
-                            <p class="text-xs font-weight-bold mb-0">`+jCount[item].jam_mulai+`</p>
-                          </td>`;
-                          }else{
-                            if(jCount[item].jam_mulai != jCount[item-1].jam_mulai){
-                              tempCondition2 = `<td style="text-align:center;" rowspan="`+hari[jCount[item].nama_hari].jam_group.data[jCount[item].jam_mulai].data.length+`">
-                            <p class="text-xs font-weight-bold mb-0">`+jCount[item].jam_mulai+`</p>
-                          </td>`;
+                            if(hari[jCount[item].nama_hari].jam_group.data[jCount[item].jam_mulai].data.length > 0){
+                              jmlrow = hari[jCount[item].nama_hari].jam_group.data[jCount[item].jam_mulai].data.length;
                             }
-                          }
+                            tempCondition2 = `<td style="text-align:center;" rowspan="`+jmlrow+`">
+                            <p class="text-xs font-weight-bold mb-0">`+jCount[item].jam_mulai+`</p>
+                          </td>`;
                     }else{
                       if(jCount[item].nama_hari != jCount[item-1].nama_hari){
                         tempCondition = `<td rowspan="`+hari[jCount[item].nama_hari].count+`">
@@ -154,13 +150,14 @@
                             <span class="badge badge-sm bg-gradient-success">`+jCount[item].nama_hari+`</span>
                           </div>
                       </td>`;
-                    }else{
                       if(jCount[item].jam_mulai != jCount[item-1].jam_mulai){
-                            tempCondition2 = `<td style="text-align:center;" rowspan="`+hari[jCount[item].nama_hari].jam_group.data[jCount[item].jam_mulai].data.length+`">
+                        if(hari[jCount[item].nama_hari].jam_group.data[jCount[item].jam_mulai].data.length > 0){
+                              jmlrow = hari[jCount[item].nama_hari].jam_group.data[jCount[item].jam_mulai].data.length;
+                            }
+                            tempCondition2 = `<td style="text-align:center;" rowspan="`+jmlrow+`">
                           <p class="text-xs font-weight-bold mb-0">`+jCount[item].jam_mulai+`</p>
                         </td>`;
                           }
-                    }
                       }
                       temp += `
                       <tr>
