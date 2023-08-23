@@ -80,7 +80,7 @@
                     console.log(data.data);
                     let temp = '';
 
-                    hari = {
+                    let hari = {
                       Senin:{
                         count:0,
                         jam_group:{
@@ -137,7 +137,7 @@
                         hari[data.data.nama_hari].jam_group.count++;
                       }
                     }
-                    console.log();
+                    console.log("ini hasilnya : ",hari);
                     for(item of data.data){
                       let before = 0;
                       let icon = 'secondary';
