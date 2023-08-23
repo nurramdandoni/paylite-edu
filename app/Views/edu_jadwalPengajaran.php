@@ -132,16 +132,16 @@
                           </div>
                       </td>
                       <td>
-                        <p class="text-xs font-weight-bold mb-0">`+item.nama_hari+`</p>
+                        <p class="text-xs font-weight-bold mb-0">`+item.jam_mulai+`</p>
                       </td>
                       <td class="align-middle text-center text-sm">
-                        <span class="text-secondary text-xs font-weight-bold">`+item.nama_hari+`</span>
+                        <span class="text-secondary text-xs font-weight-bold">`+item.nama_kelas+`</span>
                       </td>
                       <td class="align-middle text-center">
-                        <span class="text-secondary text-xs font-weight-bold">`+item.nama_hari+`</span>
+                        <span class="text-secondary text-xs font-weight-bold">`+item.nama_mata_ajar+`</span>
                       </td>
                       <td class="align-middle text-center">
-                        <span class="text-secondary text-xs font-weight-bold">`+item.nama_hari+`</span>
+                        <span class="text-secondary text-xs font-weight-bold">`+item.nama_guru+`</span>
                       </td>
                       <td class="align-middle">
                         <a href="javascript:;" class="text-secondary font-weight-bold text-xs" data-toggle="tooltip" data-original-title="Edit user">
