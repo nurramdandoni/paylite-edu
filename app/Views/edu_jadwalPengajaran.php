@@ -122,19 +122,11 @@
                       
                       temp += `
                       <tr>
-                      `if(hari.Senin.count > 1){`
-                      <td rowspan="`+hari.Senin.count+`">
-                          <div class="d-flex flex-column justify-content-center">
-                            <span class="badge badge-sm bg-gradient-success">`+item.nama_hari+`</span>
-                          </div>
-                      </td>
-                      `} else {`
                       <td>
                           <div class="d-flex flex-column justify-content-center">
                             <span class="badge badge-sm bg-gradient-success">`+item.nama_hari+`</span>
                           </div>
                       </td>
-                      `}`
                       <td>
                         <p class="text-xs font-weight-bold mb-0">`+item.jam_mulai+`</p>
                       </td>
