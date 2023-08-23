@@ -132,7 +132,8 @@
                           // const vari = {`${data.data[start].jam_mulai}`:"hehhe"};
                           // const vari = {start:"nyeleneh"};
                           const datajamgroup = {nama_kelas:data.data[start].nama_kelas,nama_guru:data.data[start].nama_guru};
-                          hari[data.data[start].nama_hari].jam_group.data[data.data[start].jam_mulai] = datajamgroup;
+                          const d = hari[data.data[start].nama_hari].jam_group.data[data.data[start].jam_mulai] = [];
+                          d.push(datajamgroup);
                           
                         }
                       }
