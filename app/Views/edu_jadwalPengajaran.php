@@ -113,43 +113,81 @@
 
                     console.log("ini hasilnya : ",hari);
                     // const array_loop = ["Senin","Selasa","Rabu","Kamis","Jumat","Sabtu","Minggu"];
-                    for(item of data.data){
-                      let before = 0;
-                      let icon = 'secondary';
-                      if(item.status == 'aktif'){
-                        icon = 'success';
-                      }
-                      
-                      temp += `
-                      <tr>
-                      <td>
-                          <div rowspan="3" class="d-flex flex-column justify-content-center">
-                            <span class="badge badge-sm bg-gradient-success">`+item.nama_hari+`</span>
-                          </div>
-                      </td>
-                      <td>
-                        <p class="text-xs font-weight-bold mb-0">`+item.jam_mulai+`</p>
-                      </td>
-                      <td class="align-middle text-center text-sm">
-                        <span class="text-secondary text-xs font-weight-bold">`+item.nama_kelas+`</span>
-                      </td>
-                      <td class="align-middle text-center">
-                        <span class="text-secondary text-xs font-weight-bold">`+item.nama_mata_ajar+`</span>
-                      </td>
-                      <td class="align-middle text-center">
-                        <span class="text-secondary text-xs font-weight-bold">`+item.nama_guru+`</span>
-                      </td>
-                      <td class="align-middle">
-                        <a href="javascript:;" class="text-secondary font-weight-bold text-xs" data-toggle="tooltip" data-original-title="Edit user">
-                          Edit
-                        </a>
-                      </td>
-                    </tr>
-                      `;
-                    }
-                    if(data.data.length > 0){
-                      $("#list").html(temp);
-                    }
+                    // Proses data dan menghitung rowspan
+let processedData = {};
+for (item of data.data) {
+  if (!processedData[item.nama_hari]) {
+    processedData[item.nama_hari] = {};
+  }
+  if (!processedData[item.nama_hari][item.jam_mulai]) {
+    processedData[item.nama_hari][item.jam_mulai] = {
+      rowspan: 0,
+      items: []
+    };
+  }
+  processedData[item.nama_hari][item.jam_mulai].items.push(item);
+  processedData[item.nama_hari][item.jam_mulai].rowspan++;
+}
+
+// Buat string HTML tabel
+let temp = "";
+for (namaHari in processedData) {
+  for (jamMulai in processedData[namaHari]) {
+    const group = processedData[namaHari][jamMulai];
+    temp += `
+      <tr>
+        <td rowspan="${group.rowspan}">
+          <div class="d-flex flex-column justify-content-center">
+            <span class="badge badge-sm bg-gradient-success">${namaHari}</span>
+          </div>
+        </td>
+        <td>
+          <p class="text-xs font-weight-bold mb-0">${jamMulai}</p>
+        </td>
+        <td class="align-middle text-center text-sm">
+          <span class="text-secondary text-xs font-weight-bold">${group.items[0].nama_kelas}</span>
+        </td>
+        <td class="align-middle text-center">
+          <span class="text-secondary text-xs font-weight-bold">${group.items[0].nama_mata_ajar}</span>
+        </td>
+        <td class="align-middle text-center">
+          <span class="text-secondary text-xs font-weight-bold">${group.items[0].nama_guru}</span>
+        </td>
+        <td class="align-middle">
+          <a href="javascript:;" class="text-secondary font-weight-bold text-xs" data-toggle="tooltip" data-original-title="Edit user">
+            Edit
+          </a>
+        </td>
+      </tr>
+    `;
+    
+    // Sisipkan baris tambahan untuk item-item berikutnya (jika ada)
+    for (let i = 1; i < group.rowspan; i++) {
+      temp += `
+        <tr>
+          <td class="align-middle text-center text-sm">
+            <span class="text-secondary text-xs font-weight-bold">${group.items[i].nama_kelas}</span>
+          </td>
+          <td class="align-middle text-center">
+            <span class="text-secondary text-xs font-weight-bold">${group.items[i].nama_mata_ajar}</span>
+          </td>
+          <td class="align-middle text-center">
+            <span class="text-secondary text-xs font-weight-bold">${group.items[i].nama_guru}</span>
+          </td>
+          <td class="align-middle">
+            <a href="javascript:;" class="text-secondary font-weight-bold text-xs" data-toggle="tooltip" data-original-title="Edit user">
+              Edit
+            </a>
+          </td>
+        </tr>
+      `;
+    }
+  }
+}
+
+// Masukkan HTML ke dalam elemen dengan ID "list"
+$("#list").html(temp);
+
                 }
       </script>
 <?= $this->endSection() ?>
