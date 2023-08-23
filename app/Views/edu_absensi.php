@@ -161,7 +161,7 @@
             waktu: Waktu
                 }
         console.log(postCeker);
-        // cek();
+        cek();
     }
 
     function getCurrentTimeFormatted() {
