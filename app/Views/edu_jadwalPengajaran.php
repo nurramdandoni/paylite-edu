@@ -79,7 +79,7 @@
                     const data = await fetchData('https://api.paylite.co.id/jadwalPelajaranWhereJoin/'+lembaga_pendidikan_id+'');
                     console.log(data.data);
                     let temp = '';
-
+                    let loophari = ["Senin","Selasa","Rabu","Kamis","Jumat","Sabtu","Minggu"];
                     let hari = {
                       Senin:{
                         count:0,
@@ -132,7 +132,7 @@
                       }
                     }
                     for(start=0; start<data.data.length; start++){
-                      if(data.data[start].nama_hari == hari[data.data[start].nama_hari]){
+                      if(data.data[start].nama_hari == data.data[start].nama_hari){
                         hari[data.data[start].nama_hari].count++;
                         hari[data.data[start].nama_hari].jam_group.count++;
                       }
