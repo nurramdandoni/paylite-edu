@@ -133,7 +133,7 @@
                       </td>`;
                     }else{
                       if(item.nama_hari != 'Senin'){
-                        tempCondition = `<td>
+                        tempCondition = `<td rowspan="1">
                           <div class="d-flex flex-column justify-content-center">
                             <span class="badge badge-sm bg-gradient-success">`+item.nama_hari+`</span>
                           </div>
