@@ -214,8 +214,42 @@
         if(data.status == 'Sukses'){
           console.log("Processing input data..............");
           console.log("Processing input data.............. jadwal Pelajaran : ",data.data[0].jadwal_pelajaran_id);
+          console.log("Processing input data.............. jadwal Pelajaran : ",data.data[0].siswa_id);
+          const printBack = await inputAbsensi(data.data[0].jadwal_pelajaran_id,data.data[0].siswa_id);
         }else{
           alert("Mohon Maaf NISN Tidak Terdaftar, Hubungi Pihak Sekolah!");
+        }
+
+        // Di sini, Anda bisa melanjutkan dengan memproses data sesuai kebutuhan
+        // Misalnya, Anda dapat memeriksa panjang data.data dan memberikan respons sesuai dengan itu.
+      } catch (error) {
+        console.error("Error:", error);
+      }
+    }
+    async function inputAbsensi(id_jadwal,id_siswa) {
+      const postAbsensi = {
+        jadwal_pelajaran_id: id_jadwal,
+        siswa_id: id_siswa,
+        status_kehadiran: "hadir"
+      };
+      
+      const requestOptions = {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(postAbsensi),
+      };
+
+      try {
+        const data = await fetchData('https://api.paylite.co.id/absensi', requestOptions);
+        console.log(data);
+        if(data.status == 'Sukses'){
+          console.log("Processing input data..............");
+          console.log("Berhasil : ",data.data);
+          alert("Absensi Berhasil!");
+        }else{
+          alert("Terjadi KEsalahan saat Input Data, Silahkan Ulangi kembali!");
         }
 
         // Di sini, Anda bisa melanjutkan dengan memproses data sesuai kebutuhan
