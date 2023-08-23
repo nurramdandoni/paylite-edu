@@ -79,75 +79,37 @@
                     const data = await fetchData('https://api.paylite.co.id/jadwalPelajaranWhereJoin/'+lembaga_pendidikan_id+'');
                     console.log(data.data);
                     let temp = '';
-                    let loophari = ["Senin","Selasa","Rabu","Kamis","Jumat","Sabtu","Minggu"];
-                    let hari = {
-                      Senin:{
-                        count:0,
-                        jam_group:{
-                          data:[]
-                        }
-                      },
-                      Selasa:{
-                        count:0,
-                        jam_group:{
-                          data:[]
-                        }
-                      },
-                      Rabu:{
-                        count:0,
-                        jam_group:{
-                          data:[]
-                        }
-                      },
-                      Kamis:{
-                        count:0,
-                        jam_group:{
-                          data:[]
-                        }
-                      },
-                      Jumat:{
-                        count:0,
-                        jam_group:{
-                          data:[]
-                        }
-                      },
-                      Sabtu:{
-                        count:0,
-                        jam_group:{
-                          data:[]
-                        }
-                      },
-                      Minggu:{
-                        count:0,
-                        jam_group:{
-                          data:[
-                            // {"07.00": []},
-                            // {"08.00": []},
-                            // "08.00": [],
-                          ]
-                        }
+                    let hari = {};
+
+                    for (start = 0; start < data.data.length; start++) {
+                      const currentData = data.data[start];
+                      const namaHari = currentData.nama_hari;
+                      const jamMulai = currentData.jam_mulai;
+
+                      if (!hari[namaHari]) {
+                        hari[namaHari] = {
+                          count: 0,
+                          jam_group: {
+                            data: {}
+                          }
+                        };
                       }
-                    }
-                    for(start=0; start<data.data.length; start++){
-                      if(data.data[start].nama_hari == data.data[start].nama_hari){
-                        hari[data.data[start].nama_hari].count++;
-                        if(data.data[start].jam_mulai == data.data[start].jam_mulai){
-                          // hari[data.data[start].nama_hari].jam_group.count++;
-                          const datajamgroup = {nama_kelas:data.data[start].nama_kelas,nama_guru:data.data[start].nama_guru};
-                          const key = data.data[start].jam_mulai;
-                          // const vari = {[key]: []};
-                          // // vari.key.push(datajamgroup);
-                          // // const vari = {start:"nyeleneh"};
-                          // if(!Object.keys(vari).includes(key)){
-                            hari[data.data[start].nama_hari].jam_group.data[key] = {data:[]};
-                            hari[data.data[start].nama_hari].jam_group.data[key].data.push(datajamgroup);
-                          // }
-                          // hari[data.data[start].nama_hari].jam_group.data[data.data[start].jam_mulai].push({start:"hihi"});
-                          // d.push(datajamgroup);
-                          
-                        }
+
+                      if (!hari[namaHari].jam_group.data[jamMulai]) {
+                        hari[namaHari].jam_group.data[jamMulai] = {
+                          data: []
+                        };
                       }
+
+                      hari[namaHari].count++;
+                      hari[namaHari].jam_group.data[jamMulai].data.push({
+                        nama_kelas: currentData.nama_kelas,
+                        nama_guru: currentData.nama_guru
+                      });
                     }
+
+                    console.log(hari);
+
                     console.log("ini hasilnya : ",hari);
                     for(item of data.data){
                       let before = 0;
