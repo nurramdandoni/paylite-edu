@@ -136,12 +136,7 @@
                             <span class="badge badge-sm bg-gradient-success">`+jCount[item].nama_hari+`</span>
                           </div>
                       </td>`;
-                      let jmlRowspan = 1;
-                      if(hari[jCount[item].nama_hari].jam_group.data[jCount[item].jam_mulai].data.length >0){
-                        let jmlRowspan = hari[jCount[item].nama_hari].jam_group.data[jCount[item].jam_mulai].data.length;
-
-                      }
-                            tempCondition2 = `<td style="text-align:center;" rowspan="`+jmlRowspan+`">
+                            tempCondition2 = `<td style="text-align:center;" rowspan="`+hari[jCount[item].nama_hari].jam_group.data[jCount[item].jam_mulai].data.length+`">
                             <p class="text-xs font-weight-bold mb-0">`+jCount[item].jam_mulai+`</p>
                           </td>`;
                     }else{
