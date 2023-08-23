@@ -139,7 +139,8 @@
                           // // vari.key.push(datajamgroup);
                           // // const vari = {start:"nyeleneh"};
                           // if(!Object.keys(vari).includes(key)){
-                            hari[data.data[start].nama_hari].jam_group.data[key] = {data:[datajamgroup]};
+                            hari[data.data[start].nama_hari].jam_group.data[key] = {data:[]};
+                            hari[data.data[start].nama_hari].jam_group.data[key].data.push(datajamgroup);
                           // }
                           // hari[data.data[start].nama_hari].jam_group.data[data.data[start].jam_mulai].push({start:"hihi"});
                           // d.push(datajamgroup);
