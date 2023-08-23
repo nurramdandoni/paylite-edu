@@ -75,7 +75,7 @@
                   },
                   body: JSON.stringify(postSiswa), // Mengubah data menjadi bentuk JSON
                 };
-                    const data = await fetchData('https://api.paylite.co.id/dataKelasWhereJoinwWhere/'+lembaga_pendidikan_id+'');
+                    const data = await fetchData('https://api.paylite.co.id/dataKelasWhereJoin/'+lembaga_pendidikan_id+'');
                     console.log(data.data);
                     let temp = '';
                     for(item of data.data){
