@@ -121,20 +121,21 @@
                     // for(const item in hari){
                       let jCount = data.data;
                     for(item=0; item<jCount.length;item++){
+                      console.log("hari "+jCount[item].nama_hari+" :",hari.[jCount[item].nama_hari].count);
                       let icon = 'secondary';
                       if(jCount[item].status == 'aktif'){
                         icon = 'success';
                       }
                       let tempCondition = '';
                       if(isFirstIteration){
-                        tempCondition = `<td rowspan="`+hari.[jCount[item].nama_hari].count+`">
+                        tempCondition = `<td rowspan="3">
                           <div class="d-flex flex-column justify-content-center">
                             <span class="badge badge-sm bg-gradient-success">`+jCount[item].nama_hari+`</span>
                           </div>
                       </td>`;
                     }else{
                       if(jCount[item].nama_hari != jCount[item-1].nama_hari){
-                        tempCondition = `<td rowspan="`+hari.[jCount[item].nama_hari].count+`">
+                        tempCondition = `<td rowspan="1">
                           <div class="d-flex flex-column justify-content-center">
                             <span class="badge badge-sm bg-gradient-success">`+jCount[item].nama_hari+`</span>
                           </div>
