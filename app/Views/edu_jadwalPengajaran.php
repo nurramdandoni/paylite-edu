@@ -124,19 +124,19 @@
                       temp += `
                       <tr>`
                       if(hari[item].count > 1) {
-                      `<td rowspan="`+hari[item].count+`">
+                      temp += `<td rowspan="`+hari[item].count+`">
                           <div class="d-flex flex-column justify-content-center">
                             <span class="badge badge-sm bg-gradient-success">`+item+`</span>
                           </div>
                       </td>`
                       } else {
-                      `<td>
+                      temp += `<td>
                           <div class="d-flex flex-column justify-content-center">
                             <span class="badge badge-sm bg-gradient-success">`+item+`</span>
                           </div>
                       </td>`
                       }
-                      `<td>
+                      temp += `<td>
                         <p class="text-xs font-weight-bold mb-0">`+item+`</p>
                       </td>
                       <td class="align-middle text-center text-sm">
