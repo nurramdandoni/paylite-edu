@@ -113,30 +113,40 @@
 
                     console.log("ini hasilnya : ",hari);
                     // const array_loop = ["Senin","Selasa","Rabu","Kamis","Jumat","Sabtu","Minggu"];
-                    let isFirstIteration = true;
-                    for(item of data.data){
-                      let icon = 'secondary';
-                      if(item.status == 'aktif'){
-                        icon = 'success';
-                      }
+                    // let isFirstIteration = true;
+                    for(item in hari){
+                      console.log(`ini item dalam for in`, item)
+                    // for(item of data.data){
+                      // let icon = 'secondary';
+                      // if(item.status == 'aktif'){
+                      //   icon = 'success';
+                      // }
                       temp += `
                       <tr>
-                      <td>
+                      `if(hari[item].count > 1) {`
+                      <td rowspan="`+hari[item].count+`">
                           <div class="d-flex flex-column justify-content-center">
-                            <span class="badge badge-sm bg-gradient-success">`+item.nama_hari+`</span>
+                            <span class="badge badge-sm bg-gradient-success">`+item+`</span>
                           </div>
                       </td>
+                      `} else {`
                       <td>
-                        <p class="text-xs font-weight-bold mb-0">`+item.jam_mulai+`</p>
+                          <div class="d-flex flex-column justify-content-center">
+                            <span class="badge badge-sm bg-gradient-success">`+item+`</span>
+                          </div>
+                      </td>
+                      `}`
+                      <td>
+                        <p class="text-xs font-weight-bold mb-0">`+item+`</p>
                       </td>
                       <td class="align-middle text-center text-sm">
-                        <span class="text-secondary text-xs font-weight-bold">`+item.nama_kelas+`</span>
+                        <span class="text-secondary text-xs font-weight-bold">`+item+`</span>
                       </td>
                       <td class="align-middle text-center">
-                        <span class="text-secondary text-xs font-weight-bold">`+item.nama_mata_ajar+`</span>
+                        <span class="text-secondary text-xs font-weight-bold">`+item+`</span>
                       </td>
                       <td class="align-middle text-center">
-                        <span class="text-secondary text-xs font-weight-bold">`+item.nama_guru+`</span>
+                        <span class="text-secondary text-xs font-weight-bold">`+item+`</span>
                       </td>
                       <td class="align-middle">
                         <a href="javascript:;" class="text-secondary font-weight-bold text-xs" data-toggle="tooltip" data-original-title="Edit user">
@@ -145,11 +155,11 @@
                       </td>
                     </tr>
                       `;
-                      isFirstIteration = false;
+                      // isFirstIteration = false;
                     }
-                    if(data.data.length > 0){
+                    // if(data.data.length > 0){
                       $("#list").html(temp);
-                    }
+                    // }
                 }
       </script>
 <?= $this->endSection() ?>
