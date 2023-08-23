@@ -150,22 +150,22 @@
         console.log("id lembaga ", lembaga_pendidikan_id);
 
         // await cekNisnAfterAbsen();
-        const postCeker = {
-            lembaga_pendidikan_id: lembaga_pendidikan_id,
-            hari_id: hariIni,
-            nisn: Nisn,
-            waktu: Waktu
-                }
-          const requestOptions = {
-                  method: 'POST', // Metode permintaan
-                  headers: {
-                            'Content-Type': 'application/json', // Jenis konten yang dikirim
-                            // 'Authorization': 'Bearer YOUR_ACCESS_TOKEN' // Header otorisasi jika diperlukan
-                  },
-                  body: JSON.stringify(postCeker), // Mengubah data menjadi bentuk JSON
-                };
-                    const data = await fetchData('https://api.paylite.co.id/jadwalPelajaranWhereJoinByKrsNisn', requestOptions);
-                    console.log(data.data);
+        // const postCeker = {
+        //     lembaga_pendidikan_id: lembaga_pendidikan_id,
+        //     hari_id: hariIni,
+        //     nisn: Nisn,
+        //     waktu: Waktu
+        //         }
+        //   const requestOptions = {
+        //           method: 'POST', // Metode permintaan
+        //           headers: {
+        //                     'Content-Type': 'application/json', // Jenis konten yang dikirim
+        //                     // 'Authorization': 'Bearer YOUR_ACCESS_TOKEN' // Header otorisasi jika diperlukan
+        //           },
+        //           body: JSON.stringify(postCeker), // Mengubah data menjadi bentuk JSON
+        //         };
+        //             const data = await fetchData('https://api.paylite.co.id/jadwalPelajaranWhereJoinByKrsNisn', requestOptions);
+        //             console.log(data.data);
     }
 
     function getCurrentTimeFormatted() {
