@@ -135,7 +135,7 @@
                           // hari[data.data[start].nama_hari].jam_group.count++;
                           // const datajamgroup = {nama_kelas:data.data[start].nama_kelas,nama_guru:data.data[start].nama_guru};
                           const key = data.data[start].jam_mulai;
-                          const vari = {key:[]};
+                          const vari = {`${key}`: []};
                           // vari.key.push(datajamgroup);
                           // const vari = {start:"nyeleneh"};
                           hari[data.data[start].nama_hari].jam_group.data.push(vari);
