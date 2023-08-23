@@ -116,7 +116,7 @@
                     // let isFirstIteration = true;
                     const keysData = Object.keys(hari);
                     const keysJamGroup = keysData.map(key => Object.keys(hari[key].jam_group.data));
-                    const dataJamGroupLength = keysJamGroup.map((idx, keyGroup) => ({ length: hari[keysData[idx]].jam_group.data[keyGroup].data.length }));
+                    const dataJamGroupLength = keysJamGroup.map((keyGroup, idx) => ({ length: hari[keysData[idx]].jam_group.data[keyGroup].data.length }));
                     console.log(`data`, keysData)
                     console.log(`jam grup`, keysJamGroup)
                     console.log(`jam grup data length`, dataJamGroupLength)
