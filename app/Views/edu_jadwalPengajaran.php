@@ -119,23 +119,24 @@
                     // console.log(`data`, keysData)
                     // console.log(`jam grup`, keysJamGroup)
                     // for(const item in hari){
-                    for(item of data.data){
+                      let jCount = data.data;
+                    for(item=0; item<jCount.length;item++){
                       let icon = 'secondary';
-                      if(item.status == 'aktif'){
+                      if(jCount[item].status == 'aktif'){
                         icon = 'success';
                       }
                       let tempCondition = '';
                       if(isFirstIteration){
                         tempCondition = `<td rowspan="3">
                           <div class="d-flex flex-column justify-content-center">
-                            <span class="badge badge-sm bg-gradient-success">`+item.nama_hari+`</span>
+                            <span class="badge badge-sm bg-gradient-success">`+jCount[item].nama_hari+`</span>
                           </div>
                       </td>`;
                     }else{
-                      if(item.nama_hari != 'Senin'){
+                      if(jCount[item].nama_hari != 'Senin'){
                         tempCondition = `<td rowspan="1">
                           <div class="d-flex flex-column justify-content-center">
-                            <span class="badge badge-sm bg-gradient-success">`+item.nama_hari+`</span>
+                            <span class="badge badge-sm bg-gradient-success">`+jCount[item].nama_hari+`</span>
                           </div>
                       </td>`;
                         
@@ -145,16 +146,16 @@
                       <tr>
                       `+tempCondition+`
                       <td>
-                        <p class="text-xs font-weight-bold mb-0">`+item.jam_mulai+`</p>
+                        <p class="text-xs font-weight-bold mb-0">`+jCount[item].jam_mulai+`</p>
                       </td>
                       <td class="align-middle text-center text-sm">
-                        <span class="text-secondary text-xs font-weight-bold">`+item.nama_kelas+`</span>
+                        <span class="text-secondary text-xs font-weight-bold">`+jCount[item].nama_kelas+`</span>
                       </td>
                       <td class="align-middle text-center">
-                        <span class="text-secondary text-xs font-weight-bold">`+item.nama_mata_ajar+`</span>
+                        <span class="text-secondary text-xs font-weight-bold">`+jCount[item].nama_mata_ajar+`</span>
                       </td>
                       <td class="align-middle text-center">
-                        <span class="text-secondary text-xs font-weight-bold">`+item.nama_guru+`</span>
+                        <span class="text-secondary text-xs font-weight-bold">`+jCount[item].nama_guru+`</span>
                       </td>
                       <td class="align-middle">
                         <a href="javascript:;" class="text-secondary font-weight-bold text-xs" data-toggle="tooltip" data-original-title="Edit user">
