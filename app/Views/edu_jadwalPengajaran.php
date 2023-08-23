@@ -98,10 +98,12 @@
                       // Masukkan data ke dalam jadwal[hari].jam_group[jamMulai]
                       jadwal[hari].jam_group[jamMulai].push(mapping); 
                     }
-
+                    let obj = Object.keys(jadwal.senin);
+                    let objChild = Object.keys(jadwal.senin.jam_group);
                     console.log(jadwal);
-                    console.log(jadwal.senin.length);
-                    console.log(jadwal.senin.jam_group.length);
+                    console.log(obj.length);
+                    console.log(objChild.length);
+                    // console.log(obj["senin"]["jam_group"]);
 
                     console.log();
                     for(item of data.data){
