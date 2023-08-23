@@ -213,6 +213,7 @@
         console.log(data);
         if(data.status == 'Sukses'){
           console.log("Processing input data..............");
+          console.log("Processing input data.............. jadwal Pelajaran : ",data.data[0].jadwal_pelajaran_id);
         }else{
           alert("Mohon Maaf NISN Tidak Terdaftar, Hubungi Pihak Sekolah!");
         }
