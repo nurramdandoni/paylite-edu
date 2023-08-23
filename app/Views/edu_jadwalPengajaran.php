@@ -127,14 +127,14 @@
                       }
                       let tempCondition = '';
                       if(isFirstIteration){
-                        tempCondition = `<td rowspan="`+hari.jCount[item].nama_hari.count+`">
+                        tempCondition = `<td rowspan="`+hari.[jCount[item].nama_hari].count+`">
                           <div class="d-flex flex-column justify-content-center">
                             <span class="badge badge-sm bg-gradient-success">`+jCount[item].nama_hari+`</span>
                           </div>
                       </td>`;
                     }else{
                       if(jCount[item].nama_hari != jCount[item-1].nama_hari){
-                        tempCondition = `<td rowspan="`+hari.jCount[item].nama_hari.count+`">
+                        tempCondition = `<td rowspan="`+hari.[jCount[item].nama_hari].count+`">
                           <div class="d-flex flex-column justify-content-center">
                             <span class="badge badge-sm bg-gradient-success">`+jCount[item].nama_hari+`</span>
                           </div>
