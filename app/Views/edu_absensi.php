@@ -145,6 +145,7 @@
         console.log("Jam saat ini:", currentTimeFormatted);
         const currentDayFormatted = getFormattedDay();
         hariIni = currentDayFormatted;
+        Waktu = currentTimeFormatted;
         console.log("Hari saat ini (format 1-7, Senin = 1):", currentDayFormatted);
         console.log("id lembaga ", lembaga_pendidikan_id);
 
