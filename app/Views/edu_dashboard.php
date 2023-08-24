@@ -286,6 +286,7 @@
         $("#absensi").removeClass("active");
         $("#nilai").removeClass("active");
       </script>
+      <script src="<?= base_url(); ?>assets/js/plugins/chartjs.min.js"></script>
       <script>
     var ctx = document.getElementById("chart-bars").getContext("2d");
 
