@@ -133,6 +133,14 @@
         "reader", { fps: 10, qrbox: 250 });
     html5QrcodeScanner.render(onScanSuccess);
     function onScanSuccess(decodedText, decodedResult) {
+      if (html5QrcodeScanner.getState() 
+        !== Html5QrcodeScannerState.NOT_STARTED) {
+        // Add this check to ensure success callback is not being called
+        // from file based scanner.
+
+        // Pause on scan result
+        html5QrcodeScanner.pause();
+    }
     // Handle on success condition with the decoded text or result.
     console.log(`Scan result:`, decodedResult);
         // alert(`Scan result: ${decodedText}`);
