@@ -37,35 +37,35 @@
   <script src="<?= base_url(); ?>assets/js/dataTables.bootstrap4.min.js"></script>
 </head>
 <script>
-  const socket = new WebSocket('wss://broadcast.paylite.co.id/socket'); // Ganti URL server sesuai dengan kebutuhan
+//   const socket = new WebSocket('wss://broadcast.paylite.co.id/socket'); // Ganti URL server sesuai dengan kebutuhan
 
-// Event saat koneksi terbuka
-socket.addEventListener('open', (event) => {
-console.log('Koneksi terbuka');
+// // Event saat koneksi terbuka
+// socket.addEventListener('open', (event) => {
+// console.log('Koneksi terbuka');
 
-// Kirim pesan ke server saat koneksi terbuka (opsional)
-const message = {
-    id: '2342',
-    pesan: 'Hello server!'
-};
-socket.send("Hello Server saya telah terhubung!");
-});
+// // Kirim pesan ke server saat koneksi terbuka (opsional)
+// const message = {
+//     id: '2342',
+//     pesan: 'Hello server!'
+// };
+// socket.send("Hello Server saya telah terhubung!");
+// });
 
-// Event saat menerima pesan dari server
-socket.addEventListener('message', (event) => {
-const message = JSON.parse(event.data);
-console.log('Menerima pesan:', message);
+// // Event saat menerima pesan dari server
+// socket.addEventListener('message', (event) => {
+// const message = JSON.parse(event.data);
+// console.log('Menerima pesan:', message);
 
-// Tindakan yang sesuai dengan pesan yang diterima
-if (message.id == '2342') {
-    alert('Pembayaran berhasil!');
-}
-});
+// // Tindakan yang sesuai dengan pesan yang diterima
+// if (message.id == '2342') {
+//     alert('Pembayaran berhasil!');
+// }
+// });
 
-// Event saat koneksi ditutup
-socket.addEventListener('close', (event) => {
-console.log('Koneksi ditutup');
-});
+// // Event saat koneksi ditutup
+// socket.addEventListener('close', (event) => {
+// console.log('Koneksi ditutup');
+// });
 async function fetchData(url, options) {
             try {
                 const response = await fetch(url, options);
