@@ -109,7 +109,10 @@
                       $("#list").html(temp);
                     }
                 }
-        new DataTable('#example');
+        $('#example').DataTable({
+          // Konfigurasi opsi DataTables disini
+                  // Misalnya, searching, paging, sorting, dan lain-lain.
+        });
         var previousLink = document.querySelector('#example_previous a');
   
         if (previousLink) {
