@@ -228,7 +228,7 @@
         if(cekNisn.data.length > 0){
           // alert("NISN Terdaftar!");
           if(dataJadwal.data.length > 0){
-            const printBack = await inputAbsensi(data.data[0].jadwal_pelajaran_id,data.data[0].siswa_id);
+            const printBack = await inputAbsensi(dataJadwal.data[0].jadwal_pelajaran_id,dataJadwal.data[0].siswa_id);
           }else{
             alert("Sesi Absensi Berakhir, Hubungi Guru Kelas/ Mata Pelajaran! (Pastikan anda ada jadwal pelajaran hari ini atau jam absensi valid!)");
           }
