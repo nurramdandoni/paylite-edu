@@ -230,7 +230,7 @@
           if(dataJadwal.data.length > 0){
             alert("proses Absensi");
           }else{
-            alert("Sesi Absensi Berakhir, Hubungi Guru Kelas/ Mata Pelajaran!");
+            alert("Sesi Absensi Berakhir, Hubungi Guru Kelas/ Mata Pelajaran! (Pastikan anda ada jadwal pelajaran hari ini atau jam absensi valid!)");
           }
         }else{
           alert("Mohon Maaf NISN Tidak Terdaftar, Hubungi Pihak Sekolah!");
