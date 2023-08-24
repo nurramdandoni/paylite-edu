@@ -103,7 +103,7 @@
                       $("#list").html(temp);
                     }
                     $('#example').DataTable();
-                  }
+                }
         var previousLink = document.querySelector('#example_previous a');
   
         if (previousLink) {

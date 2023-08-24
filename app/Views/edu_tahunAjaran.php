@@ -41,11 +41,6 @@
     </style>
       <script>
         getTahunAjaran();
-        var previousLink = document.querySelector('#example_previous a');
-  
-        if (previousLink) {
-            previousLink.textContent = 'Prev';
-        }
         $("#liDash").html("Tahun Ajaran");
         $("#liDash2").html("Tahun Ajaran");
         $("#dashboard").removeClass("active");
@@ -112,6 +107,10 @@
                     }
                     $('#example').DataTable();
                 }
-        
+        var previousLink = document.querySelector('#example_previous a');
+  
+        if (previousLink) {
+            previousLink.textContent = 'Prev';
+        }
       </script>
 <?= $this->endSection() ?>

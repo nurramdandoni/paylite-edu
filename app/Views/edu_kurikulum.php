@@ -41,12 +41,6 @@
       </style>
       <script>
         getKurikulum();
-        new DataTable('#example');
-        var previousLink = document.querySelector('#example_previous a');
-  
-        if (previousLink) {
-            previousLink.textContent = 'Prev';
-        }
         $("#liDash").html("Kurikulum");
         $("#liDash2").html("Kurikulum");
         $("#dashboard").removeClass("active");
@@ -111,6 +105,12 @@
                     if(data.data.length > 0){
                       $("#list").html(temp);
                     }
+                    $('#example').DataTable();
                 }
+        var previousLink = document.querySelector('#example_previous a');
+  
+        if (previousLink) {
+            previousLink.textContent = 'Prev';
+        }
       </script>
 <?= $this->endSection() ?>

@@ -43,12 +43,6 @@
       </style>
       <script>
         getJadwalPengajaran();
-        // new DataTable('#example');
-        // var previousLink = document.querySelector('#example_previous a');
-  
-        // if (previousLink) {
-        //     previousLink.textContent = 'Prev';
-        // }
         $("#liDash").html("Jadwal Pengajaran");
         $("#liDash2").html("Jadwal Pengajaran");
         $("#dashboard").removeClass("active");

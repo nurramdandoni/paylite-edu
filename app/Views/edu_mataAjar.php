@@ -39,7 +39,6 @@
         }
       </style>
       <script>
-        $('#example').DataTable();
         getMataAjar();
         var previousLink = document.querySelector('#example_previous a');
   
@@ -107,7 +106,12 @@
                     if(data.data.length > 0){
                       $("#list").html(temp);
                     }
+                    $('#example').DataTable();
                 }
-        
+        var previousLink = document.querySelector('#example_previous a');
+  
+        if (previousLink) {
+            previousLink.textContent = 'Prev';
+        }
       </script>
 <?= $this->endSection() ?>

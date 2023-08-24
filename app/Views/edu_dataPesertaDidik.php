@@ -108,11 +108,8 @@
                     if(data.data.length > 0){
                       $("#list").html(temp);
                     }
+                    $('#example').DataTable();
                 }
-        $('#example').DataTable({
-          // Konfigurasi opsi DataTables disini
-                  // Misalnya, searching, paging, sorting, dan lain-lain.
-        });
         var previousLink = document.querySelector('#example_previous a');
   
         if (previousLink) {
