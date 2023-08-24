@@ -99,14 +99,11 @@
                     </tr>
                       `;
                     }
-                    if(data.data.length > 0){
-                      $("#list").html(temp);
-                    }
-                }
-                $('#example').DataTable({
-  pagingType: 'full', // Tipe pembagian halaman (full, simple, numbers)
-  // Opsi lainnya...
-}).draw();
+                  }
+                  if(data.data.length > 0){
+                    $("#list").html(temp);
+                    $('#example').DataTable().draw();
+                  }
         var previousLink = document.querySelector('#example_previous a');
   
         if (previousLink) {
