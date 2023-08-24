@@ -42,12 +42,7 @@
       </style>
       <script>
         getDataKelas();
-        new DataTable('#example');
-        var previousLink = document.querySelector('#example_previous a');
-  
-        if (previousLink) {
-            previousLink.textContent = 'Prev';
-        }
+        
         $("#liDash").html("Data Kelas");
         $("#liDash2").html("Data Kelas");
         $("#dashboard").removeClass("active");
@@ -122,5 +117,11 @@
                       $("#list").html(temp);
                     }
                 }
+                new DataTable('#example');
+        var previousLink = document.querySelector('#example_previous a');
+  
+        if (previousLink) {
+            previousLink.textContent = 'Prev';
+        }
       </script>
 <?= $this->endSection() ?>
