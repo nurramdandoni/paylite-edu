@@ -223,10 +223,15 @@
       try {
         const cekNisn = await fetchData('https://api.paylite.co.id/siswaWhere', requestOptionsCekNisn);
         console.log("CEK NISN : ",cekNisn);
-        const data = await fetchData('https://api.paylite.co.id/jadwalPelajaranWhereJoinByKrsNisn', requestOptions);
-        console.log("INI HASIL Dari CEK JADWAL PELAJARAN BY KRS NIS",data);
+        const dataJadwal = await fetchData('https://api.paylite.co.id/jadwalPelajaranWhereJoinByKrsNisn', requestOptions);
+        console.log("INI HASIL Dari CEK JADWAL PELAJARAN BY KRS NIS",dataJadwal);
         if(cekNisn.data.length > 0){
-          alert("NISN Terdaftar!");
+          // alert("NISN Terdaftar!");
+          if(dataJadwal.data.length > 0){
+            alert("proses Absensi");
+          }else{
+            alert("Sesi Absensi Berakhir, Hubungi Guru Kelas/ Mata Pelajaran!");
+          }
         }else{
           alert("Mohon Maaf NISN Tidak Terdaftar, Hubungi Pihak Sekolah!");
         }
