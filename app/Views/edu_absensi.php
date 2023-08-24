@@ -225,14 +225,19 @@
         console.log("CEK NISN : ",cekNisn);
         const data = await fetchData('https://api.paylite.co.id/jadwalPelajaranWhereJoinByKrsNisn', requestOptions);
         console.log("INI HASIL Dari CEK JADWAL PELAJARAN BY KRS NIS",data);
-        if(data.status == 'Sukses'){
-          console.log("Processing input data..............");
-          console.log("Processing input data.............. jadwal Pelajaran : ",data.data[0].jadwal_pelajaran_id);
-          console.log("Processing input data.............. jadwal Pelajaran : ",data.data[0].siswa_id);
-          const printBack = await inputAbsensi(data.data[0].jadwal_pelajaran_id,data.data[0].siswa_id);
+        if(cekNisn.data.length > 0){
+          alert("NISN Terdaftar!");
         }else{
           alert("Mohon Maaf NISN Tidak Terdaftar, Hubungi Pihak Sekolah!");
         }
+        // if(data.status == 'Sukses'){
+        //   console.log("Processing input data..............");
+        //   console.log("Processing input data.............. jadwal Pelajaran : ",data.data[0].jadwal_pelajaran_id);
+        //   console.log("Processing input data.............. jadwal Pelajaran : ",data.data[0].siswa_id);
+        //   const printBack = await inputAbsensi(data.data[0].jadwal_pelajaran_id,data.data[0].siswa_id);
+        // }else{
+        //   alert("Mohon Maaf NISN Tidak Terdaftar, Hubungi Pihak Sekolah!");
+        // }
 
         // Di sini, Anda bisa melanjutkan dengan memproses data sesuai kebutuhan
         // Misalnya, Anda dapat memeriksa panjang data.data dan memberikan respons sesuai dengan itu.
