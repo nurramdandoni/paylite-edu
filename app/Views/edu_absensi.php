@@ -228,7 +228,7 @@
         if(cekNisn.data.length > 0){
           // alert("NISN Terdaftar!");
           if(dataJadwal.data.length > 0){
-            alert("proses Absensi");
+            const printBack = await inputAbsensi(data.data[0].jadwal_pelajaran_id,data.data[0].siswa_id);
           }else{
             alert("Sesi Absensi Berakhir, Hubungi Guru Kelas/ Mata Pelajaran! (Pastikan anda ada jadwal pelajaran hari ini atau jam absensi valid!)");
           }
@@ -274,7 +274,7 @@
           console.log("Berhasil : ",data.data);
           alert("Absensi Berhasil!");
         }else{
-          alert("Terjadi KEsalahan saat Input Data, Silahkan Ulangi kembali!");
+          alert("Terjadi Kesalahan saat Input Data, Silahkan Ulangi kembali!");
         }
 
         // Di sini, Anda bisa melanjutkan dengan memproses data sesuai kebutuhan
