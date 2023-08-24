@@ -103,7 +103,10 @@
                       $("#list").html(temp);
                     }
                 }
-                new DataTable('#example');
+                $('#example').DataTable({
+  pagingType: 'full', // Tipe pembagian halaman (full, simple, numbers)
+  // Opsi lainnya...
+});
         var previousLink = document.querySelector('#example_previous a');
   
         if (previousLink) {
