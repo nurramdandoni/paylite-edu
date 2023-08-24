@@ -239,9 +239,11 @@
             const printBack = await inputAbsensi(dataJadwal.data[0].jadwal_pelajaran_id,dataJadwal.data[0].siswa_id);
           }else{
             alert("Sesi Absensi Berakhir, Hubungi Guru Kelas/ Mata Pelajaran! (Pastikan anda ada jadwal pelajaran hari ini atau jam absensi valid!)");
+            html5QrcodeScanner.render(onScanSuccess);
           }
         }else{
           alert("Mohon Maaf NISN Tidak Terdaftar, Hubungi Pihak Sekolah!");
+          html5QrcodeScanner.render(onScanSuccess);
         }
         // if(data.status == 'Sukses'){
         //   console.log("Processing input data..............");
@@ -281,7 +283,7 @@
           console.log("Processing input data..............");
           console.log("Berhasil : ",data.data);
           alert("Absensi Berhasil!");
-          html5QrcodeScanner.resume();
+          html5QrcodeScanner.render(onScanSuccess);
         }else{
           alert("Terjadi Kesalahan saat Input Data, Silahkan Ulangi kembali!");
         }
