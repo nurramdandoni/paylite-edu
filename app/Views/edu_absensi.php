@@ -281,6 +281,7 @@
           console.log("Processing input data..............");
           console.log("Berhasil : ",data.data);
           alert("Absensi Berhasil!");
+          html5QrcodeScanner.resume();
         }else{
           alert("Terjadi Kesalahan saat Input Data, Silahkan Ulangi kembali!");
         }
