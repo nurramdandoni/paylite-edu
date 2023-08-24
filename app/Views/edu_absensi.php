@@ -136,7 +136,7 @@
     // Handle on success condition with the decoded text or result.
     console.log(`Scan result:`, decodedResult);
         // alert(`Scan result: ${decodedText}`);
-        const inputString = decodedResult;
+        const inputString = decodedResult.decodedText;
         const parts = inputString.split(" - "); // Membagi string berdasarkan tanda "-"
 
         const id = parts[0]; // Bagian pertama (ID)
