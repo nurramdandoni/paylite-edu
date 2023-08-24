@@ -239,11 +239,13 @@
             const printBack = await inputAbsensi(dataJadwal.data[0].jadwal_pelajaran_id,dataJadwal.data[0].siswa_id);
           }else{
             alert("Sesi Absensi Berakhir, Hubungi Guru Kelas/ Mata Pelajaran! (Pastikan anda ada jadwal pelajaran hari ini atau jam absensi valid!)");
-            html5QrcodeScanner.render(onScanSuccess);
+            html5QrcodeScanner.getState();
+            html5QrcodeScanner.resume();
           }
         }else{
           alert("Mohon Maaf NISN Tidak Terdaftar, Hubungi Pihak Sekolah!");
-          html5QrcodeScanner.render(onScanSuccess);
+          html5QrcodeScanner.getState();
+          html5QrcodeScanner.resume();
         }
         // if(data.status == 'Sukses'){
         //   console.log("Processing input data..............");
