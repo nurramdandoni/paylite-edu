@@ -210,7 +210,7 @@
 
       try {
         const data = await fetchData('https://api.paylite.co.id/jadwalPelajaranWhereJoinByKrsNisn', requestOptions);
-        console.log(data);
+        console.log("INI HASIL Dari CEK JADWAL PELAJARAN BY KRS NIS",data);
         if(data.status == 'Sukses'){
           console.log("Processing input data..............");
           console.log("Processing input data.............. jadwal Pelajaran : ",data.data[0].jadwal_pelajaran_id);
