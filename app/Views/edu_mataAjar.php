@@ -39,8 +39,8 @@
         }
       </style>
       <script>
+        $('#example').DataTable();
         getMataAjar();
-        new DataTable('#example');
         var previousLink = document.querySelector('#example_previous a');
   
         if (previousLink) {

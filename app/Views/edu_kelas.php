@@ -101,8 +101,8 @@
                     }
                     if(data.data.length > 0){
                       $("#list").html(temp);
-                      $('#example').DataTable();
                     }
+                    $('#example').DataTable();
                   }
         var previousLink = document.querySelector('#example_previous a');
   

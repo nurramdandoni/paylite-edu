@@ -116,8 +116,8 @@
                     if(data.data.length > 0){
                       $("#list").html(temp);
                     }
+                    $('#example').DataTable();
                 }
-                new DataTable('#example');
         var previousLink = document.querySelector('#example_previous a');
   
         if (previousLink) {

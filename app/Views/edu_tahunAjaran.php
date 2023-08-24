@@ -41,7 +41,6 @@
     </style>
       <script>
         getTahunAjaran();
-        new DataTable('#example');
         var previousLink = document.querySelector('#example_previous a');
   
         if (previousLink) {
@@ -111,6 +110,7 @@
                     if(data.data.length > 0){
                       $("#list").html(temp);
                     }
+                    $('#example').DataTable();
                 }
         
       </script>
