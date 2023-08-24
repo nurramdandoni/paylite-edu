@@ -136,7 +136,7 @@
     // Handle on success condition with the decoded text or result.
     console.log(`Scan result:`, decodedResult);
         // alert(`Scan result: ${decodedText}`);
-        const inputString = "0155957994 - Adelia Faranisa Azmi";
+        const inputString = decodedResult;
         const parts = inputString.split(" - "); // Membagi string berdasarkan tanda "-"
 
         const id = parts[0]; // Bagian pertama (ID)
@@ -193,6 +193,18 @@
       }
     }
     async function cekNisnAfterAbsen() {
+      const postCekerNisn = {
+        lembaga_pendidikan_id: lembaga_pendidikan_id,
+        nisn: Nisn
+      };
+      
+      const requestOptionsCekNisn = {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(postCekerNisn),
+      };
       const postCeker = {
         lembaga_pendidikan_id: lembaga_pendidikan_id,
         hari_id: hariIni,
@@ -209,6 +221,8 @@
       };
 
       try {
+        const cekNisn = await fetchData('https://api.paylite.co.id/siswaWhere', requestOptionsCekNisn);
+        console.log("CEK NISN : ",cekNisn);
         const data = await fetchData('https://api.paylite.co.id/jadwalPelajaranWhereJoinByKrsNisn', requestOptions);
         console.log("INI HASIL Dari CEK JADWAL PELAJARAN BY KRS NIS",data);
         if(data.status == 'Sukses'){
