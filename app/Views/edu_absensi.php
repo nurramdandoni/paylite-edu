@@ -152,7 +152,7 @@
               
             }
           }else{
-            alert("Sesi Absensi Berakhir, Hubungi Guru Kelas/ Mata Pelajaran! (Pastikan anda ada jadwal pelajaran hari ini atau jam absensi valid!)");
+            alert("Sesi Absensi Berakhir, Hubungi Guru Kelas/ Mata Pelajaran! (Pastikan anda ada pada krs dan jadwal pelajaran hari ini atau jam absensi valid!)");
             html5QrcodeScanner.resume();
           }
         }else{
