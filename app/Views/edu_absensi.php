@@ -262,7 +262,7 @@
     }
     async function cekExistAbsensi(id_jadwal,id_siswa) {
       // Membuat objek Date dengan tanggal yang diinginkan
-      const tanggal = new Date('2023-08-19');
+      const tanggal = new Date();
 
       // Mendapatkan tahun, bulan, dan tanggal dari objek Date
       const tahun = tanggal.getFullYear();
