@@ -245,8 +245,8 @@
                             <img src="../assets/img/team-2.jpg" class="avatar avatar-sm me-3" alt="user1">
                           </div>
                           <div class="d-flex flex-column justify-content-center">
-                            <h6 class="mb-0 text-sm">`+profile.data.nama_siswa+`</h6>
-                            <p class="text-xs text-secondary mb-0">`+profile.data.nisn+`</p>
+                            <h6 class="mb-0 text-sm">`+profile.data[0].nama_siswa+`</h6>
+                            <p class="text-xs text-secondary mb-0">`+profile.data[0].nisn+`</p>
                           </div>
                         </div>
                       </td>
