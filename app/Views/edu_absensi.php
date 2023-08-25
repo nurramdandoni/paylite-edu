@@ -139,7 +139,7 @@
         // from file based scanner.
 
         // Pause on scan result
-        html5QrcodeScanner.pause();
+        html5QrcodeScanner.pause(true);
     }
     // Handle on success condition with the decoded text or result.
     console.log(`Scan result:`, decodedResult);
@@ -236,15 +236,23 @@
         if(cekNisn.data.length > 0){
           // alert("NISN Terdaftar!");
           if(dataJadwal.data.length > 0){
-            const printBack = await inputAbsensi(dataJadwal.data[0].jadwal_pelajaran_id,dataJadwal.data[0].siswa_id);
+            // cek jadwal_pelajaranid di tanggal hari ini 
+            // if(tidak ada?){
+
+              const printBack = await inputAbsensi(dataJadwal.data[0].jadwal_pelajaran_id,dataJadwal.data[0].siswa_id);
+              // alert("Absensi Berhasil!");
+              // html5QrcodeScanner.resume();
+              // }else{
+                // alert("Berhasil Absensi Sebelumnya!");      
+            // }
           }else{
             alert("Sesi Absensi Berakhir, Hubungi Guru Kelas/ Mata Pelajaran! (Pastikan anda ada jadwal pelajaran hari ini atau jam absensi valid!)");
-            html5QrcodeScanner.getState();
+            // html5QrcodeScanner.getState();
             html5QrcodeScanner.resume();
           }
         }else{
           alert("Mohon Maaf NISN Tidak Terdaftar, Hubungi Pihak Sekolah!");
-          html5QrcodeScanner.getState();
+          // html5QrcodeScanner.getState();
           html5QrcodeScanner.resume();
         }
         // if(data.status == 'Sukses'){
