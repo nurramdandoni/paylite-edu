@@ -170,7 +170,7 @@
                 }
         console.log(postCeker);
         cek();
-        html5QrcodeScanner.resume();
+       
     }
 
     function getCurrentTimeFormatted() {
@@ -239,6 +239,7 @@
           if(dataJadwal.data.length > 0){
             // cek jadwal_pelajaranid di tanggal hari ini 
             const cekDataAbsensiToday = await cekExistAbsensi(dataJadwal.data[0].jadwal_pelajaran_id,dataJadwal.data[0].siswa_id);
+            console.log("INI HASIL Dari CEK absen by Tanggal : ",cekDataAbsensiToday);
             if(cekDataAbsensiToday.data.length > 0){
               alert("Berhasil Absensi Sebelumnya!");      
               // html5QrcodeScanner.resume();
