@@ -236,6 +236,7 @@
             body: JSON.stringify(postAbsensiProfile),
           };
           const profile = await fetchData('https://api.paylite.co.id/absensiWhere', requestOptionsProfile);
+          console.log("profiled : ",profile);
           $("#listHadir").prepend(`
           <tr>
                       <td>
