@@ -269,7 +269,7 @@
 
       // Menggabungkan tahun, bulan, dan tanggal menjadi format yang diinginkan
       const formatTanggal = `${tahun}-${bulan}-${tanggalTanggal}`;
-
+      alert(`tanggal ${formatTanggal}`);
       const postAbsensi = {
         lembaga_pendidikan_id: lembaga_pendidikan_id,
         jadwal_pelajaran_id: id_jadwal,
