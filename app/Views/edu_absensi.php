@@ -237,33 +237,59 @@
           // alert("NISN Terdaftar!");
           if(dataJadwal.data.length > 0){
             // cek jadwal_pelajaranid di tanggal hari ini 
-            // if(tidak ada?){
-
+            const cekDataAbsensiToday = await cekExistAbsensi(dataJadwal.data[0].jadwal_pelajaran_id,dataJadwal.data[0].siswa_id);
+            if(cekDataAbsensiToday.data.length > 0){
+              alert("Berhasil Absensi Sebelumnya!");      
+              html5QrcodeScanner.resume();
+            }else{
               const printBack = await inputAbsensi(dataJadwal.data[0].jadwal_pelajaran_id,dataJadwal.data[0].siswa_id);
-              // alert("Absensi Berhasil!");
-              // html5QrcodeScanner.resume();
-              // }else{
-                // alert("Berhasil Absensi Sebelumnya!");      
-            // }
+              alert("Absensi Berhasil!");
+              html5QrcodeScanner.resume();
+            }
           }else{
             alert("Sesi Absensi Berakhir, Hubungi Guru Kelas/ Mata Pelajaran! (Pastikan anda ada jadwal pelajaran hari ini atau jam absensi valid!)");
-            // html5QrcodeScanner.getState();
             html5QrcodeScanner.resume();
           }
         }else{
           alert("Mohon Maaf NISN Tidak Terdaftar, Hubungi Pihak Sekolah!");
-          // html5QrcodeScanner.getState();
           html5QrcodeScanner.resume();
         }
-        // if(data.status == 'Sukses'){
-        //   console.log("Processing input data..............");
-        //   console.log("Processing input data.............. jadwal Pelajaran : ",data.data[0].jadwal_pelajaran_id);
-        //   console.log("Processing input data.............. jadwal Pelajaran : ",data.data[0].siswa_id);
-        //   const printBack = await inputAbsensi(data.data[0].jadwal_pelajaran_id,data.data[0].siswa_id);
-        // }else{
-        //   alert("Mohon Maaf NISN Tidak Terdaftar, Hubungi Pihak Sekolah!");
-        // }
+      } catch (error) {
+        console.error("Error:", error);
+      }
+    }
+    async function cekExistAbsensi(id_jadwal,id_siswa) {
+      // Membuat objek Date dengan tanggal yang diinginkan
+      const tanggal = new Date('2023-08-19');
 
+      // Mendapatkan tahun, bulan, dan tanggal dari objek Date
+      const tahun = tanggal.getFullYear();
+      const bulan = String(tanggal.getMonth() + 1).padStart(2, '0'); // Ingat bahwa bulan dimulai dari 0
+      const tanggalTanggal = String(tanggal.getDate()).padStart(2, '0');
+
+      // Menggabungkan tahun, bulan, dan tanggal menjadi format yang diinginkan
+      const formatTanggal = `${tahun}-${bulan}-${tanggalTanggal}`;
+
+      const postAbsensi = {
+        lembaga_pendidikan_id: lembaga_pendidikan_id,
+        jadwal_pelajaran_id: id_jadwal,
+        siswa_id: id_siswa,
+        tanggal_absensi_start: formatTanggal,
+        tanggal_absensi_end: formatTanggal,
+      };
+      
+      const requestOptions = {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(postAbsensi),
+      };
+
+      try {
+        const data = await fetchData('https://api.paylite.co.id/absensiWhereTanggal', requestOptions);
+        console.log("Hasil CEK by Tanggal Absensi : ",data);
+        return data;
         // Di sini, Anda bisa melanjutkan dengan memproses data sesuai kebutuhan
         // Misalnya, Anda dapat memeriksa panjang data.data dan memberikan respons sesuai dengan itu.
       } catch (error) {
