@@ -242,19 +242,18 @@
             console.log("INI HASIL Dari CEK absen by Tanggal : ",cekDataAbsensiToday);
             if(cekDataAbsensiToday.data.length > 0){
               alert("Berhasil Absensi Sebelumnya!");      
-              // html5QrcodeScanner.resume();
+              html5QrcodeScanner.resume();
             }else{
               const printBack = await inputAbsensi(dataJadwal.data[0].jadwal_pelajaran_id,dataJadwal.data[0].siswa_id);
-              alert("Absensi Berhasil!");
-              // html5QrcodeScanner.resume();
+              
             }
           }else{
             alert("Sesi Absensi Berakhir, Hubungi Guru Kelas/ Mata Pelajaran! (Pastikan anda ada jadwal pelajaran hari ini atau jam absensi valid!)");
-            // html5QrcodeScanner.resume();
+            html5QrcodeScanner.resume();
           }
         }else{
           alert("Mohon Maaf NISN Tidak Terdaftar, Hubungi Pihak Sekolah!");
-          // html5QrcodeScanner.resume();
+          html5QrcodeScanner.resume();
         }
       } catch (error) {
         console.error("Error:", error);
@@ -271,7 +270,7 @@
 
       // Menggabungkan tahun, bulan, dan tanggal menjadi format yang diinginkan
       const formatTanggal = `${tahun}-${bulan}-${tanggalTanggal}`;
-      alert(`tanggal ${formatTanggal}`);
+      // alert(`tanggal ${formatTanggal}`);
       const postAbsensi = {
         lembaga_pendidikan_id: lembaga_pendidikan_id,
         jadwal_pelajaran_id: id_jadwal,
@@ -321,9 +320,10 @@
           console.log("Processing input data..............");
           console.log("Berhasil : ",data.data);
           alert("Absensi Berhasil!");
-          html5QrcodeScanner.render(onScanSuccess);
+          html5QrcodeScanner.resume();
         }else{
           alert("Terjadi Kesalahan saat Input Data, Silahkan Ulangi kembali!");
+          html5QrcodeScanner.resume();
         }
 
         // Di sini, Anda bisa melanjutkan dengan memproses data sesuai kebutuhan
