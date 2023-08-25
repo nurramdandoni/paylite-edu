@@ -170,6 +170,7 @@
                 }
         console.log(postCeker);
         cek();
+        html5QrcodeScanner.resume();
     }
 
     function getCurrentTimeFormatted() {
@@ -240,19 +241,19 @@
             const cekDataAbsensiToday = await cekExistAbsensi(dataJadwal.data[0].jadwal_pelajaran_id,dataJadwal.data[0].siswa_id);
             if(cekDataAbsensiToday.data.length > 0){
               alert("Berhasil Absensi Sebelumnya!");      
-              html5QrcodeScanner.resume();
+              // html5QrcodeScanner.resume();
             }else{
               const printBack = await inputAbsensi(dataJadwal.data[0].jadwal_pelajaran_id,dataJadwal.data[0].siswa_id);
               alert("Absensi Berhasil!");
-              html5QrcodeScanner.resume();
+              // html5QrcodeScanner.resume();
             }
           }else{
             alert("Sesi Absensi Berakhir, Hubungi Guru Kelas/ Mata Pelajaran! (Pastikan anda ada jadwal pelajaran hari ini atau jam absensi valid!)");
-            html5QrcodeScanner.resume();
+            // html5QrcodeScanner.resume();
           }
         }else{
           alert("Mohon Maaf NISN Tidak Terdaftar, Hubungi Pihak Sekolah!");
-          html5QrcodeScanner.resume();
+          // html5QrcodeScanner.resume();
         }
       } catch (error) {
         console.error("Error:", error);
