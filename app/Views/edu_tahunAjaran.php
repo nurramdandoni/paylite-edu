@@ -192,7 +192,7 @@
                     alert("Gunakan Nama Tahun Ajaran lain!");
                   }else{
                     // proses insert data
-                    const inserted = await insertDataTahunAjaran(dataPost);
+                    const inserted = await insertDataTahunAjaran(postData);
                     if(inserted.data.length > 0 ){
                       alert("Data Berhasil Ditambahkan");
                       getTahunAjaran();
