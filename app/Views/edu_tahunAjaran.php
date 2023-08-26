@@ -11,7 +11,7 @@
               <div class="table-responsive p-0">
                 <div id="contentFormInputEdit">
                   <!-- Button trigger modal -->
-                  <button id="judulModal" type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
+                  <button id="judulModal" onclick="formTambah()" type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
                     Tambah Tahun Ajaran
                   </button>
                 </div>
@@ -114,6 +114,13 @@
                       $("#list").html(temp);
                     }
                     $('#example').DataTable();
+                }
+
+                function formTambah(){
+                  console.log("clicked");
+                  $("#modalTitle").html("Tambah Tahun Ajaran");
+                  $("#modalButtonAction").html("Tambah");
+                  $("#modalContent").html("Formulir tambah tahun ajaran");
                 }
         var previousLink = document.querySelector('#example_previous a');
   
