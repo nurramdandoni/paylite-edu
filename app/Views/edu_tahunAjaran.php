@@ -120,7 +120,26 @@
                   console.log("clicked");
                   $("#modalTitle").html("Tambah Tahun Ajaran");
                   $("#modalButtonAction").html("Tambah");
-                  $("#modalContent").html('<?= $_COOKIE['lembaga_pendidikan_id']; ?>');
+                  let form = `
+                  <div class="form-group">
+                    <label for="namaTahunAjaran">Nama Tahun Ajaran</label>
+                    <input type="text" class="form-control" id="namaTahunAjaran" aria-describedby="namaTahun" placeholder="Nama Tahun Ajaran. Ex. Tahun Ajaran 2023 Ganjil">
+                    <small id="namaTahun" class="form-text text-muted">Masukan Nama Tahun Ajaran Anda</small>
+                  </div>
+                  <div class="form-group">
+                    <label for="description">Example textarea</label>
+                    <textarea class="form-control" id="description" rows="3"></textarea>
+                  </div>
+                  <div class="form-group">
+                    <label for="status">Status Tahun Ajaran</label>
+                    <select class="form-control" id="status">
+                      <option value="aktif">akttif</option>
+                      <option value="non aktif">non aktif</option>
+                    </select>
+                  </div>
+                  `;
+                  // $("#modalContent").html('<?= $_COOKIE['lembaga_pendidikan_id']; ?>');
+                  $("#modalContent").html(form);
                 }
         var previousLink = document.querySelector('#example_previous a');
   
