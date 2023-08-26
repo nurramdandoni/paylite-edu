@@ -143,7 +143,7 @@
                   $("#modalContent").html(form);
                 }
 
-                $("#modalButtonAction").click(function(){
+                function modalButtonAction(){
                   const tipe = $("#typeForm").val();
                   const nama_tahun_ajaran = $("#namaTahunAjaran").val();
                   const description = $("#description").val();
@@ -157,7 +157,7 @@
                     }
                   
                   console.log(postData);
-                });
+                };
         var previousLink = document.querySelector('#example_previous a');
   
         if (previousLink) {
