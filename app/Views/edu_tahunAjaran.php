@@ -8,11 +8,13 @@
               <h6>Tahun Ajaran</h6>
             </div>
             <div class="card-body px-0 pt-0 pb-2">
-              <!-- Button trigger modal -->
-              <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
-                Tambah Tahun Ajaran
-              </button>
               <div class="table-responsive p-0">
+                <div id="contentFormInputEdit">
+                  <!-- Button trigger modal -->
+                  <button id="judulModal" type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
+                    Tambah Tahun Ajaran
+                  </button>
+                </div>
 
 
                 <table id="example" class="table align-items-center mb-0">
