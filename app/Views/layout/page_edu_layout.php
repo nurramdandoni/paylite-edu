@@ -442,7 +442,11 @@ async function fetchData(url, options) {
 .footer {
   margin-top: auto;
 }
-
+#contentFormInputEdit{
+  position: relative;
+  text-align: right;
+  margin-right: 20px;
+}
 </style>
   <!--   Core JS Files   -->
   <script src="<?= base_url(); ?>assets/js/core/popper.min.js"></script>
