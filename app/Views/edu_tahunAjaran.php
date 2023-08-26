@@ -120,7 +120,7 @@
                   console.log("clicked");
                   $("#modalTitle").html("Tambah Tahun Ajaran");
                   $("#modalButtonAction").html("Tambah");
-                  $("#modalContent").html("Formulir tambah tahun ajaran");
+                  $("#modalContent").html('<?= $_COOKIE['lembaga_pendidikan_id']; ?>');
                 }
         var previousLink = document.querySelector('#example_previous a');
   
