@@ -144,19 +144,19 @@
                 }
 
                 $("#modalButtonAction").click(function(){
-                  const tipe = $("#typeForm").val();
-                  const nama_tahun_ajaran = $("#namaTahunAjaran").val();
-                  const description = $("#description").val();
-                  const status = $("#status").val();
-                  const postData = {
-                      tipe: tipe,
-                      lembaga_pendidikan_id: lembaga_pendidikan_id,
-                      nama_tahun_ajaran: nama_tahun_ajaran,
-                      description: description,
-                      status: aktif
-                    }
+                  // const tipe = $("#typeForm").val();
+                  // const nama_tahun_ajaran = $("#namaTahunAjaran").val();
+                  // const description = $("#description").val();
+                  // const status = $("#status").val();
+                  // const postData = {
+                  //     tipe: tipe,
+                  //     lembaga_pendidikan_id: lembaga_pendidikan_id,
+                  //     nama_tahun_ajaran: nama_tahun_ajaran,
+                  //     description: description,
+                  //     status: aktif
+                  //   }
                   
-                  console.log(postData);
+                  console.log("postData");
                 });
         var previousLink = document.querySelector('#example_previous a');
   
