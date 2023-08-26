@@ -153,7 +153,7 @@
                       lembaga_pendidikan_id: lembaga_pendidikan_id,
                       nama_tahun_ajaran: nama_tahun_ajaran,
                       description: description,
-                      status: aktif
+                      status: status
                     }
                   
                   console.log(postData);
