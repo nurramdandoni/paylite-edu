@@ -156,6 +156,7 @@
                   body: JSON.stringify(postDatagetTahunAjaran), // Mengubah data menjadi bentuk JSON
                 };
                     const data = await fetchData('https://api.paylite.co.id/tahunAjaranWhere', requestOptions);
+                    return data;
                 }
                 async function insertDataTahunAjaran(dataPost){
                   const requestOptions = {
@@ -167,6 +168,7 @@
                   body: JSON.stringify(dataPost), // Mengubah data menjadi bentuk JSON
                 };
                     const data = await fetchData('https://api.paylite.co.id/tahunAjaran', requestOptions);
+                    return data;
                 }
 
                 function modalButtonAction(){
