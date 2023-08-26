@@ -133,7 +133,7 @@
                   <div class="form-group">
                     <label for="status">Status Tahun Ajaran</label>
                     <select class="form-control" id="status">
-                      <option value="aktif">akttif</option>
+                      <option value="aktif">aktif</option>
                       <option value="non aktif">non aktif</option>
                     </select>
                   </div>
