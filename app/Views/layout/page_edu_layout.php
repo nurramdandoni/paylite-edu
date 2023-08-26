@@ -406,7 +406,7 @@ async function fetchData(url, options) {
           </div>
           <div class="modal-footer">
             <button type="button" class="btn btn-secondary" data-dismiss="modal">Batal</button>
-            <span class="btn btn-primary" id="modalspanAction">-</button>
+            <span class="btn btn-primary" id="modalAction">-</span>
           </div>
         </div>
       </div>
