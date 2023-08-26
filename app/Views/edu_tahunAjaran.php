@@ -133,7 +133,7 @@
                   </div>
                   <div class="form-group">
                     <label for="status">Status Tahun Ajaran</label>
-                    <select class="form-control" id="status">
+                    <select class="form-control" id="statusTahun">
                       <option value="aktif">aktif</option>
                       <option value="non aktif">non aktif</option>
                     </select>
@@ -147,7 +147,7 @@
                   const tipe = $("#typeForm").val();
                   const nama_tahun_ajaran = $("#namaTahunAjaran").val();
                   const description = $("#description").val();
-                  const status = $("#status").val();
+                  const status = $("#statusTahun").val();
                   const postData = {
                       tipe: tipe,
                       lembaga_pendidikan_id: lembaga_pendidikan_id,
