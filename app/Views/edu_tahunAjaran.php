@@ -127,7 +127,7 @@
                     <small id="namaTahun" class="form-text text-muted">Masukan Nama Tahun Ajaran Anda</small>
                   </div>
                   <div class="form-group">
-                    <label for="description">Example textarea</label>
+                    <label for="description">Deskripsi Tahun Ajaran</label>
                     <textarea class="form-control" id="description" rows="3"></textarea>
                   </div>
                   <div class="form-group">
