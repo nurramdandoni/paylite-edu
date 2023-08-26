@@ -192,7 +192,7 @@
                     const inserted = await insertDataTahunAjaran(dataPost);
                     if(inserted.data.length > 0 ){
                       alert("Data Berhasil Ditambahkan");
-                      getTahunAjaran();
+                      // getTahunAjaran();
                     }else{
                       alert("upsh ada kesalahan!");
                     }
