@@ -171,7 +171,7 @@
                     return data;
                 }
 
-                function modalButtonAction(){
+                async function modalButtonAction(){
                   const tipe = $("#typeForm").val();
                   const nama_tahun_ajaran = $("#namaTahunAjaran").val();
                   const description = $("#description").val();
@@ -186,20 +186,20 @@
                   
                   console.log(postData);
                   // cek data sebelumnya dengan nama yang sama
-                  // const hasilCek = await cekExist(nama_tahun_ajaran);
-                  //   console.log(hasilCek);
-                  // if(hasilCek.data.length > 0){
-                  //   alert("Gunakan Nama Tahun Ajaran lain!");
-                  // }else{
-                  //   // proses insert data
-                  //   const inserted = await insertDataTahunAjaran(dataPost);
-                  //   if(inserted.data.length > 0 ){
-                  //     alert("Data Berhasil Ditambahkan");
-                  //     // getTahunAjaran();
-                  //   }else{
-                  //     alert("upsh ada kesalahan!");
-                  //   }
-                  // }
+                  const hasilCek = await cekExist(nama_tahun_ajaran);
+                    console.log(hasilCek);
+                  if(hasilCek.data.length > 0){
+                    alert("Gunakan Nama Tahun Ajaran lain!");
+                  }else{
+                    // proses insert data
+                    const inserted = await insertDataTahunAjaran(dataPost);
+                    if(inserted.data.length > 0 ){
+                      alert("Data Berhasil Ditambahkan");
+                      getTahunAjaran();
+                    }else{
+                      alert("upsh ada kesalahan!");
+                    }
+                  }
 
                 };
         var previousLink = document.querySelector('#example_previous a');
