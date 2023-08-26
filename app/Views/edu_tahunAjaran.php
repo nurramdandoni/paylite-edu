@@ -121,6 +121,7 @@
                   $("#modalTitle").html("Tambah Tahun Ajaran");
                   $("#modalButtonAction").html("Tambah");
                   let form = `
+                  <input type="hidden" id="typeForm" value="add"/>
                   <div class="form-group">
                     <label for="namaTahunAjaran">Nama Tahun Ajaran</label>
                     <input type="text" class="form-control" id="namaTahunAjaran" aria-describedby="namaTahun" placeholder="Nama Tahun Ajaran. Ex. Tahun Ajaran 2023 Ganjil">
@@ -141,6 +142,22 @@
                   // $("#modalContent").html('<?= $_COOKIE['lembaga_pendidikan_id']; ?>');
                   $("#modalContent").html(form);
                 }
+
+                $("#modalButtonAction").click(function(){
+                  const tipe = $("#typeForm").val();
+                  const nama_tahun_ajaran = $("#namaTahunAjaran").val();
+                  const description = $("#description").val();
+                  const status = $("#status").val();
+                  const postData = {
+                      tipe: tipe,
+                      lembaga_pendidikan_id: lembaga_pendidikan_id,
+                      nama_tahun_ajaran: nama_tahun_ajaran,
+                      description: description,
+                      status: aktif
+                    }
+                  
+                  console.log(postData);
+                });
         var previousLink = document.querySelector('#example_previous a');
   
         if (previousLink) {
