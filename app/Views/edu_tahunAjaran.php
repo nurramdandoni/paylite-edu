@@ -142,6 +142,32 @@
                   // $("#modalContent").html('<?= $_COOKIE['lembaga_pendidikan_id']; ?>');
                   $("#modalContent").html(form);
                 }
+                async function cekExist(namatahun){
+                  const postDatagetTahunAjaran = {
+                  lembaga_pendidikan_id: lembaga_pendidikan_id,
+                  nama_tahun_ajaran: namatahun,
+                }
+                  const requestOptions = {
+                  method: 'POST', // Metode permintaan
+                  headers: {
+                            'Content-Type': 'application/json', // Jenis konten yang dikirim
+                            // 'Authorization': 'Bearer YOUR_ACCESS_TOKEN' // Header otorisasi jika diperlukan
+                  },
+                  body: JSON.stringify(postDatagetTahunAjaran), // Mengubah data menjadi bentuk JSON
+                };
+                    const data = await fetchData('https://api.paylite.co.id/tahunAjaranWhere', requestOptions);
+                }
+                async function insertDataTahunAjaran(dataPost){
+                  const requestOptions = {
+                  method: 'POST', // Metode permintaan
+                  headers: {
+                            'Content-Type': 'application/json', // Jenis konten yang dikirim
+                            // 'Authorization': 'Bearer YOUR_ACCESS_TOKEN' // Header otorisasi jika diperlukan
+                  },
+                  body: JSON.stringify(dataPost), // Mengubah data menjadi bentuk JSON
+                };
+                    const data = await fetchData('https://api.paylite.co.id/tahunAjaranWhere', requestOptions);
+                }
 
                 function modalButtonAction(){
                   const tipe = $("#typeForm").val();
@@ -156,7 +182,22 @@
                       status: status
                     }
                   
-                  console.log(postData);
+                  // console.log(postData);
+                  // cek data sebelumnya dengan nama yang sama
+                  const hasilCek = await cekExist(nama_tahun_ajaran);
+                  if(hasilCek.data.length > 0){
+                    alert("Gunakan Nama Tahun Ajaran lain!");
+                  }else{
+                    // proses insert data
+                    const inserted = await insertDataTahunAjaran(dataPost);
+                    if(inserted.data.length > 0 ){
+                      alert("Data Berhasil Ditambahkan");
+                      getTahunAjaran();
+                    }else{
+                      alert("upsh ada kesalahan!");
+                    }
+                  }
+
                 };
         var previousLink = document.querySelector('#example_previous a');
   
