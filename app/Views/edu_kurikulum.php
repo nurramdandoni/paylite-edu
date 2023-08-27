@@ -79,7 +79,7 @@
                     let temp = '';
                     for(item of data.data){
                       let icon = 'secondary';
-                      if(item.status == 'aktif'){
+                      if(item.statusKur == 'aktif'){
                         icon = 'success';
                       }
                       temp += `
@@ -98,7 +98,7 @@
                         <p class="text-xs font-weight-bold mb-0">`+item.nama_mata_ajar+`</p>
                       </td>
                       <td class="align-middle text-center text-sm">
-                        <span class="badge badge-sm bg-gradient-`+icon+`">`+item.status+`</span>
+                        <span class="badge badge-sm bg-gradient-`+icon+`">`+item.statusKur+`</span>
                       </td>
                       <td class="align-middle">
                         <a data-toggle="modal" data-target="#exampleModal" onclick="formEdit('`+item.kurikulum_id+`')" class="text-secondary font-weight-bold text-xs" data-toggle="tooltip" data-original-title="Edit user">
@@ -260,7 +260,7 @@
                       jurusan_id: jurusan_id,
                       mata_ajar_id: listMataAjar,
                       description: description,
-                      status: status
+                      status: kurikulum.status
                     }
                   
                   console.log("BEFORE EXECUTION DATA",postData);
