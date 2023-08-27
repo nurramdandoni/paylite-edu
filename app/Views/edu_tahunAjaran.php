@@ -239,7 +239,7 @@
                   if(hasilCek.data.length > 0){
                     // alert("Gunakan Nama Tahun Ajaran lain!");
                     const update = await updateDataTahunAjaran(id,postData);
-                      if(update.data.tahun_ajaran_id){
+                      if(update.status == "Sukses"){
                         alert("Data Berhasil Diperbaharui");
                         $("#cls").click();
                         getTahunAjaran();
@@ -261,8 +261,7 @@
                       
                     }else{
                       const update = await updateDataTahunAjaran(id,postData);
-
-                      if(update.data.tahun_ajaran_id){
+                      if(update.status == "Sukses"){
                         alert("Data Berhasil Diperbaharui");
                         $("#cls").click();
                         getTahunAjaran();
