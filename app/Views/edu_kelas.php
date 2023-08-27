@@ -176,7 +176,7 @@
                   `;
                   // $("#modalContent").html('<?= $_COOKIE['lembaga_pendidikan_id']; ?>');
                   $("#modalContent").html(form);
-                  console.log(dt);
+                  console.log("response ::: ",dt);
                   getTahunAjaran();
                   $("#tahunAjaranForm").val(dt.data.tahun_ajaran_id);
                 }
