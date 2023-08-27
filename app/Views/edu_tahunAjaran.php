@@ -239,6 +239,16 @@
                   if(hasilCek.data.length > 0){
                     alert("Nama Tahun Ajaran Sudah Digunakan!");
                     console.log("id nya : ", id);
+                    if(id != undefined){
+                      const update = await updateDataTahunAjaran(id,postData);
+                      if(update.status == "Sukses"){
+                        alert("Data Berhasil Diperbaharui");
+                        $("#cls").click();
+                        getTahunAjaran();
+                      }else{
+                        alert("upsh ada kesalahan!");
+                      }
+                    }
                   }else{
                     if(tipe == "add"){
                       const inserted = await insertDataTahunAjaran(postData);
