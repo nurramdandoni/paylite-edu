@@ -270,7 +270,7 @@
                       if(update.status == "Sukses"){
                         alert("Data Berhasil Diperbaharui");
                         $("#cls").click();
-                        getKelas();
+                        getKurikulum();
                       }else{
                         alert("upsh ada kesalahan!");
                       }
@@ -286,7 +286,7 @@
                       if(inserted){
                         alert("Data Berhasil Ditambahkan");
                         $("#cls").click();
-                        getKelas();
+                        getKurikulum();
                       }else{
                         alert("upsh ada kesalahan!");
                       }
@@ -295,7 +295,7 @@
                       if(update.status == "Sukses"){
                         alert("Data Berhasil Diperbaharui");
                         $("#cls").click();
-                        getKelas();
+                        getKurikulum();
                       }else{
                         alert("upsh ada kesalahan!");
                       }
