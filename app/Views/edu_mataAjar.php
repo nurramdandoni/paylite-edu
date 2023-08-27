@@ -237,7 +237,7 @@
                   const hasilCek = await cekExist(nama_mata_ajar);
                     console.log(hasilCek);
                   if(hasilCek.data.length > 0){
-                    alert("Gunakan Nama Tahun Ajaran lain!");
+                    alert("Nama Mata Ajar Sudah Digunakan!");
                   }else{
                     // proses insert/update data
                     if(tipe == "add"){

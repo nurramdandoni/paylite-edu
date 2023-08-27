@@ -237,7 +237,7 @@
                   const hasilCek = await cekExist(nama_tahun_ajaran);
                     console.log(hasilCek);
                   if(hasilCek.data.length > 0){
-                    alert("Gunakan Nama Tahun Ajaran lain!");
+                    alert("Nama Tahun Ajaran Sudah Digunakan!");
                     
                   }else{
                     if(tipe == "add"){
