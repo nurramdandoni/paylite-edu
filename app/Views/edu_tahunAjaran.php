@@ -237,16 +237,10 @@
                   const hasilCek = await cekExist(nama_tahun_ajaran);
                     console.log(hasilCek);
                   if(hasilCek.data.length > 0){
-                    // alert("Gunakan Nama Tahun Ajaran lain!");
-                    const update = await updateDataTahunAjaran(id,postData);
-                      if(update.status == "Sukses"){
-                        alert("Data Berhasil Diperbaharui");
-                        $("#cls").click();
-                        getTahunAjaran();
-                      }else{
-                        alert("upsh ada kesalahan!");
-                      }
+                    alert("Gunakan Nama Tahun Ajaran lain!");
+                    
                   }else{
+                    if(tipe == "add"){
                       const inserted = await insertDataTahunAjaran(postData);
                       if(inserted){
                         alert("Data Berhasil Ditambahkan");
@@ -255,6 +249,17 @@
                       }else{
                         alert("upsh ada kesalahan!");
                       }
+                    }else{
+                      const update = await updateDataTahunAjaran(id,postData);
+                      if(update.status == "Sukses"){
+                        alert("Data Berhasil Diperbaharui");
+                        $("#cls").click();
+                        getTahunAjaran();
+                      }else{
+                        alert("upsh ada kesalahan!");
+                      }
+                    }
+                      
                       
                   }
 
