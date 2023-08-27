@@ -9,6 +9,12 @@
             </div>
             <div class="card-body px-0 pt-0 pb-2">
               <div class="table-responsive p-0">
+              <div id="contentFormInputEdit">
+                  <!-- Button trigger modal -->
+                  <button id="judulModal" onclick="formTambah()" type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
+                    Tambah Kurikulum
+                  </button>
+                </div>
               <table id="example" class="table align-items-center mb-0">
                   <thead>
                     <tr>
@@ -107,6 +113,209 @@
                     }
                     $('#example').DataTable();
                 }
+
+                function formTambah(){
+                  console.log("clicked");
+                  $("#modalTitle").html("Tambah Kurikulum");
+                  $("#modalButtonAction").html("Tambah");
+                  let form = `
+                  <input type="hidden" id="typeForm" value="add"/>
+                  <div class="form-group">
+                    <label for="status">Tahun Ajaran</label>
+                    <select class="form-control" id="tahunAjaranForm">
+                    </select>
+                  </div>
+                  <div class="form-group">
+                    <label for="listMataAjar">Mata Ajar</label>
+                    <input type="text" class="form-control" name="listMataAjar[]" id="listMataAjar" aria-describedby="listMataAjarLabel" placeholder="Nama Kelas. Ex. Kelas 1">
+                    <small id="listMataAjarLabel" class="form-text text-muted">Masukan List Mata Ajar</small>
+                  </div>
+                  <div class="form-group">
+                    <label for="description">Deskripsi</label>
+                    <textarea class="form-control" id="description" rows="3"></textarea>
+                  </div>
+                  <div class="form-group">
+                    <label for="status">Status Kelas</label>
+                    <select class="form-control" id="statusKelas">
+                      <option value="aktif">aktif</option>
+                      <option value="non aktif">non aktif</option>
+                    </select>
+                  </div>
+                  `;
+                  // $("#modalContent").html('<?= $_COOKIE['lembaga_pendidikan_id']; ?>');
+                  $("#modalContent").html(form);
+                  getTahunAjaran();
+                }
+                async function formEdit(id){
+                  console.log("clicked");
+                  $("#modalTitle").html("Edit Kurikulum");
+                  $("#modalButtonAction").html("Simpan");
+                  const dt = await getExist(id);
+                  let form = `
+                  <input type="hidden" id="typeForm" value="edit"/>
+                  <input type="hidden" id="idData" value="`+id+`"/>
+                  <div class="form-group">
+                    <label for="status">Tahun Ajaran</label>
+                    <select class="form-control" id="tahunAjaranForm">
+                    </select>
+                  </div>
+                  <div class="form-group">
+                    <label for="listMataAjar">Mata Ajar</label>
+                    <input value="`+dt.data.nama_kelas+`" type="text" class="form-control" id="listMataAjar" aria-describedby="listMataAjarLabel" placeholder="Nama Kelas. Ex. Kelas 1">
+                    <small id="listMataAjarLabel" class="form-text text-muted">Masukan List Mata Ajar</small>
+                  </div>
+                  <div class="form-group">
+                    <label for="description">Deskripsi</label>
+                    <textarea class="form-control" id="description" rows="3">`+dt.data.description+`</textarea>
+                  </div>
+                  <div class="form-group">
+                  <label for="status">Status Kelas</label>
+                    <select class="form-control" id="statusKelas">
+                      <option value="`+dt.data.status+`">`+dt.data.status+`</option>
+                      <option value="aktif">aktif</option>
+                      <option value="non aktif">non aktif</option>
+                    </select>
+                  </div>
+                  `;
+                  // $("#modalContent").html('<?= $_COOKIE['lembaga_pendidikan_id']; ?>');
+                  $("#modalContent").html(form);
+                  console.log("response ::: ",dt);
+                  const dtget = await getTahunAjaran();
+                  if(dtget){
+
+                    $("#tahunAjaranForm").val(dt.data.tahun_ajaran_id);
+                    console.log("yyyy : ",dt.data.tahun_ajaran_id);
+                  }
+                }
+
+                async function getExist(id){
+                    const data = await fetchData('https://api.paylite.co.id/kurikulum/'+id+'');
+                    return data;
+                }
+                async function cekExist(tahun_ajaran_id,mata_ajar_id){
+                  const postDatagetMataAjar = {
+                  lembaga_pendidikan_id: lembaga_pendidikan_id,
+                  tahun_ajaran_id,: tahun_ajaran_id,
+                  mata_ajar_id,: mata_ajar_id
+                }
+                  const requestOptions = {
+                  method: 'POST', // Metode permintaan
+                  headers: {
+                            'Content-Type': 'application/json', // Jenis konten yang dikirim
+                            // 'Authorization': 'Bearer YOUR_ACCESS_TOKEN' // Header otorisasi jika diperlukan
+                  },
+                  body: JSON.stringify(postDatagetMataAjar), // Mengubah data menjadi bentuk JSON
+                };
+                    const data = await fetchData('https://api.paylite.co.id/kurikulumWhere', requestOptions);
+                    return data;
+                }
+                async function insertDataKelas(dataPost){
+                  const requestOptions = {
+                  method: 'POST', // Metode permintaan
+                  headers: {
+                            'Content-Type': 'application/json', // Jenis konten yang dikirim
+                            // 'Authorization': 'Bearer YOUR_ACCESS_TOKEN' // Header otorisasi jika diperlukan
+                  },
+                  body: JSON.stringify(dataPost), // Mengubah data menjadi bentuk JSON
+                };
+                    const data = await fetchData('https://api.paylite.co.id/kurikulum', requestOptions);
+                    return data;
+                }
+                async function updateDataKelas(id,dataPost){
+                  const requestOptions = {
+                  method: 'PUT', // Metode permintaan
+                  headers: {
+                            'Content-Type': 'application/json', // Jenis konten yang dikirim
+                            // 'Authorization': 'Bearer YOUR_ACCESS_TOKEN' // Header otorisasi jika diperlukan
+                  },
+                  body: JSON.stringify(dataPost), // Mengubah data menjadi bentuk JSON
+                };
+                    const data = await fetchData('https://api.paylite.co.id/kurikulum/'+id+'', requestOptions);
+                    return data;
+                }
+
+                async function modalButtonAction(){
+                  const tipe = $("#typeForm").val();
+                  const id = $("#idData").val();
+                  const tahun_ajaran_id = $("#tahunAjaranForm").val();
+                  const listMataAjar = $("#listMataAjar").val();
+                  const description = $("#description").val();
+                  const status = $("#statusKelas").val();
+                  const postData = {
+                      tipe: tipe,
+                      lembaga_pendidikan_id: lembaga_pendidikan_id,
+                      tahun_ajaran_id: tahun_ajaran_id,
+                      listMataAjar: listMataAjar,
+                      description: description,
+                      status: status
+                    }
+                  
+                  console.log(postData);
+                 // // cek data sebelumnya dengan nama yang sama
+                  // const hasilCek = await cekExist(nama_kelas);
+                  //   console.log(hasilCek);
+                  // if(hasilCek.data.length > 0){
+                  //   console.log("id nya : ", id);
+                  //   if(id != undefined){
+                  //     const update = await updateDataKelas(id,postData);
+                  //     if(update.status == "Sukses"){
+                  //       alert("Data Berhasil Diperbaharui");
+                  //       $("#cls").click();
+                  //       getKelas();
+                  //     }else{
+                  //       alert("upsh ada kesalahan!");
+                  //     }
+                  //   }else{
+                  //     alert("Nama Kelas Sudah Digunakan!");
+
+                  //   }
+                  // }else{
+                   // // proses insert/update data
+                  //   if(tipe == "add"){
+
+                  //     const inserted = await insertDataKelas(postData);
+                  //     if(inserted){
+                  //       alert("Data Berhasil Ditambahkan");
+                  //       $("#cls").click();
+                  //       getKelas();
+                  //     }else{
+                  //       alert("upsh ada kesalahan!");
+                  //     }
+                  //   }else{
+                  //     const update = await updateDataKelas(id,postData);
+                  //     if(update.status == "Sukses"){
+                  //       alert("Data Berhasil Diperbaharui");
+                  //       $("#cls").click();
+                  //       getKelas();
+                  //     }else{
+                  //       alert("upsh ada kesalahan!");
+                  //     }
+
+                  //   }
+                  // }
+
+                };
+                async function getTahunAjaran(){
+                    const postDatagetTahunAjaran = {
+                            lembaga_pendidikan_id: lembaga_pendidikan_id
+                          }
+                    const requestOptions = {
+                            method: 'POST', // Metode permintaan
+                            headers: {
+                                      'Content-Type': 'application/json', // Jenis konten yang dikirim
+                                      // 'Authorization': 'Bearer YOUR_ACCESS_TOKEN' // Header otorisasi jika diperlukan
+                            },
+                            body: JSON.stringify(postDatagetTahunAjaran), // Mengubah data menjadi bentuk JSON
+                          };
+                    const data = await fetchData('https://api.paylite.co.id/tahunAjaranWhere', requestOptions);
+                    console.log("list tahun", data.data);
+                    let temp2 = '';
+                    for(item2 of data.data){
+                      temp2 += `<option value="`+item2.tahun_ajaran_id+`">`+item2.nama_tahun_ajaran+`</option>`;
+                    }
+                    $("#tahunAjaranForm").html(temp2);
+                    return true;
+              }
         var previousLink = document.querySelector('#example_previous a');
   
         if (previousLink) {
