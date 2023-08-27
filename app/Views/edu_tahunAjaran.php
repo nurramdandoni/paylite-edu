@@ -128,7 +128,7 @@
                     <small id="namaTahun" class="form-text text-muted">Masukan Nama Tahun Ajaran Anda</small>
                   </div>
                   <div class="form-group">
-                    <label for="description">Deskripsi Tahun Ajaran</label>
+                    <label for="description">Deskripsi (Semester)</label>
                     <textarea class="form-control" id="description" rows="3"></textarea>
                   </div>
                   <div class="form-group">
@@ -195,6 +195,7 @@
                     const inserted = await insertDataTahunAjaran(postData);
                     if(inserted.data.tahun_ajaran_id){
                       alert("Data Berhasil Ditambahkan");
+                      $("#cls").click();
                       getTahunAjaran();
                     }else{
                       alert("upsh ada kesalahan!");
