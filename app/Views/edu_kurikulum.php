@@ -67,14 +67,14 @@
                   lembaga_pendidikan_id: lembaga_pendidikan_id
                 }
           const requestOptions = {
-                  method: 'GET', // Metode permintaan
+                  method: 'POST', // Metode permintaan
                   headers: {
                             'Content-Type': 'application/json', // Jenis konten yang dikirim
                             // 'Authorization': 'Bearer YOUR_ACCESS_TOKEN' // Header otorisasi jika diperlukan
                   },
                   body: JSON.stringify(postDatagetKelas), // Mengubah data menjadi bentuk JSON
                 };
-                    const data = await fetchData('https://api.paylite.co.id/kurikulumWhereJoin/'+lembaga_pendidikan_id+'');
+                    const data = await fetchData('https://api.paylite.co.id/kurikulumWhere',requestOptions);
                     console.log(data.data);
                     let temp = '';
                     for(item of data.data){
