@@ -238,6 +238,7 @@
                     console.log(hasilCek);
                   if(hasilCek.data.length > 0){
                     alert("Nama Mata Ajar Sudah Digunakan!");
+                    console.log("id nya : ", id);
                   }else{
                     // proses insert/update data
                     if(tipe == "add"){

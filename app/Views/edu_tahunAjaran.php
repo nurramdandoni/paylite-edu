@@ -238,7 +238,7 @@
                     console.log(hasilCek);
                   if(hasilCek.data.length > 0){
                     alert("Nama Tahun Ajaran Sudah Digunakan!");
-                    
+                    console.log("id nya : ", id);
                   }else{
                     if(tipe == "add"){
                       const inserted = await insertDataTahunAjaran(postData);
