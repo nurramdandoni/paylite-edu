@@ -250,10 +250,14 @@
                   const listMataAjar = $("#listMataAjar").val();
                   const description = $("#description").val();
                   const status = $("#statusKelas").val();
+                  const prodi_id = 1;
+                  const jurusan_id = 1;
                   const postData = {
                       tipe: tipe,
                       lembaga_pendidikan_id: lembaga_pendidikan_id,
                       tahun_ajaran_id: tahun_ajaran_id,
+                      prodi_id: prodi_id,
+                      jurusan_id: jurusan_id,
                       listMataAjar: listMataAjar,
                       description: description,
                       status: status
