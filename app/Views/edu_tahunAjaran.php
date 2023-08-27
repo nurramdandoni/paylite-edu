@@ -247,11 +247,8 @@
                         alert("upsh ada kesalahan!");
                       }
                   }else{
-                    // proses insert/update data
-                    if(tipe == "add"){
-
                       const inserted = await insertDataTahunAjaran(postData);
-                      if(inserted.data.tahun_ajaran_id){
+                      if(inserted){
                         alert("Data Berhasil Ditambahkan");
                         $("#cls").click();
                         getTahunAjaran();
@@ -259,17 +256,6 @@
                         alert("upsh ada kesalahan!");
                       }
                       
-                    }else{
-                      const update = await updateDataTahunAjaran(id,postData);
-                      if(update.status == "Sukses"){
-                        alert("Data Berhasil Diperbaharui");
-                        $("#cls").click();
-                        getTahunAjaran();
-                      }else{
-                        alert("upsh ada kesalahan!");
-                      }
-
-                    }
                   }
 
                 };
