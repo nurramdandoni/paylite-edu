@@ -95,7 +95,7 @@
                         </div>
                       </td>
                       <td>
-                        <p class="text-xs font-weight-bold mb-0">`+item.nama_mata_ajar+`</p>
+                        <p class="text-xs font-weight-bold mb-0">`+item.mata_ajar.nama_mata_ajar+`</p>
                       </td>
                       <td class="align-middle text-center text-sm">
                         <span class="badge badge-sm bg-gradient-`+icon+`">`+item.status+`</span>
