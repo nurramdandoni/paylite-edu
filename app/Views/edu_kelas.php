@@ -141,6 +141,7 @@
                   `;
                   // $("#modalContent").html('<?= $_COOKIE['lembaga_pendidikan_id']; ?>');
                   $("#modalContent").html(form);
+                  getTahunAjaran();
                 }
                 async function formEdit(id){
                   console.log("clicked");
@@ -162,7 +163,7 @@
                   </div>
                   <div class="form-group">
                     <label for="description">Deskripsi</label>
-                    <textarea class="form-control" id="description" rows="3">`+dt.data.status+`</textarea>
+                    <textarea class="form-control" id="description" rows="3">`+dt.data.description+`</textarea>
                   </div>
                   <div class="form-group">
                   <label for="status">Status Kelas</label>
@@ -176,6 +177,8 @@
                   // $("#modalContent").html('<?= $_COOKIE['lembaga_pendidikan_id']; ?>');
                   $("#modalContent").html(form);
                   console.log(dt);
+                  getTahunAjaran();
+                  $("#tahunAjaranForm").val(dt.data.tahun_ajaran_id);
                 }
 
                 async function getExist(id){
