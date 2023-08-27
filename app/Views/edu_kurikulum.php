@@ -258,7 +258,7 @@
                       tahun_ajaran_id: tahun_ajaran_id,
                       prodi_id: prodi_id,
                       jurusan_id: jurusan_id,
-                      listMataAjar: listMataAjar,
+                      mata_ajar: listMataAjar,
                       description: description,
                       status: status
                     }
