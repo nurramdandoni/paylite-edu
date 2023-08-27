@@ -297,7 +297,7 @@
                             body: JSON.stringify(postDatagetTahunAjaran), // Mengubah data menjadi bentuk JSON
                           };
                     const data = await fetchData('https://api.paylite.co.id/tahunAjaranWhere', requestOptions);
-                    console.log(data.data);
+                    console.log("list tahun", data.data);
                     let temp2 = '';
                     for(item2 of data.data){
                       temp2 += `<option value="`+item2.tahun_ajaran_id+`">`+item2.nama_tahun_ajaran+`</option>`;
