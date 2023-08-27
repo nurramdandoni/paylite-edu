@@ -137,7 +137,7 @@
                   </div>
                   <div class="form-group">
                     <label for="status">Status Kelas</label>
-                    <select class="form-control" id="statusKelas">
+                    <select class="form-control" id="statusKurikulum">
                       <option value="aktif">aktif</option>
                       <option value="non aktif">non aktif</option>
                     </select>
@@ -173,7 +173,7 @@
                   </div>
                   <div class="form-group">
                   <label for="status">Status Kelas</label>
-                    <select class="form-control" id="statusKelas">
+                    <select class="form-control" id="statusKurikulum">
                       <option value="`+dt.data.status+`">`+dt.data.status+`</option>
                       <option value="aktif">aktif</option>
                       <option value="non aktif">non aktif</option>
@@ -249,7 +249,7 @@
                   const tahun_ajaran_id = $("#tahunAjaranForm").val();
                   const listMataAjar = $("#listMataAjar").val();
                   const description = $("#description").val();
-                  const status = $("#statusKelas").val();
+                  const status = $("#statusKurikulum").val();
                   const prodi_id = 1;
                   const jurusan_id = 1;
                   const postData = {
