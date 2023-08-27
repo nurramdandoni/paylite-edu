@@ -146,7 +146,7 @@
                   console.log("clicked");
                   $("#modalTitle").html("Edit Tahun Ajaran");
                   $("#modalButtonAction").html("Simpan");
-                  const dt = await getExist();
+                  const dt = await getExist(id);
                   let form = `
                   <input type="hidden" id="typeForm" value="edit"/>
                   <div class="form-group">
