@@ -127,7 +127,8 @@
                   </div>
                   <div class="form-group">
                     <label for="listMataAjar">Mata Ajar</label>
-                    <input type="text" class="form-control" name="listMataAjar[]" id="listMataAjar" aria-describedby="listMataAjarLabel" placeholder="Nama Kelas. Ex. Kelas 1">
+                    <select class="form-control" id="listMataAjar">
+                    </select>
                     <small id="listMataAjarLabel" class="form-text text-muted">Masukan List Mata Ajar</small>
                   </div>
                   <div class="form-group">
@@ -145,6 +146,7 @@
                   // $("#modalContent").html('<?= $_COOKIE['lembaga_pendidikan_id']; ?>');
                   $("#modalContent").html(form);
                   getTahunAjaran();
+                  getMataAjar();
                 }
                 async function formEdit(id){
                   console.log("clicked");
@@ -161,7 +163,8 @@
                   </div>
                   <div class="form-group">
                     <label for="listMataAjar">Mata Ajar</label>
-                    <input value="`+dt.data.mata_ajar.nama_mata_ajar+`" type="text" class="form-control" id="listMataAjar" aria-describedby="listMataAjarLabel" placeholder="Nama Kelas. Ex. Kelas 1">
+                    <select class="form-control" id="listMataAjar">
+                    </select>
                     <small id="listMataAjarLabel" class="form-text text-muted">Masukan List Mata Ajar</small>
                   </div>
                   <div class="form-group">
@@ -184,6 +187,12 @@
                   if(dtget){
 
                     $("#tahunAjaranForm").val(dt.data.tahun_ajaran_id);
+                    console.log("yyyy : ",dt.data.tahun_ajaran_id);
+                  }
+                  const dtget2 = await getMataAjar();
+                  if(dtget2){
+
+                    $("#llistMataAjar").val(dt.data.mata_ajar_id);
                     console.log("yyyy : ",dt.data.tahun_ajaran_id);
                   }
                 }
@@ -316,6 +325,27 @@
                     $("#tahunAjaranForm").html(temp2);
                     return true;
               }
+              async function getMataAjar(){
+          const postDatagetMataAjar = {
+                  lembaga_pendidikan_id: lembaga_pendidikan_id
+                }
+          const requestOptions = {
+                  method: 'POST', // Metode permintaan
+                  headers: {
+                            'Content-Type': 'application/json', // Jenis konten yang dikirim
+                            // 'Authorization': 'Bearer YOUR_ACCESS_TOKEN' // Header otorisasi jika diperlukan
+                  },
+                  body: JSON.stringify(postDatagetMataAjar), // Mengubah data menjadi bentuk JSON
+                };
+                    const data = await fetchData('https://api.paylite.co.id/mataAjarWhere', requestOptions);
+                    console.log(data.data);
+                    let temp2 = '';
+                    for(item2 of data.data){
+                      temp2 += `<option value="`+item2.mata_ajar_id+`">`+item2.nama_mata_ajar+`</option>`;
+                    }
+                    $("#listMataAjar").html(temp2);
+                    return true;
+                }
         var previousLink = document.querySelector('#example_previous a');
   
         if (previousLink) {
