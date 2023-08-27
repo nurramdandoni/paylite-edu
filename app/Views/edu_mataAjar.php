@@ -242,7 +242,7 @@
                       if(update.status == "Sukses"){
                         alert("Data Berhasil Diperbaharui");
                         $("#cls").click();
-                        getTahunAjaran();
+                        getMataAjar();
                       }else{
                         alert("upsh ada kesalahan!");
                       }
@@ -254,7 +254,7 @@
                       if(inserted.data.tahun_ajaran_id){
                         alert("Data Berhasil Ditambahkan");
                         $("#cls").click();
-                        getTahunAjaran();
+                        getMataAjar();
                       }else{
                         alert("upsh ada kesalahan!");
                       }
@@ -264,7 +264,7 @@
                       if(update.status == "Sukses"){
                         alert("Data Berhasil Diperbaharui");
                         $("#cls").click();
-                        getTahunAjaran();
+                        getMataAjar();
                       }else{
                         alert("upsh ada kesalahan!");
                       }
