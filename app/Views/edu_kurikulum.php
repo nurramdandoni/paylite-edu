@@ -260,7 +260,7 @@
                       jurusan_id: jurusan_id,
                       mata_ajar_id: listMataAjar,
                       description: description,
-                      status: kurikulum.status
+                      status: status
                     }
                   
                   console.log("BEFORE EXECUTION DATA",postData);
