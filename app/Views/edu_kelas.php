@@ -310,6 +310,7 @@
                       temp2 += `<option value="`+item2.tahun_ajaran_id+`">`+item2.nama_tahun_ajaran+`</option>`;
                     }
                     $("#tahunAjaranForm").html(temp2);
+                    return true;
               }
         var previousLink = document.querySelector('#example_previous a');
   
