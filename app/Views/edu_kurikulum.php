@@ -192,8 +192,8 @@
                   const dtget2 = await getMataAjar();
                   if(dtget2){
 
-                    $("#llistMataAjar").val(dt.data.mata_ajar_id);
-                    console.log("yyyy : ",dt.data.tahun_ajaran_id);
+                    $("#listMataAjar").val(dt.data.mata_ajar_id);
+                    console.log("zzzz : ",dt.data.mata_ajar_id);
                   }
                 }
 
