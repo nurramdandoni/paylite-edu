@@ -263,7 +263,7 @@
                       status: status
                     }
                   
-                  console.log(postData);
+                  console.log("BEFORE EXECUTION DATA",postData);
                  // cek data sebelumnya dengan nama yang sama
                   const hasilCek = await cekExist(tahun_ajaran_id,listMataAjar);
                     console.log(hasilCek);
