@@ -234,7 +234,7 @@
                   
                   console.log(postData);
                   // cek data sebelumnya dengan nama yang sama
-                  const hasilCek = await cekExist(nama_tahun_ajaran);
+                  const hasilCek = await cekExist(nama_mata_ajar);
                     console.log(hasilCek);
                   if(hasilCek.data.length > 0){
                     // alert("Gunakan Nama Tahun Ajaran lain!");
