@@ -149,6 +149,7 @@
                   const dt = await getExist(id);
                   let form = `
                   <input type="hidden" id="typeForm" value="edit"/>
+                  <input type="hidden" id="idData" value="`+id+`"/>
                   <div class="form-group">
                     <label for="namaTahunAjaran">Nama Tahun Ajaran</label>
                     <input value="`+dt.data.nama_tahun_ajaran+`" type="text" class="form-control" id="namaTahunAjaran" aria-describedby="namaTahun" placeholder="Nama Tahun Ajaran. Ex. Tahun Ajaran 2023 Ganjil">
@@ -204,9 +205,22 @@
                     const data = await fetchData('https://api.paylite.co.id/tahunAjaran', requestOptions);
                     return data;
                 }
+                async function updateDataTahunAjaran(id,dataPost){
+                  const requestOptions = {
+                  method: 'PUT', // Metode permintaan
+                  headers: {
+                            'Content-Type': 'application/json', // Jenis konten yang dikirim
+                            // 'Authorization': 'Bearer YOUR_ACCESS_TOKEN' // Header otorisasi jika diperlukan
+                  },
+                  body: JSON.stringify(dataPost), // Mengubah data menjadi bentuk JSON
+                };
+                    const data = await fetchData('https://api.paylite.co.id/tahunAjaran/'+id+'', requestOptions);
+                    return data;
+                }
 
                 async function modalButtonAction(){
                   const tipe = $("#typeForm").val();
+                  const id = $("#idData").val();
                   const nama_tahun_ajaran = $("#namaTahunAjaran").val();
                   const description = $("#description").val();
                   const status = $("#statusTahun").val();
@@ -225,14 +239,28 @@
                   if(hasilCek.data.length > 0){
                     alert("Gunakan Nama Tahun Ajaran lain!");
                   }else{
-                    // proses insert data
-                    const inserted = await insertDataTahunAjaran(postData);
-                    if(inserted.data.tahun_ajaran_id){
-                      alert("Data Berhasil Ditambahkan");
-                      $("#cls").click();
-                      getTahunAjaran();
+                    // proses insert/update data
+                    if(tipe == "add"){
+
+                      const inserted = await insertDataTahunAjaran(postData);
+                      if(inserted.data.tahun_ajaran_id){
+                        alert("Data Berhasil Ditambahkan");
+                        $("#cls").click();
+                        getTahunAjaran();
+                      }else{
+                        alert("upsh ada kesalahan!");
+                      }
+                      
                     }else{
-                      alert("upsh ada kesalahan!");
+                      const update = await updateDataTahunAjaran(id,dataPost);
+                      if(update.data.tahun_ajaran_id){
+                        alert("Data Berhasil Dipperbaharui");
+                        $("#cls").click();
+                        getTahunAjaran();
+                      }else{
+                        alert("upsh ada kesalahan!");
+                      }
+
                     }
                   }
 
