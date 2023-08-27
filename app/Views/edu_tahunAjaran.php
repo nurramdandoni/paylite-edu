@@ -260,7 +260,8 @@
                       }
                       
                     }else{
-                      const update = await updateDataTahunAjaran(id,dataPost);
+                      const update = await updateDataTahunAjaran(id,postData);
+
                       if(update.data.tahun_ajaran_id){
                         alert("Data Berhasil Diperbaharui");
                         $("#cls").click();
