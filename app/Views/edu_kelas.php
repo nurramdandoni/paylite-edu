@@ -119,7 +119,7 @@
                   <input type="hidden" id="typeForm" value="add"/>
                   <div class="form-group">
                     <label for="status">Tahun Ajaran</label>
-                    <select class="form-control" id="tahunAjaran">
+                    <select class="form-control" id="tahunAjaranForm">
                     </select>
                   </div>
                   <div class="form-group">
@@ -152,7 +152,7 @@
                   <input type="hidden" id="idData" value="`+id+`"/>
                   <div class="form-group">
                     <label for="status">Tahun Ajaran</label>
-                    <select class="form-control" id="tahunAjaran">
+                    <select class="form-control" id="tahunAjaranForm">
                     </select>
                   </div>
                   <div class="form-group">
@@ -226,7 +226,7 @@
                 async function modalButtonAction(){
                   const tipe = $("#typeForm").val();
                   const id = $("#idData").val();
-                  const tahun_ajaran_id = $("#tahunAjaran").val();
+                  const tahun_ajaran_id = $("#tahunAjaranForm").val();
                   const nama_kelas = $("#namaKelas").val();
                   const description = $("#description").val();
                   const status = $("#statusMataAjar").val();
@@ -302,7 +302,7 @@
                     for(item2 of data.data){
                       temp2 += `<option value="`+item2.tahun_ajaran_id+`">`+item2.nama_tahun_ajaran+`</option>`;
                     }
-                    $("#tahunAjaran").html(temp2);
+                    $("#tahunAjaranForm").html(temp2);
               }
         var previousLink = document.querySelector('#example_previous a');
   
