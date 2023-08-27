@@ -218,7 +218,7 @@
                     const data = await fetchData('https://api.paylite.co.id/kurikulumWhere', requestOptions);
                     return data;
                 }
-                async function insertDataKelas(dataPost){
+                async function insertDataKurikulum(dataPost){
                   const requestOptions = {
                   method: 'POST', // Metode permintaan
                   headers: {
@@ -230,7 +230,7 @@
                     const data = await fetchData('https://api.paylite.co.id/kurikulum', requestOptions);
                     return data;
                 }
-                async function updateDataKelas(id,dataPost){
+                async function updateDataKurikulum(id,dataPost){
                   const requestOptions = {
                   method: 'PUT', // Metode permintaan
                   headers: {
@@ -260,48 +260,48 @@
                     }
                   
                   console.log(postData);
-                 // // cek data sebelumnya dengan nama yang sama
-                  // const hasilCek = await cekExist(nama_kelas);
-                  //   console.log(hasilCek);
-                  // if(hasilCek.data.length > 0){
-                  //   console.log("id nya : ", id);
-                  //   if(id != undefined){
-                  //     const update = await updateDataKelas(id,postData);
-                  //     if(update.status == "Sukses"){
-                  //       alert("Data Berhasil Diperbaharui");
-                  //       $("#cls").click();
-                  //       getKelas();
-                  //     }else{
-                  //       alert("upsh ada kesalahan!");
-                  //     }
-                  //   }else{
-                  //     alert("Nama Kelas Sudah Digunakan!");
+                 // cek data sebelumnya dengan nama yang sama
+                  const hasilCek = await cekExist(tahun_ajaran_id,listMataAjar);
+                    console.log(hasilCek);
+                  if(hasilCek.data.length > 0){
+                    console.log("id nya : ", id);
+                    if(id != undefined){
+                      const update = await updateDataKurikulum(id,postData);
+                      if(update.status == "Sukses"){
+                        alert("Data Berhasil Diperbaharui");
+                        $("#cls").click();
+                        getKelas();
+                      }else{
+                        alert("upsh ada kesalahan!");
+                      }
+                    }else{
+                      alert("Mata Ajar Sudah Ada!");
 
-                  //   }
-                  // }else{
-                   // // proses insert/update data
-                  //   if(tipe == "add"){
+                    }
+                  }else{
+                   // proses insert/update data
+                    if(tipe == "add"){
 
-                  //     const inserted = await insertDataKelas(postData);
-                  //     if(inserted){
-                  //       alert("Data Berhasil Ditambahkan");
-                  //       $("#cls").click();
-                  //       getKelas();
-                  //     }else{
-                  //       alert("upsh ada kesalahan!");
-                  //     }
-                  //   }else{
-                  //     const update = await updateDataKelas(id,postData);
-                  //     if(update.status == "Sukses"){
-                  //       alert("Data Berhasil Diperbaharui");
-                  //       $("#cls").click();
-                  //       getKelas();
-                  //     }else{
-                  //       alert("upsh ada kesalahan!");
-                  //     }
+                      const inserted = await insertDataKurikulum(postData);
+                      if(inserted){
+                        alert("Data Berhasil Ditambahkan");
+                        $("#cls").click();
+                        getKelas();
+                      }else{
+                        alert("upsh ada kesalahan!");
+                      }
+                    }else{
+                      const update = await updateDataKurikulum(id,postData);
+                      if(update.status == "Sukses"){
+                        alert("Data Berhasil Diperbaharui");
+                        $("#cls").click();
+                        getKelas();
+                      }else{
+                        alert("upsh ada kesalahan!");
+                      }
 
-                  //   }
-                  // }
+                    }
+                  }
 
                 };
                 async function getTahunAjaran(){
