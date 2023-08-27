@@ -195,8 +195,8 @@
                 async function cekExist(tahun_ajaran_id,mata_ajar_id){
                   const postDatagetMataAjar = {
                   lembaga_pendidikan_id: lembaga_pendidikan_id,
-                  tahun_ajaran_id,: tahun_ajaran_id,
-                  mata_ajar_id,: mata_ajar_id
+                  tahun_ajaran_id: tahun_ajaran_id,
+                  mata_ajar_id: mata_ajar_id
                 }
                   const requestOptions = {
                   method: 'POST', // Metode permintaan
