@@ -95,7 +95,7 @@
                         </div>
                       </td>
                       <td>
-                        <p class="text-xs font-weight-bold mb-0">`+item.mata_ajar.nama_mata_ajar+`</p>
+                        <p class="text-xs font-weight-bold mb-0">`+item.nama_mata_ajar+`</p>
                       </td>
                       <td class="align-middle text-center text-sm">
                         <span class="badge badge-sm bg-gradient-`+icon+`">`+item.status+`</span>
@@ -161,7 +161,7 @@
                   </div>
                   <div class="form-group">
                     <label for="listMataAjar">Mata Ajar</label>
-                    <input value="`+dt.data.nama_kelas+`" type="text" class="form-control" id="listMataAjar" aria-describedby="listMataAjarLabel" placeholder="Nama Kelas. Ex. Kelas 1">
+                    <input value="`+dt.data.mata_ajar.nama_mata_ajar+`" type="text" class="form-control" id="listMataAjar" aria-describedby="listMataAjarLabel" placeholder="Nama Kelas. Ex. Kelas 1">
                     <small id="listMataAjarLabel" class="form-text text-muted">Masukan List Mata Ajar</small>
                   </div>
                   <div class="form-group">
