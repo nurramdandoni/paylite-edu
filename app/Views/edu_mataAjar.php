@@ -248,7 +248,7 @@
                       }
                   }else{
                     // proses insert/update data
-                    if(tipe == "add"){
+                    // if(tipe == "add"){
 
                       const inserted = await insertDataMataAjar(postData);
                       if(inserted.data.tahun_ajaran_id){
@@ -259,17 +259,17 @@
                         alert("upsh ada kesalahan!");
                       }
                       
-                    }else{
-                      const update = await updateDataMataAjar(id,postData);
-                      if(update.status == "Sukses"){
-                        alert("Data Berhasil Diperbaharui");
-                        $("#cls").click();
-                        getMataAjar();
-                      }else{
-                        alert("upsh ada kesalahan!");
-                      }
+                    // }else{
+                    //   const update = await updateDataMataAjar(id,postData);
+                    //   if(update.status == "Sukses"){
+                    //     alert("Data Berhasil Diperbaharui");
+                    //     $("#cls").click();
+                    //     getMataAjar();
+                    //   }else{
+                    //     alert("upsh ada kesalahan!");
+                    //   }
 
-                    }
+                    // }
                   }
 
                 };
