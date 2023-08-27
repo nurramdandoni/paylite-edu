@@ -236,7 +236,7 @@
                   const tahun_ajaran_id = $("#tahunAjaranForm").val();
                   const nama_kelas = $("#namaKelas").val();
                   const description = $("#description").val();
-                  const status = $("#statusMataAjar").val();
+                  const status = $("#statusKelas").val();
                   const postData = {
                       tipe: tipe,
                       lembaga_pendidikan_id: lembaga_pendidikan_id,
