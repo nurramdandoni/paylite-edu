@@ -179,6 +179,7 @@
                   console.log("response ::: ",dt);
                   getTahunAjaran();
                   $("#tahunAjaranForm").val(dt.data.tahun_ajaran_id);
+                  console.log("yyyy : ",dt.data.tahun_ajaran_id);
                 }
 
                 async function getExist(id){
