@@ -237,8 +237,20 @@
                   const hasilCek = await cekExist(nama_mata_ajar);
                     console.log(hasilCek);
                   if(hasilCek.data.length > 0){
-                    alert("Nama Mata Ajar Sudah Digunakan!");
                     console.log("id nya : ", id);
+                    if(id != undefined){
+                      const update = await updateDataMataAjar(id,postData);
+                      if(update.status == "Sukses"){
+                        alert("Data Berhasil Diperbaharui");
+                        $("#cls").click();
+                        getMataAjar();
+                      }else{
+                        alert("upsh ada kesalahan!");
+                      }
+                    }else{
+                      alert("Nama Tahun Ajaran Sudah Digunakan!");
+
+                    }
                   }else{
                     // proses insert/update data
                     if(tipe == "add"){

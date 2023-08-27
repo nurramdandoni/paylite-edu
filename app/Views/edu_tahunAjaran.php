@@ -237,7 +237,6 @@
                   const hasilCek = await cekExist(nama_tahun_ajaran);
                     console.log(hasilCek);
                   if(hasilCek.data.length > 0){
-                    alert("Nama Tahun Ajaran Sudah Digunakan!");
                     console.log("id nya : ", id);
                     if(id != undefined){
                       const update = await updateDataTahunAjaran(id,postData);
@@ -248,6 +247,9 @@
                       }else{
                         alert("upsh ada kesalahan!");
                       }
+                    }else{
+                      alert("Nama Tahun Ajaran Sudah Digunakan!");
+
                     }
                   }else{
                     if(tipe == "add"){
