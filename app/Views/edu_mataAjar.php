@@ -248,7 +248,7 @@
                         alert("upsh ada kesalahan!");
                       }
                     }else{
-                      alert("Nama Tahun Ajaran Sudah Digunakan!");
+                      alert("Nama Mata Ajar Sudah Digunakan!");
 
                     }
                   }else{
