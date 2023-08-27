@@ -103,7 +103,7 @@
                         <span class="badge badge-sm bg-gradient-`+icon+`">`+item.status+`</span>
                       </td>
                       <td class="align-middle">
-                        <a href="javascript:;" class="text-secondary font-weight-bold text-xs" data-toggle="tooltip" data-original-title="Edit user">
+                        <a data-toggle="modal" data-target="#exampleModal" onclick="formEdit('`+item.tahun_ajaran_id+`')" class="text-secondary font-weight-bold text-xs" data-toggle="tooltip" data-original-title="Edit user">
                           Edit
                         </a>
                       </td>
@@ -141,6 +141,39 @@
                   `;
                   // $("#modalContent").html('<?= $_COOKIE['lembaga_pendidikan_id']; ?>');
                   $("#modalContent").html(form);
+                }
+                async function formEdit(id){
+                  console.log("clicked");
+                  $("#modalTitle").html("Edit Tahun Ajaran");
+                  $("#modalButtonAction").html("Simpan");
+                  const dt = await getExist();
+                  let form = `
+                  <input type="hidden" id="typeForm" value="edit"/>
+                  <div class="form-group">
+                    <label for="namaTahunAjaran">Nama Tahun Ajaran</label>
+                    <input type="text" class="form-control" id="namaTahunAjaran" aria-describedby="namaTahun" placeholder="Nama Tahun Ajaran. Ex. Tahun Ajaran 2023 Ganjil">
+                    <small id="namaTahun" class="form-text text-muted">Masukan Nama Tahun Ajaran Anda</small>
+                  </div>
+                  <div class="form-group">
+                    <label for="description">Deskripsi (Semester)</label>
+                    <textarea class="form-control" id="description" rows="3"></textarea>
+                  </div>
+                  <div class="form-group">
+                    <label for="status">Status Tahun Ajaran</label>
+                    <select class="form-control" id="statusTahun">
+                      <option value="aktif">aktif</option>
+                      <option value="non aktif">non aktif</option>
+                    </select>
+                  </div>
+                  `;
+                  // $("#modalContent").html('<?= $_COOKIE['lembaga_pendidikan_id']; ?>');
+                  $("#modalContent").html(form);
+                  console.log(dt);
+                }
+
+                async function getExist(id){
+                    const data = await fetchData('https://api.paylite.co.id/tahunAjaran/'+id+'');
+                    return data;
                 }
                 async function cekExist(namatahun){
                   const postDatagetTahunAjaran = {
