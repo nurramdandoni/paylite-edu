@@ -98,7 +98,7 @@
                         <span class="badge badge-sm bg-gradient-`+icon+`">`+item.status+`</span>
                       </td>
                       <td class="align-middle">
-                        <a href="javascript:;" class="text-secondary font-weight-bold text-xs" data-toggle="tooltip" data-original-title="Edit user">
+                        <a data-toggle="modal" data-target="#exampleModal" onclick="formEdit('`+item.kelas_id+`')" class="text-secondary font-weight-bold text-xs" data-toggle="tooltip" data-original-title="Edit user">
                           Edit
                         </a>
                       </td>
