@@ -193,7 +193,7 @@
                   }else{
                     // proses insert data
                     const inserted = await insertDataTahunAjaran(postData);
-                    if(inserted.data.length > 0 ){
+                    if(inserted.data.tahun_ajaran_id){
                       alert("Data Berhasil Ditambahkan");
                       getTahunAjaran();
                     }else{
