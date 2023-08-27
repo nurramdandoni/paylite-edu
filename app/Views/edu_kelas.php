@@ -244,7 +244,7 @@
                   
                   console.log(postData);
                   // cek data sebelumnya dengan nama yang sama
-                  const hasilCek = await cekExist(nama_mata_ajar);
+                  const hasilCek = await cekExist(nama_kelas);
                     console.log(hasilCek);
                   if(hasilCek.data.length > 0){
                     console.log("id nya : ", id);
