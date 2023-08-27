@@ -177,9 +177,12 @@
                   // $("#modalContent").html('<?= $_COOKIE['lembaga_pendidikan_id']; ?>');
                   $("#modalContent").html(form);
                   console.log("response ::: ",dt);
-                  getTahunAjaran();
-                  $("#tahunAjaranForm").val(dt.data.tahun_ajaran_id);
-                  console.log("yyyy : ",dt.data.tahun_ajaran_id);
+                  const dtget = await getTahunAjaran();
+                  if(dtget){
+
+                    $("#tahunAjaranForm").val(dt.data.tahun_ajaran_id);
+                    console.log("yyyy : ",dt.data.tahun_ajaran_id);
+                  }
                 }
 
                 async function getExist(id){
@@ -254,7 +257,7 @@
                       if(update.status == "Sukses"){
                         alert("Data Berhasil Diperbaharui");
                         $("#cls").click();
-                        getMataAjar();
+                        getKelas();
                       }else{
                         alert("upsh ada kesalahan!");
                       }
@@ -270,7 +273,7 @@
                       if(inserted){
                         alert("Data Berhasil Ditambahkan");
                         $("#cls").click();
-                        getMataAjar();
+                        getKelas();
                       }else{
                         alert("upsh ada kesalahan!");
                       }
@@ -279,7 +282,7 @@
                       if(update.status == "Sukses"){
                         alert("Data Berhasil Diperbaharui");
                         $("#cls").click();
-                        getMataAjar();
+                        getKelas();
                       }else{
                         alert("upsh ada kesalahan!");
                       }
