@@ -79,28 +79,18 @@
                       const tahunAjaranId = item.tahun_ajaran_id;
                       const kelasId = item.kelas_id;
 
-                      if (!groupedData[tahunAjaranId]) {
-                        groupedData[tahunAjaranId] = {};
+                      const key = `${tahunAjaranId}-${kelasId}`;
+
+                      if (!groupedData[key]) {
+                        groupedData[key] = [];
                       }
 
-                      if (!groupedData[tahunAjaranId][kelasId]) {
-                        groupedData[tahunAjaranId][kelasId] = [];
-                      }
-
-                      // Cek apakah data dengan tahun ajaran dan kelas yang sama sudah ada
-                      const existingData = groupedData[tahunAjaranId][kelasId].find(
-                        data => data.nama_kelas === item.nama_kelas
-                      );
-
-                      // Jika belum ada, tambahkan data ke kelompok yang sesuai
-                      if (!existingData) {
-                        groupedData[tahunAjaranId][kelasId].push(item);
-                      }
+                      groupedData[key].push(item);
                     });
 
                     console.log(groupedData);
 
-                  
+
                   console.log("HASIL GROUPING : ",groupedData);
                   // end grouped view
                     let temp = '';
