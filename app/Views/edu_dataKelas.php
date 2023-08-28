@@ -178,7 +178,7 @@
                   },
                   body: JSON.stringify(postDatagetMataAjar), // Mengubah data menjadi bentuk JSON
                 };
-                    const data = await fetchData('https://api.paylite.co.id/dataKelas', requestOptions);
+                    const data = await fetchData('https://api.paylite.co.id/dataKelasWhere', requestOptions);
                     return data;
                 }
                 async function insertDataKelas(dataPost){
