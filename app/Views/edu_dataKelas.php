@@ -143,10 +143,10 @@
                   `;
                   // $("#modalContent").html('<?= $_COOKIE['lembaga_pendidikan_id']; ?>');
                   $("#modalContent").html(form);
-                  getTahunAjaran();
-                  getKelas();
-                  getGuru();
-                  getSiswa();
+                  // getTahunAjaran();
+                  // getKelas();
+                  // getGuru();
+                  // getSiswa();
                 }
 
                 async function getExist(id){
