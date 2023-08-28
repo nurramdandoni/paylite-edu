@@ -145,6 +145,10 @@
                     <select class="form-control" id="DKsiswa">
                     </select>
                   </div>
+                  <div class="form-group">
+                    <label for="description">Deskripsi</label>
+                    <textarea class="form-control" id="description" rows="3">-</textarea>
+                  </div>
                   `;
                   // $("#modalContent").html('<?= $_COOKIE['lembaga_pendidikan_id']; ?>');
                   $("#modalContent").html(form);
