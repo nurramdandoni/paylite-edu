@@ -117,6 +117,24 @@
                       $("#list").html(temp);
                     }
                     $('#example').DataTable();
+                    // grouped view
+                    data.data.forEach(item => {
+                    const tahunAjaranId = item.tahun_ajaran_id;
+                    const kelasId = item.kelas_id;
+
+                    if (!groupedData[tahunAjaranId]) {
+                      groupedData[tahunAjaranId] = {};
+                    }
+
+                    if (!groupedData[tahunAjaranId][kelasId]) {
+                      groupedData[tahunAjaranId][kelasId] = [];
+                    }
+                    
+                    groupedData[tahunAjaranId][kelasId].push(item);
+                  });
+                  
+                  console.log("HASIL GROUPING : ",groupedData);
+                  // end grouped view
                 }
         var previousLink = document.querySelector('#example_previous a');
   
