@@ -301,7 +301,7 @@
                       if(update.status == "Sukses"){
                         alert("Data Berhasil Diperbaharui");
                         $("#cls").click();
-                        get();
+                        getGuru();
                       }else{
                         alert("upsh ada kesalahan!");
                       }
