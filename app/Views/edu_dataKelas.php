@@ -127,22 +127,22 @@
                   <input type="hidden" id="typeForm" value="add"/>
                   <div class="form-group">
                     <label for="tahunAjaran">Tahun Ajaran</label>
-                    <select class="form-control" id="tahunAjaran">
+                    <select class="form-control" id="DKtahunAjaran">
                     </select>
                   </div>
                   <div class="form-group">
                   <label for="kelas">Kelas</label>
-                  <select class="form-control" id="kelas">
+                  <select class="form-control" id="DKkelas">
                   </select>
                   </div>
                   <div class="form-group">
                     <label for="waliKelas">Wali Kelas</label>
-                    <select class="form-control" id="waliKelas">
+                    <select class="form-control" id="DKwaliKelas">
                     </select>
                   </div>
                   <div class="form-group">
                     <label for="siswa">Siswa</label>
-                    <select class="form-control" id="siswa">
+                    <select class="form-control" id="DKsiswa">
                     </select>
                   </div>
                   `;
@@ -285,7 +285,7 @@
                     for(item2 of data.data){
                       temp2 += `<option value="`+item2.tahun_ajaran_id+`">`+item2.nama_tahun_ajaran+`</option>`;
                     }
-                    $("#tahunAjaran").html(temp2);
+                    $("#DKtahunAjaran").html(temp2);
                     return true;
               }
                 async function getKelas(){
@@ -306,7 +306,7 @@
                     for(item2 of data.data){
                       temp2 += `<option value="`+item2.kelas_id+`">`+item2.nama_kelas+`</option>`;
                     }
-                    $("#kelas").html(temp2);
+                    $("#DKkelas").html(temp2);
                     return true;
               }
                 async function getGuru(){
@@ -327,7 +327,7 @@
                     for(item2 of data.data){
                       temp2 += `<option value="`+item2.guru_id+`">`+item2.nama_guru+`</option>`;
                     }
-                    $("#wali_kelas").html(temp2);
+                    $("#DKwali_kelas").html(temp2);
                     return true;
               }
                 async function getSiswa(){
@@ -348,7 +348,7 @@
                     for(item2 of data.data){
                       temp2 += `<option value="`+item2.siswa_id+`">`+item2.nama_siswa+`</option>`;
                     }
-                    $("#siswa").html(temp2);
+                    $("#DKsiswa").html(temp2);
                     return true;
               }
 
