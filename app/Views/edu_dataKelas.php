@@ -83,7 +83,7 @@
                       groupedData[key] = [];
 
                       if (!groupedData[key]) {
-                        groupedData[key].push(item);
+                        groupedData[key].push({item});
                       }
 
                     });
