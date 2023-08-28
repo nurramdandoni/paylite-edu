@@ -85,7 +85,9 @@
 
                       if (!groupedData[tahunAjaranId][kelasId]) {
                         groupedData[tahunAjaranId][kelasId] = [];
-                        groupedData[tahunAjaranId][kelasId].push(item);
+                      }else{
+                        // groupedData[tahunAjaranId][kelasId].push(item);
+
                       }
 
                     });
