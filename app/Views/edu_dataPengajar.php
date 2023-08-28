@@ -9,6 +9,12 @@
             </div>
             <div class="card-body px-0 pt-0 pb-2">
               <div class="table-responsive p-0">
+              <div id="contentFormInputEdit">
+                  <!-- Button trigger modal -->
+                  <button id="judulModal" onclick="formTambah()" type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
+                    Tambah Pengajar
+                  </button>
+                </div>
               <table id="example" class="display table align-items-center mb-0">
                   <thead>
                     <tr>
@@ -123,6 +129,217 @@
                     }
                     $('#example').DataTable();
                 }
+
+                function formTambah(){
+                  console.log("clicked");
+                  $("#modalTitle").html("Tambah Pengajar");
+                  $("#modalButtonAction").html("Tambah");
+                  let form = `
+                  <input type="hidden" id="typeForm" value="add"/>
+                  <div class="form-group">
+                    <label for="nipGuru">Nomor Induk Pegawai</label>
+                    <input type="text" class="form-control" id="nipGuru" aria-describedby="nipG" placeholder="Nomor Induk Pegawai. Ex. NIP/ {NPSN}+{4 Digit Nomor Unik} =  202130010001">
+                    <small id="nipG" class="form-text text-muted">Masukan Nomor Induk Pegawai</small>
+                  </div>
+                  <div class="form-group">
+                    <label for="namaGuru">Nama Pengajar</label>
+                    <input type="text" class="form-control" id="namaGuru" aria-describedby="namaG" placeholder="Nama Pengajar. Ex. NIP/ {NPSN}+{4 Digit Nomor Unik} =  202130010001">
+                    <small id="namaG" class="form-text text-muted">Masukan Nama Pengajar</small>
+                  </div>
+                  <div class="form-group">
+                    <label for="jenisKelamin">Jenis Kelamin</label>
+                    <select class="form-control" id="jenisKelamin">
+                      <option value="L">Laki - Laki</option>
+                      <option value="P">Perempuan</option>
+                    </select>
+                  </div>
+                  <div class="form-group">
+                    <label for="jabatanPengajar">Jabatan Pengajar</label>
+                    <select class="form-control" id="jabatanPengajar">
+                    </select>
+                  </div>
+                  <div class="form-group">
+                    <label for="status">Status Kelas</label>
+                    <select class="form-control" id="statusGuru">
+                      <option value="aktif">aktif</option>
+                      <option value="non aktif">non aktif</option>
+                    </select>
+                  </div>
+                  `;
+                  // $("#modalContent").html('<?= $_COOKIE['lembaga_pendidikan_id']; ?>');
+                  $("#modalContent").html(form);
+                  getGuru();
+                }
+                async function formEdit(id){
+                  console.log("clicked");
+                  $("#modalTitle").html("Edit Kelas");
+                  $("#modalButtonAction").html("Simpan");
+                  const dt = await getExist(id);
+                  let form = `
+                  <input type="hidden" id="typeForm" value="edit"/>
+                  <input type="hidden" id="idData" value="`+id+`"/>
+                  <div class="form-group">
+                    <label for="nipGuru">Nomor Induk Pegawai</label>
+                    <input type="text" value="`+dt.data.nip+`" class="form-control" id="nipGuru" aria-describedby="nipG" placeholder="Nomor Induk Pegawai. Ex. NIP/ {NPSN}+{4 Digit Nomor Unik} =  202130010001">
+                    <small id="nipG" class="form-text text-muted">Masukan Nomor Induk Pegawai</small>
+                  </div>
+                  <div class="form-group">
+                    <label for="namaGuru">Nama Pengajar</label>
+                    <input type="text" value="`+dt.data.nama_guru+`" class="form-control" id="namaGuru" aria-describedby="namaG" placeholder="Nama Pengajar. Ex. NIP/ {NPSN}+{4 Digit Nomor Unik} =  202130010001">
+                    <small id="namaG" class="form-text text-muted">Masukan Nama Pengajar</small>
+                  </div>
+                  <div class="form-group">
+                    <label for="jenisKelamin">Jenis Kelamin</label>
+                    <select class="form-control" id="jenisKelamin">
+                      <option value="L">Laki - Laki</option>
+                      <option value="P">Perempuan</option>
+                    </select>
+                  </div>
+                  <div class="form-group">
+                    <label for="jabatanPengajar">Jabatan Pengajar</label>
+                    <select class="form-control" id="jabatanPengajar">
+                    </select>
+                  </div>
+                  <div class="form-group">
+                  <label for="status">Status Kelas</label>
+                    <select class="form-control" id="statusGuru">
+                      <option value="`+dt.data.status+`">`+dt.data.status+`</option>
+                      <option value="aktif">aktif</option>
+                      <option value="non aktif">non aktif</option>
+                    </select>
+                  </div>
+                  `;
+                  // $("#modalContent").html('<?= $_COOKIE['lembaga_pendidikan_id']; ?>');
+                  $("#modalContent").html(form);
+                  console.log("response ::: ",dt);
+                  $("#jenisKelamin").val(dt.data.jenis_kelamin_id);
+                  const dtget = await getJabatanGuru();
+                  if(dtget){
+
+                    $("#jabatanPengajar").val(dt.data.jabatan_guru_id);
+                    console.log("yyyy : ",dt.data.jabatan_guru_id);
+                  }
+                }
+
+                async function getExist(id){
+                    const data = await fetchData('https://api.paylite.co.id/guru/'+id+'');
+                    return data;
+                }
+                async function cekExist(nip){
+                  const postDatagetMataAjar = {
+                  lembaga_pendidikan_id: lembaga_pendidikan_id,
+                  nip: nip
+                }
+                  const requestOptions = {
+                  method: 'POST', // Metode permintaan
+                  headers: {
+                            'Content-Type': 'application/json', // Jenis konten yang dikirim
+                            // 'Authorization': 'Bearer YOUR_ACCESS_TOKEN' // Header otorisasi jika diperlukan
+                  },
+                  body: JSON.stringify(postDatagetMataAjar), // Mengubah data menjadi bentuk JSON
+                };
+                    const data = await fetchData('https://api.paylite.co.id/guruWhere', requestOptions);
+                    return data;
+                }
+                async function insertDataGuru(dataPost){
+                  const requestOptions = {
+                  method: 'POST', // Metode permintaan
+                  headers: {
+                            'Content-Type': 'application/json', // Jenis konten yang dikirim
+                            // 'Authorization': 'Bearer YOUR_ACCESS_TOKEN' // Header otorisasi jika diperlukan
+                  },
+                  body: JSON.stringify(dataPost), // Mengubah data menjadi bentuk JSON
+                };
+                    const data = await fetchData('https://api.paylite.co.id/guru', requestOptions);
+                    return data;
+                }
+                async function updateDataGuru(id,dataPost){
+                  const requestOptions = {
+                  method: 'PUT', // Metode permintaan
+                  headers: {
+                            'Content-Type': 'application/json', // Jenis konten yang dikirim
+                            // 'Authorization': 'Bearer YOUR_ACCESS_TOKEN' // Header otorisasi jika diperlukan
+                  },
+                  body: JSON.stringify(dataPost), // Mengubah data menjadi bentuk JSON
+                };
+                    const data = await fetchData('https://api.paylite.co.id/guru/'+id+'', requestOptions);
+                    return data;
+                }
+
+                async function modalButtonAction(){
+                  const tipe = $("#typeForm").val();
+                  const id = $("#idData").val();
+                  const nip = $("#nipGuru").val();
+                  const nama_guru = $("#namaGuru").val();
+                  const jenis_kelamin_id = $("#jenisKelamin").val();
+                  const jabatan_guru_id = $("#jabatanPengajar").val();
+                  const status = $("#statusGuru").val();
+                  const postData = {
+                      tipe: tipe,
+                      lembaga_pendidikan_id: lembaga_pendidikan_id,
+                      nip: nip,
+                      tahun_ajaran_id: tahun_ajaran_id,
+                      nama_guru: nama_guru,
+                      jenis_kelamin_id: jenis_kelamin_id,
+                      jabatan_guru_id: jabatan_guru_id,
+                      status: status
+                    }
+                  
+                  console.log(postData);
+                  // cek data sebelumnya dengan nama yang sama
+                  const hasilCek = await cekExist(nip);
+                    console.log(hasilCek);
+                  if(hasilCek.data.length > 0){
+                    console.log("id nya : ", id);
+                    if(id != undefined){
+                      const update = await updateDataGuru(id,postData);
+                      if(update.status == "Sukses"){
+                        alert("Data Berhasil Diperbaharui");
+                        $("#cls").click();
+                        getKelas();
+                      }else{
+                        alert("upsh ada kesalahan!");
+                      }
+                    }else{
+                      alert("NIP Sudah Digunakan!");
+
+                    }
+                  }else{
+                    // proses insert/update data
+                    if(tipe == "add"){
+
+                      const inserted = await insertDataGuru(postData);
+                      if(inserted){
+                        alert("Data Berhasil Ditambahkan");
+                        $("#cls").click();
+                        getKelas();
+                      }else{
+                        alert("upsh ada kesalahan!");
+                      }
+                    }else{
+                      const update = await updateDataGuru(id,postData);
+                      if(update.status == "Sukses"){
+                        alert("Data Berhasil Diperbaharui");
+                        $("#cls").click();
+                        getKelas();
+                      }else{
+                        alert("upsh ada kesalahan!");
+                      }
+
+                    }
+                  }
+
+                };
+                async function getJabatanGuru(){
+                    const data = await fetchData('https://api.paylite.co.id/jabatanGuru');
+                    console.log("list tahun", data.data);
+                    let temp2 = '';
+                    for(item2 of data.data){
+                      temp2 += `<option value="`+item2.jabatan_guru_id+`">`+item2.nama_jabatan+`</option>`;
+                    }
+                    $("#jabatanPengajar").html(temp2);
+                    return true;
+              }
         var previousLink = document.querySelector('#example_previous a');
   
         if (previousLink) {
