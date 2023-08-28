@@ -157,15 +157,15 @@
                   getKelas();
                   getGuru();
                   getSiswa();
-                  const where2 = {
-                    tahun_ajaran_id: tahun_ajaran_id,
-                    kelas_id: kelas_id
-                  };
-                  const hasilCekWaliKelas = await cekExistWaliKelas(where2);
-                  if(hasilCekWaliKelas.length > 0){
-                    $("#DKwaliKelas").val(hasilCekWaliKelas.data[0].wali_kelas_id);
-                    $("#DKwaliKelas").attr('disabled',true) 
-                  }
+                  // const where2 = {
+                  //   tahun_ajaran_id: tahun_ajaran_id,
+                  //   kelas_id: kelas_id
+                  // };
+                  // const hasilCekWaliKelas = await cekExistWaliKelas(where2);
+                  // if(hasilCekWaliKelas.length > 0){
+                  //   $("#DKwaliKelas").val(hasilCekWaliKelas.data[0].wali_kelas_id);
+                  //   $("#DKwaliKelas").attr('disabled',true) 
+                  // }
                 }
                 async function getExist(id){
                     const data = await fetchData('https://api.paylite.co.id/dataKelas/'+id+'');
