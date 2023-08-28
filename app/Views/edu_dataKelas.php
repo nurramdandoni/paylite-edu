@@ -157,15 +157,7 @@
                   getKelas();
                   getGuru();
                   getSiswa();
-                  // const where2 = {
-                  //   tahun_ajaran_id: tahun_ajaran_id,
-                  //   kelas_id: kelas_id
-                  // };
-                  // const hasilCekWaliKelas = await cekExistWaliKelas(where2);
-                  // if(hasilCekWaliKelas.length > 0){
-                  //   $("#DKwaliKelas").val(hasilCekWaliKelas.data[0].wali_kelas_id);
-                  //   $("#DKwaliKelas").attr('disabled',true) 
-                  // }
+                 
                 }
                 async function getExist(id){
                     const data = await fetchData('https://api.paylite.co.id/dataKelas/'+id+'');
@@ -208,6 +200,13 @@
                     const data = await fetchData('https://api.paylite.co.id/dataKelasWhere', requestOptions);
                     return data;
                 }
+                async function changeLive(){
+                  const where2 = {
+                    tahun_ajaran_id: tahun_ajaran_id,
+                    kelas_id: kelas_id
+                  };
+                  const hasilCekWaliKelas = await cekExistWaliKelas(where2);
+                }
                 async function insertDataKelas(dataPost){
                   const requestOptions = {
                   method: 'POST', // Metode permintaan
@@ -248,7 +247,11 @@
                       kelas_id: kelas_id,
                       wali_kelas_id: wali_kelas_id,
                       siswa_id: siswa_id,
-                      description: description
+                      description: description,
+                      if(hasilCekWaliKelas.length > 0){
+                    $("#DKwaliKelas").val(hasilCekWaliKelas.data[0].wali_kelas_id);
+                    $("#DKwaliKelas").attr('disabled',true) 
+                  }
                     }
                   
                   console.log("BEfore send : ", postData);
@@ -258,7 +261,15 @@
                     kelas_id: kelas_id,
                     siswa_id: siswa_id
                   };
-                  
+                   const where2 = {
+                    tahun_ajaran_id: tahun_ajaran_id,
+                    kelas_id: kelas_id
+                  };
+                  const hasilCekWaliKelas = await cekExistWaliKelas(where2);
+                  if(hasilCekWaliKelas.length > 0){
+                    $("#DKwaliKelas").val(hasilCekWaliKelas.data[0].wali_kelas_id);
+                    $("#DKwaliKelas").attr('disabled',true) 
+                  }
                   const hasilCek = await cekExist(where);
                   
                     console.log("Hasil Cek ::: ", hasilCek);
