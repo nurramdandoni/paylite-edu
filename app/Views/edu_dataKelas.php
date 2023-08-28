@@ -233,45 +233,45 @@
                   };
                   const hasilCek = await cekExist(where);
                     console.log("Hasil Cek ::: ", hasilCek);
-                  // if(hasilCek.data.length > 0){
-                  //   console.log("id nya : ", id);
-                  //   if(id != undefined){
-                  //     const update = await updateDataKelas(id,postData);
-                  //     if(update.status == "Sukses"){
-                  //       alert("Data Berhasil Diperbaharui");
-                  //       $("#cls").click();
-                  //       getDataKelas();
-                  //     }else{
-                  //       alert("upsh ada kesalahan!");
-                  //     }
-                  //   }else{
-                  //     alert("siswa dengan ID : "+siswa_id+" Sudah Ada di Kelas ini!");
+                  if(hasilCek.data.length > 0){
+                    console.log("id nya : ", id);
+                    if(id != undefined){
+                      const update = await updateDataKelas(id,postData);
+                      if(update.status == "Sukses"){
+                        alert("Data Berhasil Diperbaharui");
+                        $("#cls").click();
+                        getDataKelas();
+                      }else{
+                        alert("upsh ada kesalahan!");
+                      }
+                    }else{
+                      alert("siswa dengan ID : "+siswa_id+" Sudah Ada di Kelas ini!");
 
-                  //   }
-                  // }else{
-                  //   // proses insert/update data
-                  //   if(tipe == "add"){
+                    }
+                  }else{
+                    // proses insert/update data
+                    if(tipe == "add"){
 
-                  //     const inserted = await insertDataKelas(postData);
-                  //     if(inserted){
-                  //       alert("Data Berhasil Ditambahkan");
-                  //       $("#cls").click();
-                  //       getDataKelas();
-                  //     }else{
-                  //       alert("upsh ada kesalahan!");
-                  //     }
-                  //   }else{
-                  //     const update = await updateDataKelas(id,postData);
-                  //     if(update.status == "Sukses"){
-                  //       alert("Data Berhasil Diperbaharui");
-                  //       $("#cls").click();
-                  //       getDataKelas();
-                  //     }else{
-                  //       alert("upsh ada kesalahan!");
-                  //     }
+                      const inserted = await insertDataKelas(postData);
+                      if(inserted){
+                        alert("Data Berhasil Ditambahkan");
+                        $("#cls").click();
+                        getDataKelas();
+                      }else{
+                        alert("upsh ada kesalahan!");
+                      }
+                    }else{
+                      const update = await updateDataKelas(id,postData);
+                      if(update.status == "Sukses"){
+                        alert("Data Berhasil Diperbaharui");
+                        $("#cls").click();
+                        getDataKelas();
+                      }else{
+                        alert("upsh ada kesalahan!");
+                      }
 
-                  //   }
-                  // }
+                    }
+                  }
 
                 };
                     
