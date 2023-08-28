@@ -354,7 +354,7 @@
                     for(item2 of data.data){
                       temp2 += `<option value="`+item2.siswa_id+`">`+item2.nama_siswa+`</option>`;
                     }
-                    $("#js-example-basic-multiple").html(temp2);
+                    $(".js-example-basic-multiple").html(temp2);
                     return true;
               }
 
