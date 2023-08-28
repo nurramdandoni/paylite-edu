@@ -47,8 +47,6 @@
       </style>
       
       <script>
-        const tahun_ajaran_id = '<?= $tahun_ajaran_id; ?>';
-        const kelas_id = '<?= $kelas_id; ?>';
         getDataKelas();
         
         $("#liDash").html("Data Kelas");
@@ -68,11 +66,8 @@
 
         async function getDataKelas(){
           const postSiswa = {
-                  lembaga_pendidikan_id: lembaga_pendidikan_id,
-                  tahun_ajaran_id: tahun_ajaran_id,
-                  kelas_id: kelas_id,
+                  lembaga_pendidikan_id: lembaga_pendidikan_id
                 }
-                console.log("BEFORE ::::: ",postSiswa);
           const requestOptions = {
                   method: 'POST', // Metode permintaan
                   headers: {
@@ -81,7 +76,7 @@
                   },
                   body: JSON.stringify(postSiswa), // Mengubah data menjadi bentuk JSON
                 };
-                    const data = await fetchData('https://api.paylite.co.id/dataKelasWhere/'+lembaga_pendidikan_id+'');
+                    const data = await fetchData('https://api.paylite.co.id/dataKelasWhereJoin/'+lembaga_pendidikan_id+'');
                     console.log(data.data);
                     let temp = '';
                     for(item of data.data){
@@ -112,7 +107,7 @@
                         <span class="badge badge-sm bg-gradient-`+icon+`">Aktif</span>
                       </td>
                       <td class="align-middle">
-                        <a href="`+'<?= base_url(); ?>siswaKelas/'+item.tahun_ajaran_id+'/'+item.kelas_id+`" class="text-secondary font-weight-bold text-xs" data-toggle="tooltip" data-original-title="Edit user">
+                        <a href="`+'<?= base_url(); ?>siswaKelas/'+item.nama_tahun_ajaran+'/'+item.kelas_id+`" class="text-secondary font-weight-bold text-xs" data-toggle="tooltip" data-original-title="Edit user">
                           Lihat Peserta Didik
                         </a>
                       </td>
