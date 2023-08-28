@@ -117,7 +117,6 @@
                       $("#list").html(temp);
                     }
                     $('#example').DataTable();
-                    $('.js-example-basic-multiple').select2();
                 }
 
                     function formTambah(){
@@ -143,7 +142,7 @@
                   </div>
                   <div class="form-group">
                     <label for="siswa">Siswa</label>
-                    <select class="js-example-basic-multiple" name="siswa[]" multiple="multiple">
+                    <select class="form-control" id="DKsiswa">
                     </select>
                   </div>
                   <div class="form-group">
@@ -157,7 +156,6 @@
                   getKelas();
                   getGuru();
                   getSiswa();
-                  
                 }
                 async function getExist(id){
                     const data = await fetchData('https://api.paylite.co.id/dataKelas/'+id+'');
@@ -354,7 +352,7 @@
                     for(item2 of data.data){
                       temp2 += `<option value="`+item2.siswa_id+`">`+item2.nama_siswa+`</option>`;
                     }
-                    $(".js-example-basic-multiple").html(temp2);
+                    $("#DKsiswa").html(temp2);
                     return true;
               }
 
