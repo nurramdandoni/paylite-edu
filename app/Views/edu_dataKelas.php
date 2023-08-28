@@ -73,29 +73,24 @@
                     const data = await fetchData('https://api.paylite.co.id/dataKelasWhereJoin/'+lembaga_pendidikan_id+'');
                     console.log(data.data);
                     // grouped view
-                    const groupedData = {};
+                    const dataGroup = {};
 
                     data.data.forEach(item => {
                       const tahunAjaranId = item.tahun_ajaran_id;
                       const kelasId = item.kelas_id;
 
-                      if (!groupedData[tahunAjaranId]) {
-                        groupedData[tahunAjaranId] = {};
+                      if (!dataGroup[tahunAjaranId]) {
+                        dataGroup[tahunAjaranId] = {};
                       }
 
-                      if (!groupedData[tahunAjaranId][kelasId]) {
-                        groupedData[tahunAjaranId][kelasId] = [];
-                      }else{
-                        // groupedData[tahunAjaranId][kelasId].push(item);
-
+                      if (!dataGroup[tahunAjaranId][kelasId]) {
+                        dataGroup[tahunAjaranId][kelasId] = item;
                       }
-
                     });
 
-                    console.log(groupedData);
+                    console.log(dataGroup);
 
-
-
+                    
                   console.log("HASIL GROUPING : ",groupedData);
                   // end grouped view
                     // let temp = '';
