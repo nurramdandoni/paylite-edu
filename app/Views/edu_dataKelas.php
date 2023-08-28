@@ -84,14 +84,15 @@
                       }
 
                       if (!dataGroup[tahunAjaranId][kelasId]) {
-                        dataGroup[tahunAjaranId][kelasId] = item;
+                        dataGroup[tahunAjaranId][kelasId] = {};
                       }
+                      dataGroup[tahunAjaranId][kelasId] = item;
                     });
 
                     console.log(dataGroup);
 
                     
-                  console.log("HASIL GROUPING : ",groupedData);
+                  console.log("HASIL GROUPING : ",dataGroup);
                   // end grouped view
                     // let temp = '';
                     // for (const tahunAjaranId in groupedData) {
