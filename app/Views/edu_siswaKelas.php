@@ -80,7 +80,7 @@
                     let temp = '';
                     for(item of data.data){
                       let icon = 'secondary';
-                      if(item.status == 'aktif'){
+                      if(item.siswa.status == 'aktif'){
                         icon = 'success';
                       }
                       temp += `
