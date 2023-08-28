@@ -5,7 +5,8 @@
         <div class="col-12">
           <div class="card mb-4">
             <div class="card-header pb-0">
-              <h6>Data Siswa di Kelas <span id="titleKelas"></span> Tahun Ajaran <span id="titleTahunAjaran"></span> </h6>
+              <h6>Data Siswa ->  <span id="titleKelas"></span> - Tahun Ajaran <span id="titleTahunAjaran"></span> </h6>
+              <h6>Wali Kelas :  <span id="titleWaliKelas">< </h6>
             </div>
             <div class="card-body px-0 pt-0 pb-2">
               <div class="table-responsive p-0">
@@ -114,6 +115,7 @@
                     if(data.data.length > 0){
                       $("#list").html(temp);
                       $("#titleKelas").html(item.kelas.nama_kelas);
+                      $("#titleWaliKelas").html(item.guru.nama_guru);
                       $("#titleTahunAjaran").html(item.tahun_ajaran.nama_tahun_ajaran);
                     }
                     $('#example').DataTable();
