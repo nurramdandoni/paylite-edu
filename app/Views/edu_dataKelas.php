@@ -85,7 +85,7 @@
                         groupedData[key] = [];
                         // groupedData[key].push({item});
                         if(!groupedData[key][kelasId]){
-                          groupedData[key][kelasId] = [];
+                          // groupedData[key][kelasId] = [];
                           groupedData[key][kelasId].push({item});
                         }
                       }
