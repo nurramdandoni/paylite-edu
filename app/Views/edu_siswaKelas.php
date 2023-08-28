@@ -66,6 +66,7 @@
                   tahun_ajaran_id: tahun_ajaran_id,
                   kelas_id: kelas_id
                 }
+                console.log("SENDERRRRv : ", postSiswa);
           const requestOptions = {
                   method: 'POST', // Metode permintaan
                   headers: {
