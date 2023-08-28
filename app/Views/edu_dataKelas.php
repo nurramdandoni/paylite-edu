@@ -73,26 +73,35 @@
                     const data = await fetchData('https://api.paylite.co.id/dataKelasWhereJoin/'+lembaga_pendidikan_id+'');
                     console.log(data.data);
                     // grouped view
-                    let groupedData = {};
+                    const groupedData = {};
+
                     data.data.forEach(item => {
-                    const tahunAjaranId = item.tahun_ajaran_id;
-                    const kelasId = item.kelas_id;
+                      const tahunAjaranId = item.tahun_ajaran_id;
+                      const kelasId = item.kelas_id;
 
-                    if (!groupedData[tahunAjaranId]) {
-                      groupedData[tahunAjaranId] = {};
-                    }
+                      if (!groupedData[tahunAjaranId]) {
+                        groupedData[tahunAjaranId] = {};
+                      }
 
-                    if (!groupedData[tahunAjaranId][kelasId]) {
-                      groupedData[tahunAjaranId][kelasId] = [];
-                    }
-                    
-                    groupedData[tahunAjaranId][kelasId].push(item);
-                  });
+                      if (!groupedData[tahunAjaranId][kelasId]) {
+                        groupedData[tahunAjaranId][kelasId] = [];
+                      }
+
+                      // Cek apakah data dengan tahun ajaran dan kelas yang sama sudah ada
+                      const existingData = groupedData[tahunAjaranId][kelasId].find(
+                        data => data.nama_kelas === item.nama_kelas
+                      );
+
+                      // Jika belum ada, tambahkan data ke kelompok yang sesuai
+                      if (!existingData) {
+                        groupedData[tahunAjaranId][kelasId].push(item);
+                      }
+                    });
+
+                    console.log(groupedData);
+
                   
                   console.log("HASIL GROUPING : ",groupedData);
-                  console.log("HASIL len : ",groupedData.length);
-                  console.log("HASIL len id 1 : ",groupedData[1]);
-                  console.log("HASIL len id 2 : ",groupedData[2]);
                   // end grouped view
                     let temp = '';
                     for (const tahunAjaranId in groupedData) {
