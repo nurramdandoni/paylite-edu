@@ -85,7 +85,7 @@
                       //   groupedData[key] = [];
                       // }
 
-                      groupedData[key];
+                      groupedData[key].push(item);
                     });
 
                     console.log(groupedData);
