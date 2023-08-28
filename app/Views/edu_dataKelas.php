@@ -78,21 +78,20 @@
                     data.data.forEach(item => {
                       const tahunAjaranId = item.tahun_ajaran_id;
                       const kelasId = item.kelas_id;
-                      
-                      const key = `${tahunAjaranId}`;
-                      
-                      if (!groupedData[key]) {
-                        groupedData[key] = [];
-                        // groupedData[key].push({item});
-                        if(!groupedData[key][kelasId]){
-                          // groupedData[key][kelasId] = [];
-                          groupedData[key][kelasId].push({item});
-                        }
+
+                      if (!groupedData[tahunAjaranId]) {
+                        groupedData[tahunAjaranId] = {};
                       }
 
+                      if (!groupedData[tahunAjaranId][kelasId]) {
+                        groupedData[tahunAjaranId][kelasId] = [];
+                      }
+
+                      groupedData[tahunAjaranId][kelasId].push(item);
                     });
 
                     console.log(groupedData);
+
 
 
                   console.log("HASIL GROUPING : ",groupedData);
