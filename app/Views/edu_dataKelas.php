@@ -113,6 +113,7 @@
                     </tr>
                       `;
                     }
+                  }
 
                     function formTambah(){
                   console.log("clicked");

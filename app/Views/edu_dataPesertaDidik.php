@@ -156,7 +156,6 @@
                   `;
                   // $("#modalContent").html('<?= $_COOKIE['lembaga_pendidikan_id']; ?>');
                   $("#modalContent").html(form);
-                  getJabatanGuru();
                 }
                 async function formEdit(id){
                   console.log("clicked");
