@@ -143,7 +143,7 @@
                   </div>
                   <div class="form-group">
                     <label for="siswa">Siswa</label>
-                    <select class="js-example-basic-multiple" id="DKsiswa" name="siswa[]" multiple="multiple">
+                    <select class="js-example-basic-multiple" name="siswa[]" multiple="multiple">
                     </select>
                   </div>
                   <div class="form-group">
