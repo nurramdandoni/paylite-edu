@@ -149,7 +149,7 @@
 
                     // }
                     if(data.data.length > 0){
-                      $("#list").html(temp);
+                      // $("#list").html(temp);
                     }
                     $('#example').DataTable();
                     
