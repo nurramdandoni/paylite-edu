@@ -118,6 +118,7 @@
                     }
                     $('#example').DataTable();
                     // grouped view
+                    let groupedData = {};
                     data.data.forEach(item => {
                     const tahunAjaranId = item.tahun_ajaran_id;
                     const kelasId = item.kelas_id;
