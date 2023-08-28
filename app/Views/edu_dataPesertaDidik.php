@@ -9,7 +9,7 @@
             </div>
             <div class="card-body px-0 pt-0 pb-2">
               <div class="table-responsive p-0">
-              <div id="contentFormInputEdit">
+                <div id="contentFormInputEdit">
                   <!-- Button trigger modal -->
                   <button id="judulModal" onclick="formTambah()" type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
                     Tambah Peserta Didik
