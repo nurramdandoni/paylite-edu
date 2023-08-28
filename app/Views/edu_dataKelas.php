@@ -81,11 +81,11 @@
 
                       const key = `${tahunAjaranId}-${kelasId}`;
 
-                      if (!groupedData[key]) {
-                        groupedData[key] = [];
-                      }
+                      // if (!groupedData[key]) {
+                      //   groupedData[key] = [];
+                      // }
 
-                      groupedData[key].push(item);
+                      groupedData[key];
                     });
 
                     console.log(groupedData);
