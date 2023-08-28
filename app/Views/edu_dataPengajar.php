@@ -186,7 +186,7 @@
                   <input type="hidden" id="idData" value="`+id+`"/>
                   <div class="form-group">
                     <label for="nipGuru">Nomor Induk Pegawai</label>
-                    <input type="text" value="`+dt.data.nip+`" class="form-control" id="nipGuru" aria-describedby="nipG" placeholder="Nomor Induk Pegawai. Ex. NIP/ {NPSN}+{4 Digit Nomor Unik} =  202130010001">
+                    <input readonly type="text" value="`+dt.data.nip+`" class="form-control" id="nipGuru" aria-describedby="nipG" placeholder="Nomor Induk Pegawai. Ex. NIP/ {NPSN}+{4 Digit Nomor Unik} =  202130010001">
                     <small id="nipG" class="form-text text-muted">Masukan Nomor Induk Pegawai</small>
                   </div>
                   <div class="form-group">
