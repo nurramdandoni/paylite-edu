@@ -95,7 +95,21 @@
                   console.log("HASIL len id 2 : ",groupedData[2]);
                   // end grouped view
                     let temp = '';
-                    for(item=0; groupedData.length; item++){
+                    for (const tahunAjaranId in groupedData) {
+                      console.log(`Tahun Ajaran ID: ${tahunAjaranId}`);
+                      
+                      const kelasGroups = groupedData[tahunAjaranId];
+                      for (const kelasId in kelasGroups) {
+                        console.log(`  Kelas ID: ${kelasId}`);
+                        
+                        const dataKelas = kelasGroups[kelasId];
+                        dataKelas.forEach(item => {
+                          console.log(`    Data Kelas ID: ${item.data_kelas_id}`);
+                          // Lakukan sesuatu dengan data kelas
+                        });
+                      }
+
+
                       // let icon = 'secondary';
                       // if(item.status == 'aktif'){
                       //   icon = 'success';
