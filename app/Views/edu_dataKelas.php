@@ -245,7 +245,7 @@
                         alert("upsh ada kesalahan!");
                       }
                     }else{
-                      alert("siswa dengan ID : "+siswa_id+" Sudah Ada di Kelas ini!");
+                      alert("siswa dengan ID : "+hasilCek.data[0].siswa.nama_siswa+" Sudah Ada di Kelas ini!");
 
                     }
                   }else{
