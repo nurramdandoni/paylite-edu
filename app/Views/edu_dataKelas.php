@@ -203,10 +203,10 @@
                 async function modalButtonAction(){
                   const tipe = $("#typeForm").val();
                   const id = $("#idData").val();
-                  const tahun_ajaran_id = $("#tahunAjaran").val();
-                  const kelas_id = $("#kelas").val();
-                  const wali_kelas_id = $("#waliKelas").val();
-                  const siswa_id = $("#siswa").val();
+                  const tahun_ajaran_id = $("#DKtahunAjaran").val();
+                  const kelas_id = $("#DKkelas").val();
+                  const wali_kelas_id = $("#DKwaliKelas").val();
+                  const siswa_id = $("#DKsiswa").val();
                   const postData = {
                       tipe: tipe,
                       lembaga_pendidikan_id: lembaga_pendidikan_id,
@@ -216,7 +216,7 @@
                       siswa_id: siswa_id
                     }
                   
-                  console.log(postData);
+                  console.log("BEfore send : ", postData);
                   // cek data sebelumnya dengan nama yang sama
                   const where = {
                     tahun_ajaran_id: tahun_ajaran_id,
@@ -224,46 +224,46 @@
                     siswa_id: siswa_id
                   };
                   const hasilCek = await cekExist(where);
-                    console.log(hasilCek);
-                  if(hasilCek.data.length > 0){
-                    console.log("id nya : ", id);
-                    if(id != undefined){
-                      const update = await updateDataKelas(id,postData);
-                      if(update.status == "Sukses"){
-                        alert("Data Berhasil Diperbaharui");
-                        $("#cls").click();
-                        getDataKelas();
-                      }else{
-                        alert("upsh ada kesalahan!");
-                      }
-                    }else{
-                      alert("siswa dengan ID : "+siswa_id+" Sudah Ada di Kelas ini!");
+                    console.log("Hasil Cek ::: ", hasilCek);
+                  // if(hasilCek.data.length > 0){
+                  //   console.log("id nya : ", id);
+                  //   if(id != undefined){
+                  //     const update = await updateDataKelas(id,postData);
+                  //     if(update.status == "Sukses"){
+                  //       alert("Data Berhasil Diperbaharui");
+                  //       $("#cls").click();
+                  //       getDataKelas();
+                  //     }else{
+                  //       alert("upsh ada kesalahan!");
+                  //     }
+                  //   }else{
+                  //     alert("siswa dengan ID : "+siswa_id+" Sudah Ada di Kelas ini!");
 
-                    }
-                  }else{
-                    // proses insert/update data
-                    if(tipe == "add"){
+                  //   }
+                  // }else{
+                  //   // proses insert/update data
+                  //   if(tipe == "add"){
 
-                      const inserted = await insertDataKelas(postData);
-                      if(inserted){
-                        alert("Data Berhasil Ditambahkan");
-                        $("#cls").click();
-                        getDataKelas();
-                      }else{
-                        alert("upsh ada kesalahan!");
-                      }
-                    }else{
-                      const update = await updateDataKelas(id,postData);
-                      if(update.status == "Sukses"){
-                        alert("Data Berhasil Diperbaharui");
-                        $("#cls").click();
-                        getDataKelas();
-                      }else{
-                        alert("upsh ada kesalahan!");
-                      }
+                  //     const inserted = await insertDataKelas(postData);
+                  //     if(inserted){
+                  //       alert("Data Berhasil Ditambahkan");
+                  //       $("#cls").click();
+                  //       getDataKelas();
+                  //     }else{
+                  //       alert("upsh ada kesalahan!");
+                  //     }
+                  //   }else{
+                  //     const update = await updateDataKelas(id,postData);
+                  //     if(update.status == "Sukses"){
+                  //       alert("Data Berhasil Diperbaharui");
+                  //       $("#cls").click();
+                  //       getDataKelas();
+                  //     }else{
+                  //       alert("upsh ada kesalahan!");
+                  //     }
 
-                    }
-                  }
+                  //   }
+                  // }
 
                 };
                     
@@ -327,7 +327,7 @@
                     for(item2 of data.data){
                       temp2 += `<option value="`+item2.guru_id+`">`+item2.nama_guru+`</option>`;
                     }
-                    $("#DKwali_kelas").html(temp2);
+                    $("#DKwaliKelas").html(temp2);
                     return true;
               }
                 async function getSiswa(){
