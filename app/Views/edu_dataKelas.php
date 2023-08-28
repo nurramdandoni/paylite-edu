@@ -117,73 +117,38 @@
 
                     function formTambah(){
                   console.log("clicked");
-                  $("#modalTitle").html("Tambah Peserta Didik");
+                  $("#modalTitle").html("Tambah Data Kelas");
                   $("#modalButtonAction").html("Tambah");
                   let form = `
                   <input type="hidden" id="typeForm" value="add"/>
                   <div class="form-group">
-                    <label for="nisSiswa">Nomor Induk Siswa Nasional</label>
-                    <input type="text" class="form-control" id="nisSiswa" aria-describedby="nisS" placeholder="Nomor Induk Siswa Nasional. Ex. NISN = 151043360 ">
-                    <small id="nisS" class="form-text text-muted">Masukan Nomor Induk Siswa Nasional</small>
-                  </div>
-                  <div class="form-group">
-                    <label for="namaSiswa">Nama Peserta Didik</label>
-                    <input type="text" class="form-control" id="namaSiswa" aria-describedby="namaS" placeholder="Nama Siswa. Ex. Kenziro">
-                    <small id="namaS" class="form-text text-muted">Masukan Nama Peserta Didik</small>
-                  </div>
-                  <div class="form-group">
-                    <label for="jenisKelamin">Jenis Kelamin</label>
-                    <select class="form-control" id="jenisKelamin">
-                      <option value="L">Laki - Laki</option>
-                      <option value="P">Perempuan</option>
+                    <label for="tahunAjaran">Tahun Ajaran</label>
+                    <select class="form-control" id="tahunAjaran">
                     </select>
                   </div>
                   <div class="form-group">
-                    <label for="status">Status Kelas</label>
-                    <select class="form-control" id="statusGuru">
-                      <option value="aktif">aktif</option>
-                      <option value="non aktif">non aktif</option>
+                  <label for="kelas">Kelas</label>
+                  <select class="form-control" id="kelas">
+                  </select>
+                  </div>
+                  <div class="form-group">
+                    <label for="waliKelas">Wali Kelas</label>
+                    <select class="form-control" id="waliKelas">
+                    </select>
+                  </div>
+                  <div class="form-group">
+                    <label for="siswa">Siswa</label>
+                    <select class="form-control" id="siswa">
                     </select>
                   </div>
                   `;
                   // $("#modalContent").html('<?= $_COOKIE['lembaga_pendidikan_id']; ?>');
                   $("#modalContent").html(form);
-                  // getJabatanGuru();
+                  // getTahunAjaran();
+                  // getKelas();
+                  // getGuru();
+                  // getSiswa();
                 }
-                //     function formTambah(){
-                //   console.log("clicked");
-                //   $("#modalTitle").html("Tambah Data Kelas");
-                //   $("#modalButtonAction").html("Tambah");
-                //   // let form = `
-                //   // <input type="hidden" id="typeForm" value="add"/>
-                //   // <div class="form-group">
-                //   //   <label for="tahunAjaran">Tahun Ajaran</label>
-                //   //   <select class="form-control" id="tahunAjaran">
-                //   //   </select>
-                //   // </div>
-                //   // <div class="form-group">
-                //   // <label for="kelas">Kelas</label>
-                //   // <select class="form-control" id="kelas">
-                //   // </select>
-                //   // </div>
-                //   // <div class="form-group">
-                //   //   <label for="waliKelas">Wali Kelas</label>
-                //   //   <select class="form-control" id="waliKelas">
-                //   //   </select>
-                //   // </div>
-                //   // <div class="form-group">
-                //   //   <label for="siswa">Siswa</label>
-                //   //   <select class="form-control" id="siswa">
-                //   //   </select>
-                //   // </div>
-                //   // `;
-                //   // $("#modalContent").html('<?= $_COOKIE['lembaga_pendidikan_id']; ?>');
-                //   // $("#modalContent").html(form);
-                //   // getTahunAjaran();
-                //   // getKelas();
-                //   // getGuru();
-                //   // getSiswa();
-                // }
 
                 
         var previousLink = document.querySelector('#example_previous a');
