@@ -169,6 +169,7 @@
                   kelas_id: where.kelas_id,
                   siswa_id: where.siswa_id
                 }
+                console.log("cekkk : ",postDatagetMataAjar);
                   const requestOptions = {
                   method: 'POST', // Metode permintaan
                   headers: {
