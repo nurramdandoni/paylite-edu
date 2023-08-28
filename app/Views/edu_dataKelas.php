@@ -75,12 +75,12 @@
                     // grouped view
                     const groupedData = {};
 
-                    let groupedData[key] = [];
                     data.data.forEach(item => {
                       const tahunAjaranId = item.tahun_ajaran_id;
                       const kelasId = item.kelas_id;
-
+                      
                       const key = `${tahunAjaranId}-${kelasId}`;
+                      groupedData[key] = [];
 
                       if (!groupedData[key]) {
                         groupedData[key].push(item);
