@@ -37,6 +37,9 @@
   <script src="https://code.jquery.com/jquery-3.7.0.js" integrity="sha256-JlqSTELeR4TLqP0OG9dxM7yDPqX1ox/HfgiSLBj8+kM=" crossorigin="anonymous"></script>
   <script src="<?= base_url(); ?>assets/js/jquery.dataTables.min.js"></script>
   <script src="<?= base_url(); ?>assets/js/dataTables.bootstrap4.min.js"></script>
+  <!-- select 2 -->
+  <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
+<script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
 </head>
 <script>
 //   const socket = new WebSocket('wss://broadcast.paylite.co.id/socket'); // Ganti URL server sesuai dengan kebutuhan

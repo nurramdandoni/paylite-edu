@@ -142,7 +142,7 @@
                   </div>
                   <div class="form-group">
                     <label for="siswa">Siswa</label>
-                    <select class="form-control" id="DKsiswa">
+                    <select class="js-example-basic-multiple" id="DKsiswa" name="siswa[]" multiple="multiple">
                     </select>
                   </div>
                   <div class="form-group">
@@ -156,6 +156,7 @@
                   getKelas();
                   getGuru();
                   getSiswa();
+                  $('.js-example-basic-multiple').select2();
                 }
                 async function getExist(id){
                     const data = await fetchData('https://api.paylite.co.id/dataKelas/'+id+'');
