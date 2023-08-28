@@ -149,7 +149,7 @@
                   </div>
                   <div class="form-group">
                     <label for="namaGuru">Nama Pengajar</label>
-                    <input type="text" class="form-control" id="namaGuru" aria-describedby="namaG" placeholder="Nama Pengajar. Ex. NIP/ {NPSN}+{4 Digit Nomor Unik} =  202130010001">
+                    <input type="text" class="form-control" id="namaGuru" aria-describedby="namaG" placeholder="Nama Pengajar. Ex. Amayadori ">
                     <small id="namaG" class="form-text text-muted">Masukan Nama Pengajar</small>
                   </div>
                   <div class="form-group">
@@ -178,7 +178,7 @@
                 }
                 async function formEdit(id){
                   console.log("clicked");
-                  $("#modalTitle").html("Edit Kelas");
+                  $("#modalTitle").html("Edit Pengajar");
                   $("#modalButtonAction").html("Simpan");
                   const dt = await getExist(id);
                   let form = `
@@ -191,7 +191,7 @@
                   </div>
                   <div class="form-group">
                     <label for="namaGuru">Nama Pengajar</label>
-                    <input type="text" value="`+dt.data.nama_guru+`" class="form-control" id="namaGuru" aria-describedby="namaG" placeholder="Nama Pengajar. Ex. NIP/ {NPSN}+{4 Digit Nomor Unik} =  202130010001">
+                    <input type="text" value="`+dt.data.nama_guru+`" class="form-control" id="namaGuru" aria-describedby="namaG" placeholder="Nama Pengajar. Ex. Amayadori ">
                     <small id="namaG" class="form-text text-muted">Masukan Nama Pengajar</small>
                   </div>
                   <div class="form-group">
