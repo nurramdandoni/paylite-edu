@@ -160,7 +160,7 @@
                 }
                 async function formEdit(id){
                   console.log("clicked");
-                  $("#modalTitle").html("Edit Kelas");
+                  $("#modalTitle").html("Edit Peserta Didik");
                   $("#modalButtonAction").html("Simpan");
                   const dt = await getExist(id);
                   let form = `
