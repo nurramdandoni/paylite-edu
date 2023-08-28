@@ -157,6 +157,15 @@
                   getKelas();
                   getGuru();
                   getSiswa();
+                  const where2 = {
+                    tahun_ajaran_id: tahun_ajaran_id,
+                    kelas_id: kelas_id
+                  };
+                  const hasilCekWaliKelas = await cekExistWaliKelas(where2);
+                  if(hasilCekWaliKelas.length > 0){
+                    $("#DKwaliKelas").val(hasilCekWaliKelas.data[0].wali_kelas_id);
+                    $("#DKwaliKelas").attr('disabled',true) 
+                  }
                 }
                 async function getExist(id){
                     const data = await fetchData('https://api.paylite.co.id/dataKelas/'+id+'');
@@ -168,6 +177,24 @@
                   tahun_ajaran_id: where.tahun_ajaran_id,
                   kelas_id: where.kelas_id,
                   siswa_id: where.siswa_id
+                }
+                console.log("cekkk : ",postDatagetMataAjar);
+                  const requestOptions = {
+                  method: 'POST', // Metode permintaan
+                  headers: {
+                            'Content-Type': 'application/json', // Jenis konten yang dikirim
+                            // 'Authorization': 'Bearer YOUR_ACCESS_TOKEN' // Header otorisasi jika diperlukan
+                  },
+                  body: JSON.stringify(postDatagetMataAjar), // Mengubah data menjadi bentuk JSON
+                };
+                    const data = await fetchData('https://api.paylite.co.id/dataKelasWhere', requestOptions);
+                    return data;
+                }
+                async function cekExistWaliKelas(where){
+                  const postDatagetMataAjar = {
+                  lembaga_pendidikan_id: lembaga_pendidikan_id,
+                  tahun_ajaran_id: where.tahun_ajaran_id,
+                  kelas_id: where.kelas_id
                 }
                 console.log("cekkk : ",postDatagetMataAjar);
                   const requestOptions = {
@@ -231,7 +258,9 @@
                     kelas_id: kelas_id,
                     siswa_id: siswa_id
                   };
+                  
                   const hasilCek = await cekExist(where);
+                  
                     console.log("Hasil Cek ::: ", hasilCek);
                   if(hasilCek.data.length > 0){
                     console.log("id nya : ", id);
