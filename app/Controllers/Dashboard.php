@@ -181,6 +181,18 @@ class Dashboard extends BaseController
             return $this->response->redirect('https://account.paylite.co.id');
         }
     }
+    public function siswaKelas()
+    {
+        if(isset($_COOKIE['statusProduk'])){
+            if($_COOKIE['statusProduk'] == 'prepareSubscriberRegister'){
+                return redirect()->route('register');
+            }else{
+                return view('edu_siswaKelas');
+            }
+        }else{
+            return $this->response->redirect('https://account.paylite.co.id');
+        }
+    }
     public function jadwalPengajaran()
     {
         if(isset($_COOKIE['statusProduk'])){
