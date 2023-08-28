@@ -168,7 +168,7 @@
                   <input type="hidden" id="idData" value="`+id+`"/>
                   <div class="form-group">
                     <label for="nisSiswa">Nomor Induk Siswa Nasional</label>
-                    <input type="text" value="`+dt.data.nisn+`" class="form-control" id="nisSiswa" aria-describedby="nisS" placeholder="Nomor Induk Siswa Nasional. Ex. NISN = 151043360 ">
+                    <input readonly type="text" value="`+dt.data.nisn+`" class="form-control" id="nisSiswa" aria-describedby="nisS" placeholder="Nomor Induk Siswa Nasional. Ex. NISN = 151043360 ">
                     <small id="nisS" class="form-text text-muted">Masukan Nomor Induk Siswa Nasional</small>
                   </div>
                   <div class="form-group">
