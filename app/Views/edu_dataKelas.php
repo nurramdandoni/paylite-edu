@@ -107,7 +107,7 @@
                         <span class="badge badge-sm bg-gradient-`+icon+`">Aktif</span>
                       </td>
                       <td class="align-middle">
-                        <a href="`+'<?= base_url(); ?>siswaKelas/'+item.nama_tahun_ajaran+'/'+item.kelas_id+`" class="text-secondary font-weight-bold text-xs" data-toggle="tooltip" data-original-title="Edit user">
+                        <a href="`+'<?= base_url(); ?>siswaKelas/'+item.tahun_ajaran_id+'/'+item.kelas_id+`" class="text-secondary font-weight-bold text-xs" data-toggle="tooltip" data-original-title="Edit user">
                           Lihat Peserta Didik
                         </a>
                       </td>
