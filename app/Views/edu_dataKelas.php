@@ -212,13 +212,15 @@
                   const kelas_id = $("#DKkelas").val();
                   const wali_kelas_id = $("#DKwaliKelas").val();
                   const siswa_id = $("#DKsiswa").val();
+                  const description = $("#description").val();
                   const postData = {
                       tipe: tipe,
                       lembaga_pendidikan_id: lembaga_pendidikan_id,
                       tahun_ajaran_id: tahun_ajaran_id,
                       kelas_id: kelas_id,
                       wali_kelas_id: wali_kelas_id,
-                      siswa_id: siswa_id
+                      siswa_id: siswa_id,
+                      description: description
                     }
                   
                   console.log("BEfore send : ", postData);
