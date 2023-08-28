@@ -117,6 +117,7 @@
                       $("#list").html(temp);
                     }
                     $('#example').DataTable();
+                    $('.js-example-basic-multiple').select2();
                 }
 
                     function formTambah(){
@@ -156,7 +157,7 @@
                   getKelas();
                   getGuru();
                   getSiswa();
-                  $('.js-example-basic-multiple').select2();
+                  
                 }
                 async function getExist(id){
                     const data = await fetchData('https://api.paylite.co.id/dataKelas/'+id+'');
