@@ -112,7 +112,7 @@
                         <span class="badge badge-sm bg-gradient-`+icon+`">`+item.status+`</span>
                       </td>
                       <td class="align-middle">
-                        <a href="javascript:;" class="text-secondary font-weight-bold text-xs" data-toggle="tooltip" data-original-title="Edit user">
+                        <a  data-toggle="modal" data-target="#exampleModal" onclick="formEdit('`+item.guru_id+`')" class="text-secondary font-weight-bold text-xs" data-toggle="tooltip" data-original-title="Edit user">
                           Edit
                         </a>
                       </td>
@@ -168,7 +168,7 @@
                   `;
                   // $("#modalContent").html('<?= $_COOKIE['lembaga_pendidikan_id']; ?>');
                   $("#modalContent").html(form);
-                  getGuru();
+                  getJabatanGuru();
                 }
                 async function formEdit(id){
                   console.log("clicked");
@@ -278,7 +278,6 @@
                       tipe: tipe,
                       lembaga_pendidikan_id: lembaga_pendidikan_id,
                       nip: nip,
-                      tahun_ajaran_id: tahun_ajaran_id,
                       nama_guru: nama_guru,
                       jenis_kelamin_id: jenis_kelamin_id,
                       jabatan_guru_id: jabatan_guru_id,
