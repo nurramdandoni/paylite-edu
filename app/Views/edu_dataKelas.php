@@ -79,12 +79,12 @@
                       const tahunAjaranId = item.tahun_ajaran_id;
                       const kelasId = item.kelas_id;
                       
-                      const key = `${tahunAjaranId}-${kelasId}`;
+                      const key = `${tahunAjaranId}`;
                       
                       if (!groupedData[key]) {
                         groupedData[key] = [];
+                        groupedData[key].push({item});
                       }
-                      groupedData[key].push({item});
 
                     });
 
