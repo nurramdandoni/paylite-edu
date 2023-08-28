@@ -113,7 +113,11 @@
                     </tr>
                       `;
                     }
-                  }
+                    if(data.data.length > 0){
+                      $("#list").html(temp);
+                    }
+                    $('#example').DataTable();
+                }
 
                     function formTambah(){
                   console.log("clicked");
@@ -262,11 +266,7 @@
                   }
 
                 };
-                    if(data.data.length > 0){
-                      $("#list").html(temp);
-                    }
-                    $('#example').DataTable();
-                }
+                    
                 async function getTahunAjaran(){
                     const postDatagetTahunAjaran = {
                             lembaga_pendidikan_id: lembaga_pendidikan_id
