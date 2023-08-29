@@ -137,7 +137,7 @@
                     $('#example').DataTable();
                 }
 
-                function formTambah(){
+                async function formTambah(){
                   // let th = await getTahunAjaranAktif();
                   console.log("clicked");
                   $("#modalTitle").html("Tambah Kelas");
@@ -168,7 +168,7 @@
                   `;
                   // $("#modalContent").html('<?= $_COOKIE['lembaga_pendidikan_id']; ?>');
                   $("#modalContent").html(form);
-                  const y = await getTahunAjaran();
+                  await getTahunAjaran();
                   // $("#tahunAjaranForm").val(th);
                 }
                 async function formEdit(id){
