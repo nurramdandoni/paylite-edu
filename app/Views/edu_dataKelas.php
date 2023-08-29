@@ -213,6 +213,9 @@
                   if(hasilCekWaliKelas.data.length > 0){
                     $("#DKwaliKelas").val(hasilCekWaliKelas.data[0].wali_kelas_id);
                     $("#DKwaliKelas").attr('disabled',true) 
+                  }else{
+                    $("#DKwaliKelas").attr('disabled',false) 
+
                   }
                 }
                 async function insertDataKelas(dataPost){
