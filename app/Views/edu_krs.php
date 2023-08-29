@@ -49,7 +49,7 @@
         getDataKelas();
         
         $("#liDash").html("Data Kelas");
-        $("#liDash2").html("Data Kelas");
+        $("#liDash2").html("Data KRS");
         $("#dashboard").removeClass("active");
         $("#account").removeClass("active");
         $("#tahunAjaran").removeClass("active");
