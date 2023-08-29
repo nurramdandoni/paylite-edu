@@ -164,7 +164,23 @@
                   getKelas();
                   getGuru();
                   getSiswa();
-                  changeLive();
+                  // 
+                let id_kelas = $("#DKkelas").val();
+                  let tahun_ajaran_id = $("#DKtahunAjaran").val();
+                  const where2 = {
+                    tahun_ajaran_id: tahun_ajaran_id,
+                    kelas_id: id_kelas
+                  };
+                  const hasilCekWaliKelas = await cekExistWaliKelas(where2);
+                  console.log("WALI KELAS :::: ",hasilCekWaliKelas);
+                  if(hasilCekWaliKelas.data.length > 0){
+                    $("#DKwaliKelas").val(hasilCekWaliKelas.data[0].wali_kelas_id);
+                    $("#DKwaliKelas").attr('disabled',true) 
+                  }else{
+                    $("#DKwaliKelas").attr('disabled',false) 
+
+                  }  
+                // 
                  
                 }
                 async function getExist(id){
@@ -251,23 +267,7 @@
                 }
 
                 async function modalButtonAction(){
-                // 
-                let id_kelas = $("#DKkelas").val();
-                  let tahun_ajaran_id = $("#DKtahunAjaran").val();
-                  const where2 = {
-                    tahun_ajaran_id: tahun_ajaran_id,
-                    kelas_id: id_kelas
-                  };
-                  const hasilCekWaliKelas = await cekExistWaliKelas(where2);
-                  console.log("WALI KELAS :::: ",hasilCekWaliKelas);
-                  if(hasilCekWaliKelas.data.length > 0){
-                    $("#DKwaliKelas").val(hasilCekWaliKelas.data[0].wali_kelas_id);
-                    $("#DKwaliKelas").attr('disabled',true) 
-                  }else{
-                    $("#DKwaliKelas").attr('disabled',false) 
-
-                  }  
-                // 
+                
                   const tipe = $("#typeForm").val();
                   const id = $("#idData").val();
                   const tahun_ajaran_id = $("#DKtahunAjaran").val();
