@@ -222,11 +222,6 @@
                     </select>
                   </div>
                   <div class="form-group">
-                    <label for="kelas">Kelas</label>
-                    <select class="form-control " id="DKkelas">
-                    </select>
-                  </div>
-                  <div class="form-group">
                     <label for="kurikulum">Kurikulum</label>
                     <select class="form-control " id="DKkurikulum">
                     </select>
