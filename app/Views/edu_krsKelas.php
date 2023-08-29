@@ -93,9 +93,11 @@
                       temp += `
                       <tr>
                       <td>
+                        <div class="align-middle">
                           <div class="d-flex flex-column justify-content-center">
                             <h6 class="mb-0 text-sm">`+item.kurikulum.kurikulum_id+`</h6>
                           </div>
+                        </div>
                       </td>
                       <td class="align-middle">
                         <a href="javascript:;" class="text-secondary font-weight-bold text-xs" data-toggle="tooltip" data-original-title="Edit user">
