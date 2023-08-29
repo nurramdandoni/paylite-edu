@@ -133,7 +133,7 @@
                   </div>
                   <div class="form-group">
                   <label for="kelas">Kelas</label>
-                  <select class="form-control" id="DKkelas">
+                  <select onchange="changeLive()" class="form-control" id="DKkelas">
                   </select>
                   </div>
                   <div class="form-group">
@@ -210,10 +210,10 @@
                   };
                   const hasilCekWaliKelas = await cekExistWaliKelas(where2);
                   console.log("WALI KELAS :::: ",hasilCekWaliKelas);
-                  // if(hasilCekWaliKelas.length > 0){
-                  //   $("#DKwaliKelas").val(hasilCekWaliKelas.data[0].wali_kelas_id);
-                  //   $("#DKwaliKelas").attr('disabled',true) 
-                  // }
+                  if(hasilCekWaliKelas.length > 0){
+                    $("#DKwaliKelas").val(hasilCekWaliKelas.data[0].wali_kelas_id);
+                    $("#DKwaliKelas").attr('disabled',true) 
+                  }
                 }
                 async function insertDataKelas(dataPost){
                   const requestOptions = {
