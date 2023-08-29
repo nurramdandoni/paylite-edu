@@ -75,7 +75,7 @@
                   },
                   body: JSON.stringify(postSiswa), // Mengubah data menjadi bentuk JSON
                 };
-                    const data = await fetchData('https://api.paylite.co.id/dataKelasWhereJoin/'+lembaga_pendidikan_id+'');
+                    const data = await fetchData('https://api.paylite.co.id/krsWhereJoin/'+lembaga_pendidikan_id+'');
                     console.log(data.data);
                     let temp = '';
                     for(item of data.data){
@@ -103,7 +103,7 @@
                         </div>
                       </td>
                       <td class="align-middle">
-                        <a href="`+'<?= base_url(); ?>siswaKelas/'+item.dkT+'/'+item.dkK+`" class="text-secondary font-weight-bold text-xs" data-toggle="tooltip" data-original-title="Edit user">
+                        <a href="`+'<?= base_url(); ?>krsKelas/'+item.dTh+'/'+item.dKk+`" class="text-secondary font-weight-bold text-xs" data-toggle="tooltip" data-original-title="Edit user">
                           Lihat KRS
                         </a>
                       </td>
