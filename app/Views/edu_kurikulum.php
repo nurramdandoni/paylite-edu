@@ -63,9 +63,30 @@
         $("#nilai").removeClass("active");
         $("#krs").removeClass("active");
 
+        async function getTahunAjaranAktif(){
+                  const postDataTahunAjaranAktif = {
+                  lembaga_pendidikan_id: lembaga_pendidikan_id,
+                  status:"aktif"
+                }
+                console.log("cekkk : ",postDataTahunAjaranAktif);
+                  const requestOptions = {
+                  method: 'POST', // Metode permintaan
+                  headers: {
+                            'Content-Type': 'application/json', // Jenis konten yang dikirim
+                            // 'Authorization': 'Bearer YOUR_ACCESS_TOKEN' // Header otorisasi jika diperlukan
+                  },
+                  body: JSON.stringify(postDataTahunAjaranAktif), // Mengubah data menjadi bentuk JSON
+                };
+                    const data = await fetchData('https://api.paylite.co.id/tahunAjaranWhere', requestOptions);
+                    console.log("ID Tahun Ajaran Aktif : ",data.data[0].tahun_ajaran_id);
+                    return data.data[0].tahun_ajaran_id;
+                }
+
         async function getKurikulum(){
+          let th = await getTahunAjaranAktif();
           const postDatagetKelas = {
-                  lembaga_pendidikan_id: lembaga_pendidikan_id
+                  lembaga_pendidikan_id: lembaga_pendidikan_id,
+                  tahun_ajaran_id:th
                 }
           const requestOptions = {
                   method: 'GET', // Metode permintaan
@@ -115,7 +136,8 @@
                     $('#example').DataTable();
                 }
 
-                function formTambah(){
+                async function formTambah(){
+                  let th = await getTahunAjaranAktif();
                   console.log("clicked");
                   $("#modalTitle").html("Tambah Kurikulum");
                   $("#modalButtonAction").html("Tambah");
@@ -123,7 +145,7 @@
                   <input type="hidden" id="typeForm" value="add"/>
                   <div class="form-group">
                     <label for="status">Tahun Ajaran</label>
-                    <select class="form-control" id="tahunAjaranForm">
+                    <select disabled class="form-control" id="tahunAjaranForm">
                     </select>
                   </div>
                   <div class="form-group">
@@ -146,8 +168,10 @@
                   `;
                   // $("#modalContent").html('<?= $_COOKIE['lembaga_pendidikan_id']; ?>');
                   $("#modalContent").html(form);
-                  getTahunAjaran();
-                  getMataAjar();
+                  await getTahunAjaran();
+                  await getMataAjar();
+                  $("#tahunAjaranForm").val(th);
+                  
                 }
                 async function formEdit(id){
                   console.log("clicked");
@@ -159,7 +183,7 @@
                   <input type="hidden" id="idData" value="`+id+`"/>
                   <div class="form-group">
                     <label for="status">Tahun Ajaran</label>
-                    <select class="form-control" id="tahunAjaranForm">
+                    <select disabled class="form-control" id="tahunAjaranForm">
                     </select>
                   </div>
                   <div class="form-group">
