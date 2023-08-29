@@ -138,7 +138,7 @@
                   </div>
                   <div class="form-group">
                     <label for="waliKelas">Wali Kelas</label>
-                    <select class="form-control" id="DKwaliKelas">
+                    <select onchange="changeLive()" class="form-control" id="DKwaliKelas">
                     </select>
                   </div>
                   <div class="form-group">
@@ -157,6 +157,7 @@
                   getKelas();
                   getGuru();
                   getSiswa();
+                  changeLive();
                  
                 }
                 async function getExist(id){
@@ -201,11 +202,16 @@
                     return data;
                 }
                 async function changeLive(){
+                  let id_kelas = $("#DKkelas").val();
                   const where2 = {
                     tahun_ajaran_id: tahun_ajaran_id,
-                    kelas_id: kelas_id
+                    kelas_id: id_kelas
                   };
                   const hasilCekWaliKelas = await cekExistWaliKelas(where2);
+                  if(hasilCekWaliKelas.length > 0){
+                    $("#DKwaliKelas").val(hasilCekWaliKelas.data[0].wali_kelas_id);
+                    $("#DKwaliKelas").attr('disabled',true) 
+                  }
                 }
                 async function insertDataKelas(dataPost){
                   const requestOptions = {
@@ -248,10 +254,6 @@
                       wali_kelas_id: wali_kelas_id,
                       siswa_id: siswa_id,
                       description: description,
-                      if(hasilCekWaliKelas.length > 0){
-                    $("#DKwaliKelas").val(hasilCekWaliKelas.data[0].wali_kelas_id);
-                    $("#DKwaliKelas").attr('disabled',true) 
-                  }
                     }
                   
                   console.log("BEfore send : ", postData);
@@ -261,15 +263,6 @@
                     kelas_id: kelas_id,
                     siswa_id: siswa_id
                   };
-                   const where2 = {
-                    tahun_ajaran_id: tahun_ajaran_id,
-                    kelas_id: kelas_id
-                  };
-                  const hasilCekWaliKelas = await cekExistWaliKelas(where2);
-                  if(hasilCekWaliKelas.length > 0){
-                    $("#DKwaliKelas").val(hasilCekWaliKelas.data[0].wali_kelas_id);
-                    $("#DKwaliKelas").attr('disabled',true) 
-                  }
                   const hasilCek = await cekExist(where);
                   
                     console.log("Hasil Cek ::: ", hasilCek);
