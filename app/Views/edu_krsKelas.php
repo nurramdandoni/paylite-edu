@@ -120,7 +120,7 @@
 
                 async function formTambah(){
                   console.log("clicked");
-                  $("#modalTitle").html("Tambah Data Kelas");
+                  $("#modalTitle").html("Tambah Data KRS");
                   $("#modalButtonAction").html("Tambah");
                   let form = `
                   <input type="hidden" id="typeForm" value="add"/>
@@ -135,13 +135,8 @@
                   </select>
                   </div>
                   <div class="form-group">
-                    <label for="waliKelas">Wali Kelas</label>
-                    <select onchange="changeLive()" class="form-control" id="DKwaliKelas">
-                    </select>
-                  </div>
-                  <div class="form-group">
-                    <label for="siswa">Siswa</label>
-                    <select class="form-control " id="DKsiswa">
+                    <label for="siswa">Kurikulum</label>
+                    <select class="form-control " id="DKkurikulum">
                     </select>
                   </div>
                   <div class="form-group">
@@ -153,68 +148,49 @@
                   $("#modalContent").html(form);
                   await getTahunAjaran();
                   await getKelas();
-                  await getGuru();
-                  await getSiswa();
-                  $("#DKtahunAjaran").val('<?= $tahun_ajaran_id; ?>');
-                  $("#DKtahunAjaran").attr('disabled',true) 
-                  $("#DKkelas").val('<?= $kelas_id; ?>');
-                  $("#DKkelas").attr('disabled',true) 
                   // 
-                let id_kelas = $("#DKkelas").val();
                   let tahun_ajaran_id = $("#DKtahunAjaran").val();
-                  const where2 = {
-                    tahun_ajaran_id: tahun_ajaran_id,
-                    kelas_id: id_kelas
-                  };
-                  const hasilCekWaliKelas = await cekExistWaliKelas(where2);
-                  console.log("WALI KELAS :::: ",hasilCekWaliKelas);
-                  if(hasilCekWaliKelas.data.length > 0){
-                    $("#DKwaliKelas").val(hasilCekWaliKelas.data[0].wali_kelas_id);
-                    $("#DKwaliKelas").attr('disabled',true) 
-                  }else{
-                    $("#DKwaliKelas").attr('disabled',false) 
-
-                  }  
-                // 
+                  await getKurikulum(tahun_ajaran_id);
+                  // 
                  
                 }
                 async function getExist(id){
-                    const data = await fetchData('https://api.paylite.co.id/dataKelas/'+id+'');
+                    const data = await fetchData('https://api.paylite.co.id/krs/'+id+'');
                     return data;
                 }
                 async function cekExist(where){
-                  const postDatagetMataAjar = {
+                  const postDatagetKurikulum = {
                   lembaga_pendidikan_id: lembaga_pendidikan_id,
                   tahun_ajaran_id: where.tahun_ajaran_id,
                   kelas_id: where.kelas_id,
-                  siswa_id: where.siswa_id
+                  kurikulum_id: where.kurikulum_id
                 }
-                console.log("cekkk : ",postDatagetMataAjar);
+                console.log("cekkk : ",postDatagetKurikulum);
                   const requestOptions = {
                   method: 'POST', // Metode permintaan
                   headers: {
                             'Content-Type': 'application/json', // Jenis konten yang dikirim
                             // 'Authorization': 'Bearer YOUR_ACCESS_TOKEN' // Header otorisasi jika diperlukan
                   },
-                  body: JSON.stringify(postDatagetMataAjar), // Mengubah data menjadi bentuk JSON
+                  body: JSON.stringify(postDatagetKurikulum), // Mengubah data menjadi bentuk JSON
                 };
-                    const data = await fetchData('https://api.paylite.co.id/dataKelasWhere', requestOptions);
+                    const data = await fetchData('https://api.paylite.co.id/krsWhere', requestOptions);
                     return data;
                 }
-                async function cekExistWaliKelas(where){
-                  const postDatagetMataAjar = {
+                async function cekdatakelasList(where){
+                  const postDatagetDataKelasList = {
                   lembaga_pendidikan_id: lembaga_pendidikan_id,
                   tahun_ajaran_id: where.tahun_ajaran_id,
                   kelas_id: where.kelas_id
                 }
-                console.log("cekkk : ",postDatagetMataAjar);
+                console.log("cekkk : ",postDatagetDataKelasList);
                   const requestOptions = {
                   method: 'POST', // Metode permintaan
                   headers: {
                             'Content-Type': 'application/json', // Jenis konten yang dikirim
                             // 'Authorization': 'Bearer YOUR_ACCESS_TOKEN' // Header otorisasi jika diperlukan
                   },
-                  body: JSON.stringify(postDatagetMataAjar), // Mengubah data menjadi bentuk JSON
+                  body: JSON.stringify(postDatagetDataKelasList), // Mengubah data menjadi bentuk JSON
                 };
                     const data = await fetchData('https://api.paylite.co.id/dataKelasWhere', requestOptions);
                     return data;
@@ -226,17 +202,9 @@
                     tahun_ajaran_id: tahun_ajaran_id,
                     kelas_id: id_kelas
                   };
-                  const hasilCekWaliKelas = await cekExistWaliKelas(where2);
-                  console.log("WALI KELAS :::: ",hasilCekWaliKelas);
-                  if(hasilCekWaliKelas.data.length > 0){
-                    $("#DKwaliKelas").val(hasilCekWaliKelas.data[0].wali_kelas_id);
-                    $("#DKwaliKelas").attr('disabled',true) 
-                  }else{
-                    $("#DKwaliKelas").attr('disabled',false) 
-
-                  }
+                  await getKurikulum(tahun_ajaran_id)
                 }
-                async function insertDataKelas(dataPost){
+                async function insertDataKrs(dataPost){
                   const requestOptions = {
                   method: 'POST', // Metode permintaan
                   headers: {
@@ -245,10 +213,10 @@
                   },
                   body: JSON.stringify(dataPost), // Mengubah data menjadi bentuk JSON
                 };
-                    const data = await fetchData('https://api.paylite.co.id/dataKelas', requestOptions);
+                    const data = await fetchData('https://api.paylite.co.id/krs', requestOptions);
                     return data;
                 }
-                async function updateDataKelas(id,dataPost){
+                async function updateDataKrs(id,dataPost){
                   const requestOptions = {
                   method: 'PUT', // Metode permintaan
                   headers: {
@@ -257,76 +225,75 @@
                   },
                   body: JSON.stringify(dataPost), // Mengubah data menjadi bentuk JSON
                 };
-                    const data = await fetchData('https://api.paylite.co.id/dataKelas/'+id+'', requestOptions);
+                    const data = await fetchData('https://api.paylite.co.id/krs/'+id+'', requestOptions);
                     return data;
                 }
 
                 async function modalButtonAction(){
-                
                   const tipe = $("#typeForm").val();
                   const id = $("#idData").val();
                   const tahun_ajaran_id = $("#DKtahunAjaran").val();
                   const kelas_id = $("#DKkelas").val();
-                  const wali_kelas_id = $("#DKwaliKelas").val();
-                  const siswa_id = $("#DKsiswa").val();
+                  const kurikulum_id = $("#DKkurikulum").val();
                   const description = $("#description").val();
-                  const postData = {
-                      tipe: tipe,
-                      lembaga_pendidikan_id: lembaga_pendidikan_id,
-                      tahun_ajaran_id: tahun_ajaran_id,
-                      kelas_id: kelas_id,
-                      wali_kelas_id: wali_kelas_id,
-                      siswa_id: siswa_id,
-                      description: description,
-                    }
-                  console.log("BEfore send : ", postData);
-                  // cek data sebelumnya dengan nama yang sama
-                  const where = {
+
+                  const whereList = {
                     tahun_ajaran_id: tahun_ajaran_id,
-                    kelas_id: kelas_id,
-                    siswa_id: siswa_id
+                    kelas_id: kelas_id
                   };
-                  const hasilCek = await cekExist(where);
-                  
-                    console.log("Hasil Cek ::: ", hasilCek);
-                  if(hasilCek.data.length > 0){
-                    console.log("id nya : ", id);
-                    if(id != undefined){
-                      const update = await updateDataKelas(id,postData);
-                      if(update.status == "Sukses"){
-                        alert("Data Berhasil Diperbaharui");
-                        $("#cls").click();
-                        getDataKrs();
-                      }else{
-                        alert("upsh ada kesalahan!");
-                      }
-                    }else{
-                      alert("siswa dengan Nama : "+hasilCek.data[0].siswa.nama_siswa+" Sudah Ada di Kelas ini!");
 
-                    }
+                  const listSiswaKelas = await cekdatakelasList(whereList);
+                  console.log("Data Siswa Di KElas : ",listSiswaKelas);
+                  if(listSiswaKelas.data.length > 0){
+                    for(siswa of listSiswaKelas.data){
+                      console.log("ini Iterate : ", siswa.siswa_id);
+                          const postData = {
+                          tipe: tipe,
+                          lembaga_pendidikan_id: lembaga_pendidikan_id,
+                          tahun_ajaran_id: tahun_ajaran_id,
+                          kelas_id: kelas_id,
+                          kurikulum_id: kurikulum_id,
+                          siswa_id: siswa.siswa_id,
+                          status_wali: "approved",
+                          status_pay: "paying",
+                          description: description,
+                        }
+                        console.log("BEfore send : ", postData);
+                        // cek data sebelumnya dengan nama yang sama
+                        const where = {
+                          tahun_ajaran_id: tahun_ajaran_id,
+                          kelas_id: kelas_id,
+                          kurikulum_id: kurikulum_id,
+                          siswa_id: siswa.siswa_id,
+                        };
+                        const hasilCek = await cekExist(where);
+                        
+                          console.log("Hasil Cek ::: iterate "+siswa.siswa_id+"", hasilCek);
+                        if(hasilCek.data.length > 0){
+                          console.log("id nya : ", hasilCek.data[0].krs_id);
+                          if(hasilCek.data[0].krs_id != undefined){
+                            const update = await updateDataKrs(hasilCek.data[0].krs_id,postData);
+                          }else{
+                            // alert("Kurikulum : "+hasilCek.data[0].kurikulum.mata_ajar.nama_mata_ajar+" Sudah Ada di Kelas ini!");
+                          }
+                        }else{
+                          // proses insert/update data
+                          if(tipe == "add"){
+                            
+                            const inserted = await insertDataKrs(postData);
+                          }else{
+                            const update = await updateDataKrs(id,postData);
+                            
+                          }
+                        }
+                      }
+                      alert("Data KRS Berhasil Ditambahkan!");
+                      $("#cls").click();
+                      getDataKrs();
                   }else{
-                    // proses insert/update data
-                    if(tipe == "add"){
-
-                      const inserted = await insertDataKelas(postData);
-                      if(inserted){
-                        alert("Data Berhasil Ditambahkan");
-                        $("#cls").click();
-                        getDataKrs();
-                      }else{
-                        alert("upsh ada kesalahan!");
-                      }
-                    }else{
-                      const update = await updateDataKelas(id,postData);
-                      if(update.status == "Sukses"){
-                        alert("Data Berhasil Diperbaharui");
-                        $("#cls").click();
-                        getDataKrs();
-                      }else{
-                        alert("upsh ada kesalahan!");
-                      }
-
-                    }
+                    let kls = $("#DKkelas option:selected").text();
+                    let thn = $("#DKtahunAjaran option:selected").text();
+                    alert("Data Kelas : "+kls+" Tahun Ajaran "+thn+" Kosong!");
                   }
 
                 };
@@ -394,27 +361,29 @@
                     $("#DKwaliKelas").html(temp2);
                     return true;
               }
-                async function getSiswa(){
-                    const postDatagetTahunAjaran = {
-                            lembaga_pendidikan_id: lembaga_pendidikan_id
-                          }
-                    const requestOptions = {
-                            method: 'POST', // Metode permintaan
-                            headers: {
-                                      'Content-Type': 'application/json', // Jenis konten yang dikirim
-                                      // 'Authorization': 'Bearer YOUR_ACCESS_TOKEN' // Header otorisasi jika diperlukan
-                            },
-                            body: JSON.stringify(postDatagetTahunAjaran), // Mengubah data menjadi bentuk JSON
-                          };
-                    const data = await fetchData('https://api.paylite.co.id/siswaWhere', requestOptions);
+                async function getKurikulum(tahun_ajaran_id){
+                  const postDatagetKurikulum = {
+                  lembaga_pendidikan_id: lembaga_pendidikan_id,
+                  tahun_ajaran_id: tahun_ajaran_id
+                }
+          const requestOptions = {
+                  method: 'POST', // Metode permintaan
+                  headers: {
+                            'Content-Type': 'application/json', // Jenis konten yang dikirim
+                            // 'Authorization': 'Bearer YOUR_ACCESS_TOKEN' // Header otorisasi jika diperlukan
+                  },
+                  body: JSON.stringify(postDatagetKurikulum), // Mengubah data menjadi bentuk JSON
+                };
+                    const data = await fetchData('https://api.paylite.co.id/kurikulumWhere', requestOptions);
                     console.log("list tahun", data.data);
                     let temp2 = '';
                     for(item2 of data.data){
-                      temp2 += `<option value="`+item2.siswa_id+`">`+item2.nama_siswa+`</option>`;
+                      temp2 += `<option value="`+item2.kurikulum_id+`">`+item2.mata_ajar.nama_mata_ajar+`</option>`;
                     }
-                    $("#DKsiswa").html(temp2);
+                    $("#DKkurikulum").html(temp2);
                     return true;
               }
+
                    
         var previousLink = document.querySelector('#example_previous a');
   
