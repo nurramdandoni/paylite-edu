@@ -120,7 +120,7 @@
                     $('#example').DataTable();
                 }
 
-                    function formTambah(){
+                    async function formTambah(){
                   console.log("clicked");
                   $("#modalTitle").html("Tambah Data Kelas");
                   $("#modalButtonAction").html("Tambah");
@@ -156,8 +156,10 @@
                   getTahunAjaran();
                   getKelas();
                   getGuru();
-                  getSiswa();
-                  changeLive();
+                  const fedd = await getSiswa();
+                  if(fedd){
+                    changeLive();
+                  }
                  
                 }
                 async function getExist(id){
