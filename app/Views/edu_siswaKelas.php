@@ -160,10 +160,10 @@
                   `;
                   // $("#modalContent").html('<?= $_COOKIE['lembaga_pendidikan_id']; ?>');
                   $("#modalContent").html(form);
-                  getTahunAjaran();
-                  getKelas();
-                  getGuru();
-                  getSiswa();
+                  await getTahunAjaran();
+                  await getKelas();
+                  await getGuru();
+                  await getSiswa();
                   // 
                 let id_kelas = $("#DKkelas").val();
                   let tahun_ajaran_id = $("#DKtahunAjaran").val();
