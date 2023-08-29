@@ -244,6 +244,7 @@
                 }
 
                 async function modalButtonAction(){
+                  changeLive();
                   const tipe = $("#typeForm").val();
                   const id = $("#idData").val();
                   const tahun_ajaran_id = $("#DKtahunAjaran").val();
@@ -260,7 +261,6 @@
                       siswa_id: siswa_id,
                       description: description,
                     }
-                    changeLive();
                   console.log("BEfore send : ", postData);
                   // cek data sebelumnya dengan nama yang sama
                   const where = {
