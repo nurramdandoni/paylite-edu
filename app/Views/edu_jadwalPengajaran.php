@@ -305,6 +305,7 @@
               }
                 async function getKurikulum(){
                   const aktif = await getTahunAjaranAktif();
+                  console.log("AKTIFFFF : ",aktif);
                   const postDatagetKurikulum = {
                   lembaga_pendidikan_id: lembaga_pendidikan_id,
                   tahun_ajaran_id: aktif
