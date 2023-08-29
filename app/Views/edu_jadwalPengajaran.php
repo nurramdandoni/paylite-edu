@@ -247,7 +247,7 @@
                   },
                   body: JSON.stringify(dataPost), // Mengubah data menjadi bentuk JSON
                 };
-                    const data = await fetchData('https://api.paylite.co.id/jadwalPengajaran', requestOptions);
+                    const data = await fetchData('https://api.paylite.co.id/jadwalPelajaran', requestOptions);
                     return data;
                 }
 
@@ -306,7 +306,7 @@
                       if(inserted){
                         alert("Data Berhasil Ditambahkan");
                         $("#cls").click();
-                        getDataKelas();
+                        getJadwalPengajaran();
                       }else{
                         alert("upsh ada kesalahan!");
                       }
