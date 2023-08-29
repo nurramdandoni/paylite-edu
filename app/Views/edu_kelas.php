@@ -64,32 +64,32 @@
         $("#nilai").removeClass("active");
         $("#krs").removeClass("active");
 
-        // async function getTahunAjaranAktif(){
-        //           const postDataTahunAjaranAktif = {
-        //           lembaga_pendidikan_id: lembaga_pendidikan_id,
-        //           status:"aktif"
-        //         }
-        //         console.log("cekkk : ",postDataTahunAjaranAktif);
-        //           const requestOptions = {
-        //           method: 'POST', // Metode permintaan
-        //           headers: {
-        //                     'Content-Type': 'application/json', // Jenis konten yang dikirim
-        //                     // 'Authorization': 'Bearer YOUR_ACCESS_TOKEN' // Header otorisasi jika diperlukan
-        //           },
-        //           body: JSON.stringify(postDataTahunAjaranAktif), // Mengubah data menjadi bentuk JSON
-        //         };
-        //             const data = await fetchData('https://api.paylite.co.id/tahunAjaranWhere', requestOptions);
-        //             console.log("ID Tahun Ajaran Aktif : ",data.data[0].tahun_ajaran_id);
-        //             return data.data[0].tahun_ajaran_id;
-        //         }
+        async function getTahunAjaranAktif(){
+                  const postDataTahunAjaranAktif = {
+                  lembaga_pendidikan_id: lembaga_pendidikan_id,
+                  status:"aktif"
+                }
+                console.log("cekkk : ",postDataTahunAjaranAktif);
+                  const requestOptions = {
+                  method: 'POST', // Metode permintaan
+                  headers: {
+                            'Content-Type': 'application/json', // Jenis konten yang dikirim
+                            // 'Authorization': 'Bearer YOUR_ACCESS_TOKEN' // Header otorisasi jika diperlukan
+                  },
+                  body: JSON.stringify(postDataTahunAjaranAktif), // Mengubah data menjadi bentuk JSON
+                };
+                    const data = await fetchData('https://api.paylite.co.id/tahunAjaranWhere', requestOptions);
+                    console.log("ID Tahun Ajaran Aktif : ",data.data[0].tahun_ajaran_id);
+                    return data.data[0].tahun_ajaran_id;
+                }
               
 
         async function getKelas(){
-          // let th = await getTahunAjaranAktif();
-          // console.log("receier ", th);
+          let th = await getTahunAjaranAktif();
+          console.log("receier ", th);
           const postDatagetKelas = {
                   lembaga_pendidikan_id: lembaga_pendidikan_id
-                  // tahun_ajaran_id:th
+                  tahun_ajaran_id:th
                 }
                 console.log("DDD : ",postDatagetKelas);
           const requestOptions = {
@@ -138,7 +138,7 @@
                 }
 
                 async function formTambah(){
-                  // let th = await getTahunAjaranAktif();
+                  let th = await getTahunAjaranAktif();
                   console.log("clicked");
                   $("#modalTitle").html("Tambah Kelas");
                   $("#modalButtonAction").html("Tambah");
@@ -169,7 +169,7 @@
                   // $("#modalContent").html('<?= $_COOKIE['lembaga_pendidikan_id']; ?>');
                   $("#modalContent").html(form);
                   await getTahunAjaran();
-                  // $("#tahunAjaranForm").val(th);
+                  $("#tahunAjaranForm").val(th);
                 }
                 async function formEdit(id){
                   console.log("clicked");
