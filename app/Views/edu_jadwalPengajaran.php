@@ -234,6 +234,79 @@
                   `;
                   // $("#modalContent").html('<?= $_COOKIE['lembaga_pendidikan_id']; ?>');
                   $("#modalContent").html(form);
+                  await getKelas();
+                  await getGuru()
                 }
+
+
+
+
+
+
+
+                async function getKelas(){
+                    const postDatagetTahunAjaran = {
+                            lembaga_pendidikan_id: lembaga_pendidikan_id
+                          }
+                    const requestOptions = {
+                            method: 'POST', // Metode permintaan
+                            headers: {
+                                      'Content-Type': 'application/json', // Jenis konten yang dikirim
+                                      // 'Authorization': 'Bearer YOUR_ACCESS_TOKEN' // Header otorisasi jika diperlukan
+                            },
+                            body: JSON.stringify(postDatagetTahunAjaran), // Mengubah data menjadi bentuk JSON
+                          };
+                    const data = await fetchData('https://api.paylite.co.id/kelasWhere', requestOptions);
+                    console.log("list tahun", data.data);
+                    let temp2 = '';
+                    for(item2 of data.data){
+                      temp2 += `<option value="`+item2.kelas_id+`">`+item2.nama_kelas+`</option>`;
+                    }
+                    $("#DKkelas").html(temp2);
+                    return true;
+              }
+                async function getGuru(){
+                    const postDatagetTahunAjaran = {
+                            lembaga_pendidikan_id: lembaga_pendidikan_id
+                          }
+                    const requestOptions = {
+                            method: 'POST', // Metode permintaan
+                            headers: {
+                                      'Content-Type': 'application/json', // Jenis konten yang dikirim
+                                      // 'Authorization': 'Bearer YOUR_ACCESS_TOKEN' // Header otorisasi jika diperlukan
+                            },
+                            body: JSON.stringify(postDatagetTahunAjaran), // Mengubah data menjadi bentuk JSON
+                          };
+                    const data = await fetchData('https://api.paylite.co.id/guruWhere', requestOptions);
+                    console.log("list tahun", data.data);
+                    let temp2 = '';
+                    for(item2 of data.data){
+                      temp2 += `<option value="`+item2.guru_id+`">`+item2.nama_guru+`</option>`;
+                    }
+                    $("#DKpengajar").html(temp2);
+                    return true;
+              }
+                async function getKurikulum(){
+                  const postDatagetKurikulum = {
+                  lembaga_pendidikan_id: lembaga_pendidikan_id,
+                  status: "aktif"
+                }
+          const requestOptions = {
+                  method: 'POST', // Metode permintaan
+                  headers: {
+                            'Content-Type': 'application/json', // Jenis konten yang dikirim
+                            // 'Authorization': 'Bearer YOUR_ACCESS_TOKEN' // Header otorisasi jika diperlukan
+                  },
+                  body: JSON.stringify(postDatagetKurikulum), // Mengubah data menjadi bentuk JSON
+                };
+                    const data = await fetchData('https://api.paylite.co.id/kurikulumWhere', requestOptions);
+                    console.log("list tahun", data.data);
+                    let temp2 = '';
+                    for(item2 of data.data){
+                      temp2 += `<option value="`+item2.kurikulum_id+`">`+item2.mata_ajar.nama_mata_ajar+`</option>`;
+                    }
+                    $("#DKkurikulum").html(temp2);
+                    return true;
+              }
       </script>
 <?= $this->endSection() ?>
