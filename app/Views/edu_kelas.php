@@ -82,7 +82,7 @@
                 }
 
         async function getKelas(){
-          const th = await getTahunAjaranAktif()l
+          const th = await getTahunAjaranAktif();
           const postDatagetKelas = {
                   lembaga_pendidikan_id: lembaga_pendidikan_id,
                   tahun_ajaran_id:th
