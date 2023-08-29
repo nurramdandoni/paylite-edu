@@ -290,14 +290,14 @@
                   //   // proses insert/update data
                   //   if(tipe == "add"){
 
-                  //     const inserted = await insertDataKelas(postData);
-                  //     if(inserted){
-                  //       alert("Data Berhasil Ditambahkan");
-                  //       $("#cls").click();
-                  //       getDataKelas();
-                  //     }else{
-                  //       alert("upsh ada kesalahan!");
-                  //     }
+                      const inserted = await insertDataKelas(postData);
+                      if(inserted){
+                        alert("Data Berhasil Ditambahkan");
+                        $("#cls").click();
+                        getDataKelas();
+                      }else{
+                        alert("upsh ada kesalahan!");
+                      }
                   //   }else{
                   //     const update = await updateDataKelas(id,postData);
                   //     if(update.status == "Sukses"){
