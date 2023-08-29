@@ -20,7 +20,6 @@
                     <tr>
                       <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Tahun Ajaran</th>
                       <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Nama Kelas</th>
-                      <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Status</th>
                       <th class="text-secondary opacity-7"></th>
                     </tr>
                   </thead>
@@ -103,12 +102,9 @@
                           </div>
                         </div>
                       </td>
-                      <td class="align-middle text-center text-sm">
-                        <span class="badge badge-sm bg-gradient-`+icon+`">Aktif</span>
-                      </td>
                       <td class="align-middle">
                         <a href="`+'<?= base_url(); ?>siswaKelas/'+item.dkT+'/'+item.dkK+`" class="text-secondary font-weight-bold text-xs" data-toggle="tooltip" data-original-title="Edit user">
-                          Lihat Peserta Didik
+                          Lihat KRS
                         </a>
                       </td>
                     </tr>
