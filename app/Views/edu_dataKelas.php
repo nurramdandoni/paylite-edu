@@ -210,7 +210,7 @@
                   };
                   const hasilCekWaliKelas = await cekExistWaliKelas(where2);
                   console.log("WALI KELAS :::: ",hasilCekWaliKelas);
-                  if(hasilCekWaliKelas.length > 0){
+                  if(hasilCekWaliKelas.data.length > 0){
                     $("#DKwaliKelas").val(hasilCekWaliKelas.data[0].wali_kelas_id);
                     $("#DKwaliKelas").attr('disabled',true) 
                   }
