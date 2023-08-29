@@ -156,10 +156,8 @@
                   getTahunAjaran();
                   getKelas();
                   getGuru();
-                  const fedd = await getGuru();
-                  if(fedd){
-                    changeLive();
-                  }
+                  getSiswa();
+                  changeLive();
                  
                 }
                 async function getExist(id){
@@ -262,7 +260,7 @@
                       siswa_id: siswa_id,
                       description: description,
                     }
-                  
+                    changeLive();
                   console.log("BEfore send : ", postData);
                   // cek data sebelumnya dengan nama yang sama
                   const where = {
