@@ -258,7 +258,7 @@
                   },
                   body: JSON.stringify(postDataTahunAjaranAktif), // Mengubah data menjadi bentuk JSON
                 };
-                    const data = await fetchData('https://api.paylite.co.id/dataKelasWhere', requestOptions);
+                    const data = await fetchData('https://api.paylite.co.id/tahunAjaranWhere', requestOptions);
                     return data.data[0].tahun_ajaran_id;
                 }
                 async function getKelas(){
