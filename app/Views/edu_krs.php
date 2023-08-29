@@ -290,7 +290,8 @@
                       getDataKrs();
                   }else{
                     let kls = $("#DKkelas option:selected").text();
-                    alert("Data Kelas : "+kls+" Kosong!");
+                    let thn = $("#DKtahunAjaran option:selected").text();
+                    alert("Data Kelas : "+kls+" Tahun Ajaran "+thn+" Kosong!");
                   }
 
                 };
