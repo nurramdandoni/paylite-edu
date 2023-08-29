@@ -238,6 +238,18 @@
                   await getKurikulum();
                   await getGuru()
                 }
+                async function insertJadwalPengajaran(dataPost){
+                  const requestOptions = {
+                  method: 'POST', // Metode permintaan
+                  headers: {
+                            'Content-Type': 'application/json', // Jenis konten yang dikirim
+                            // 'Authorization': 'Bearer YOUR_ACCESS_TOKEN' // Header otorisasi jika diperlukan
+                  },
+                  body: JSON.stringify(dataPost), // Mengubah data menjadi bentuk JSON
+                };
+                    const data = await fetchData('https://api.paylite.co.id/jadwalPengajaran', requestOptions);
+                    return data;
+                }
 
                 async function modalButtonAction(){
                   const thn = await getTahunAjaranAktif();
@@ -290,7 +302,7 @@
                   //   // proses insert/update data
                   //   if(tipe == "add"){
 
-                      const inserted = await insertDataKelas(postData);
+                      const inserted = await insertJadwalPengajaran(postData);
                       if(inserted){
                         alert("Data Berhasil Ditambahkan");
                         $("#cls").click();
