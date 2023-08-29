@@ -88,7 +88,7 @@
           let th = await getTahunAjaranAktif();
           console.log("receier ", th);
           const postDatagetKelas = {
-                  lembaga_pendidikan_id: lembaga_pendidikan_id
+                  lembaga_pendidikan_id: lembaga_pendidikan_id,
                   tahun_ajaran_id:th
                 }
                 console.log("DDD : ",postDatagetKelas);
