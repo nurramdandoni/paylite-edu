@@ -153,7 +153,7 @@
                  
                 }
                 async function getExist(id){
-                    const data = await fetchData('https://api.paylite.co.id/dataKelas/'+id+'');
+                    const data = await fetchData('https://api.paylite.co.id/krs/'+id+'');
                     return data;
                 }
                 async function cekExist(where){
