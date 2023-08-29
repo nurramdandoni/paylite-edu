@@ -268,9 +268,9 @@
                         
                           console.log("Hasil Cek ::: iterate "+siswa.siswa_id+"", hasilCek);
                         if(hasilCek.data.length > 0){
-                          console.log("id nya : ", id);
-                          if(id != undefined){
-                            const update = await updateDataKrs(id,postData);
+                          console.log("id nya : ", hasilCek.data[0].krs_id);
+                          if(hasilCek.data[0].krs_id != undefined){
+                            const update = await updateDataKrs(hasilCek.data[0].krs_id,postData);
                           }else{
                             // alert("Kurikulum : "+hasilCek.data[0].kurikulum.mata_ajar.nama_mata_ajar+" Sudah Ada di Kelas ini!");
                           }
