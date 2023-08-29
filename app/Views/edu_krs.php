@@ -133,13 +133,8 @@
                   </select>
                   </div>
                   <div class="form-group">
-                    <label for="waliKelas">Wali Kelas</label>
-                    <select onchange="changeLive()" class="form-control" id="DKwaliKelas">
-                    </select>
-                  </div>
-                  <div class="form-group">
-                    <label for="siswa">Mata Ajar</label>
-                    <select class="form-control " id="DKmataAjar">
+                    <label for="siswa">Kurikulum</label>
+                    <select class="form-control " id="DKkurikulum">
                     </select>
                   </div>
                   <div class="form-group">
@@ -151,7 +146,6 @@
                   $("#modalContent").html(form);
                   await getTahunAjaran();
                   await getKelas();
-                  await getGuru();
                   // 
                   let id_kelas = $("#DKkelas").val();
                   let tahun_ajaran_id = $("#DKtahunAjaran").val();
@@ -162,13 +156,13 @@
                   console.log("MOAL OPEN : ",where2);
                   const hasilCekWaliKelas = await cekExistWaliKelas(where2);
                   console.log("WALI KELAS :::: ",hasilCekWaliKelas);
-                  if(hasilCekWaliKelas.data.length > 0){
-                    $("#DKwaliKelas").val(hasilCekWaliKelas.data[0].wali_kelas_id);
-                    $("#DKwaliKelas").attr('disabled',true) 
-                  }else{
-                    $("#DKwaliKelas").attr('disabled',false) 
+                  // if(hasilCekWaliKelas.data.length > 0){
+                  //   $("#DKwaliKelas").val(hasilCekWaliKelas.data[0].wali_kelas_id);
+                  //   $("#DKwaliKelas").attr('disabled',true) 
+                  // }else{
+                  //   $("#DKwaliKelas").attr('disabled',false) 
                     
-                  }
+                  // }
                   await getKurikulum(tahun_ajaran_id);
                   // 
                  
@@ -182,7 +176,7 @@
                   lembaga_pendidikan_id: lembaga_pendidikan_id,
                   tahun_ajaran_id: where.tahun_ajaran_id,
                   kelas_id: where.kelas_id,
-                  siswa_id: where.siswa_id
+                  kurikulum_id: where.kurikulum_id
                 }
                 console.log("cekkk : ",postDatagetKurikulum);
                   const requestOptions = {
@@ -193,25 +187,7 @@
                   },
                   body: JSON.stringify(postDatagetKurikulum), // Mengubah data menjadi bentuk JSON
                 };
-                    const data = await fetchData('https://api.paylite.co.id/dataKelasWhere', requestOptions);
-                    return data;
-                }
-                async function cekExistWaliKelas(where){
-                  const postDatagetKurikulum = {
-                  lembaga_pendidikan_id: lembaga_pendidikan_id,
-                  tahun_ajaran_id: where.tahun_ajaran_id,
-                  kelas_id: where.kelas_id
-                }
-                console.log("cekkk : ",postDatagetKurikulum);
-                  const requestOptions = {
-                  method: 'POST', // Metode permintaan
-                  headers: {
-                            'Content-Type': 'application/json', // Jenis konten yang dikirim
-                            // 'Authorization': 'Bearer YOUR_ACCESS_TOKEN' // Header otorisasi jika diperlukan
-                  },
-                  body: JSON.stringify(postDatagetKurikulum), // Mengubah data menjadi bentuk JSON
-                };
-                    const data = await fetchData('https://api.paylite.co.id/dataKelasWhere', requestOptions);
+                    const data = await fetchData('https://api.paylite.co.id/krsWhere', requestOptions);
                     return data;
                 }
                 async function changeLive(){
@@ -221,18 +197,18 @@
                     tahun_ajaran_id: tahun_ajaran_id,
                     kelas_id: id_kelas
                   };
-                  const hasilCekWaliKelas = await cekExistWaliKelas(where2);
-                  console.log("WALI KELAS :::: ",hasilCekWaliKelas);
-                  if(hasilCekWaliKelas.data.length > 0){
-                    $("#DKwaliKelas").val(hasilCekWaliKelas.data[0].wali_kelas_id);
-                    $("#DKwaliKelas").attr('disabled',true) 
-                  }else{
-                    $("#DKwaliKelas").attr('disabled',false) 
+                  // const hasilCekWaliKelas = await cekExistWaliKelas(where2);
+                  // console.log("WALI KELAS :::: ",hasilCekWaliKelas);
+                  // if(hasilCekWaliKelas.data.length > 0){
+                  //   $("#DKwaliKelas").val(hasilCekWaliKelas.data[0].wali_kelas_id);
+                  //   $("#DKwaliKelas").attr('disabled',true) 
+                  // }else{
+                  //   $("#DKwaliKelas").attr('disabled',false) 
 
-                  }
+                  // }
                   await getKurikulum(tahun_ajaran_id)
                 }
-                async function insertDataKelas(dataPost){
+                async function insertDataKrs(dataPost){
                   const requestOptions = {
                   method: 'POST', // Metode permintaan
                   headers: {
@@ -244,7 +220,7 @@
                     const data = await fetchData('https://api.paylite.co.id/dataKelas', requestOptions);
                     return data;
                 }
-                async function updateDataKelas(id,dataPost){
+                async function updateDataKrs(id,dataPost){
                   const requestOptions = {
                   method: 'PUT', // Metode permintaan
                   headers: {
@@ -262,16 +238,14 @@
                   const id = $("#idData").val();
                   const tahun_ajaran_id = $("#DKtahunAjaran").val();
                   const kelas_id = $("#DKkelas").val();
-                  const wali_kelas_id = $("#DKwaliKelas").val();
-                  const siswa_id = $("#DKsiswa").val();
+                  const kurikulum_id = $("#DKkurikulum").val();
                   const description = $("#description").val();
                   const postData = {
                       tipe: tipe,
                       lembaga_pendidikan_id: lembaga_pendidikan_id,
                       tahun_ajaran_id: tahun_ajaran_id,
                       kelas_id: kelas_id,
-                      wali_kelas_id: wali_kelas_id,
-                      siswa_id: siswa_id,
+                      kurikulum_id: kurikulum_id,
                       description: description,
                     }
                   console.log("BEfore send : ", postData);
@@ -279,7 +253,7 @@
                   const where = {
                     tahun_ajaran_id: tahun_ajaran_id,
                     kelas_id: kelas_id,
-                    siswa_id: siswa_id
+                    kurikulum_id: kurikulum_id
                   };
                   const hasilCek = await cekExist(where);
                   
@@ -287,7 +261,7 @@
                   if(hasilCek.data.length > 0){
                     console.log("id nya : ", id);
                     if(id != undefined){
-                      const update = await updateDataKelas(id,postData);
+                      // const update = await updateDataKrs(id,postData);
                       if(update.status == "Sukses"){
                         alert("Data Berhasil Diperbaharui");
                         $("#cls").click();
@@ -296,14 +270,14 @@
                         alert("upsh ada kesalahan!");
                       }
                     }else{
-                      alert("siswa dengan Nama : "+hasilCek.data[0].siswa.nama_siswa+" Sudah Ada di Kelas ini!");
+                      alert("Kurikulum : ... Sudah Ada di Kelas ini!");
 
                     }
                   }else{
                     // proses insert/update data
                     if(tipe == "add"){
 
-                      const inserted = await insertDataKelas(postData);
+                      // const inserted = await insertDataKrs(postData);
                       if(inserted){
                         alert("Data Berhasil Ditambahkan");
                         $("#cls").click();
@@ -312,7 +286,7 @@
                         alert("upsh ada kesalahan!");
                       }
                     }else{
-                      const update = await updateDataKelas(id,postData);
+                      // const update = await updateDataKrs(id,postData);
                       if(update.status == "Sukses"){
                         alert("Data Berhasil Diperbaharui");
                         $("#cls").click();
@@ -408,7 +382,7 @@
                     for(item2 of data.data){
                       temp2 += `<option value="`+item2.kurikulum_id+`">`+item2.mata_ajar.nama_mata_ajar+`</option>`;
                     }
-                    $("#DKmataAjar").html(temp2);
+                    $("#DKkurikulum").html(temp2);
                     return true;
               }
 
