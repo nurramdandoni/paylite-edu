@@ -235,6 +235,7 @@
                   // $("#modalContent").html('<?= $_COOKIE['lembaga_pendidikan_id']; ?>');
                   $("#modalContent").html(form);
                   await getKelas();
+                  await getKurikulum();
                   await getGuru()
                 }
 
