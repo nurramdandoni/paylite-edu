@@ -57,6 +57,7 @@
         $("#jadwalPengajaran").addClass("active");
         $("#absensi").removeClass("active");
         $("#nilai").removeClass("active");
+        $("#krs").removeClass("active");
 
         async function getJadwalPengajaran(){
           const postJadwalPelajaran = {

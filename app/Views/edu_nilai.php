@@ -72,5 +72,6 @@
         $("#jadwalPengajaran").removeClass("active");
         $("#absensi").removeClass("active");
         $("#nilai").addClass("active");
+        $("#krs").removeClass("active");
       </script>
 <?= $this->endSection() ?>

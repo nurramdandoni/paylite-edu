@@ -63,6 +63,7 @@
         $("#jadwalPengajaran").removeClass("active");
         $("#absensi").removeClass("active");
         $("#nilai").removeClass("active");
+        $("#krs").removeClass("active");
 
         async function getTahunAjaran(){
           const postDatagetTahunAjaran = {

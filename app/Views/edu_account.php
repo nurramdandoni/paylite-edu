@@ -17,5 +17,6 @@ $("#dataKelas").removeClass("active");
 $("#jadwalPengajaran").removeClass("active");
 $("#absensi").removeClass("active");
 $("#nilai").removeClass("active");
+$("#krs").removeClass("active");
 </script>
 <?= $this->endSection() ?>

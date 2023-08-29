@@ -58,10 +58,11 @@
         $("#kurikulum").removeClass("active");
         $("#dataPengajar").removeClass("active");
         $("#dataPesertaDidik").removeClass("active");
-        $("#dataKelas").addClass("active");
+        $("#dataKelas").removeClass("active");
         $("#jadwalPengajaran").removeClass("active");
         $("#absensi").removeClass("active");
         $("#nilai").removeClass("active");
+        $("#krs").addClass("active");
 
         async function getDataKrs(){
           const postSiswa = {

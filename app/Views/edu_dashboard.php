@@ -285,6 +285,7 @@
         $("#jadwalPengajaran").removeClass("active");
         $("#absensi").removeClass("active");
         $("#nilai").removeClass("active");
+        $("#krs").removeClass("active");
       </script>
       <script src="<?= base_url(); ?>assets/js/plugins/chartjs.min.js"></script>
       <script>

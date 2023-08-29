@@ -66,6 +66,7 @@
         $("#jadwalPengajaran").removeClass("active");
         $("#absensi").removeClass("active");
         $("#nilai").removeClass("active");
+        $("#krs").removeClass("active");
 
         async function getMataAjar(){
           const postDatagetMataAjar = {

@@ -294,5 +294,6 @@
         $("#jadwalPengajaran").removeClass("active");
         $("#absensi").addClass("active");
         $("#nilai").removeClass("active");
+        $("#krs").removeClass("active");
       </script>
 <?= $this->endSection() ?>
