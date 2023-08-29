@@ -65,9 +65,30 @@
         $("#nilai").removeClass("active");
         $("#krs").removeClass("active");
 
+        async function getTahunAjaranAktif(){
+                  const postDataTahunAjaranAktif = {
+                  lembaga_pendidikan_id: lembaga_pendidikan_id,
+                  status:"aktif"
+                }
+                console.log("cekkk : ",postDataTahunAjaranAktif);
+                  const requestOptions = {
+                  method: 'POST', // Metode permintaan
+                  headers: {
+                            'Content-Type': 'application/json', // Jenis konten yang dikirim
+                            // 'Authorization': 'Bearer YOUR_ACCESS_TOKEN' // Header otorisasi jika diperlukan
+                  },
+                  body: JSON.stringify(postDataTahunAjaranAktif), // Mengubah data menjadi bentuk JSON
+                };
+                    const data = await fetchData('https://api.paylite.co.id/tahunAjaranWhere', requestOptions);
+                    console.log("ID Tahun Ajaran Aktif : ",data.data[0].tahun_ajaran_id);
+                    return data.data[0].tahun_ajaran_id;
+                }
+
         async function getDataKelas(){
+          let th = await getTahunAjaranAktif();
           const postSiswa = {
-                  lembaga_pendidikan_id: lembaga_pendidikan_id
+                  lembaga_pendidikan_id: lembaga_pendidikan_id,
+                  tahun_ajaran_id:th
                 }
           const requestOptions = {
                   method: 'POST', // Metode permintaan
@@ -122,6 +143,7 @@
                 }
 
                     async function formTambah(){
+                  let th = await getTahunAjaranAktif();
                   console.log("clicked");
                   $("#modalTitle").html("Tambah Data Kelas");
                   $("#modalButtonAction").html("Tambah");
@@ -129,7 +151,7 @@
                   <input type="hidden" id="typeForm" value="add"/>
                   <div class="form-group">
                     <label for="tahunAjaran">Tahun Ajaran</label>
-                    <select onchange="changeLive()" class="form-control" id="DKtahunAjaran">
+                    <select disabled onchange="changeLive()" class="form-control" id="DKtahunAjaran">
                     </select>
                   </div>
                   <div class="form-group">
@@ -168,6 +190,7 @@
                   console.log("MOAL OPEN : ",where2);
                   const hasilCekWaliKelas = await cekExistWaliKelas(where2);
                   console.log("WALI KELAS :::: ",hasilCekWaliKelas);
+                  $("#DKtahunAjaran").val(th);
                   if(hasilCekWaliKelas.data.length > 0){
                     $("#DKwaliKelas").val(hasilCekWaliKelas.data[0].wali_kelas_id);
                     $("#DKwaliKelas").attr('disabled',true) 
