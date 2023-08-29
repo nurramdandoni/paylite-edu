@@ -209,11 +209,11 @@
                   <div class="row">
                     <div class="form-group col-md-6">
                       <label for="kelas">Jam Mulai</label>
-                      <input type="time" class="form-control" id="DKJamMulai">
+                      <input type="time" class="form-control" id="DKJamMulai"/>
                     </div>
                     <div class="form-group col-md-6">
                       <label for="kelas">Jam Selesai</label>
-                      <input type="time" class="form-control" id="DKJamSelesai">
+                      <input type="time" class="form-control" id="DKJamSelesai"/>
                     </div>
                   </div>
                   <div class="form-group">
@@ -248,8 +248,8 @@
                   const kelas_id = $("#DKkelas").val();
                   const siswa_id = $("#DKsiswa").val();
                   const guru_id = $("#DKpengajar").val();
-                  const jam_mulai = $("#DKjamMulai").val();
-                  const jam_selesai = $("#DKjamSelesai").val();
+                  const jam_mulai = $("#DKJamMulai").val();
+                  const jam_selesai = $("#DKJamSelesai").val();
                   const postData = {
                       tipe: tipe,
                       lembaga_pendidikan_id: lembaga_pendidikan_id,
