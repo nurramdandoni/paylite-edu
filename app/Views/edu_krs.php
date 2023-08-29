@@ -252,6 +252,8 @@
                           kelas_id: kelas_id,
                           kurikulum_id: kurikulum_id,
                           siswa_id: siswa.siswa_id,
+                          status_wali: "approved",
+                          status_pay: "paying",
                           description: description,
                         }
                         console.log("BEfore send : ", postData);
