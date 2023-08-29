@@ -242,6 +242,11 @@
 
                   const listSiswaKelas = await cekdatakelasList(whereList);
                   console.log("Data Siswa Di KElas : ",listSiswaKelas);
+                  if(listSiswaKelas.data.length > 0){
+                    for(siswa of listSiswaKelas.data){
+                      console.log("ini Iterate : ", siswa.siswa_id);
+                    }
+                  }
                   const postData = {
                       tipe: tipe,
                       lembaga_pendidikan_id: lembaga_pendidikan_id,
