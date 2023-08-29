@@ -164,9 +164,9 @@
                   await getKelas();
                   await getGuru();
                   await getSiswa();
-                  $("#DKtahunAjaran").val(tahun_ajaran_id);
+                  $("#DKtahunAjaran").val('<?= $tahun_ajaran_id; ?>');
                   $("#DKtahunAjaran").attr('disabled',true) 
-                  $("#DKkelas").val(id_kelas);
+                  $("#DKkelas").val('<?= $kelas_id; ?>');
                   $("#DKkelas").attr('disabled',true) 
                   // 
                 let id_kelas = $("#DKkelas").val();
