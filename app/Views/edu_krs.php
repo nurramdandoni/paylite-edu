@@ -147,22 +147,7 @@
                   await getTahunAjaran();
                   await getKelas();
                   // 
-                  let id_kelas = $("#DKkelas").val();
                   let tahun_ajaran_id = $("#DKtahunAjaran").val();
-                  const where2 = {
-                    tahun_ajaran_id: tahun_ajaran_id,
-                    kelas_id: id_kelas
-                  };
-                  console.log("MOAL OPEN : ",where2);
-                  const hasilCekWaliKelas = await cekExistWaliKelas(where2);
-                  console.log("WALI KELAS :::: ",hasilCekWaliKelas);
-                  // if(hasilCekWaliKelas.data.length > 0){
-                  //   $("#DKwaliKelas").val(hasilCekWaliKelas.data[0].wali_kelas_id);
-                  //   $("#DKwaliKelas").attr('disabled',true) 
-                  // }else{
-                  //   $("#DKwaliKelas").attr('disabled',false) 
-                    
-                  // }
                   await getKurikulum(tahun_ajaran_id);
                   // 
                  
@@ -197,15 +182,6 @@
                     tahun_ajaran_id: tahun_ajaran_id,
                     kelas_id: id_kelas
                   };
-                  // const hasilCekWaliKelas = await cekExistWaliKelas(where2);
-                  // console.log("WALI KELAS :::: ",hasilCekWaliKelas);
-                  // if(hasilCekWaliKelas.data.length > 0){
-                  //   $("#DKwaliKelas").val(hasilCekWaliKelas.data[0].wali_kelas_id);
-                  //   $("#DKwaliKelas").attr('disabled',true) 
-                  // }else{
-                  //   $("#DKwaliKelas").attr('disabled',false) 
-
-                  // }
                   await getKurikulum(tahun_ajaran_id)
                 }
                 async function insertDataKrs(dataPost){
