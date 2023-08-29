@@ -133,6 +133,7 @@
                 }
 
                 function formTambah(){
+                  const th = await getTahunAjaranAktif();
                   console.log("clicked");
                   $("#modalTitle").html("Tambah Kelas");
                   $("#modalButtonAction").html("Tambah");
@@ -140,7 +141,7 @@
                   <input type="hidden" id="typeForm" value="add"/>
                   <div class="form-group">
                     <label for="status">Tahun Ajaran</label>
-                    <select class="form-control" id="tahunAjaranForm">
+                    <select disabled class="form-control" id="tahunAjaranForm">
                     </select>
                   </div>
                   <div class="form-group">
@@ -162,7 +163,8 @@
                   `;
                   // $("#modalContent").html('<?= $_COOKIE['lembaga_pendidikan_id']; ?>');
                   $("#modalContent").html(form);
-                  getTahunAjaran();
+                  await getTahunAjaran();
+                  $("#tahunAjaranForm").val(th);
                 }
                 async function formEdit(id){
                   console.log("clicked");
@@ -174,7 +176,7 @@
                   <input type="hidden" id="idData" value="`+id+`"/>
                   <div class="form-group">
                     <label for="status">Tahun Ajaran</label>
-                    <select class="form-control" id="tahunAjaranForm">
+                    <select disabled class="form-control" id="tahunAjaranForm">
                     </select>
                   </div>
                   <div class="form-group">
