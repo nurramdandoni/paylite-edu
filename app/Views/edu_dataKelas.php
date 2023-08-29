@@ -128,7 +128,7 @@
                   <input type="hidden" id="typeForm" value="add"/>
                   <div class="form-group">
                     <label for="tahunAjaran">Tahun Ajaran</label>
-                    <select class="form-control" id="DKtahunAjaran">
+                    <select onchange="changeLive()" class="form-control" id="DKtahunAjaran">
                     </select>
                   </div>
                   <div class="form-group">
@@ -203,6 +203,7 @@
                 }
                 async function changeLive(){
                   let id_kelas = $("#DKkelas").val();
+                  let tahun_ajaran_id = $("#DKtahunAjaran").val();
                   const where2 = {
                     tahun_ajaran_id: tahun_ajaran_id,
                     kelas_id: id_kelas
