@@ -48,7 +48,7 @@
       <script>
         getDataKelas();
         
-        $("#liDash").html("Data Kelas");
+        $("#liDash").html("Data KRS");
         $("#liDash2").html("Data KRS");
         $("#dashboard").removeClass("active");
         $("#account").removeClass("active");
