@@ -168,7 +168,7 @@
                   `;
                   // $("#modalContent").html('<?= $_COOKIE['lembaga_pendidikan_id']; ?>');
                   $("#modalContent").html(form);
-                  await getTahunAjaran();
+                  const y = await getTahunAjaran();
                   // $("#tahunAjaranForm").val(th);
                 }
                 async function formEdit(id){
