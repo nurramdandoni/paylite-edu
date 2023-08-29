@@ -12,7 +12,7 @@
               <div id="contentFormInputEdit">
                   <!-- Button trigger modal -->
                   <button id="judulModal" onclick="formTambah()" type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
-                    Tambah Peserta Didik
+                    Tambah Mata Ajar
                   </button>
                 </div>
               <table id="example" class="table align-items-center mb-0">
@@ -47,7 +47,7 @@
       <script>
         const tahun_ajaran_id = '<?= $tahun_ajaran_id; ?>';
         const kelas_id = '<?= $kelas_id; ?>';
-        getDataKelas();
+        getDataKrs();
         
         $("#liDash").html("Data KRS");
         $("#liDash2").html("Data KRS");
@@ -64,11 +64,14 @@
         $("#absensi").removeClass("active");
         $("#nilai").removeClass("active");
 
-        async function getDataKelas(){
+        async function getDataKrs(){
           const postSiswa = {
-                  lembaga_pendidikan_id: lembaga_pendidikan_id,
-                  tahun_ajaran_id: tahun_ajaran_id,
-                  kelas_id: kelas_id
+                  where : {
+                    lembaga_pendidikan_id: lembaga_pendidikan_id,
+                    tahun_ajaran_id: tahun_ajaran_id,
+                    kelas_id: kelas_id
+                  },
+                  column:"krs.kurikulum_id"
                 }
                 console.log("SENDERRRRv : ", postSiswa);
           const requestOptions = {
@@ -79,7 +82,7 @@
                   },
                   body: JSON.stringify(postSiswa), // Mengubah data menjadi bentuk JSON
                 };
-                    const data = await fetchData('https://api.paylite.co.id/dataKelasWhere',requestOptions);
+                    const data = await fetchData('https://api.paylite.co.id/krsWhereGroup',requestOptions);
                     console.log(data.data);
                     let temp = '';
                     for(item of data.data){
@@ -91,7 +94,7 @@
                       <tr>
                       <td>
                           <div class="d-flex flex-column justify-content-center">
-                            <h6 class="mb-0 text-sm">`+item.siswa.nama_siswa+`</h6>
+                            <h6 class="mb-0 text-sm">`+item.kurikulum.kurikulum_id+`</h6>
                           </div>
                       </td>
                       <td class="align-middle">
@@ -289,7 +292,7 @@
                       if(update.status == "Sukses"){
                         alert("Data Berhasil Diperbaharui");
                         $("#cls").click();
-                        getDataKelas();
+                        getDataKrs();
                       }else{
                         alert("upsh ada kesalahan!");
                       }
@@ -305,7 +308,7 @@
                       if(inserted){
                         alert("Data Berhasil Ditambahkan");
                         $("#cls").click();
-                        getDataKelas();
+                        getDataKrs();
                       }else{
                         alert("upsh ada kesalahan!");
                       }
@@ -314,7 +317,7 @@
                       if(update.status == "Sukses"){
                         alert("Data Berhasil Diperbaharui");
                         $("#cls").click();
-                        getDataKelas();
+                        getDataKrs();
                       }else{
                         alert("upsh ada kesalahan!");
                       }

@@ -46,7 +46,7 @@
       </style>
       
       <script>
-        getDataKelas();
+        getDataKrs();
         
         $("#liDash").html("Data KRS");
         $("#liDash2").html("Data KRS");
@@ -63,7 +63,7 @@
         $("#absensi").removeClass("active");
         $("#nilai").removeClass("active");
 
-        async function getDataKelas(){
+        async function getDataKrs(){
           const postSiswa = {
                   lembaga_pendidikan_id: lembaga_pendidikan_id
                 }
@@ -290,7 +290,7 @@
                       if(update.status == "Sukses"){
                         alert("Data Berhasil Diperbaharui");
                         $("#cls").click();
-                        getDataKelas();
+                        getDataKrs();
                       }else{
                         alert("upsh ada kesalahan!");
                       }
@@ -306,7 +306,7 @@
                       if(inserted){
                         alert("Data Berhasil Ditambahkan");
                         $("#cls").click();
-                        getDataKelas();
+                        getDataKrs();
                       }else{
                         alert("upsh ada kesalahan!");
                       }
@@ -315,7 +315,7 @@
                       if(update.status == "Sukses"){
                         alert("Data Berhasil Diperbaharui");
                         $("#cls").click();
-                        getDataKelas();
+                        getDataKrs();
                       }else{
                         alert("upsh ada kesalahan!");
                       }
