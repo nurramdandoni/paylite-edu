@@ -78,15 +78,18 @@
                   body: JSON.stringify(postDataTahunAjaranAktif), // Mengubah data menjadi bentuk JSON
                 };
                     const data = await fetchData('https://api.paylite.co.id/tahunAjaranWhere', requestOptions);
+                    console.log("ID Tahun Ajaran Aktif : ",data.data[0].tahun_ajaran_id);
                     return data.data[0].tahun_ajaran_id;
                 }
 
         async function getKelas(){
           let th = await getTahunAjaranAktif();
+          console.log("receier ", th);
           const postDatagetKelas = {
                   lembaga_pendidikan_id: lembaga_pendidikan_id,
                   tahun_ajaran_id:th
                 }
+                console.log("DDD : ",postDatagetKelas);
           const requestOptions = {
                   method: 'POST', // Metode permintaan
                   headers: {
