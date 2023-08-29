@@ -152,7 +152,6 @@
                   await getTahunAjaran();
                   await getKelas();
                   await getGuru();
-                  await getMataAjar();
                   // 
                   let id_kelas = $("#DKkelas").val();
                   let tahun_ajaran_id = $("#DKtahunAjaran").val();
@@ -168,8 +167,9 @@
                     $("#DKwaliKelas").attr('disabled',true) 
                   }else{
                     $("#DKwaliKelas").attr('disabled',false) 
-
+                    
                   }
+                  await getKurikulum(tahun_ajaran_id);
                   // 
                  
                 }
@@ -178,38 +178,38 @@
                     return data;
                 }
                 async function cekExist(where){
-                  const postDatagetMataAjar = {
+                  const postDatagetKurikulum = {
                   lembaga_pendidikan_id: lembaga_pendidikan_id,
                   tahun_ajaran_id: where.tahun_ajaran_id,
                   kelas_id: where.kelas_id,
                   siswa_id: where.siswa_id
                 }
-                console.log("cekkk : ",postDatagetMataAjar);
+                console.log("cekkk : ",postDatagetKurikulum);
                   const requestOptions = {
                   method: 'POST', // Metode permintaan
                   headers: {
                             'Content-Type': 'application/json', // Jenis konten yang dikirim
                             // 'Authorization': 'Bearer YOUR_ACCESS_TOKEN' // Header otorisasi jika diperlukan
                   },
-                  body: JSON.stringify(postDatagetMataAjar), // Mengubah data menjadi bentuk JSON
+                  body: JSON.stringify(postDatagetKurikulum), // Mengubah data menjadi bentuk JSON
                 };
                     const data = await fetchData('https://api.paylite.co.id/dataKelasWhere', requestOptions);
                     return data;
                 }
                 async function cekExistWaliKelas(where){
-                  const postDatagetMataAjar = {
+                  const postDatagetKurikulum = {
                   lembaga_pendidikan_id: lembaga_pendidikan_id,
                   tahun_ajaran_id: where.tahun_ajaran_id,
                   kelas_id: where.kelas_id
                 }
-                console.log("cekkk : ",postDatagetMataAjar);
+                console.log("cekkk : ",postDatagetKurikulum);
                   const requestOptions = {
                   method: 'POST', // Metode permintaan
                   headers: {
                             'Content-Type': 'application/json', // Jenis konten yang dikirim
                             // 'Authorization': 'Bearer YOUR_ACCESS_TOKEN' // Header otorisasi jika diperlukan
                   },
-                  body: JSON.stringify(postDatagetMataAjar), // Mengubah data menjadi bentuk JSON
+                  body: JSON.stringify(postDatagetKurikulum), // Mengubah data menjadi bentuk JSON
                 };
                     const data = await fetchData('https://api.paylite.co.id/dataKelasWhere', requestOptions);
                     return data;
@@ -230,6 +230,7 @@
                     $("#DKwaliKelas").attr('disabled',false) 
 
                   }
+                  await getKurikulum(tahun_ajaran_id)
                 }
                 async function insertDataKelas(dataPost){
                   const requestOptions = {
@@ -388,9 +389,10 @@
                     $("#DKwaliKelas").html(temp2);
                     return true;
               }
-                async function getMataAjar(){
-                  const postDatagetMataAjar = {
-                  lembaga_pendidikan_id: lembaga_pendidikan_id
+                async function getKurikulum(tahun_ajaran_id){
+                  const postDatagetKurikulum = {
+                  lembaga_pendidikan_id: lembaga_pendidikan_id,
+                  tahun_ajaran_id: tahun_ajaran_id
                 }
           const requestOptions = {
                   method: 'POST', // Metode permintaan
@@ -398,13 +400,13 @@
                             'Content-Type': 'application/json', // Jenis konten yang dikirim
                             // 'Authorization': 'Bearer YOUR_ACCESS_TOKEN' // Header otorisasi jika diperlukan
                   },
-                  body: JSON.stringify(postDatagetMataAjar), // Mengubah data menjadi bentuk JSON
+                  body: JSON.stringify(postDatagetKurikulum), // Mengubah data menjadi bentuk JSON
                 };
-                    const data = await fetchData('https://api.paylite.co.id/mataAjarWhere', requestOptions);
+                    const data = await fetchData('https://api.paylite.co.id/kurikulumWhere', requestOptions);
                     console.log("list tahun", data.data);
                     let temp2 = '';
                     for(item2 of data.data){
-                      temp2 += `<option value="`+item2.siswa_id+`">`+item2.nama_siswa+`</option>`;
+                      temp2 += `<option value="`+item2.kurikulum_id+`">`+item2.mata_ajar.nama_mata_ajar+`</option>`;
                     }
                     $("#DKmataAjar").html(temp2);
                     return true;
