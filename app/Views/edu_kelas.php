@@ -63,9 +63,29 @@
         $("#nilai").removeClass("active");
         $("#krs").removeClass("active");
 
+        async function getTahunAjaranAktif(){
+                  const postDataTahunAjaranAktif = {
+                  lembaga_pendidikan_id: lembaga_pendidikan_id,
+                  status:"aktif"
+                }
+                console.log("cekkk : ",postDataTahunAjaranAktif);
+                  const requestOptions = {
+                  method: 'POST', // Metode permintaan
+                  headers: {
+                            'Content-Type': 'application/json', // Jenis konten yang dikirim
+                            // 'Authorization': 'Bearer YOUR_ACCESS_TOKEN' // Header otorisasi jika diperlukan
+                  },
+                  body: JSON.stringify(postDataTahunAjaranAktif), // Mengubah data menjadi bentuk JSON
+                };
+                    const data = await fetchData('https://api.paylite.co.id/tahunAjaranWhere', requestOptions);
+                    return data.data[0].tahun_ajaran_id;
+                }
+
         async function getKelas(){
+          const th = await getTahunAjaranAktif()l
           const postDatagetKelas = {
-                  lembaga_pendidikan_id: lembaga_pendidikan_id
+                  lembaga_pendidikan_id: lembaga_pendidikan_id,
+                  tahun_ajaran_id:th
                 }
           const requestOptions = {
                   method: 'POST', // Metode permintaan
