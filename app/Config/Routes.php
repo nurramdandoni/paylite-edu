@@ -42,6 +42,8 @@ $routes->get('/dataPengajar', 'Dashboard::dataPengajar');
 $routes->get('/dataPesertaDidik', 'Dashboard::dataPesertaDidik');
 $routes->get('/dataKelas', 'Dashboard::dataKelas');
 $routes->get('/siswaKelas/(:num)/(:num)', 'Dashboard::siswaKelas/$1/$2');
+$routes->get('/krs', 'Dashboard::krs');
+$routes->get('/krsKelas/(:num)/(:num)', 'Dashboard::krsKelas/$1/$2');
 $routes->get('/jadwalPengajaran', 'Dashboard::jadwalPengajaran');
 $routes->get('/absensi', 'Dashboard::absensi');
 $routes->get('/nilai', 'Dashboard::nilai');

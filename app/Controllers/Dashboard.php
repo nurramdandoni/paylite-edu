@@ -195,6 +195,33 @@ class Dashboard extends BaseController
             return $this->response->redirect('https://account.paylite.co.id');
         }
     }
+    public function krs()
+    {
+        if(isset($_COOKIE['statusProduk'])){
+            if($_COOKIE['statusProduk'] == 'prepareSubscriberRegister'){
+                return redirect()->route('register');
+            }else{
+                return view('edu_krs');
+            }
+        }else{
+            return $this->response->redirect('https://account.paylite.co.id');
+        }
+    }
+    public function krsKelas($tahun_ajaran_id,$kelas_id)
+    {
+        if(isset($_COOKIE['statusProduk'])){
+            if($_COOKIE['statusProduk'] == 'prepareSubscriberRegister'){
+                return redirect()->route('register');
+            }else{
+                $data['tahun_ajaran_id'] = $tahun_ajaran_id;
+                $data['kelas_id'] = $kelas_id;
+                // menampilkan Mapel
+                return view('edu_krsKelas',$data);
+            }
+        }else{
+            return $this->response->redirect('https://account.paylite.co.id');
+        }
+    }
     public function jadwalPengajaran()
     {
         if(isset($_COOKIE['statusProduk'])){
