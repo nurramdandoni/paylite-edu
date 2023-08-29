@@ -82,7 +82,7 @@
                 }
 
         async function getKelas(){
-          const th = await getTahunAjaranAktif();
+          let th = await getTahunAjaranAktif();
           const postDatagetKelas = {
                   lembaga_pendidikan_id: lembaga_pendidikan_id,
                   tahun_ajaran_id:th
@@ -133,7 +133,7 @@
                 }
 
                 function formTambah(){
-                  const th = await getTahunAjaranAktif();
+                  let th = await getTahunAjaranAktif();
                   console.log("clicked");
                   $("#modalTitle").html("Tambah Kelas");
                   $("#modalButtonAction").html("Tambah");
