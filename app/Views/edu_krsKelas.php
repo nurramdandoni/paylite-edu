@@ -148,6 +148,10 @@
                   $("#modalContent").html(form);
                   await getTahunAjaran();
                   await getKelas();
+                  $("#DKtahunAjaran").val('<?= $tahun_ajaran_id; ?>');
+                  $("#DKtahunAjaran").attr('disabled',true) 
+                  $("#DKkelas").val('<?= $kelas_id; ?>');
+                  $("#DKkelas").attr('disabled',true) 
                   // 
                   let tahun_ajaran_id = $("#DKtahunAjaran").val();
                   await getKurikulum(tahun_ajaran_id);
