@@ -118,7 +118,7 @@
 
                     async function formTambah(){
                   console.log("clicked");
-                  $("#modalTitle").html("Tambah Data Kelas");
+                  $("#modalTitle").html("Tambah Data KRS");
                   $("#modalButtonAction").html("Tambah");
                   let form = `
                   <input type="hidden" id="typeForm" value="add"/>
@@ -138,8 +138,8 @@
                     </select>
                   </div>
                   <div class="form-group">
-                    <label for="siswa">Siswa</label>
-                    <select class="form-control " id="DKsiswa">
+                    <label for="siswa">Mata Ajar</label>
+                    <select class="form-control " id="DKmataAjar">
                     </select>
                   </div>
                   <div class="form-group">
@@ -152,7 +152,7 @@
                   await getTahunAjaran();
                   await getKelas();
                   await getGuru();
-                  await getSiswa();
+                  await getMataAjar();
                   // 
                   let id_kelas = $("#DKkelas").val();
                   let tahun_ajaran_id = $("#DKtahunAjaran").val();
@@ -388,25 +388,25 @@
                     $("#DKwaliKelas").html(temp2);
                     return true;
               }
-                async function getSiswa(){
-                    const postDatagetTahunAjaran = {
-                            lembaga_pendidikan_id: lembaga_pendidikan_id
-                          }
-                    const requestOptions = {
-                            method: 'POST', // Metode permintaan
-                            headers: {
-                                      'Content-Type': 'application/json', // Jenis konten yang dikirim
-                                      // 'Authorization': 'Bearer YOUR_ACCESS_TOKEN' // Header otorisasi jika diperlukan
-                            },
-                            body: JSON.stringify(postDatagetTahunAjaran), // Mengubah data menjadi bentuk JSON
-                          };
-                    const data = await fetchData('https://api.paylite.co.id/siswaWhere', requestOptions);
+                async function getMataAjar(){
+                  const postDatagetMataAjar = {
+                  lembaga_pendidikan_id: lembaga_pendidikan_id
+                }
+          const requestOptions = {
+                  method: 'POST', // Metode permintaan
+                  headers: {
+                            'Content-Type': 'application/json', // Jenis konten yang dikirim
+                            // 'Authorization': 'Bearer YOUR_ACCESS_TOKEN' // Header otorisasi jika diperlukan
+                  },
+                  body: JSON.stringify(postDatagetMataAjar), // Mengubah data menjadi bentuk JSON
+                };
+                    const data = await fetchData('https://api.paylite.co.id/mataAjarWhere', requestOptions);
                     console.log("list tahun", data.data);
                     let temp2 = '';
                     for(item2 of data.data){
                       temp2 += `<option value="`+item2.siswa_id+`">`+item2.nama_siswa+`</option>`;
                     }
-                    $("#DKsiswa").html(temp2);
+                    $("#DKmataAjar").html(temp2);
                     return true;
               }
 
