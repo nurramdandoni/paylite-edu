@@ -288,64 +288,10 @@
                       alert("Data KRS Berhasil Ditambahkan!");
                       $("#cls").click();
                       getDataKrs();
+                  }else{
+                    let kls = $("#DKkelas option:selected").text();
+                    alert("Data Kelas : "+kls+" Kosong!");
                   }
-                  // const postData = {
-                  //     tipe: tipe,
-                  //     lembaga_pendidikan_id: lembaga_pendidikan_id,
-                  //     tahun_ajaran_id: tahun_ajaran_id,
-                  //     kelas_id: kelas_id,
-                  //     kurikulum_id: kurikulum_id,
-                  //     description: description,
-                  //   }
-                  // console.log("BEfore send : ", postData);
-                  // // cek data sebelumnya dengan nama yang sama
-                  // const where = {
-                  //   tahun_ajaran_id: tahun_ajaran_id,
-                  //   kelas_id: kelas_id,
-                  //   kurikulum_id: kurikulum_id
-                  // };
-                  // const hasilCek = await cekExist(where);
-                  
-                  //   console.log("Hasil Cek ::: ", hasilCek);
-                  // if(hasilCek.data.length > 0){
-                  //   console.log("id nya : ", id);
-                  //   if(id != undefined){
-                  //     const update = await updateDataKrs(id,postData);
-                  //     // if(update.status == "Sukses"){
-                  //     //   alert("Data Berhasil Diperbaharui");
-                  //     //   $("#cls").click();
-                  //     //   getDataKrs();
-                  //     // }else{
-                  //     //   alert("upsh ada kesalahan!");
-                  //     // }
-                  //   }else{
-                  //     // alert("Kurikulum : "+hasilCek.data[0].kurikulum.mata_ajar.nama_mata_ajar+" Sudah Ada di Kelas ini!");
-
-                  //   }
-                  // }else{
-                  //   // proses insert/update data
-                  //   if(tipe == "add"){
-
-                  //     const inserted = await insertDataKrs(postData);
-                  //     // if(inserted){
-                  //     //   alert("Data Berhasil Ditambahkan");
-                  //     //   $("#cls").click();
-                  //     //   getDataKrs();
-                  //     // }else{
-                  //     //   alert("upsh ada kesalahan!");
-                  //     // }
-                  //   }else{
-                  //     const update = await updateDataKrs(id,postData);
-                  //     // if(update.status == "Sukses"){
-                  //     //   alert("Data Berhasil Diperbaharui");
-                  //     //   $("#cls").click();
-                  //     //   getDataKrs();
-                  //     // }else{
-                  //     //   alert("upsh ada kesalahan!");
-                  //     // }
-
-                  //   }
-                  // }
 
                 };
                     
