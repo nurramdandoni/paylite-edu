@@ -156,7 +156,7 @@
                   getTahunAjaran();
                   getKelas();
                   getGuru();
-                  const fedd = await getSiswa();
+                  const fedd = await getGuru();
                   if(fedd){
                     changeLive();
                   }
