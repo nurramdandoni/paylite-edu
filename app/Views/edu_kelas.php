@@ -217,9 +217,11 @@
                     return data;
                 }
                 async function cekExist(nama_kelas){
+                  let th = await getTahunAjaranAktif();
                   const postDatagetMataAjar = {
                   lembaga_pendidikan_id: lembaga_pendidikan_id,
-                  nama_kelas: nama_kelas
+                  nama_kelas: nama_kelas,
+                  tahun_ajaran_id:th
                 }
                   const requestOptions = {
                   method: 'POST', // Metode permintaan
