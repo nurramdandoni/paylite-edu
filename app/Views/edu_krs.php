@@ -286,6 +286,8 @@
                         }
                       }
                       alert("Data KRS Berhasil Ditambahkan!");
+                      $("#cls").click();
+                      getDataKrs();
                   }
                   // const postData = {
                   //     tipe: tipe,
