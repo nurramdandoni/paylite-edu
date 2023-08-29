@@ -46,7 +46,6 @@
       </style>
       <script>
         getKelas();
-        getTahunAjaranAktif();
         
         $("#liDash").html("Kelas");
         $("#liDash2").html("Kelas");
