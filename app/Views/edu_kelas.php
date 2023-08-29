@@ -46,6 +46,7 @@
       </style>
       <script>
         getKelas();
+        getTahunAjaranAktif();
         
         $("#liDash").html("Kelas");
         $("#liDash2").html("Kelas");
@@ -83,7 +84,7 @@
                 }
 
         async function getKelas(){
-          let th = await getTahunAjaranAktif();
+          // let th = await getTahunAjaranAktif();
           console.log("receier ", th);
           const postDatagetKelas = {
                   lembaga_pendidikan_id: lembaga_pendidikan_id
@@ -136,7 +137,7 @@
                 }
 
                 function formTambah(){
-                  let th = await getTahunAjaranAktif();
+                  // let th = await getTahunAjaranAktif();
                   console.log("clicked");
                   $("#modalTitle").html("Tambah Kelas");
                   $("#modalButtonAction").html("Tambah");
@@ -167,7 +168,7 @@
                   // $("#modalContent").html('<?= $_COOKIE['lembaga_pendidikan_id']; ?>');
                   $("#modalContent").html(form);
                   await getTahunAjaran();
-                  $("#tahunAjaranForm").val(th);
+                  // $("#tahunAjaranForm").val(th);
                 }
                 async function formEdit(id){
                   console.log("clicked");
