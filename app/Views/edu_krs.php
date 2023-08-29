@@ -211,7 +211,7 @@
                   },
                   body: JSON.stringify(dataPost), // Mengubah data menjadi bentuk JSON
                 };
-                    const data = await fetchData('https://api.paylite.co.id/dataKelas', requestOptions);
+                    const data = await fetchData('https://api.paylite.co.id/krs', requestOptions);
                     return data;
                 }
                 async function updateDataKrs(id,dataPost){
@@ -223,7 +223,7 @@
                   },
                   body: JSON.stringify(dataPost), // Mengubah data menjadi bentuk JSON
                 };
-                    const data = await fetchData('https://api.paylite.co.id/dataKelas/'+id+'', requestOptions);
+                    const data = await fetchData('https://api.paylite.co.id/krs/'+id+'', requestOptions);
                     return data;
                 }
 
