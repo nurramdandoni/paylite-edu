@@ -113,7 +113,6 @@
                     if(data.data.length > 0){
                       $("#list").html(temp);
                       $("#titleKelas").html(item.kelas.nama_kelas);
-                      $("#titleWaliKelas").html(item.guru.nama_guru);
                       $("#titleTahunAjaran").html(item.tahun_ajaran.nama_tahun_ajaran);
                     }
                     $('#example').DataTable();
