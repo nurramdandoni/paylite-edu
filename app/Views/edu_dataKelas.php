@@ -209,10 +209,11 @@
                     kelas_id: id_kelas
                   };
                   const hasilCekWaliKelas = await cekExistWaliKelas(where2);
-                  if(hasilCekWaliKelas.length > 0){
-                    $("#DKwaliKelas").val(hasilCekWaliKelas.data[0].wali_kelas_id);
-                    $("#DKwaliKelas").attr('disabled',true) 
-                  }
+                  console.log("WALI KELAS :::: ",hasilCekWaliKelas);
+                  // if(hasilCekWaliKelas.length > 0){
+                  //   $("#DKwaliKelas").val(hasilCekWaliKelas.data[0].wali_kelas_id);
+                  //   $("#DKwaliKelas").attr('disabled',true) 
+                  // }
                 }
                 async function insertDataKelas(dataPost){
                   const requestOptions = {
