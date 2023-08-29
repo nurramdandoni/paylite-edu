@@ -175,6 +175,24 @@
                     const data = await fetchData('https://api.paylite.co.id/krsWhere', requestOptions);
                     return data;
                 }
+                async function cekdatakelasList(where){
+                  const postDatagetDataKelasList = {
+                  lembaga_pendidikan_id: lembaga_pendidikan_id,
+                  tahun_ajaran_id: where.tahun_ajaran_id,
+                  kelas_id: where.kelas_id
+                }
+                console.log("cekkk : ",postDatagetDataKelasList);
+                  const requestOptions = {
+                  method: 'POST', // Metode permintaan
+                  headers: {
+                            'Content-Type': 'application/json', // Jenis konten yang dikirim
+                            // 'Authorization': 'Bearer YOUR_ACCESS_TOKEN' // Header otorisasi jika diperlukan
+                  },
+                  body: JSON.stringify(postDatagetDataKelasList), // Mengubah data menjadi bentuk JSON
+                };
+                    const data = await fetchData('https://api.paylite.co.id/dataKelasWhere', requestOptions);
+                    return data;
+                }
                 async function changeLive(){
                   let id_kelas = $("#DKkelas").val();
                   let tahun_ajaran_id = $("#DKtahunAjaran").val();
@@ -216,6 +234,14 @@
                   const kelas_id = $("#DKkelas").val();
                   const kurikulum_id = $("#DKkurikulum").val();
                   const description = $("#description").val();
+
+                  const whereList = {
+                    tahun_ajaran_id: tahun_ajaran_id,
+                    kelas_id: kelas_id
+                  };
+
+                  const listSiswaKelas = await cekdatakelasList(whereList);
+                  console.log("Data Siswa Di KElas : ",listSiswaKelas);
                   const postData = {
                       tipe: tipe,
                       lembaga_pendidikan_id: lembaga_pendidikan_id,
