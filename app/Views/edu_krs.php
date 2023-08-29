@@ -246,7 +246,7 @@
                         alert("upsh ada kesalahan!");
                       }
                     }else{
-                      alert("Kurikulum : ... Sudah Ada di Kelas ini!");
+                      alert("Kurikulum : "+hasilCek.data.[0].kurikulum.mata_ajar.nama_mata_ajar+" Sudah Ada di Kelas ini!");
 
                     }
                   }else{
