@@ -83,7 +83,7 @@
                     console.log("ID Tahun Ajaran Aktif : ",data.data[0].tahun_ajaran_id);
                     return data.data[0].tahun_ajaran_id;
                 }
-                
+
         async function getDataKrs(){
           const postSiswa = {
                   where : {
@@ -203,7 +203,8 @@
                   lembaga_pendidikan_id: lembaga_pendidikan_id,
                   tahun_ajaran_id: where.tahun_ajaran_id,
                   kelas_id: where.kelas_id,
-                  kurikulum_id: where.kurikulum_id
+                  kurikulum_id: where.kurikulum_id,
+                  siswa_id: where.siswa_id
                 }
                 console.log("cekkk : ",postDatagetKurikulum);
                   const requestOptions = {
