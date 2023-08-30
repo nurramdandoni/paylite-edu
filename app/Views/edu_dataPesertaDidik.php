@@ -177,7 +177,7 @@
                   $("#modalContent").html(form);
                   $("#modalButtonAction").hide();
                   $("#cls").html("OK");
-                  $('.qrcode').ClassyQR({
+                  $('#qrSiswa').ClassyQR({
                       create: true,
                       type: 'text',
                       text: dt.data.nisn+" - "+dt.data.nama_siswa
