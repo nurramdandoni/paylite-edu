@@ -171,7 +171,7 @@
                   await getKelas();
                   // 
                   let tahun_ajaran_id = $("#DKtahunAjaran").val();
-                  await getKurikulum(tahun_ajaran_id);
+                  await getKurikulum(th);
                   $("#DKtahunAjaran").val(th);
                   // 
                  
@@ -243,6 +243,7 @@
                 }
 
                 async function modalButtonAction(){
+                  let th = await getTahunAjaranAktif();
                   const tipe = $("#typeForm").val();
                   const id = $("#idData").val();
                   const tahun_ajaran_id = $("#DKtahunAjaran").val();
@@ -251,7 +252,7 @@
                   const description = $("#description").val();
 
                   const whereList = {
-                    tahun_ajaran_id: tahun_ajaran_id,
+                    tahun_ajaran_id: th,
                     kelas_id: kelas_id
                   };
 
@@ -263,7 +264,7 @@
                           const postData = {
                           tipe: tipe,
                           lembaga_pendidikan_id: lembaga_pendidikan_id,
-                          tahun_ajaran_id: tahun_ajaran_id,
+                          tahun_ajaran_id: th,
                           kelas_id: kelas_id,
                           kurikulum_id: kurikulum_id,
                           siswa_id: siswa.siswa_id,
@@ -274,7 +275,7 @@
                         console.log("BEfore send : ", postData);
                         // cek data sebelumnya dengan nama yang sama
                         const where = {
-                          tahun_ajaran_id: tahun_ajaran_id,
+                          tahun_ajaran_id: th,
                           kelas_id: kelas_id,
                           kurikulum_id: kurikulum_id,
                           siswa_id: siswa.siswa_id,
