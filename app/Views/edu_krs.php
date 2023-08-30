@@ -221,8 +221,7 @@
                   let id_kelas = $("#DKkelas").val();
                   let tahun_ajaran_id = $("#DKtahunAjaran").val();
                   const where2 = {
-                    tahun_ajaran_id: tahun_ajaran_id,
-                    kelas_id: id_kelas
+                    tahun_ajaran_id: tahun_ajaran_id
                   };
                   await getKurikulum(tahun_ajaran_id)
                 }
