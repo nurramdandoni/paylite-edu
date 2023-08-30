@@ -142,6 +142,7 @@
                     // console.log(`jam grup`, keysJamGroup)
                     // for(const item in hari){
                       let jCount = data.data;
+                      console.log("data mentah ",jCount);
                     for(item=0; item<jCount.length;item++){
                       console.log("hari "+jCount[item].nama_hari+" :", hari[jCount[item].nama_hari].count);
                       console.log("jam : ", hari[jCount[item].nama_hari].jam_group.data[jCount[item].jam_mulai].data.length);
