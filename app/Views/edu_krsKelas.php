@@ -239,7 +239,7 @@
                     console.log("folower", data.data);
                     let temp2 = '';
                     for(item2 of data.data){
-                      temp2 += `<div style="text-align:center"><div class="btn btn-success" style="min-width:300px;">`+item2.siswa.nisn+" - "+item2.siswa.nama_siswa+`</div><div style="margin-left:5px;" class="btn btn-danger">X</div></div>`;
+                      temp2 += `<div style="text-align:center"><div class="btn btn-success" style="min-width:300px;">`+item2.siswa.nisn+" - "+item2.siswa.nama_siswa+`</div><div style="margin-left:5px;" class="btn btn-danger" onclick="removeKrsById('`+item2.krs_id+`')">X</div></div>`;
                     }
                     $("#modalTitle").html("Follower di "+item2.kelas.nama_kelas+" Tahun Ajaran "+item2.tahun_ajaran.nama_tahun_ajaran+"");
                     $("#lsKrsFollow").html(temp2);
@@ -250,6 +250,9 @@
                   lembaga_pendidikan_id: lembaga_pendidikan_id,
                   tahun_ajaran_id: where.tahun_ajaran_id,
                   kelas_id: where.kelas_id
+                }
+                function removeKrsById(krs_id){
+                  console.log(krs_id);
                 }
                 console.log("cekkk : ",postDatagetDataKelasList);
                   const requestOptions = {
