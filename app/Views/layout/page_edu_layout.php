@@ -38,6 +38,9 @@
   <script src="<?= base_url(); ?>assets/js/jquery.dataTables.min.js"></script>
   <script src="<?= base_url(); ?>assets/js/dataTables.bootstrap4.min.js"></script>
   <!-- select 2 -->
+
+  <!-- qrcode -->
+  <script src="<?= base_url(); ?>assets/js/jquery.classyqr.min.js"></script>
 </head>
 <script>
 //   const socket = new WebSocket('wss://broadcast.paylite.co.id/socket'); // Ganti URL server sesuai dengan kebutuhan
