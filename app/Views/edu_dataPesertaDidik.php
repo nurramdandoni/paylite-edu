@@ -112,7 +112,7 @@
                         </a>
                       </td>
                       <td class="align-middle">
-                        <a href="javascript:;" class="text-secondary font-weight-bold text-xs" data-toggle="tooltip" data-original-title="Edit user">
+                        <a data-toggle="modal" data-target="#exampleModal" onclick="qrCode('`+item.siswa_id+`')" class="text-secondary font-weight-bold text-xs" data-toggle="tooltip" data-original-title="Edit user">
                           Lihat QR Code
                         </a>
                       </td>
@@ -132,6 +132,7 @@
 
                 function formTambah(){
                   console.log("clicked");
+                  $("#modalButtonAction").show();
                   $("#modalTitle").html("Tambah Peserta Didik");
                   $("#modalButtonAction").html("Tambah");
                   let form = `
@@ -164,8 +165,25 @@
                   // $("#modalContent").html('<?= $_COOKIE['lembaga_pendidikan_id']; ?>');
                   $("#modalContent").html(form);
                 }
+                async function qrCode(siswa_id){
+                  console.log("clicked");
+                  const dt = await getExist(siswa_id);
+                  $("#modalTitle").html("QR Code : "+dt.data.nisn+" - "+dt.data.nama_siswa+"");
+                  // $("#modalButtonAction").html("Tambah");
+                  let form = `
+                  <div id="qrSiswa">
+                  </div>
+                  `;
+                  $("#modalContent").html(form);
+                  $("#modalButtonAction").hide();
+                  $("#cls").html("OK");
+                  // await follower(kurikulum_id);
+                  // 
+                 
+                }
                 async function formEdit(id){
                   console.log("clicked");
+                  $("#modalButtonAction").show();
                   $("#modalTitle").html("Edit Peserta Didik");
                   $("#modalButtonAction").html("Simpan");
                   const dt = await getExist(id);
