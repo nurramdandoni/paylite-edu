@@ -195,7 +195,7 @@
                  
                 }
 
-                function removeKrsById(krs_id,nama){
+                async function removeKrsById(krs_id,nama){
                   console.log(krs_id);
                   const requestOptions = {
                   method: 'DELETE', // Metode permintaan
