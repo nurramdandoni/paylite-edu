@@ -12,7 +12,7 @@
               <div id="contentFormInputEdit">
                   <!-- Button trigger modal -->
                   <button id="judulModal" onclick="formTambah()" type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
-                    Tambah Mata Ajar
+                    Tambah/ Update Data KRS
                   </button>
                 </div>
               <table id="example" class="table align-items-center mb-0">
