@@ -171,12 +171,17 @@
                   $("#modalTitle").html("QR Code : "+dt.data.nisn+" - "+dt.data.nama_siswa+"");
                   // $("#modalButtonAction").html("Tambah");
                   let form = `
-                  <div id="qrSiswa">
+                  <div style="text-align:center;" id="qrSiswa">
                   </div>
                   `;
                   $("#modalContent").html(form);
                   $("#modalButtonAction").hide();
                   $("#cls").html("OK");
+                  $('.qrcode').ClassyQR({
+                      create: true,
+                      type: 'text',
+                      text: dt.data.nisn+" - "+dt.data.nama_siswa
+                  });
                   // await follower(kurikulum_id);
                   // 
                  
