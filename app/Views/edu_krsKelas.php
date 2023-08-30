@@ -184,7 +184,7 @@
                   // $("#modalTitle").html("Follower Kurikulum : .... di Kelas .... Tahun Ajaran ...");
                   // $("#modalButtonAction").html("Tambah");
                   let form = `
-                  <div class="form-group" id="lsKrsFollow">
+                  <div" class="form-group" id="lsKrsFollow">
                   </div>
                   `;
                   $("#modalContent").html(form);
@@ -239,7 +239,7 @@
                     console.log("folower", data.data);
                     let temp2 = '';
                     for(item2 of data.data){
-                      temp2 += `<div class="btn btn-success">`+item2.siswa.nisn+" - "+item2.siswa.nama_siswa+`</div>`;
+                      temp2 += `<div style="width:100%;" class="btn btn-success">`+item2.siswa.nisn+" - "+item2.siswa.nama_siswa+`<div class="btn btn-danger">X</div></div>`;
                     }
                     $("#modalTitle").html("Follower di "+item2.kelas.nama_kelas+" Tahun Ajaran "+item2.tahun_ajaran.nama_tahun_ajaran+"");
                     $("#lsKrsFollow").html(temp2);
