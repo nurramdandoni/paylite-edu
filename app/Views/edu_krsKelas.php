@@ -197,9 +197,16 @@
 
                 function removeKrsById(krs_id,nama){
                   console.log(krs_id);
+                  const requestOptions = {
+                  method: 'DELETE', // Metode permintaan
+                  headers: {
+                            'Content-Type': 'application/json', // Jenis konten yang dikirim
+                            // 'Authorization': 'Bearer YOUR_ACCESS_TOKEN' // Header otorisasi jika diperlukan
+                  },// Mengubah data menjadi bentuk JSON
+                };
                   var confirmation = confirm("Apakah Anda yakin Menghapus KRS "+nama+"?");
                   if (confirmation) {
-                    const data = await fetchData('https://api.paylite.co.id/krs/'+krs_id+'');
+                    const data = await fetchData('https://api.paylite.co.id/krs/'+krs_id+'',requestOptions);
                     // return data;
                     if(data.status == 'Sukses'){
                       alert("KRS "+nama+" Berhasil Dihapus!");
