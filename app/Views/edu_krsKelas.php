@@ -168,6 +168,8 @@
                   </div>
                   `;
                   $("#modalContent").html(form);
+                  $("#modalButtonAction").hide();
+                  $("#cls").html("OK");
                   await follower(kurikulum_id);
                   // 
                  
