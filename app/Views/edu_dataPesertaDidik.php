@@ -113,12 +113,12 @@
                       </td>
                       <td class="align-middle">
                         <a href="javascript:;" class="text-secondary font-weight-bold text-xs" data-toggle="tooltip" data-original-title="Edit user">
-                          Detail
+                          Lihat QR Code
                         </a>
                       </td>
                       <td class="align-middle">
                         <a href="javascript:;" class="text-secondary font-weight-bold text-xs" data-toggle="tooltip" data-original-title="Edit user">
-                          QR Code
+                          Detail
                         </a>
                       </td>
                     </tr>
