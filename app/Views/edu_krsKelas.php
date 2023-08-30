@@ -239,7 +239,7 @@
                     console.log("folower", data.data);
                     let temp2 = '';
                     for(item2 of data.data){
-                      temp2 += `<div><div class="btn btn-success">`+item2.siswa.nisn+" - "+item2.siswa.nama_siswa+`</div><div class="btn btn-danger">X</div></div>`;
+                      temp2 += `<div style="text-align:center"><div class="btn btn-success" style="min-width:300px;">`+item2.siswa.nisn+" - "+item2.siswa.nama_siswa+`</div><div style="margin-left:5px;" class="btn btn-danger">X</div></div>`;
                     }
                     $("#modalTitle").html("Follower di "+item2.kelas.nama_kelas+" Tahun Ajaran "+item2.tahun_ajaran.nama_tahun_ajaran+"");
                     $("#lsKrsFollow").html(temp2);
