@@ -218,7 +218,7 @@
                     for(item2 of data.data){
                       temp2 += `<div>`+item2.siswa.nama_siswa+`</div>`;
                     }
-                    $("#modalTitle").html("Follower di Kelas "+item2.kelas.nama_kelas+" Tahun Ajaran "+item2.tahun_ajaran.nama_tahun_ajaran+"");
+                    $("#modalTitle").html("Follower di "+item2.kelas.nama_kelas+" Tahun Ajaran "+item2.tahun_ajaran.nama_tahun_ajaran+"");
                     $("#lsKrsFollow").html(temp2);
                     return true;
                 }
