@@ -385,7 +385,7 @@ async function fetchData(url, options) {
           </div>
           <ul class="navbar-nav  justify-content-end">
             <li class="nav-item d-flex align-items-center">
-              <a href="" id="logout" class="nav-link text-body font-weight-bold px-0">
+              <a onclick="logout()" id="logout" class="nav-link text-body font-weight-bold px-0">
                 <i class="fa fa-user me-sm-1"></i>
                 <span class="d-sm-inline d-none">Logout</span>
               </a>
@@ -487,6 +487,16 @@ async function fetchData(url, options) {
         damping: '0.5'
       }
       Scrollbar.init(document.querySelector('#sidenav-scrollbar'), options);
+    }
+
+    function logout(){
+      var confirmation = confirm("Apakah Anda yakin ingin logout?");
+    if (confirmation) {
+        // Lakukan tindakan logout di sini, misalnya mengarahkan ke halaman logout
+        window.location.href = "https://account.paylite.co.id/"; // Ganti dengan URL halaman logout Anda
+    } else {
+        // Batal logout
+    }
     }
   </script>
   <!-- Github buttons -->
