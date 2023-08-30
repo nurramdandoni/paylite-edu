@@ -218,7 +218,7 @@
                     console.log("folower", data.data);
                     let temp2 = '';
                     for(item2 of data.data){
-                      temp2 += `<div>`+item2.siswa.nisn+" - "+item2.siswa.nama_siswa+`</div>`;
+                      temp2 += `<div class="btn btn-success">`+item2.siswa.nisn+" - "+item2.siswa.nama_siswa+`</div>`;
                     }
                     $("#modalTitle").html("Follower di "+item2.kelas.nama_kelas+" Tahun Ajaran "+item2.tahun_ajaran.nama_tahun_ajaran+"");
                     $("#lsKrsFollow").html(temp2);
