@@ -104,7 +104,7 @@
                         </div>
                       </td>
                       <td class="align-middle">
-                        <a href="javascript:;" class="text-secondary font-weight-bold text-xs" data-toggle="tooltip" data-original-title="Edit user">
+                        <a data-toggle="modal" data-target="#exampleModal" onclick="formEdit('`+item.kurikulum.kurikulum_id+`')" class="text-secondary font-weight-bold text-xs" data-toggle="tooltip" data-original-title="Edit user">
                           FOllower
                         </a>
                       </td>
@@ -159,6 +159,19 @@
                   // 
                  
                 }
+                async function followerKurikuluminClass(kurikulum_id){
+                  console.log("clicked");
+                  // $("#modalTitle").html("Follower Kurikulum : .... di Kelas .... Tahun Ajaran ...");
+                  // $("#modalButtonAction").html("Tambah");
+                  let form = `
+                  <div class="form-group" id="lsKrsFollow">
+                  </div>
+                  `;
+                  $("#modalContent").html(form);
+                  await follower(kurikulum_id);
+                  // 
+                 
+                }
                 async function getExist(id){
                     const data = await fetchData('https://api.paylite.co.id/krs/'+id+'');
                     return data;
@@ -181,6 +194,33 @@
                 };
                     const data = await fetchData('https://api.paylite.co.id/krsWhere', requestOptions);
                     return data;
+                }
+                async function follower(kurikulum_id){
+                  const postDatagetKurikulum = {
+                  lembaga_pendidikan_id: lembaga_pendidikan_id,
+                  tahun_ajaran_id: '<?= $tahun_ajaran_id; ?>',
+                  kelas_id: '<?= $kelas_id; ?>',
+                  kurikulum_id: kurikulum_id
+                }
+                console.log("cekkk : ",postDatagetKurikulum);
+                  const requestOptions = {
+                  method: 'POST', // Metode permintaan
+                  headers: {
+                            'Content-Type': 'application/json', // Jenis konten yang dikirim
+                            // 'Authorization': 'Bearer YOUR_ACCESS_TOKEN' // Header otorisasi jika diperlukan
+                  },
+                  body: JSON.stringify(postDatagetKurikulum), // Mengubah data menjadi bentuk JSON
+                };
+                    const data = await fetchData('https://api.paylite.co.id/krsWhere', requestOptions);
+                    // return data;
+                    console.log("list tahun", data.data);
+                    let temp2 = '';
+                    for(item2 of data.data){
+                      temp2 += `<div>`+item2.siswa.nama_siswa+`</div>`;
+                    }
+                    $("#modalTitle").html("Follower di Kelas "+item2.kelas.nama_kelas+" Tahun Ajaran "+item2.tahun_ajaran.nama_tahun_ajaran+"");
+                    $("#lsKrsFollow").html(temp2);
+                    return true;
                 }
                 async function cekdatakelasList(where){
                   const postDatagetDataKelasList = {
