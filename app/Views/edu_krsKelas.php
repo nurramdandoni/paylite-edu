@@ -202,7 +202,7 @@
                   kelas_id: '<?= $kelas_id; ?>',
                   kurikulum_id: kurikulum_id
                 }
-                console.log("cekkk : ",postDatagetKurikulum);
+                console.log("cek folower : ",postDatagetKurikulum);
                   const requestOptions = {
                   method: 'POST', // Metode permintaan
                   headers: {
@@ -213,7 +213,7 @@
                 };
                     const data = await fetchData('https://api.paylite.co.id/krsWhere', requestOptions);
                     // return data;
-                    console.log("list tahun", data.data);
+                    console.log("folower", data.data);
                     let temp2 = '';
                     for(item2 of data.data){
                       temp2 += `<div>`+item2.siswa.nama_siswa+`</div>`;
