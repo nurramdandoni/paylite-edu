@@ -195,8 +195,14 @@
                  
                 }
 
-                function removeKrsById(krs_id){
+                function removeKrsById(krs_id,nama){
                   console.log(krs_id);
+                  var confirmation = confirm("Apakah Anda yakin Menghapus KRS "+nama+"?");
+                  if (confirmation) {
+                      $("#lsR"+krs_id).hide();
+                  } else {
+                      // Batal logout
+                  }
                 }
                 async function getExist(id){
                     const data = await fetchData('https://api.paylite.co.id/krs/'+id+'');
@@ -243,7 +249,7 @@
                     console.log("folower", data.data);
                     let temp2 = '';
                     for(item2 of data.data){
-                      temp2 += `<div style="text-align:center"><div class="btn btn-success" style="min-width:300px;">`+item2.siswa.nisn+" - "+item2.siswa.nama_siswa+`</div><div style="margin-left:5px;" class="btn btn-danger" onclick="removeKrsById('`+item2.krs_id+`')">X</div></div>`;
+                      temp2 += `<div id="lsR`+item2.krs_id+`" style="text-align:center"><div class="btn btn-success" style="min-width:300px;">`+item2.siswa.nisn+" - "+item2.siswa.nama_siswa+`</div><div style="margin-left:5px;" class="btn btn-danger" onclick="removeKrsById('`+item2.krs_id+`','`+item2.siswa.nama_siswa+`')">X</div></div>`;
                     }
                     $("#modalTitle").html("Follower di "+item2.kelas.nama_kelas+" Tahun Ajaran "+item2.tahun_ajaran.nama_tahun_ajaran+"");
                     $("#lsKrsFollow").html(temp2);
