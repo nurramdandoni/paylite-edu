@@ -381,6 +381,7 @@
                   lembaga_pendidikan_id: lembaga_pendidikan_id,
                   tahun_ajaran_id: tahun_ajaran_id
                 }
+                console.log("ini params : ", postDatagetKurikulum);
           const requestOptions = {
                   method: 'POST', // Metode permintaan
                   headers: {
