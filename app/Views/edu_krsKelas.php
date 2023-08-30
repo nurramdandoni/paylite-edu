@@ -277,7 +277,76 @@
                     return data;
                 }
 
+                // async function modalButtonAction(){
+                //   const tipe = $("#typeForm").val();
+                //   const id = $("#idData").val();
+                //   const tahun_ajaran_id = $("#DKtahunAjaran").val();
+                //   const kelas_id = $("#DKkelas").val();
+                //   const kurikulum_id = $("#DKkurikulum").val();
+                //   const description = $("#description").val();
+
+                //   const whereList = {
+                //     tahun_ajaran_id: tahun_ajaran_id,
+                //     kelas_id: kelas_id
+                //   };
+
+                //   const listSiswaKelas = await cekdatakelasList(whereList);
+                //   console.log("Data Siswa Di KElas : ",listSiswaKelas);
+                //   if(listSiswaKelas.data.length > 0){
+                //     for(siswa of listSiswaKelas.data){
+                //       console.log("ini Iterate : ", siswa.siswa_id);
+                //           const postData = {
+                //           tipe: tipe,
+                //           lembaga_pendidikan_id: lembaga_pendidikan_id,
+                //           tahun_ajaran_id: tahun_ajaran_id,
+                //           kelas_id: kelas_id,
+                //           kurikulum_id: kurikulum_id,
+                //           siswa_id: siswa.siswa_id,
+                //           status_wali: "approved",
+                //           status_pay: "paying",
+                //           description: description,
+                //         }
+                //         console.log("BEfore send : ", postData);
+                //         // cek data sebelumnya dengan nama yang sama
+                //         const where = {
+                //           tahun_ajaran_id: tahun_ajaran_id,
+                //           kelas_id: kelas_id,
+                //           kurikulum_id: kurikulum_id,
+                //           siswa_id: siswa.siswa_id,
+                //         };
+                //         const hasilCek = await cekExist(where);
+                        
+                //           console.log("Hasil Cek ::: iterate "+siswa.siswa_id+"", hasilCek);
+                //         if(hasilCek.data.length > 0){
+                //           console.log("id nya : ", hasilCek.data[0].krs_id);
+                //           if(hasilCek.data[0].krs_id != undefined){
+                //             const update = await updateDataKrs(hasilCek.data[0].krs_id,postData);
+                //           }else{
+                //             // alert("Kurikulum : "+hasilCek.data[0].kurikulum.mata_ajar.nama_mata_ajar+" Sudah Ada di Kelas ini!");
+                //           }
+                //         }else{
+                //           // proses insert/update data
+                //           if(tipe == "add"){
+                            
+                //             const inserted = await insertDataKrs(postData);
+                //           }else{
+                //             const update = await updateDataKrs(id,postData);
+                            
+                //           }
+                //         }
+                //       }
+                //       alert("Data KRS Berhasil Ditambahkan!");
+                //       $("#cls").click();
+                //       getDataKrs();
+                //   }else{
+                //     let kls = $("#DKkelas option:selected").text();
+                //     let thn = $("#DKtahunAjaran option:selected").text();
+                //     alert("Data Kelas : "+kls+" Tahun Ajaran "+thn+" Kosong!");
+                //   }
+
+                // };
                 async function modalButtonAction(){
+                  let th = await getTahunAjaranAktif();
                   const tipe = $("#typeForm").val();
                   const id = $("#idData").val();
                   const tahun_ajaran_id = $("#DKtahunAjaran").val();
@@ -286,7 +355,7 @@
                   const description = $("#description").val();
 
                   const whereList = {
-                    tahun_ajaran_id: tahun_ajaran_id,
+                    tahun_ajaran_id: th,
                     kelas_id: kelas_id
                   };
 
@@ -298,7 +367,7 @@
                           const postData = {
                           tipe: tipe,
                           lembaga_pendidikan_id: lembaga_pendidikan_id,
-                          tahun_ajaran_id: tahun_ajaran_id,
+                          tahun_ajaran_id: th,
                           kelas_id: kelas_id,
                           kurikulum_id: kurikulum_id,
                           siswa_id: siswa.siswa_id,
@@ -309,7 +378,7 @@
                         console.log("BEfore send : ", postData);
                         // cek data sebelumnya dengan nama yang sama
                         const where = {
-                          tahun_ajaran_id: tahun_ajaran_id,
+                          tahun_ajaran_id: th,
                           kelas_id: kelas_id,
                           kurikulum_id: kurikulum_id,
                           siswa_id: siswa.siswa_id,
