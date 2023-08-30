@@ -121,6 +121,7 @@
 
                 async function formTambah(){
                   console.log("clicked");
+                  $("#modalButtonAction").show();
                   $("#modalTitle").html("Tambah Data KRS");
                   $("#modalButtonAction").html("Tambah");
                   let form = `
