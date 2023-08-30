@@ -199,7 +199,14 @@
                   console.log(krs_id);
                   var confirmation = confirm("Apakah Anda yakin Menghapus KRS "+nama+"?");
                   if (confirmation) {
+                    const data = await fetchData('https://api.paylite.co.id/krs/'+krs_id+'');
+                    // return data;
+                    if(data.status == 'Sukses'){
+                      alert("KRS "+nama+" Berhasil Dihapus!");
                       $("#lsR"+krs_id).hide();
+                    }else{
+                      alert("KRS "+nama+" Gagal Dihapus!");
+                    }
                   } else {
                       // Batal logout
                   }
