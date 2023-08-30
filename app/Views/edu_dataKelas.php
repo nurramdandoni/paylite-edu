@@ -198,6 +198,7 @@
                     $("#DKwaliKelas").attr('disabled',false) 
 
                   }
+                  await changeLive();
                   // 
                  
                 }
