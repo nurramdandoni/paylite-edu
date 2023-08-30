@@ -147,12 +147,12 @@
                   <input type="hidden" id="typeForm" value="add"/>
                   <div class="form-group">
                     <label for="tahunAjaran">Tahun Ajaran</label>
-                    <select disabled onchange="changeLive()" class="form-control" id="DKtahunAjaran">
+                    <select disabled class="form-control" id="DKtahunAjaran">
                     </select>
                   </div>
                   <div class="form-group">
                   <label for="kelas">Kelas</label>
-                  <select onchange="changeLive()" class="form-control" id="DKkelas">
+                  <select class="form-control" id="DKkelas">
                   </select>
                   </div>
                   <div class="form-group">
@@ -216,14 +216,6 @@
                 };
                     const data = await fetchData('https://api.paylite.co.id/dataKelasWhere', requestOptions);
                     return data;
-                }
-                async function changeLive(){
-                  let id_kelas = $("#DKkelas").val();
-                  let tahun_ajaran_id = $("#DKtahunAjaran").val();
-                  const where2 = {
-                    tahun_ajaran_id: tahun_ajaran_id
-                  };
-                  await getKurikulum(tahun_ajaran_id)
                 }
                 async function insertDataKrs(dataPost){
                   const requestOptions = {
