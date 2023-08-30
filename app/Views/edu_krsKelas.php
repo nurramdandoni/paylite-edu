@@ -194,6 +194,10 @@
                   // 
                  
                 }
+
+                function removeKrsById(krs_id){
+                  console.log(krs_id);
+                }
                 async function getExist(id){
                     const data = await fetchData('https://api.paylite.co.id/krs/'+id+'');
                     return data;
@@ -251,9 +255,7 @@
                   tahun_ajaran_id: where.tahun_ajaran_id,
                   kelas_id: where.kelas_id
                 }
-                function removeKrsById(krs_id){
-                  console.log(krs_id);
-                }
+                
                 console.log("cekkk : ",postDatagetDataKelasList);
                   const requestOptions = {
                   method: 'POST', // Metode permintaan
