@@ -447,6 +447,5 @@ class App extends BaseConfig
      */
     public bool $CSPEnabled = false;
 
-    public $displayErrors = true;
 
 }
