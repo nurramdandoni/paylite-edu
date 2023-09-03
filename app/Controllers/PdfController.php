@@ -12,7 +12,7 @@ class PdfController extends Controller
     {
         echo "test";
         // Buat objek DOMPDF
-        // $dompdf = new Dompdf();
+        $dompdf = new Dompdf();
 
         // // Buat opsi DOMPDF
         // $options = new Options();
