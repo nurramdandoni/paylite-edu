@@ -92,7 +92,7 @@
                         icon = 'success';
                       }
                       temp += `
-                      <tr>
+                      <tr id="lsR`+item.data_kelas_id+`">
                       <td>
                         <div class="d-flex px-2 py-1">
                           <div>
@@ -112,7 +112,7 @@
                         <span class="badge badge-sm bg-gradient-`+icon+`">`+item.siswa.status+`</span>
                       </td>
                       <td class="align-middle">
-                        <a href="javascript:;" class="text-secondary font-weight-bold text-xs" data-toggle="tooltip" data-original-title="Edit user">
+                        <a onclick="removeDataKelasById('`+item.data_kelas_id+`','`+item.siswa.nama_siswa+`')" class="text-secondary font-weight-bold text-xs" data-toggle="tooltip" data-original-title="Edit user">
                           Hapus dari Kelas
                         </a>
                       </td>
@@ -188,6 +188,32 @@
                 // 
                  
                 }
+
+                
+                async function removeDataKelasById(data_kelas_id,nama){
+                  console.log(data_kelas_id);
+                  const requestOptions = {
+                  method: 'DELETE', // Metode permintaan
+                  headers: {
+                            'Content-Type': 'application/json', // Jenis konten yang dikirim
+                            // 'Authorization': 'Bearer YOUR_ACCESS_TOKEN' // Header otorisasi jika diperlukan
+                  },// Mengubah data menjadi bentuk JSON
+                };
+                  var confirmation = confirm("Apakah Anda yakin Menghapus Data Kelas "+nama+"?");
+                  if (confirmation) {
+                    // const data = await fetchData('https://api.paylite.co.id/dataKelas/'+data_kelas_id+'',requestOptions);
+                    // return data;
+                    if(data.status == 'Sukses'){
+                      alert("Data Kelas "+nama+" Berhasil Dihapus!");
+                      $("#lsR"+data_kelas_id).hide();
+                    }else{
+                      alert("Data Kelas "+nama+" Gagal Dihapus!");
+                    }
+                  } else {
+                      // Batal logout
+                  }
+                }
+
                 async function getExist(id){
                     const data = await fetchData('https://api.paylite.co.id/dataKelas/'+id+'');
                     return data;
