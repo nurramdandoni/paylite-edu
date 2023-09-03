@@ -2,9 +2,9 @@
 
 namespace App\Controllers;
 
+use App\Controllers\BaseController;
 use Dompdf\Dompdf;
 use Dompdf\Options;
-use CodeIgniter\Controller;
 
 class PdfController extends BaseController
 {
