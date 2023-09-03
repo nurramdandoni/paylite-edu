@@ -112,7 +112,7 @@
                         <span class="badge badge-sm bg-gradient-`+icon+`">`+item.siswa.status+`</span>
                       </td>
                       <td class="align-middle">
-                        <a onclick="removeDataKelasById('`+item.data_kelas_id+`','`+item.siswa.nama_siswa+`')" class="text-secondary font-weight-bold text-xs" data-toggle="tooltip" data-original-title="Edit user">
+                        <a style="cursor:pointer;" onclick="removeDataKelasById('`+item.data_kelas_id+`','`+item.siswa.nama_siswa+`')" class="text-secondary font-weight-bold text-xs" data-toggle="tooltip" data-original-title="Edit user">
                           Hapus dari Kelas
                         </a>
                       </td>
