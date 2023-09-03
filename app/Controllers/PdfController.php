@@ -25,13 +25,13 @@ class PdfController extends Controller
         // // Isi konten PDF (ganti dengan konten laporan Anda)
         $html = view('pdf_template_absensi'); // Misalnya, gunakan view untuk mengatur tampilan laporan
 
-        // // Muat konten ke DOMPDF
-        // $dompdf->loadHtml($html);
+        // Muat konten ke DOMPDF
+        $dompdf->loadHtml($html);
 
-        // // Render PDF (menghasilkan PDF)
-        // $dompdf->render();
+        // Render PDF (menghasilkan PDF)
+        $dompdf->render();
 
-        // // Tampilkan atau unduh PDF
-        // $dompdf->stream("laporan_absensi.pdf", array("Attachment" => false));
+        // Tampilkan atau unduh PDF
+        $dompdf->stream("laporan_absensi.pdf", array("Attachment" => false));
     }
 }
