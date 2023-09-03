@@ -9,19 +9,17 @@ class PdfController extends BaseController
 {
     public function generatePDF()
     {
+        // instantiate and use the dompdf class
         $dompdf = new Dompdf();
+        $dompdf->loadHtml('hello world');
 
-        // // // Isi konten PDF (ganti dengan konten laporan Anda)
-        $html = view('pdf_template_absensi'); // Misalnya, gunakan view untuk mengatur tampilan laporan
-        $dompdf->setPaper('A4','portrait');
-        // // Muat konten ke DOMPDF
-        $dompdf->loadHtml($html);
+        // (Optional) Setup the paper size and orientation
+        $dompdf->setPaper('A4', 'landscape');
 
-        // // Render PDF (menghasilkan PDF)
+        // Render the HTML as PDF
         $dompdf->render();
 
-        // // Tampilkan atau unduh PDF
-        // $dompdf->stream("laporan_absensi.pdf", array("Attachment" => false));
+        // Output the generated PDF to Browser
         $dompdf->stream();
     }
 }
