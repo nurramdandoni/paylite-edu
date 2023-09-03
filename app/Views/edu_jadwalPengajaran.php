@@ -197,7 +197,7 @@
                         <span class="text-secondary text-xs font-weight-bold">`+jCount[item].nama_guru+`</span>
                       </td>
                       <td class="align-middle">
-                        <a data-toggle="modal" data-target="#exampleModal" onclick="formEdit('`+jCount[item].jadwal_pelajaran_id+`')" class="text-secondary font-weight-bold text-xs" data-toggle="tooltip" data-original-title="Edit user">
+                        <a style="cursor:pointer;" data-toggle="modal" data-target="#exampleModal" onclick="formEdit('`+jCount[item].jadwal_pelajaran_id+`')" class="text-secondary font-weight-bold text-xs" data-toggle="tooltip" data-original-title="Edit user">
                           Edit
                         </a>
                       </td>
