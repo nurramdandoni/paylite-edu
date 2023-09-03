@@ -201,8 +201,8 @@
                 };
                   var confirmation = confirm("Apakah Anda yakin Menghapus Data Kelas "+nama+"?");
                   if (confirmation) {
-                    // const data = await fetchData('https://api.paylite.co.id/dataKelas/'+data_kelas_id+'',requestOptions);
-                    return {data:{status:"Sukses"}};
+                    const data = await fetchData('https://api.paylite.co.id/dataKelas/'+data_kelas_id+'',requestOptions);
+                    return data;
                     if(data.status == 'Sukses'){
                       alert("Data Kelas "+nama+" Berhasil Dihapus!");
                       $("#lsR"+data_kelas_id).hide();
