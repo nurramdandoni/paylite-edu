@@ -338,6 +338,18 @@
                     const data = await fetchData('https://api.paylite.co.id/jadwalPelajaran', requestOptions);
                     return data;
                 }
+                async function updateJadwalPengajaran(id,dataPost){
+                  const requestOptions = {
+                  method: 'PUT', // Metode permintaan
+                  headers: {
+                            'Content-Type': 'application/json', // Jenis konten yang dikirim
+                            // 'Authorization': 'Bearer YOUR_ACCESS_TOKEN' // Header otorisasi jika diperlukan
+                  },
+                  body: JSON.stringify(dataPost), // Mengubah data menjadi bentuk JSON
+                };
+                    const data = await fetchData('https://api.paylite.co.id/jadwalPelajaran/'+id+'', requestOptions);
+                    return data;
+                }
 
                 async function modalButtonAction(){
                   const thn = await getTahunAjaranAktif();
@@ -400,17 +412,17 @@
                       }
                     }else{
                         console.log("edited");
-                  //     const update = await updateDataKelas(id,postData);
-                  //     if(update.status == "Sukses"){
-                  //       alert("Data Berhasil Diperbaharui");
-                  //       $("#cls").click();
-                  //       getDataKelas();
-                  //     }else{
-                  //       alert("upsh ada kesalahan!");
-                  //     }
+                      const update = await updateJadwalPengajaran(id,postData);
+                      if(update.status == "Sukses"){
+                        alert("Data Berhasil Diperbaharui");
+                        $("#cls").click();
+                        getJadwalPengajaran();
+                      }else{
+                        alert("upsh ada kesalahan!");
+                      }
 
-                  //   }
-                  }
+                    }
+                  // }
 
                 };
                 async function getKelas(){
