@@ -210,6 +210,11 @@
                     }
                 }
 
+                async function getExist(id){
+                    const data = await fetchData('https://api.paylite.co.id/jadwalPelajaran/'+id+'');
+                    return data;
+                }
+
                 async function formTambah(){
                   const th = getTahunAjaranAktif();
                   console.log("clicked");
@@ -262,56 +267,64 @@
                   await getGuru()
                 }
                 async function formEdit(id){
+                  const th = getTahunAjaranAktif();
                   console.log(id);
-                  // const th = getTahunAjaranAktif();
-                  // console.log("clicked");
-                  // $("#modalTitle").html("Tambah Jadwal Pengajaran");
-                  // $("#modalButtonAction").html("Tambah");
-                  // let form = `
-                  // <input type="hidden" id="typeForm" value="add"/>
-                  // <div class="form-group">
-                  //   <label for="hari">Hari</label>
-                  //   <select class="form-control" id="DKHari">
-                  //     <option value="1">Senin</option>
-                  //     <option value="2">Selasa</option>
-                  //     <option value="3">Rabu</option>
-                  //     <option value="4">Kamis</option>
-                  //     <option value="5">Jumat</option>
-                  //     <option value="6">Sabtu</option>
-                  //     <option value="7">Minggu</option>
-                  //   </select>
-                  // </div>
-                  // <div class="row">
-                  //   <div class="form-group col-md-6">
-                  //     <label for="kelas">Jam Mulai</label>
-                  //     <input type="time" class="form-control" id="DKJamMulai"/>
-                  //   </div>
-                  //   <div class="form-group col-md-6">
-                  //     <label for="kelas">Jam Selesai</label>
-                  //     <input type="time" class="form-control" id="DKJamSelesai"/>
-                  //   </div>
-                  // </div>
-                  // <div class="form-group">
-                  //   <label for="kelas">Kelas</label>
-                  //   <select class="form-control " id="DKkelas">
-                  //   </select>
-                  // </div>
-                  // <div class="form-group">
-                  //   <label for="kurikulum">Kurikulum</label>
-                  //   <select class="form-control " id="DKkurikulum">
-                  //   </select>
-                  // </div>
-                  // <div class="form-group">
-                  //   <label for="pengajar">Pengajar</label>
-                  //   <select class="form-control " id="DKpengajar">
-                  //   </select>
-                  // </div>
+                  $("#modalTitle").html("Edit Jadwal Pengajaran");
+                  $("#modalButtonAction").html("Simpan");
+                  const dt = await getExist(id);
+                  let form = `
+                  <input type="hidden" id="typeForm" value="edit"/>
+                  <input type="hidden" id="idData" value="`+id+`"/>
+                  <div class="form-group">
+                    <label for="hari">Hari</label>
+                    <select class="form-control" id="DKHari">
+                      <option value="1">Senin</option>
+                      <option value="2">Selasa</option>
+                      <option value="3">Rabu</option>
+                      <option value="4">Kamis</option>
+                      <option value="5">Jumat</option>
+                      <option value="6">Sabtu</option>
+                      <option value="7">Minggu</option>
+                    </select>
+                  </div>
+                  <div class="row">
+                    <div class="form-group col-md-6">
+                      <label for="kelas">Jam Mulai</label>
+                      <input type="time" class="form-control" id="DKJamMulai"/>
+                    </div>
+                    <div class="form-group col-md-6">
+                      <label for="kelas">Jam Selesai</label>
+                      <input type="time" class="form-control" id="DKJamSelesai"/>
+                    </div>
+                  </div>
+                  <div class="form-group">
+                    <label for="kelas">Kelas</label>
+                    <select class="form-control " id="DKkelas">
+                    </select>
+                  </div>
+                  <div class="form-group">
+                    <label for="kurikulum">Kurikulum</label>
+                    <select class="form-control " id="DKkurikulum">
+                    </select>
+                  </div>
+                  <div class="form-group">
+                    <label for="pengajar">Pengajar</label>
+                    <select class="form-control " id="DKpengajar">
+                    </select>
+                  </div>
                   // `;
                   // // $("#modalContent").html('<?= $_COOKIE['lembaga_pendidikan_id']; ?>');
-                  // $("#modalContent").html(form);
-                  // await getKelas();
-                  // await getKurikulum();
-                  // await getGuru()
+                  $("#modalContent").html(form);
+                  await getKelas();
+                  await getKurikulum();
+                  await getGuru()
+
+                  $("#DKHari").val(dt.data.hari_id);
+                  $("#DKJamMulai").val(dt.data.jam_mulai);
+                  $("#DKJamSelesai").val(dt.data.jam_selesai);
+                  $("#DKkelas").val(dt.data.data_kelas_id);
+                  $("#DKkurikulum").val(dt.data.kurikulum_id);
+                  $("#DKpengajar").val(dt.data.guru_id);
                 }
                 async function insertJadwalPengajaran(dataPost){
                   const requestOptions = {
@@ -375,7 +388,7 @@
                   //   }
                   // }else{
                   //   // proses insert/update data
-                  //   if(tipe == "add"){
+                    if(tipe == "add"){
 
                       const inserted = await insertJadwalPengajaran(postData);
                       if(inserted){
@@ -385,7 +398,8 @@
                       }else{
                         alert("upsh ada kesalahan!");
                       }
-                  //   }else{
+                    }else{
+                        console.log("edited");
                   //     const update = await updateDataKelas(id,postData);
                   //     if(update.status == "Sukses"){
                   //       alert("Data Berhasil Diperbaharui");
@@ -396,7 +410,7 @@
                   //     }
 
                   //   }
-                  // }
+                  }
 
                 };
                 async function getKelas(){
