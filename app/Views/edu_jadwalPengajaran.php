@@ -312,7 +312,7 @@
                     <select class="form-control " id="DKpengajar">
                     </select>
                   </div>
-                  // `;
+                  `;
                   // // $("#modalContent").html('<?= $_COOKIE['lembaga_pendidikan_id']; ?>');
                   $("#modalContent").html(form);
                   await getKelas();
