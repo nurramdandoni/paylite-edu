@@ -49,6 +49,8 @@ $routes->get('/absensi', 'Dashboard::absensi');
 $routes->get('/nilai', 'Dashboard::nilai');
 $routes->get('/aktivasi', 'Dashboard::aktivasi');
 
+$routes->get('/absensi-pdf', 'PdfController::generatePDF');
+
 /*
  * --------------------------------------------------------------------
  * Additional Routing
