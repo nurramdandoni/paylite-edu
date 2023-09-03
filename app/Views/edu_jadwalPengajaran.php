@@ -197,7 +197,7 @@
                         <span class="text-secondary text-xs font-weight-bold">`+jCount[item].nama_guru+`</span>
                       </td>
                       <td class="align-middle">
-                        <a href="javascript:;" class="text-secondary font-weight-bold text-xs" data-toggle="tooltip" data-original-title="Edit user">
+                        <a onclick="formEdit('`+jCount[item].jadwal_pelajaran_id+`')" class="text-secondary font-weight-bold text-xs" data-toggle="tooltip" data-original-title="Edit user">
                           Edit
                         </a>
                       </td>
@@ -260,6 +260,58 @@
                   await getKelas();
                   await getKurikulum();
                   await getGuru()
+                }
+                async function formEdit(id){
+                  console.log(id);
+                  // const th = getTahunAjaranAktif();
+                  // console.log("clicked");
+                  // $("#modalTitle").html("Tambah Jadwal Pengajaran");
+                  // $("#modalButtonAction").html("Tambah");
+                  // let form = `
+                  // <input type="hidden" id="typeForm" value="add"/>
+                  // <div class="form-group">
+                  //   <label for="hari">Hari</label>
+                  //   <select class="form-control" id="DKHari">
+                  //     <option value="1">Senin</option>
+                  //     <option value="2">Selasa</option>
+                  //     <option value="3">Rabu</option>
+                  //     <option value="4">Kamis</option>
+                  //     <option value="5">Jumat</option>
+                  //     <option value="6">Sabtu</option>
+                  //     <option value="7">Minggu</option>
+                  //   </select>
+                  // </div>
+                  // <div class="row">
+                  //   <div class="form-group col-md-6">
+                  //     <label for="kelas">Jam Mulai</label>
+                  //     <input type="time" class="form-control" id="DKJamMulai"/>
+                  //   </div>
+                  //   <div class="form-group col-md-6">
+                  //     <label for="kelas">Jam Selesai</label>
+                  //     <input type="time" class="form-control" id="DKJamSelesai"/>
+                  //   </div>
+                  // </div>
+                  // <div class="form-group">
+                  //   <label for="kelas">Kelas</label>
+                  //   <select class="form-control " id="DKkelas">
+                  //   </select>
+                  // </div>
+                  // <div class="form-group">
+                  //   <label for="kurikulum">Kurikulum</label>
+                  //   <select class="form-control " id="DKkurikulum">
+                  //   </select>
+                  // </div>
+                  // <div class="form-group">
+                  //   <label for="pengajar">Pengajar</label>
+                  //   <select class="form-control " id="DKpengajar">
+                  //   </select>
+                  // </div>
+                  // `;
+                  // // $("#modalContent").html('<?= $_COOKIE['lembaga_pendidikan_id']; ?>');
+                  // $("#modalContent").html(form);
+                  // await getKelas();
+                  // await getKurikulum();
+                  // await getGuru()
                 }
                 async function insertJadwalPengajaran(dataPost){
                   const requestOptions = {
