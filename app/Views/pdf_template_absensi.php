@@ -56,10 +56,10 @@
     </div>
     <div style="text-align:center;margin-top:10px;">
         <!-- Isi laporan Anda di sini -->
-        <h4>Laporan Absensi</h4>
-        <p>Tahun Ajaran 2023 - Ganjil - <?= $anjir; ?></p>
+        <span style="margin-top:10px;">Rekaspanitulasi Absensi</span>
+        <span style="margin-top:0px;">Tahun Ajaran 2023 - Ganjil - <?= $anjir; ?></span>
     </div>
-    <table border="0" style="margin-top:5px;">
+    <table border="0" style="margin-top:5px;font-size:11px;">
         <tr>
             <td>Kelas</td><td>:</td>
         </tr>
