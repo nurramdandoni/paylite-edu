@@ -41,16 +41,16 @@
         <table border="1" style="border-bottom: 2px solid #000;width:100%;padding:0px;">
             <tr>
                 <td rowspan="4" style="padding-left:40px;"><img style="width:110px;" class="header-logo" src="https://edu.paylite.co.id/assets/img/logo_main.jpeg" alt="Logo"></td>
-                <td style="text-align:center;font-size:18px;margin-bottom:0px;">PEMERINTAH KABUPATEN KUNINGAN</td>
+                <td style="text-align:center;font-size:18px;margin-bottom:0px;">PEMERINTAH KABUPATEN KUNINGAN</td><td style="width:40px;"></td>
             </tr>
             <tr>
-                <td style="text-align:center;font-size:15px;">DINAS PENDIDIKAN DAN KEBUDAYAAN</td>
+                <td style="text-align:center;font-size:15px;">DINAS PENDIDIKAN DAN KEBUDAYAAN</td><td style="width:40px;"></td>
             </tr>
             <tr>
-                <td style="text-align:center;font-size:18px;margin-top:0px;">SEKOLAH DASAR NEGERI 3 HAURKUNING</td>
+                <td style="text-align:center;font-size:18px;margin-top:0px;">SEKOLAH DASAR NEGERI 3 HAURKUNING</td><td style="width:40px;"></td>
             </tr>
             <tr>
-                <td style="text-align:center;font-size:11px;margin-top:4px;">Dusun Kaliwon, Kecamatan Nusaherang, Kabupaten Kuningan, Jawa Barat</td>
+                <td style="text-align:center;font-size:11px;margin-top:4px;">Dusun Kaliwon, Kecamatan Nusaherang, Kabupaten Kuningan, Jawa Barat</td><td style="width:40px;"></td>
             </tr>
         </table>
     </div>
