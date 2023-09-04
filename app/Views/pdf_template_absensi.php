@@ -78,9 +78,6 @@
             <td>Tanggal</td>
         </tr>
         <tr>
-            <td></td>
-            <td></td>
-            <td></td>
             <td>Tanggal</td>
         </tr>
         
