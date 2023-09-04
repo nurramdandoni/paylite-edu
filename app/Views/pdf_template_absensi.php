@@ -38,7 +38,7 @@
 </head>
 <body>
     <div style="text-align:center">
-        <table border="1" style="border-bottom: 2px solid #000;width:100%;">
+        <table border="0" style="border-bottom: 2px solid #000;width:100%;">
             <tr>
                 <td rowspan="4"><img style="width:120px;margin-left:20px;" class="header-logo" src="https://edu.paylite.co.id/assets/img/logo_main.jpeg" alt="Logo"></td>
                 <td style="text-align:center;font-size:23px;margin-bottom:0px;">PEMERINTAH KABUPATEN KUNINGAN</td>
@@ -54,20 +54,22 @@
             </tr>
         </table>
     </div>
-    <div style="text-align:center;">
+    <div style="text-align:center;margin-top:10px;">
         <!-- Isi laporan Anda di sini -->
-        <h1>Laporan Absensi</h1>
+        <h4>Laporan Absensi</h4>
         <p>Tahun Ajaran 2023 - Ganjil - <?= $anjir; ?></p>
     </div>
-    <div class="row">
-        <div class="col-md-2">Kelas</div><div class="col-md-4">:</div><div class="col-md-3"></div>
-    </div>
-    <div class="row">
-        <div class="col-md-2">Mata Pelajaran</div><div class="col-md-4">:</div><div class="col-md-3"></div>
-    </div>
-    <div class="row">
-        <div class="col-md-2">Guru Pengajar</div><div class="col-md-4">:</div><div class="col-md-3"></div>
-    </div>
+    <table border="0" style="margin-top:5px;">
+        <tr>
+            <td>Kelas</td><td>:</td>
+        </tr>
+        <tr>
+            <td>Mata Pelajaran</td><td>:</td>
+        </tr>
+        <tr>
+            <td>Guru Pengajar</td><td>:</td>
+        </tr>
+    </table>
 
 </body>
 </html>
