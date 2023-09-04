@@ -64,13 +64,13 @@
         <p>Tahun Ajaran 2023 - Ganjil</p>
     </div>
     <div class="row">
-        <div class="col-md-3">Kelas</div><div class="col-md-3">:</div><div class="col-md-3"></div>
+        <div class="col-md-2">Kelas</div><div class="col-md-4">:</div><div class="col-md-3"></div>
     </div>
     <div class="row">
-        <div class="col-md-3">Mata Pelajaran</div><div class="col-md-3">:</div><div class="col-md-3"></div>
+        <div class="col-md-2">Mata Pelajaran</div><div class="col-md-4">:</div><div class="col-md-3"></div>
     </div>
     <div class="row">
-        <div class="col-md-3">Guru Pengajar</div><div class="col-md-3">:</div><div class="col-md-3"></div>
+        <div class="col-md-2">Guru Pengajar</div><div class="col-md-4">:</div><div class="col-md-3"></div>
     </div>
 
 </body>
