@@ -57,6 +57,7 @@
             <div class="header4">Dusun Kaliwon, Kecamatan Nusaherang, Kabupaten Kuningan, Jawa Barat</div>
         </div>
     </div> -->
+    <div style="display:inline-block;">logo</div>
     <div style="text-align:center;">
         <div class="header1">PEMERINTAH KABUPATEN KUNINGAN</div>
         <div class="header2">DINAS PENDIDIKAN DAN KEBUDAYAAN</div>
