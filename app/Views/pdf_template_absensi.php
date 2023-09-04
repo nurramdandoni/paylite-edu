@@ -75,7 +75,7 @@
             <td rowspan="2">No</td>
             <td rowspan="2">NISN</td>
             <td rowspan="2">Nama Peserta Didik</td>
-            <td rowspan="31">Tanggal</td>
+            <td>Tanggal</td>
         </tr>
         <tr>
             <td></td>
