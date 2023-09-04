@@ -53,10 +53,20 @@
             <div class="header4">Dusun Kaliwon, Kecamatan Nusaherang, Kabupaten Kuningan, Jawa Barat</div>
         </div>
     </div>
-
-    <!-- Isi laporan Anda di sini -->
-    <h1>Laporan Absensi</h1>
-    <p>Isi laporan Anda...</p>
+    <div style="text-align:center;">
+        <!-- Isi laporan Anda di sini -->
+        <h1>Laporan Absensi</h1>
+        <p>Tahun Ajaran 2023 - Ganjil</p>
+    </div>
+    <div class="row">
+        <div class="col-md-3">Kelas</div><div class="col-md-3">:</div><div class="col-md-3"></div>
+    </div>
+    <div class="row">
+        <div class="col-md-3">Mata Pelajaran</div><div class="col-md-3">:</div><div class="col-md-3"></div>
+    </div>
+    <div class="row">
+        <div class="col-md-3">Guru Pengajar</div><div class="col-md-3">:</div><div class="col-md-3"></div>
+    </div>
 
 </body>
 </html>
