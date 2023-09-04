@@ -75,10 +75,12 @@
             <td rowspan="2">No</td>
             <td rowspan="2">NISN</td>
             <td rowspan="2">Nama Peserta Didik</td>
-            <td>Tanggal</td>
+            <td colspan="3">Tanggal</td>
         </tr>
         <tr>
-            <td>Tanggal</td>
+            <td>1</td>
+            <td>2</td>
+            <td>3</td>
         </tr>
         
     </table>
