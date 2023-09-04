@@ -38,7 +38,7 @@
 </head>
 <body>
     <div style="text-align:center">
-        <table border="0" style="border-bottom: 2px solid #000;width:100%;">
+        <table border="0" style="border-bottom: 2px solid #000;width:100%;padding:0px;">
             <tr>
                 <td rowspan="4"><img style="width:120px;margin-left:20px;" class="header-logo" src="https://edu.paylite.co.id/assets/img/logo_main.jpeg" alt="Logo"></td>
                 <td style="text-align:center;font-size:23px;margin-bottom:0px;">PEMERINTAH KABUPATEN KUNINGAN</td>
