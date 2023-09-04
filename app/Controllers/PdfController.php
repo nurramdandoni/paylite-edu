@@ -5,7 +5,6 @@ namespace App\Controllers;
 use App\Controllers\BaseController;
 use Dompdf\Dompdf;
 use Dompdf\Options;
-use App\Libraries\PdfGenerator;
 
 class PdfController extends BaseController
 {
@@ -39,6 +38,15 @@ class PdfController extends BaseController
     }
 
     public function generateFPDF(){
-         echo "Hello fpdf";
+            require(APPPATH .'../ThirdParty/fpdf/fpdf.php');
+
+            // Membuat objek FPDF
+            $pdf = new FPDF();
+            $pdf->AddPage();
+            $pdf->SetFont('Arial','B',16);
+            $pdf->Cell(40,10,'Hello, FPDF!');
+            $pdf->Output('laporan.pdf');
+
+        //  echo "Hello fpdf";
     }
 }
