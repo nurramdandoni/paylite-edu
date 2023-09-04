@@ -4,22 +4,36 @@ namespace App\Controllers;
 
 use App\Controllers\BaseController;
 use Dompdf\Dompdf;
+use Dompdf\Options;
 
 class PdfController extends BaseController
 {
     public function generatePDF()
     {
-        // instantiate and use the dompdf class
+        // return view('pdf_template_absensi');
+        // // Buat objek DOMPDF
         $dompdf = new Dompdf();
-        $dompdf->loadHtml('hello world');
 
-        // (Optional) Setup the paper size and orientation
-        $dompdf->setPaper('A4', 'landscape');
+        // // Buat opsi DOMPDF
+        $options = new Options();
+        $options->set('isHtml5ParserEnabled', true);
+        $options->set('isPhpEnabled', true);
 
-        // Render the HTML as PDF
+        // // Terapkan opsi ke objek DOMPDF
+        $dompdf->setOptions($options);
+
+        // // // Isi konten PDF (ganti dengan konten laporan Anda)
+        $html = view('pdf_template_absensi'); // Misalnya, gunakan view untuk mengatur tampilan laporan
+
+        // // Muat konten ke DOMPDF
+        $dompdf->loadHtml($html);
+        $dompdf->setPaper('A4','portrait');
+
+        // // Render PDF (menghasilkan PDF)
         $dompdf->render();
 
-        // Output the generated PDF to Browser
-        $dompdf->stream();
+        // // Tampilkan atau unduh PDF
+        $dompdf->stream("laporan_absensi.pdf", array("Attachment" => false));
+        // $dompdf->stream("laporan_absensi.pdf", array("Attachment" => false));
     }
 }
