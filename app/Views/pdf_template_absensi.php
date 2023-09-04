@@ -78,15 +78,15 @@
             <td colspan="31">Tanggal</td>
         </tr>
         <tr>
-            <td>1</td>
-            <td>2</td>
-            <td>3</td>
-            <td>4</td>
-            <td>5</td>
-            <td>6</td>
-            <td>7</td>
-            <td>8</td>
-            <td>9</td>
+            <td>11</td>
+            <td>21</td>
+            <td>31</td>
+            <td>41</td>
+            <td>51</td>
+            <td>61</td>
+            <td>71</td>
+            <td>81</td>
+            <td>91</td>
             <td>10</td>
             <td>11</td>
             <td>12</td>
