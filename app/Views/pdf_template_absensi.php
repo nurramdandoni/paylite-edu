@@ -11,7 +11,7 @@
     <style>
         /* CSS untuk mengatur tampilan header */
         .header {
-            display: flex;
+            display: inline-block;
             justify-content: center;
             align-items: center;
             border-bottom: 2px solid #000;
