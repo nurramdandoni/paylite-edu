@@ -19,7 +19,7 @@
         }
 
         .header-info {
-            text-align: right;
+            text-align: center;
         }
 
         /* CSS untuk mengatur tampilan footer */
@@ -37,9 +37,10 @@
         <img class="header-logo" src="https://edu.paylite.co.id/assets/img/logo_main.jpeg" alt="Logo">
         <!-- Informasi Header -->
         <div class="header-info">
-            <div>Baris 1 Informasi</div>
-            <div>Baris 2 Informasi</div>
-            <div>Baris 3 Informasi</div>
+            <div>PEMERINTAH KABUPATEN KUNINGAN</div>
+            <div>DINAS PENDIDIKAN DAN KEBUDAYAAN</div>
+            <div>SEKOLAH DASAR NEGERI 3 HAURKUNING</div>
+            <div>Dusun Kaliwon, Kecamatan Nusaherang, Kabupaten Kuningan, Jawa Barat</div>
         </div>
     </div>
 
