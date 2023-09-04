@@ -26,7 +26,7 @@ class PdfController extends BaseController
         
         // // Muat konten ke DOMPDF
         $dompdf->loadHtml($html);
-        $dompdf->setPaper('A4','portrait');
+        $dompdf->setPaper('A4','landscape');
         
         // // Render PDF (menghasilkan PDF)
         $dompdf->render();
