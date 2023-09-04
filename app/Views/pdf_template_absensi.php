@@ -112,41 +112,41 @@
         </tr>
         <!-- loop -->
         <tr>
-            <td style="width:30px;text-align:center;font-size:11x;"><b>1</b></td>
-            <td style="width: 110px;text-align:center;font-size:11x;"><b>0123008741</b></td>
-            <td style="width: 180;text-align:center;font-size:11x;"><b>Agung Rizki Nurhidayat Muhamad Soleh</b></td>
+            <td style="width:30px;text-align:center;font-size:11px;"><b>1</b></td>
+            <td style="width: 110px;text-align:center;font-size:11px;"><b>0123008741</b></td>
+            <td style="width: 180;text-align:center;font-size:11px;"><b>Agung Rizki Nurhidayat Muhamad Soleh</b></td>
 
-            <td style="width: 18px;text-align:center;font-size:11x;">v</td>
-            <td style="width: 18px;text-align:center;font-size:11x;">v</td>
-            <td style="width: 18px;text-align:center;font-size:11x;">v</td>
-            <td style="width: 18px;text-align:center;font-size:11x;">v</td>
-            <td style="width: 18px;text-align:center;font-size:11x;">v</td>
-            <td style="width: 18px;text-align:center;font-size:11x;">v</td>
-            <td style="width: 18px;text-align:center;font-size:11x;">v</td>
-            <td style="width: 18px;text-align:center;font-size:11x;">v</td>
-            <td style="width: 18px;text-align:center;font-size:11x;">v</td>
-            <td style="width: 18px;text-align:center;font-size:11x;">v</td>
-            <td style="width: 18px;text-align:center;font-size:11x;">v</td>
-            <td style="width: 18px;text-align:center;font-size:11x;">x</td>
-            <td style="width: 18px;text-align:center;font-size:11x;">x</td>
-            <td style="width: 18px;text-align:center;font-size:11x;">v</td>
-            <td style="width: 18px;text-align:center;font-size:11x;">v</td>
-            <td style="width: 18px;text-align:center;font-size:11x;">v</td>
-            <td style="width: 18px;text-align:center;font-size:11x;">v</td>
-            <td style="width: 18px;text-align:center;font-size:11x;">v</td>
-            <td style="width: 18px;text-align:center;font-size:11x;">v</td>
-            <td style="width: 18px;text-align:center;font-size:11x;">v</td>
-            <td style="width: 18px;text-align:center;font-size:11x;">v</td>
-            <td style="width: 18px;text-align:center;font-size:11x;">v</td>
-            <td style="width: 18px;text-align:center;font-size:11x;">v</td>
-            <td style="width: 18px;text-align:center;font-size:11x;">v</td>
-            <td style="width: 18px;text-align:center;font-size:11x;">v</td>
-            <td style="width: 18px;text-align:center;font-size:11x;">v</td>
-            <td style="width: 18px;text-align:center;font-size:11x;">v</td>
-            <td style="width: 18px;text-align:center;font-size:11x;">v</td>
-            <td style="width: 18px;text-align:center;font-size:11x;">v</td>
-            <td style="width: 18px;text-align:center;font-size:11x;">v</td>
-            <td style="width: 18px;text-align:center;font-size:11x;">v</td>
+            <td style="width: 18px;text-align:center;font-size:11px;">v</td>
+            <td style="width: 18px;text-align:center;font-size:11px;">v</td>
+            <td style="width: 18px;text-align:center;font-size:11px;">v</td>
+            <td style="width: 18px;text-align:center;font-size:11px;">v</td>
+            <td style="width: 18px;text-align:center;font-size:11px;">v</td>
+            <td style="width: 18px;text-align:center;font-size:11px;">v</td>
+            <td style="width: 18px;text-align:center;font-size:11px;">v</td>
+            <td style="width: 18px;text-align:center;font-size:11px;">v</td>
+            <td style="width: 18px;text-align:center;font-size:11px;">v</td>
+            <td style="width: 18px;text-align:center;font-size:11px;">v</td>
+            <td style="width: 18px;text-align:center;font-size:11px;">v</td>
+            <td style="width: 18px;text-align:center;font-size:11px;">x</td>
+            <td style="width: 18px;text-align:center;font-size:11px;">x</td>
+            <td style="width: 18px;text-align:center;font-size:11px;">v</td>
+            <td style="width: 18px;text-align:center;font-size:11px;">v</td>
+            <td style="width: 18px;text-align:center;font-size:11px;">v</td>
+            <td style="width: 18px;text-align:center;font-size:11px;">v</td>
+            <td style="width: 18px;text-align:center;font-size:11px;">v</td>
+            <td style="width: 18px;text-align:center;font-size:11px;">v</td>
+            <td style="width: 18px;text-align:center;font-size:11px;">v</td>
+            <td style="width: 18px;text-align:center;font-size:11px;">v</td>
+            <td style="width: 18px;text-align:center;font-size:11px;">v</td>
+            <td style="width: 18px;text-align:center;font-size:11px;">v</td>
+            <td style="width: 18px;text-align:center;font-size:11px;">v</td>
+            <td style="width: 18px;text-align:center;font-size:11px;">v</td>
+            <td style="width: 18px;text-align:center;font-size:11px;">v</td>
+            <td style="width: 18px;text-align:center;font-size:11px;">v</td>
+            <td style="width: 18px;text-align:center;font-size:11px;">v</td>
+            <td style="width: 18px;text-align:center;font-size:11px;">v</td>
+            <td style="width: 18px;text-align:center;font-size:11px;">v</td>
+            <td style="width: 18px;text-align:center;font-size:11px;">v</td>
         </tr>
         <!-- end loop -->
         
