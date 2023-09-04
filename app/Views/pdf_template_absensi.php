@@ -18,16 +18,6 @@
             padding: 10px 0;
         }
 
-        .header-logo {
-            width: 120px; /* Sesuaikan ukuran logo */
-            height: auto; /* Sesuaikan ukuran logo */
-            margin-right: 50px;
-            display: inline-block;
-        }
-
-        .header-info {
-            text-align: center;
-        }
 
         /* CSS untuk mengatur tampilan footer */
         .footer {
@@ -47,19 +37,8 @@
     </style>
 </head>
 <body>
-    <!-- <img class="header-logo" src="https://edu.paylite.co.id/assets/img/logo_main.jpeg" alt="Logo"> -->
-        
-    <!-- <div class="row">
-        <div class="col-md-2">logo</div>
-        <div class="col-md-4">
-            <div class="header1">PEMERINTAH KABUPATEN KUNINGAN</div>
-            <div class="header2">DINAS PENDIDIKAN DAN KEBUDAYAAN</div>
-            <div class="header3">SEKOLAH DASAR NEGERI 3 HAURKUNING</div>
-            <div class="header4">Dusun Kaliwon, Kecamatan Nusaherang, Kabupaten Kuningan, Jawa Barat</div>
-        </div>
-    </div> -->
     <div style="text-align:center">
-        <table border="1">
+        <table border="0" style="border-bottom: 2px solid #000">
             <tr>
                 <td rowspan="4"><img style="width:120px;margin-right:10px;" class="header-logo" src="https://edu.paylite.co.id/assets/img/logo_main.jpeg" alt="Logo"></td>
                 <td style="text-align:center;">PEMERINTAH KABUPATEN KUNINGAN</td>
