@@ -12,32 +12,24 @@ class PdfController extends BaseController
     {
         // return view('pdf_template_absensi');
         // // Buat objek DOMPDF
-        $dompdf = new Dompdf();
-        $options = new Options();
-        $options->set('isHtml5ParserEnabled', true);
-        $dompdf->setOptions($options);
-
-        // // Buat opsi DOMPDF
+        // $dompdf = new Dompdf();
         // $options = new Options();
         // $options->set('isHtml5ParserEnabled', true);
-        // $options->set('isPhpEnabled', true);
-
-        // // // Terapkan opsi ke objek DOMPDF
         // $dompdf->setOptions($options);
 
-        // // // Isi konten PDF (ganti dengan konten laporan Anda)
-        $html = view('pdf_template_absensi'); // Misalnya, gunakan view untuk mengatur tampilan laporan
-
-        // // Muat konten ke DOMPDF
-        $dompdf->loadHtml($html);
-        $dompdf->setPaper('A4','portrait');
-
-        // // Render PDF (menghasilkan PDF)
-        $dompdf->render();
-
-        // // Tampilkan atau unduh PDF
-        $dompdf->stream("laporan_absensi.pdf", array("Attachment" => false));
-        $dompdf->exit();
+        // // // // Isi konten PDF (ganti dengan konten laporan Anda)
+        // $html = view('pdf_template_absensi'); // Misalnya, gunakan view untuk mengatur tampilan laporan
+        
+        // // // Muat konten ke DOMPDF
+        // $dompdf->loadHtml($html);
+        // $dompdf->setPaper('A4','portrait');
+        
+        // // // Render PDF (menghasilkan PDF)
+        // $dompdf->render();
+        
+        // // // Tampilkan atau unduh PDF
         // $dompdf->stream("laporan_absensi.pdf", array("Attachment" => false));
+        // $dompdf->exit();
+        return view('pdf_template_absensi'); // Misalnya, gunakan view untuk mengatur tampilan laporan
     }
 }
