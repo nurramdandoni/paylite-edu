@@ -70,7 +70,7 @@
             <td>Guru Pengajar</td><td>:</td>
         </tr>
     </table>
-    <table>
+    <table border="1">
         <tr>
             <td rowspan="2">No</td>
             <td rowspan="2">NISN</td>
@@ -78,6 +78,12 @@
             <td rowspan="31">Tanggal</td>
         </tr>
         <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td>Tanggal</td>
+        </tr>
+        <!-- <tr>
             <td>1</td>
             <td>2</td>
             <td>3</td>
@@ -109,7 +115,7 @@
             <td>29</td>
             <td>30</td>
             <td>31</td>
-        </tr>
+        </tr> -->
     </table>
 
 </body>
