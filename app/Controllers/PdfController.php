@@ -4,7 +4,7 @@ namespace App\Controllers;
 
 use App\Controllers\BaseController;
 use Dompdf\Dompdf;
-// use Dompdf\Options;
+use Dompdf\Options;
 
 class PdfController extends BaseController
 {
@@ -13,6 +13,9 @@ class PdfController extends BaseController
         // return view('pdf_template_absensi');
         // // Buat objek DOMPDF
         $dompdf = new Dompdf();
+        $options = new Options();
+        $options->set('isHtml5ParserEnabled', true);
+        $dompdf->setOptions($options);
 
         // // Buat opsi DOMPDF
         // $options = new Options();
