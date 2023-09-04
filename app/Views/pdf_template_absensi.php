@@ -34,7 +34,7 @@
     <!-- Header -->
     <div class="header">
         <!-- Logo -->
-        <img class="header-logo" src="<?= base_url(); ?>assets/img/logo_main.jpeg" alt="Logo">
+        <img class="header-logo" src="https://edu.paylite.co.id/assets/img/logo_main.jpeg" alt="Logo">
         <!-- Informasi Header -->
         <div class="header-info">
             <div>Baris 1 Informasi</div>
