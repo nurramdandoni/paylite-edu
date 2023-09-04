@@ -54,10 +54,10 @@
             </tr>
         </table>
     </div>
-    <div style="text-align:center;margin-top:10px;font-size:16px;">
+    <div style="text-align:center;margin-top:10px;">
         <!-- Isi laporan Anda di sini -->
-        <div style="margin-top:10px;">Rekapitulasi Absensi</div>
-        <div style="margin-top:0px;">Tahun Ajaran 2023 - Ganjil</div>
+        <div style="margin-top:10px;font-size:14px;">Rekapitulasi Absensi</div>
+        <div style="margin-top:0px;font-size:14px;">Tahun Ajaran 2023 - Ganjil</div>
     </div>
     <table border="0" style="margin-top:5px;font-size:11px;">
         <tr>
