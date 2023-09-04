@@ -72,9 +72,9 @@
     </table>
     <table border="1">
         <tr>
-            <td rowspan="2" style="width:60px;">No</td>
-            <td rowspan="2" style="width:60px;">NISN</td>
-            <td rowspan="2">Nama Peserta Didik</td>
+            <td rowspan="2" style="width:30px;">No</td>
+            <td rowspan="2" style="width: 110px;">NISN</td>
+            <td rowspan="2" style="width: 300px;">Nama Peserta Didik</td>
             <td colspan="31">Tanggal</td>
         </tr>
         <tr>
