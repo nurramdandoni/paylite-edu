@@ -5,6 +5,7 @@ namespace App\Controllers;
 use App\Controllers\BaseController;
 use Dompdf\Dompdf;
 use Dompdf\Options;
+use App\Libraries\PdfGenerator;
 
 class PdfController extends BaseController
 {
@@ -35,5 +36,17 @@ class PdfController extends BaseController
         $dompdf->stream("laporan_absensi.pdf", array("Attachment" => false));
         $dompdf->exit();
         // return view('pdf_template_absensi'); // Misalnya, gunakan view untuk mengatur tampilan laporan
+    }
+
+    public function generateFPDF(){
+         // Buat objek PDF
+         $pdf = new PdfGenerator();
+
+         // Tambahkan konten ke PDF
+         $content = 'Ini adalah konten PDF yang akan ditambahkan.';
+         $pdf->addContent($content);
+ 
+         // Outputkan PDF ke browser
+         $pdf->Output();
     }
 }
