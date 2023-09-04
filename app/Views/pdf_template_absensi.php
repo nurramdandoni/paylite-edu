@@ -49,7 +49,7 @@
 <body>
     <!-- <img class="header-logo" src="https://edu.paylite.co.id/assets/img/logo_main.jpeg" alt="Logo"> -->
         
-    <div class="row">
+    <!-- <div class="row">
         <div class="col-md-2">logo</div>
         <div class="col-md-4">
             <div class="header1">PEMERINTAH KABUPATEN KUNINGAN</div>
@@ -57,7 +57,22 @@
             <div class="header3">SEKOLAH DASAR NEGERI 3 HAURKUNING</div>
             <div class="header4">Dusun Kaliwon, Kecamatan Nusaherang, Kabupaten Kuningan, Jawa Barat</div>
         </div>
-    </div>
+    </div> -->
+    <table border="1">
+        <tr>
+            <td colspan="4">logo</td>
+            <td>PEMERINTAH KABUPATEN KUNINGAN</td>
+        </tr>
+        <tr>
+            <td>DINAS PENDIDIKAN DAN KEBUDAYAAN</td>
+        </tr>
+        <tr>
+            <td>SEKOLAH DASAR NEGERI 3 HAURKUNING</td>
+        </tr>
+        <tr>
+            <td>Dusun Kaliwon, Kecamatan Nusaherang, Kabupaten Kuningan, Jawa Barat</td>
+        </tr>
+    </table>
     <div style="text-align:center;">
         <!-- Isi laporan Anda di sini -->
         <h1>Laporan Absensi</h1>
