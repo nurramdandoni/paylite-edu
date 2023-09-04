@@ -35,13 +35,13 @@
             text-align: center;
         }
         .header1 {
-            font-size: 10px;
+            font-size: 30px;
         }
         .header2 {
-            font-size: 5px;
+            font-size: 25px;
         }
         .header3 {
-            font-size: 22px;
+            font-size: 32px;
         }
     </style>
 </head>
