@@ -15,6 +15,7 @@ class PdfController extends BaseController
         $dompdf = new Dompdf();
         $options = new Options();
         $options->set('isHtml5ParserEnabled', true);
+        $options->set(array('isRemoteEnabled' => true));
         $dompdf->setOptions($options);
         $hehe['anjir'] = "how are you";
         // // // Isi konten PDF (ganti dengan konten laporan Anda)
