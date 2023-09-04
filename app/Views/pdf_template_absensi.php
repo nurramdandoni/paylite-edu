@@ -114,8 +114,9 @@
             <td style="width: 18px;text-align:center;font-size:14px;">31</td>
         </tr>
         <!-- loop -->
+        <?php for($i=0;$i<200;$i++){?>
         <tr>
-            <td style="width:30px;text-align:center;font-size:11px;"><b>1</b></td>
+            <td style="width:30px;text-align:center;font-size:11px;"><b><?= $i+1; ?></b></td>
             <td style="width: 110px;text-align:left;font-size:11px;"><b>0123008741</b></td>
             <td style="width: 180;text-align:left;font-size:11px;"><b>Agung Rizki Nurhidayat Muhamad Soleh</b></td>
 
@@ -151,6 +152,7 @@
             <td style="width: 18px;text-align:center;font-size:11px;">v</td>
             <td style="width: 18px;text-align:center;font-size:11px;">v</td>
         </tr>
+        <?php } ?>
         <!-- end loop -->
         
     </table>
