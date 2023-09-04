@@ -72,43 +72,43 @@
     </table>
     <table border="1">
         <tr>
-            <td rowspan="2" style="width:30px;text-align:center;">No</td>
-            <td rowspan="2" style="width: 110px;text-align:center;">NISN</td>
-            <td rowspan="2" style="width: 180;text-align:center;">Nama Peserta Didik</td>
-            <td colspan="31" style="text-align:center;">Tanggal</td>
+            <td rowspan="2" style="width:30px;text-align:center;font-size:14px;">No</td>
+            <td rowspan="2" style="width: 110px;text-align:center;font-size:14px;">NISN</td>
+            <td rowspan="2" style="width: 180;text-align:center;font-size:14px;">Nama Peserta Didik</td>
+            <td colspan="31" style="text-align:center;font-size:14px;">Tanggal</td>
         </tr>
         <tr>
-            <td style="width: 18px;text-align:center">1</td>
-            <td style="width: 18px;text-align:center">2</td>
-            <td style="width: 18px;text-align:center">3</td>
-            <td style="width: 18px;text-align:center">4</td>
-            <td style="width: 18px;text-align:center">5</td>
-            <td style="width: 18px;text-align:center">6</td>
-            <td style="width: 18px;text-align:center">7</td>
-            <td style="width: 18px;text-align:center">8</td>
-            <td style="width: 18px;text-align:center">9</td>
-            <td style="width: 18px;text-align:center">10</td>
-            <td style="width: 18px;text-align:center">11</td>
-            <td style="width: 18px;text-align:center">12</td>
-            <td style="width: 18px;text-align:center">13</td>
-            <td style="width: 18px;text-align:center">14</td>
-            <td style="width: 18px;text-align:center">15</td>
-            <td style="width: 18px;text-align:center">16</td>
-            <td style="width: 18px;text-align:center">17</td>
-            <td style="width: 18px;text-align:center">18</td>
-            <td style="width: 18px;text-align:center">19</td>
-            <td style="width: 18px;text-align:center">20</td>
-            <td style="width: 18px;text-align:center">21</td>
-            <td style="width: 18px;text-align:center">22</td>
-            <td style="width: 18px;text-align:center">23</td>
-            <td style="width: 18px;text-align:center">24</td>
-            <td style="width: 18px;text-align:center">25</td>
-            <td style="width: 18px;text-align:center">26</td>
-            <td style="width: 18px;text-align:center">27</td>
-            <td style="width: 18px;text-align:center">28</td>
-            <td style="width: 18px;text-align:center">29</td>
-            <td style="width: 18px;text-align:center">30</td>
-            <td style="width: 18px;text-align:center">31</td>
+            <td style="width: 18px;text-align:center;font-size:14px;">1</td>
+            <td style="width: 18px;text-align:center;font-size:14px;">2</td>
+            <td style="width: 18px;text-align:center;font-size:14px;">3</td>
+            <td style="width: 18px;text-align:center;font-size:14px;">4</td>
+            <td style="width: 18px;text-align:center;font-size:14px;">5</td>
+            <td style="width: 18px;text-align:center;font-size:14px;">6</td>
+            <td style="width: 18px;text-align:center;font-size:14px;">7</td>
+            <td style="width: 18px;text-align:center;font-size:14px;">8</td>
+            <td style="width: 18px;text-align:center;font-size:14px;">9</td>
+            <td style="width: 18px;text-align:center;font-size:14px;">10</td>
+            <td style="width: 18px;text-align:center;font-size:14px;">11</td>
+            <td style="width: 18px;text-align:center;font-size:14px;">12</td>
+            <td style="width: 18px;text-align:center;font-size:14px;">13</td>
+            <td style="width: 18px;text-align:center;font-size:14px;">14</td>
+            <td style="width: 18px;text-align:center;font-size:14px;">15</td>
+            <td style="width: 18px;text-align:center;font-size:14px;">16</td>
+            <td style="width: 18px;text-align:center;font-size:14px;">17</td>
+            <td style="width: 18px;text-align:center;font-size:14px;">18</td>
+            <td style="width: 18px;text-align:center;font-size:14px;">19</td>
+            <td style="width: 18px;text-align:center;font-size:14px;">20</td>
+            <td style="width: 18px;text-align:center;font-size:14px;">21</td>
+            <td style="width: 18px;text-align:center;font-size:14px;">22</td>
+            <td style="width: 18px;text-align:center;font-size:14px;">23</td>
+            <td style="width: 18px;text-align:center;font-size:14px;">24</td>
+            <td style="width: 18px;text-align:center;font-size:14px;">25</td>
+            <td style="width: 18px;text-align:center;font-size:14px;">26</td>
+            <td style="width: 18px;text-align:center;font-size:14px;">27</td>
+            <td style="width: 18px;text-align:center;font-size:14px;">28</td>
+            <td style="width: 18px;text-align:center;font-size:14px;">29</td>
+            <td style="width: 18px;text-align:center;font-size:14px;">30</td>
+            <td style="width: 18px;text-align:center;font-size:14px;">31</td>
         </tr>
         
     </table>
