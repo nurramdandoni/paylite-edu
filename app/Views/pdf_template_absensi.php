@@ -73,7 +73,7 @@
     <table border="1">
         <tr>
             <td rowspan="2" style="width:30px;text-align:center;font-size:14px;"><b>No</b></td>
-            <td rowspan="2" style="width: 110px;text-align:center;font-size:14px;"><b>NISN</b></td>
+            <td rowspan="2" style="width: 110px;text-align:center;font-size:14px;"><b>NIS/ NISN</b></td>
             <td rowspan="2" style="width: 180;text-align:center;font-size:14px;"><b>Nama Peserta Didik</b></td>
             <td colspan="31" style="text-align:center;font-size:14px;"><b>Tanggal</b></td>
         </tr>
