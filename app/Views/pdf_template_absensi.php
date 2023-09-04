@@ -112,10 +112,9 @@
         </tr>
         <!-- loop -->
         <tr>
-            <td rowspan="2" style="width:30px;text-align:center;font-size:14px;"><b>1</b></td>
-            <td rowspan="2" style="width: 110px;text-align:center;font-size:14px;"><b>0123008741</b></td>
-            <td rowspan="2" style="width: 180;text-align:center;font-size:14px;"><b>Agung Rizki Nurhidayat Muhamad Soleh</b></td>
-            <td colspan="31" style="text-align:center;font-size:14px;"><b>Tanggal</b></td>
+            <td style="width:30px;text-align:center;font-size:14px;"><b>1</b></td>
+            <td style="width: 110px;text-align:center;font-size:14px;"><b>0123008741</b></td>
+            <td style="width: 180;text-align:center;font-size:14px;"><b>Agung Rizki Nurhidayat Muhamad Soleh</b></td>
 
             <td style="width: 18px;text-align:center;font-size:14px;">v</td>
             <td style="width: 18px;text-align:center;font-size:14px;">v</td>
