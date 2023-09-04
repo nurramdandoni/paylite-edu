@@ -78,21 +78,6 @@
             <td colspan="31" style="text-align:center;">Tanggal</td>
         </tr>
         <tr>
-            <td style="width: 18px;text-align:center">11</td>
-            <td style="width: 18px;text-align:center">21</td>
-            <td style="width: 18px;text-align:center">31</td>
-            <td style="width: 18px;text-align:center">41</td>
-            <td style="width: 18px;text-align:center">51</td>
-            <td style="width: 18px;text-align:center">61</td>
-            <td style="width: 18px;text-align:center">71</td>
-            <td style="width: 18px;text-align:center">81</td>
-            <td style="width: 18px;text-align:center">91</td>
-            <td style="width: 18px;text-align:center">10</td>
-            <td style="width: 18px;text-align:center">11</td>
-            <td style="width: 18px;text-align:center">12</td>
-            <td style="width: 18px;text-align:center">13</td>
-            <td style="width: 18px;text-align:center">14</td>
-            <td style="width: 18px;text-align:center">15</td>
             <td style="width: 18px;text-align:center">1</td>
             <td style="width: 18px;text-align:center">2</td>
             <td style="width: 18px;text-align:center">3</td>
@@ -108,6 +93,21 @@
             <td style="width: 18px;text-align:center">13</td>
             <td style="width: 18px;text-align:center">14</td>
             <td style="width: 18px;text-align:center">15</td>
+            <td style="width: 18px;text-align:center">16</td>
+            <td style="width: 18px;text-align:center">17</td>
+            <td style="width: 18px;text-align:center">18</td>
+            <td style="width: 18px;text-align:center">19</td>
+            <td style="width: 18px;text-align:center">20</td>
+            <td style="width: 18px;text-align:center">21</td>
+            <td style="width: 18px;text-align:center">22</td>
+            <td style="width: 18px;text-align:center">23</td>
+            <td style="width: 18px;text-align:center">24</td>
+            <td style="width: 18px;text-align:center">25</td>
+            <td style="width: 18px;text-align:center">26</td>
+            <td style="width: 18px;text-align:center">27</td>
+            <td style="width: 18px;text-align:center">28</td>
+            <td style="width: 18px;text-align:center">29</td>
+            <td style="width: 18px;text-align:center">30</td>
             <td style="width: 18px;text-align:center">31</td>
         </tr>
         
