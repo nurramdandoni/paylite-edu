@@ -74,41 +74,41 @@
         <tr>
             <td rowspan="2" style="width:30px;">No</td>
             <td rowspan="2" style="width: 110px;">NISN</td>
-            <td rowspan="2" style="width: 300px;">Nama Peserta Didik</td>
+            <td rowspan="2" style="width: 200;">Nama Peserta Didik</td>
             <td colspan="31">Tanggal</td>
         </tr>
         <tr>
-            <td>11</td>
-            <td>21</td>
-            <td>31</td>
-            <td>41</td>
-            <td>51</td>
-            <td>61</td>
-            <td>71</td>
-            <td>81</td>
-            <td>91</td>
-            <td>10</td>
-            <td>11</td>
-            <td>12</td>
-            <td>13</td>
-            <td>14</td>
-            <td>15</td>
-            <td>1</td>
-            <td>2</td>
-            <td>3</td>
-            <td>4</td>
-            <td>5</td>
-            <td>6</td>
-            <td>7</td>
-            <td>8</td>
-            <td>9</td>
-            <td>10</td>
-            <td>11</td>
-            <td>12</td>
-            <td>13</td>
-            <td>14</td>
-            <td>15</td>
-            <td>31</td>
+            <td style="width: 20px;">11</td>
+            <td style="width: 20px;">21</td>
+            <td style="width: 20px;">31</td>
+            <td style="width: 20px;">41</td>
+            <td style="width: 20px;">51</td>
+            <td style="width: 20px;">61</td>
+            <td style="width: 20px;">71</td>
+            <td style="width: 20px;">81</td>
+            <td style="width: 20px;">91</td>
+            <td style="width: 20px;">10</td>
+            <td style="width: 20px;">11</td>
+            <td style="width: 20px;">12</td>
+            <td style="width: 20px;">13</td>
+            <td style="width: 20px;">14</td>
+            <td style="width: 20px;">15</td>
+            <td style="width: 20px;">1</td>
+            <td style="width: 20px;">2</td>
+            <td style="width: 20px;">3</td>
+            <td style="width: 20px;">4</td>
+            <td style="width: 20px;">5</td>
+            <td style="width: 20px;">6</td>
+            <td style="width: 20px;">7</td>
+            <td style="width: 20px;">8</td>
+            <td style="width: 20px;">9</td>
+            <td style="width: 20px;">10</td>
+            <td style="width: 20px;">11</td>
+            <td style="width: 20px;">12</td>
+            <td style="width: 20px;">13</td>
+            <td style="width: 20px;">14</td>
+            <td style="width: 20px;">15</td>
+            <td style="width: 20px;">31</td>
         </tr>
         
     </table>
