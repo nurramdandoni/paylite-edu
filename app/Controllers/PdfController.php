@@ -39,14 +39,6 @@ class PdfController extends BaseController
     }
 
     public function generateFPDF(){
-         // Buat objek PDF
-         $pdf = new PdfGenerator();
-
-         // Tambahkan konten ke PDF
-         $content = 'Ini adalah konten PDF yang akan ditambahkan.';
-         $pdf->addContent($content);
- 
-         // Outputkan PDF ke browser
-         $pdf->Output();
+         echo "Hello fpdf";
     }
 }
