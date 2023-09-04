@@ -60,7 +60,7 @@
     </div> -->
     <table border="1">
         <tr>
-            <td colspan="4">logo</td>
+            <td rowspan="4">logo</td>
             <td>PEMERINTAH KABUPATEN KUNINGAN</td>
         </tr>
         <tr>
