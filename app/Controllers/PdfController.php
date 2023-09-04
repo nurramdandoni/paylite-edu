@@ -1,10 +1,11 @@
 <?php
 
 namespace App\Controllers;
-
 use App\Controllers\BaseController;
+use FPDF\FPDF;
 use Dompdf\Dompdf;
 use Dompdf\Options;
+
 
 class PdfController extends BaseController
 {
@@ -37,16 +38,15 @@ class PdfController extends BaseController
         // return view('pdf_template_absensi'); // Misalnya, gunakan view untuk mengatur tampilan laporan
     }
 
-    public function generateFPDF(){
-            require(APPPATH .'../ThirdParty/fpdf/fpdf.php');
+    public function generateFPDF()
+    {
+        // Membuat objek FPDF
+        $pdf = new FPDF();
+        $pdf->AddPage();
+        $pdf->SetFont('Arial', 'B', 16);
+        $pdf->Cell(40, 10, 'Hello, FPDF!');
+        $pdf->Output('laporan.pdf');
 
-            // Membuat objek FPDF
-            $pdf = new FPDF();
-            $pdf->AddPage();
-            $pdf->SetFont('Arial','B',16);
-            $pdf->Cell(40,10,'Hello, FPDF!');
-            $pdf->Output('laporan.pdf');
-
-        //  echo "Hello fpdf";
+        // echo "Hello fpdf";
     }
 }
