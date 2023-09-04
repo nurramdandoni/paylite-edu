@@ -16,9 +16,9 @@ class PdfController extends BaseController
         $options = new Options();
         $options->set('isHtml5ParserEnabled', true);
         $dompdf->setOptions($options);
-
+        $hehe['anjir'] = "how are you";
         // // // Isi konten PDF (ganti dengan konten laporan Anda)
-        $html = view('pdf_template_absensi'); // Misalnya, gunakan view untuk mengatur tampilan laporan
+        $html = view('pdf_template_absensi',$hehe); // Misalnya, gunakan view untuk mengatur tampilan laporan
         
         // // Muat konten ke DOMPDF
         $dompdf->loadHtml($html);
