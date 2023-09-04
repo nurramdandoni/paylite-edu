@@ -47,10 +47,10 @@
                 <td style="text-align:center;">DINAS PENDIDIKAN DAN KEBUDAYAAN</td>
             </tr>
             <tr>
-                <td style="text-align:center;">SEKOLAH DASAR NEGERI 3 HAURKUNING</td>
+                <td style="text-align:center;font-size:20px;font-weight:200px;">SEKOLAH DASAR NEGERI 3 HAURKUNING</td>
             </tr>
             <tr>
-                <td style="text-align:center;">Dusun Kaliwon, Kecamatan Nusaherang, Kabupaten Kuningan, Jawa Barat</td>
+                <td style="text-align:center;font-size:10px;">Dusun Kaliwon, Kecamatan Nusaherang, Kabupaten Kuningan, Jawa Barat</td>
             </tr>
         </table>
     </div>
