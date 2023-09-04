@@ -22,6 +22,7 @@
             width: 120px; /* Sesuaikan ukuran logo */
             height: auto; /* Sesuaikan ukuran logo */
             margin-right: 50px;
+            display: inline-block;
         }
 
         .header-info {
