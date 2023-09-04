@@ -14,8 +14,9 @@
         }
 
         .header-logo {
-            width: 100px; /* Sesuaikan ukuran logo */
+            width: 120px; /* Sesuaikan ukuran logo */
             height: auto; /* Sesuaikan ukuran logo */
+            margin-right: 50px;
         }
 
         .header-info {
@@ -29,7 +30,13 @@
             text-align: center;
         }
         .header1 {
-            font-size: 20px;
+            font-size: 30px;
+        }
+        .header2 {
+            font-size: 25px;
+        }
+        .header3 {
+            font-size: 32px;
         }
     </style>
 </head>
