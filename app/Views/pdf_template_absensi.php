@@ -41,13 +41,13 @@
         <table border="0" style="border-bottom: 2px solid #000;width:100%;padding:0px;">
             <tr>
                 <td rowspan="4" style="padding-left:40px; width:110px;"><img style="width:110px;" class="header-logo" src="https://edu.paylite.co.id/assets/img/logo_main.jpeg" alt="Logo"></td>
-                <td style="text-align:center;font-size:18px;margin-bottom:0px;">PEMERINTAH KABUPATEN KUNINGAN</td><td style="width:110px;"></td>
+                <td style="text-align:center;font-size:18px;margin-bottom:0px;"><b>PEMERINTAH KABUPATEN KUNINGAN</b></td><td style="width:110px;"></td>
             </tr>
             <tr>
-                <td style="text-align:center;font-size:15px;">DINAS PENDIDIKAN DAN KEBUDAYAAN</td><td style="width:110px;"></td>
+                <td style="text-align:center;font-size:15px;"><b>DINAS PENDIDIKAN DAN KEBUDAYAAN</b></td><td style="width:110px;"></td>
             </tr>
             <tr>
-                <td style="text-align:center;font-size:18px;margin-top:0px;">SEKOLAH DASAR NEGERI 3 HAURKUNING</td><td style="width:110px;"></td>
+                <td style="text-align:center;font-size:18px;margin-top:0px;"><b>SEKOLAH DASAR NEGERI 3 HAURKUNING</b></td><td style="width:110px;"></td>
             </tr>
             <tr>
                 <td style="text-align:center;font-size:11px;margin-top:4px;">Dusun Kaliwon, Kecamatan Nusaherang, Kabupaten Kuningan, Jawa Barat</td><td style="width:110px;"></td>
@@ -56,26 +56,26 @@
     </div>
     <div style="text-align:center;margin-top:10px;">
         <!-- Isi laporan Anda di sini -->
-        <div style="margin-top:10px;font-size:14px;">Rekapitulasi Absensi</div>
-        <div style="margin-top:0px;font-size:14px;">Tahun Ajaran 2023 - Ganjil</div>
+        <div style="margin-top:10px;font-size:14px;"><b>Rekapitulasi Absensi</b></div>
+        <div style="margin-top:0px;font-size:14px;"><b>Tahun Ajaran 2023 - Ganjil</b></div>
     </div>
     <table border="0" style="margin-top:5px;font-size:11px;">
         <tr>
-            <td>Kelas</td><td>:</td>
+            <b><td>Kelas</td><td>:</td></b>
         </tr>
         <tr>
-            <td>Mata Pelajaran</td><td>:</td>
+            <b><td>Mata Pelajaran</td><td>:</td></b>
         </tr>
         <tr>
-            <td>Guru Pengajar</td><td>:</td>
+            <b><td>Guru Pengajar</td><td>:</td></b>
         </tr>
     </table>
     <table border="1">
         <tr>
-            <td rowspan="2" style="width:30px;text-align:center;font-size:14px;">No</td>
-            <td rowspan="2" style="width: 110px;text-align:center;font-size:14px;">NISN</td>
-            <td rowspan="2" style="width: 180;text-align:center;font-size:14px;">Nama Peserta Didik</td>
-            <td colspan="31" style="text-align:center;font-size:14px;">Tanggal</td>
+            <td rowspan="2" style="width:30px;text-align:center;font-size:14px;"><b>No</b></td>
+            <td rowspan="2" style="width: 110px;text-align:center;font-size:14px;"><b>NISN</b></td>
+            <td rowspan="2" style="width: 180;text-align:center;font-size:14px;"><b>Nama Peserta Didik</b></td>
+            <td colspan="31" style="text-align:center;font-size:14px;"><b>Tanggal</b></td>
         </tr>
         <tr>
             <td style="width: 18px;text-align:center;font-size:14px;">1</td>
