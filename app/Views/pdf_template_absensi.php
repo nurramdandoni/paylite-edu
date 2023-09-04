@@ -67,7 +67,10 @@
             <b><td>Mata Pelajaran</td><td>:</td></b>
         </tr>
         <tr>
-            <b><td>Guru Pengajar</td><td>:</td></b>
+            <b><td>Pengajar</td><td>:</td></b>
+        </tr>
+        <tr>
+            <b><td>Wali Kelas</td><td>:</td></b>
         </tr>
     </table>
     <table border="1">
