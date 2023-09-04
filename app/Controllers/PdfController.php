@@ -34,7 +34,7 @@ class PdfController extends BaseController
 
         // // Tampilkan atau unduh PDF
         $dompdf->stream("laporan_absensi.pdf", array("Attachment" => false));
-        // $dompdf->exit();
+        $dompdf->exit();
         // $dompdf->stream("laporan_absensi.pdf", array("Attachment" => false));
     }
 }
