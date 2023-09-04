@@ -16,6 +16,9 @@ class PdfController extends BaseController
         $options = new Options();
         $options->set('isHtml5ParserEnabled', true);
         $options->set(array('isRemoteEnabled' => true));
+        $dompdf->set_option('defaultMediaType', 'all');
+        $dompdf->set_option('isFontSubsettingEnabled', true);
+
         $dompdf->setOptions($options);
         $hehe['anjir'] = "how are you";
         // // // Isi konten PDF (ganti dengan konten laporan Anda)
