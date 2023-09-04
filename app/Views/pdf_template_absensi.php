@@ -72,8 +72,8 @@
     </table>
     <table border="1">
         <tr>
-            <td rowspan="2" style="width:20px;">No</td>
-            <td rowspan="2" style="width:20px;">NISN</td>
+            <td rowspan="2" style="width:60px;">No</td>
+            <td rowspan="2" style="width:60px;">NISN</td>
             <td rowspan="2">Nama Peserta Didik</td>
             <td colspan="31">Tanggal</td>
         </tr>
