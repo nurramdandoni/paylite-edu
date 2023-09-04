@@ -58,21 +58,23 @@
             <div class="header4">Dusun Kaliwon, Kecamatan Nusaherang, Kabupaten Kuningan, Jawa Barat</div>
         </div>
     </div> -->
-    <table border="1">
-        <tr>
-            <td rowspan="4">logo</td>
-            <td>PEMERINTAH KABUPATEN KUNINGAN</td>
-        </tr>
-        <tr>
-            <td>DINAS PENDIDIKAN DAN KEBUDAYAAN</td>
-        </tr>
-        <tr>
-            <td>SEKOLAH DASAR NEGERI 3 HAURKUNING</td>
-        </tr>
-        <tr>
-            <td>Dusun Kaliwon, Kecamatan Nusaherang, Kabupaten Kuningan, Jawa Barat</td>
-        </tr>
-    </table>
+    <div style="text-align:center">
+        <table border="1">
+            <tr>
+                <td rowspan="4"><img style="width:120px;margin-right:10px;" class="header-logo" src="https://edu.paylite.co.id/assets/img/logo_main.jpeg" alt="Logo"></td>
+                <td>PEMERINTAH KABUPATEN KUNINGAN</td>
+            </tr>
+            <tr>
+                <td>DINAS PENDIDIKAN DAN KEBUDAYAAN</td>
+            </tr>
+            <tr>
+                <td>SEKOLAH DASAR NEGERI 3 HAURKUNING</td>
+            </tr>
+            <tr>
+                <td>Dusun Kaliwon, Kecamatan Nusaherang, Kabupaten Kuningan, Jawa Barat</td>
+            </tr>
+        </table>
+    </div>
     <div style="text-align:center;">
         <!-- Isi laporan Anda di sini -->
         <h1>Laporan Absensi</h1>
