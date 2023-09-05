@@ -42,7 +42,6 @@ class Autoload extends AutoloadConfig
     public $psr4 = [
         APP_NAMESPACE => APPPATH, // For custom app namespace
         'Config'      => APPPATH . 'Config',
-        'Fpdf'        => APPPATH . 'Libraries/Fpdf/Fpdf.php'
     ];
 
     /**
@@ -53,7 +52,7 @@ class Autoload extends AutoloadConfig
      * location on the drive. Classes loaded in this manner will have
      * slightly faster performance because they will not have to be
      * searched for within one or more directories as they would if they
-     * were being autoloaded through a namespace.
+     * were being autoloaded through a namespace.s
      *
      * Prototype:
      *   $classmap = [
@@ -62,7 +61,10 @@ class Autoload extends AutoloadConfig
      *
      * @var array<string, string>
      */
-    public $classmap = [];
+    public $classmap = [
+        'Fpdf' => APPPATH . 'Libraries/Fpdf/fpdf.php'
+    ];
+    
 
     /**
      * -------------------------------------------------------------------
