@@ -97,7 +97,7 @@
 //         // end loop
 //     }
 // }
-
+use Fpdf;
 $pdf = new Fpdf('L','mm','A4');
 $pdf->AddPage();
 // header
