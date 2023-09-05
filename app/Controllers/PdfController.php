@@ -20,9 +20,17 @@ class PdfController extends BaseController
         $dompdf->set_option('isFontSubsettingEnabled', true);
 
         $dompdf->setOptions($options);
-        $hehe['anjir'] = "how are you";
+        $hehe['logo'] = "https://edu.paylite.co.id/assets/img/logo_main.jpeg";
+        $hehe['kabupaten'] = "KUNINGAN";
+        $hehe['nama_sekolah'] = "SEKOLAH DASAR NEGERI 3 HAURKUNING";
+        $hehe['alamat'] = "Dusun Kaliwon, Kecamatan Nusaherang, Kabupaten Kuningan, Jawa Barat";
+        $hehe['tahun_ajaran'] = "Tahun Ajaran 2023 - Ganjil";
+        $hehe['kelas'] = "-";
+        $hehe['mata_ajar'] = "-";
+        $hehe['pengajar'] = "-";
+        $hehe['wali_kelas'] = "Leni, S.Pd.";
         // // // Isi konten PDF (ganti dengan konten laporan Anda)
-        $html = view('pdf_template_absensi',$hehe); // Misalnya, gunakan view untuk mengatur tampilan laporan
+        $html = view('pdf_template_absensi_dompdf',$hehe); // Misalnya, gunakan view untuk mengatur tampilan laporan
         
         // // Muat konten ke DOMPDF
         $dompdf->loadHtml($html);

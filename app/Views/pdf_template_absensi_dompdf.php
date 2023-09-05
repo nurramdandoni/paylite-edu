@@ -40,37 +40,37 @@
     <div style="text-align:center">
         <table border="0" style="border-bottom: 2px solid #000;width:100%;padding:0px;">
             <tr>
-                <td rowspan="4" style="padding-left:40px; width:110px;"><img style="width:110px;" class="header-logo" src="" alt="Logo"></td>
-                <td style="text-align:center;font-size:18px;margin-bottom:0px;"><b>PEMERINTAH KABUPATEN KUNINGAN</b></td><td style="width:110px;"></td>
+                <td rowspan="4" style="padding-left:40px; width:110px;"><img style="width:110px;" class="header-logo" src="<?= $logo; ?>" alt="Logo"></td>
+                <td style="text-align:center;font-size:18px;margin-bottom:0px;"><b>PEMERINTAH KABUPATEN <?= $kabupaten; ?></b></td><td style="width:110px;"></td>
             </tr>
             <tr>
                 <td style="text-align:center;font-size:15px;"><b>DINAS PENDIDIKAN DAN KEBUDAYAAN</b></td><td style="width:110px;"></td>
             </tr>
             <tr>
-                <td style="text-align:center;font-size:18px;margin-top:0px;"><b>SEKOLAH DASAR NEGERI 3 HAURKUNING</b></td><td style="width:110px;"></td>
+                <td style="text-align:center;font-size:18px;margin-top:0px;"><b><?= $nama_sekolah; ?></b></td><td style="width:110px;"></td>
             </tr>
             <tr>
-                <td style="text-align:center;font-size:11px;margin-top:4px;">Dusun Kaliwon, Kecamatan Nusaherang, Kabupaten Kuningan, Jawa Barat</td><td style="width:110px;"></td>
+                <td style="text-align:center;font-size:11px;margin-top:4px;"><?= $alamat; ?></td><td style="width:110px;"></td>
             </tr>
         </table>
     </div>
     <div style="text-align:center;margin-top:10px;">
         <!-- Isi laporan Anda di sini -->
         <div style="margin-top:10px;font-size:14px;"><b>Rekapitulasi Absensi</b></div>
-        <div style="margin-top:0px;font-size:14px;"><b>Tahun Ajaran 2023 - Ganjil</b></div>
+        <div style="margin-top:0px;font-size:14px;"><b><?= $tahun_ajaran; ?></b></div>
     </div>
     <table border="0" style="margin-top:5px;font-size:11px;">
         <tr>
-            <b><td>Kelas</td><td>:</td></b>
+            <b><td>Kelas</td><td>:<?= $kelas; ?></td></b>
         </tr>
         <tr>
-            <b><td>Mata Pelajaran</td><td>:</td></b>
+            <b><td>Mata Pelajaran</td><td>:<?= $mata_ajar; ?></td></b>
         </tr>
         <tr>
-            <b><td>Pengajar</td><td>:</td></b>
+            <b><td>Pengajar</td><td>:<?= $pengajar; ?></td></b>
         </tr>
         <tr>
-            <b><td>Wali Kelas</td><td>:</td></b>
+            <b><td>Wali Kelas</td><td>:<?= $wali_kelas; ?></td></b>
         </tr>
     </table>
     <table border="1">
