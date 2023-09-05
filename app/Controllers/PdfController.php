@@ -38,7 +38,7 @@ class PdfController extends BaseController
         
         // // Render PDF (menghasilkan PDF)
         $dompdf->render();
-        
+        ob_clean();
         // // Tampilkan atau unduh PDF
         $dompdf->stream("laporan_absensi.pdf", array("Attachment" => false));
         $dompdf->exit();
