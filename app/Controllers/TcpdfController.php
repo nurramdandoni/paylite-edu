@@ -19,7 +19,7 @@ class TcpdfController extends BaseController
         $data['wali_kelas'] = "Leni, S.Pd.";
         $html = view('invoice',$data);
 
-		$pdf = new TCPDF('L', PDF_UNIT, 'A4', true, 'UTF-8', false);
+		$pdf = new TCPDF('L', 'mm', 'A4', true, 'UTF-8', false);
 
 		$pdf->setPrintHeader(false);
 		$pdf->setPrintFooter(false);
