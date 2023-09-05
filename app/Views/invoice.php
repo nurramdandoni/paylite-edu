@@ -45,6 +45,9 @@
             <tr>
                 <td style="width:100px;">Wali Kelas</td><td>:<?= $wali_kelas; ?></td>
             </tr>
+            <tr>
+                <td style="width:100px;">Bulan</td><td>:<?= $bulan; ?></td>
+            </tr>
         </table>
 
         <table border="1">
