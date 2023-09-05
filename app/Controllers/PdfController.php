@@ -33,8 +33,8 @@ class PdfController extends BaseController
         $html = view('pdf_template_absensi_dompdf',$hehe); // Misalnya, gunakan view untuk mengatur tampilan laporan
         
         // // Muat konten ke DOMPDF
-        $dompdf->loadHtml($html);
         $dompdf->setPaper('A4','landscape');
+        $dompdf->loadHtml($html);
         
         // // Render PDF (menghasilkan PDF)
         $dompdf->render();
