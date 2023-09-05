@@ -73,7 +73,7 @@
             <b><td>Wali Kelas</td><td>:<?= $wali_kelas; ?></td></b>
         </tr>
     </table>
-    <table border="1">
+    <!-- <table border="1">
         <tr>
             <td rowspan="2" style="width:30px;text-align:center;font-size:14px;"><b>No</b></td>
             <td rowspan="2" style="width: 110px;text-align:center;font-size:14px;"><b>NIS/ NISN</b></td>
@@ -152,7 +152,7 @@
             <td style="width: 18px;text-align:center;font-size:11px;">v</td>
             <td style="width: 18px;text-align:center;font-size:11px;">v</td>
         </tr>
-        <?php } ?>
+        <?php } ?> -->
         <!-- end loop -->
         
     </table>

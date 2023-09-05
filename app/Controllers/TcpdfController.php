@@ -8,19 +8,18 @@ class TcpdfController extends BaseController
 {
     public function generatePDF()
     {
-        
-        $html = view('invoice',[
-			'transaksi'=> 1,
-			'pembeli' => 'Doni Nurramdan',
-			'barang' => 'ps1'
-		]);
+        $data['logo'] = "https://edu.paylite.co.id/assets/img/logo_main.jpeg";
+        $data['kabupaten'] = "KUNINGAN";
+        $data['nama_sekolah'] = "SEKOLAH DASAR NEGERI 3 HAURKUNING";
+        $data['alamat'] = "Dusun Kaliwon, Kecamatan Nusaherang, Kabupaten Kuningan, Jawa Barat";
+        $data['tahun_ajaran'] = "Tahun Ajaran 2023 - Ganjil";
+        $data['kelas'] = "-";
+        $data['mata_ajar'] = "-";
+        $data['pengajar'] = "-";
+        $data['wali_kelas'] = "Leni, S.Pd.";
+        $html = view('invoice',$data);
 
 		$pdf = new TCPDF('L', PDF_UNIT, 'A4', true, 'UTF-8', false);
-
-		$pdf->SetCreator(PDF_CREATOR);
-		$pdf->SetAuthor('Dea Venditama');
-		$pdf->SetTitle('Invoice');
-		$pdf->SetSubject('Invoice');
 
 		$pdf->setPrintHeader(false);
 		$pdf->setPrintFooter(false);
