@@ -51,6 +51,7 @@ $routes->get('/aktivasi', 'Dashboard::aktivasi');
 
 $routes->get('/absensi-dompdf', 'PdfController::generatePDF');
 $routes->get('/absensi-fpdf', 'PdfController::generateFPDF');
+$routes->get('/absensi-tc', 'TcpdfController::generateFPDF');
 
 /*
  * --------------------------------------------------------------------
