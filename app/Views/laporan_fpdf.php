@@ -99,7 +99,7 @@ class PDF extends FPDF {
 $pdf = new PDF('L','mm','A4');
 $pdf->AddPage();
 $pdf->Content();
-$filed = $pdf->Output('abc.pdf', 'I',true);
+$filed = $pdf->Output('abc.pdf','D');
 // echo $filed;
 
 ?>
