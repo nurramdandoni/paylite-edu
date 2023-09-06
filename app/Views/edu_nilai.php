@@ -73,5 +73,6 @@
         $("#absensi").removeClass("active");
         $("#nilai").addClass("active");
         $("#krs").removeClass("active");
+        $("#absensiReport").removeClass("active");
       </script>
 <?= $this->endSection() ?>

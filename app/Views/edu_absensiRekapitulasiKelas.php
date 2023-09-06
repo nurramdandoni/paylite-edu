@@ -43,8 +43,8 @@
         const kelas_id = '<?= $kelas_id; ?>';
         getDataKrs();
         
-        $("#liDash").html("Data KRS");
-        $("#liDash2").html("Data KRS");
+        $("#liDash").html("Data Report Absensi");
+        $("#liDash2").html("Data Report Absensi");
         $("#dashboard").removeClass("active");
         $("#account").removeClass("active");
         $("#tahunAjaran").removeClass("active");
@@ -57,7 +57,8 @@
         $("#jadwalPengajaran").removeClass("active");
         $("#absensi").removeClass("active");
         $("#nilai").removeClass("active");
-        $("#krs").addClass("active");
+        $("#krs").removeClass("active");
+        $("#absensiReport").addClass("active");
 
         async function getTahunAjaranAktif(){
                   const postDataTahunAjaranAktif = {

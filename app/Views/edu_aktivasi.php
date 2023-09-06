@@ -19,5 +19,6 @@ Aktivasi
         $("#absensi").removeClass("active");
         $("#nilai").removeClass("active");
         $("#krs").removeClass("active");
+        $("#absensiReport").removeClass("active");
       </script>
 <?= $this->endSection() ?>

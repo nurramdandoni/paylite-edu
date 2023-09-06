@@ -297,6 +297,7 @@
         $("#absensi").addClass("active");
         $("#nilai").removeClass("active");
         $("#krs").removeClass("active");
+        $("#absensiReport").removeClass("active");
         $("#html5-qrcode-anchor-scan-type-change").hide();
       </script>
 <?= $this->endSection() ?>

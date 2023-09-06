@@ -67,6 +67,7 @@
         $("#absensi").removeClass("active");
         $("#nilai").removeClass("active");
         $("#krs").removeClass("active");
+        $("#absensiReport").removeClass("active");
 
         async function getDataKelas(){
           const postSiswa = {
