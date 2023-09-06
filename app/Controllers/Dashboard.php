@@ -246,6 +246,33 @@ class Dashboard extends BaseController
             return $this->response->redirect('https://account.paylite.co.id');
         }
     }
+    public function absensiRekapitulasi()
+    {
+        if(isset($_COOKIE['statusProduk'])){
+            if($_COOKIE['statusProduk'] == 'prepareSubscriberRegister'){
+                return redirect()->route('register');
+            }else{
+                return view('edu_absensiRekapitulasi');
+            }
+        }else{
+            return $this->response->redirect('https://account.paylite.co.id');
+        }
+    }
+    public function absensiRekapitulasiKelas($tahun_ajaran_id,$kelas_id)
+    {
+        if(isset($_COOKIE['statusProduk'])){
+            if($_COOKIE['statusProduk'] == 'prepareSubscriberRegister'){
+                return redirect()->route('register');
+            }else{
+                $data['tahun_ajaran_id'] = $tahun_ajaran_id;
+                $data['kelas_id'] = $kelas_id;
+                // menampilkan Mapel
+                return view('edu_absensiRekapitulasiKelas',$data);
+            }
+        }else{
+            return $this->response->redirect('https://account.paylite.co.id');
+        }
+    }
     public function nilai()
     {
         if(isset($_COOKIE['statusProduk'])){
