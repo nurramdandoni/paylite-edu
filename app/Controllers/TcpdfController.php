@@ -32,7 +32,7 @@ class TcpdfController extends BaseController
 		//line ini penting
 		$this->response->setContentType('application/pdf');
 		//Close and output PDF document
-		$pdf->Output('invoice.pdf', 'I');
+		$pdf->Output('Laporan_Absensi_Kelas.pdf', 'I');
     }
     public function generateMataAjarPDF($tahun_ajaran_id,$kelas_id,$kurikulum_id)
     {
@@ -60,6 +60,6 @@ class TcpdfController extends BaseController
 		//line ini penting
 		$this->response->setContentType('application/pdf');
 		//Close and output PDF document
-		$pdf->Output('invoice.pdf', 'I');
+		$pdf->Output('Laporan_Absensi_Kelas_Mata_Ajar.pdf', 'I');
     }
 }
