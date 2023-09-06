@@ -119,7 +119,7 @@
                         </div>
                       </td>
                       <td class="align-middle">
-                        <a href="`+'<?= base_url(); ?>krsKelas/'+item.dTh+'/'+item.dKk+`" class="text-secondary font-weight-bold text-xs" data-toggle="tooltip" data-original-title="Edit user">
+                        <a href="`+'<?= base_url(); ?>absensiRekapitulasiKelas/'+item.dTh+'/'+item.dKk+`" class="text-secondary font-weight-bold text-xs" data-toggle="tooltip" data-original-title="Edit user">
                           Lihat KRS
                         </a>
                       </td>
