@@ -120,7 +120,7 @@
                         </div>
                       </td>
                       <td class="align-middle">
-                      <a href="" class="text-secondary font-weight-bold text-xs" data-toggle="tooltip" data-original-title="Edit user">
+                      <a target="_blank" href="`+'<?= base_url(); ?>absensiKelas-tc/'+item.dTh+'/'+item.dKk+`" class="text-secondary font-weight-bold text-xs" data-toggle="tooltip" data-original-title="Edit user">
                       Unduh
                       </a>
                       </td>
