@@ -118,7 +118,7 @@
                       </td>
                       <td class="align-middle">
                         <a data-toggle="modal" data-target="#exampleModal" onclick="followerKurikuluminClass('`+item.kurikulum.kurikulum_id+`')" class="text-secondary font-weight-bold text-xs" data-toggle="tooltip" data-original-title="Edit user">
-                          Unduh Absensi Mata Ajar
+                          Unduh
                         </a>
                       </td>
                     </tr>

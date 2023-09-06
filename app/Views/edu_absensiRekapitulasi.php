@@ -15,6 +15,7 @@
                       <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Tahun Ajaran</th>
                       <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Nama Kelas</th>
                       <th class="text-secondary opacity-7"></th>
+                      <th class="text-secondary opacity-7"></th>
                     </tr>
                   </thead>
                   <tbody id="list">
@@ -122,8 +123,10 @@
                         <a href="`+'<?= base_url(); ?>absensiRekapitulasiKelas/'+item.dTh+'/'+item.dKk+`" class="text-secondary font-weight-bold text-xs" data-toggle="tooltip" data-original-title="Edit user">
                           Lihat Rekap Mata Ajar
                         </a>
+                      </td>
+                      <td class="align-middle">
                         <a href="" class="text-secondary font-weight-bold text-xs" data-toggle="tooltip" data-original-title="Edit user">
-                          Unduh Absensi Kelas
+                          Unduh
                         </a>
                       </td>
                     </tr>
