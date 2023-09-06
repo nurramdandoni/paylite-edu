@@ -29,9 +29,8 @@
         </div>
       </div>
 <script>
-  $(documetn).ready(function(){
-    $("#html5-qrcode-anchor-scan-type-change").hide();
-  });
+    
+  
   let hariIni = '';
   let Nisn = '';
   let Waktu = '';
@@ -273,7 +272,6 @@
       }
     }
 
-
     
 </script>
 <style>
@@ -299,5 +297,6 @@
         $("#absensi").addClass("active");
         $("#nilai").removeClass("active");
         $("#krs").removeClass("active");
+        $("#html5-qrcode-anchor-scan-type-change").hide();
       </script>
 <?= $this->endSection() ?>
