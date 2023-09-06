@@ -47,7 +47,7 @@ $routes->get('/krsKelas/(:num)/(:num)', 'Dashboard::krsKelas/$1/$2');
 $routes->get('/jadwalPengajaran', 'Dashboard::jadwalPengajaran');
 $routes->get('/absensi', 'Dashboard::absensi');
 $routes->get('/absensiRekapitulasi', 'Dashboard::absensiRekapitulasi');
-$routes->get('/absensiRekapitulasiKelas', 'Dashboard::absensiRekapitulasiKelas');
+$routes->get('/absensiRekapitulasiKelas/(:num)/(:num)', 'Dashboard::absensiRekapitulasiKelas/$1/$2');
 $routes->get('/nilai', 'Dashboard::nilai');
 $routes->get('/aktivasi', 'Dashboard::aktivasi');
 
