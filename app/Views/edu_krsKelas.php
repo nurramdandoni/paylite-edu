@@ -123,7 +123,7 @@
                         </div>
                       </td>
                       <td class="align-middle">
-                        <a data-toggle="modal" data-target="#exampleModal" onclick="followerKurikuluminClass('`+item.kurikulum.kurikulum_id+`')" class="text-secondary font-weight-bold text-xs" data-toggle="tooltip" data-original-title="Edit user">
+                        <a style="cursor:pointer;" data-toggle="modal" data-target="#exampleModal" onclick="followerKurikuluminClass('`+item.kurikulum.kurikulum_id+`')" class="text-secondary font-weight-bold text-xs" data-toggle="tooltip" data-original-title="Edit user">
                           FOllower
                         </a>
                       </td>
