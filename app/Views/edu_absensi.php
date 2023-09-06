@@ -29,6 +29,9 @@
         </div>
       </div>
 <script>
+  $(documetn).ready(function(){
+    $("#html5-qrcode-anchor-scan-type-change").hide();
+  });
   let hariIni = '';
   let Nisn = '';
   let Waktu = '';
@@ -45,7 +48,7 @@
         // Pause on scan result
         html5QrcodeScanner.pause(true);
     }
-    $("#html5-qrcode-anchor-scan-type-change").hide();
+    
     // Handle on success condition with the decoded text or result.
     console.log(`Scan result:`, decodedResult);
         // alert(`Scan result: ${decodedText}`);
