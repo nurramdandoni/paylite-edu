@@ -82,13 +82,18 @@ class TcpdfController extends BaseController
         $data['pengajar'] = "-";
         $data['wali_kelas'] = $dataCurl["data"][0]["guru"]["nama_guru"];
         $data['bulan'] = "Agustus";
+        $list = array();
+        for($i=0;$i<count($dataCurl["data"]);$i++){
+            array_push($list,$dataCurl["data"][$i]["siswa"]);
+        }
+        $data['siswaList'] = '';
 
 
-        // echo var_dump($data);
+        echo var_dump($list);
         // echo "<br>";
         // echo "<br>";
         // echo "-----------------------------------------------------------";
-        // die();
+        die();
         $html = view('invoice',$data);
 
 		$pdf = new TCPDF('L', 'mm', 'A4', true, 'UTF-8', false);
