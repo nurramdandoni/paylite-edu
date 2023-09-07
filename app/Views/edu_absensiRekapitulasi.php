@@ -120,9 +120,7 @@
                         </div>
                       </td>
                       <td class="align-middle">
-                      <a target="_blank" href="`+'<?= base_url(); ?>absensiKelas-tc/'+item.dTh+'/'+item.dKk+`" class="text-secondary font-weight-bold text-xs" data-toggle="tooltip" data-original-title="Edit user">
-                      Unduh
-                      </a>
+                      
                       </td>
                       <td class="align-middle">
                         <a href="`+'<?= base_url(); ?>absensiRekapitulasiKelas/'+item.dTh+'/'+item.dKk+`" class="text-secondary font-weight-bold text-xs" data-toggle="tooltip" data-original-title="Edit user">
@@ -132,6 +130,9 @@
                     </tr>
                       `;
                     }
+                    // <a target="_blank" href="`+'<?= base_url(); ?>absensiKelas-tc/'+item.dTh+'/'+item.dKk+`" class="text-secondary font-weight-bold text-xs" data-toggle="tooltip" data-original-title="Edit user">
+                    //   Unduh
+                    //   </a>
                     if(data.data.length > 0){
                       $("#list").html(temp);
                     }
