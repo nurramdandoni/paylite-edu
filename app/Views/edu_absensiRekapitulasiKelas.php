@@ -113,7 +113,7 @@
                         </div>
                       </td>
                         <div class="d-flex flex-column justify-content-center">
-                            <h6 class="mb-0 text-sm">`+item.guru.nama_guru+`</h6>
+                            <h6 class="mb-0 text-sm">`+item.guru.guru_id+`</h6>
                           </div>
                       <td>
                       </td>
