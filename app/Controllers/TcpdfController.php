@@ -40,6 +40,8 @@ class TcpdfController extends BaseController
         $data['kabupaten'] = "KUNINGAN";
         $data['nama_sekolah'] = "SEKOLAH DASAR NEGERI 3 HAURKUNING";
         $data['alamat'] = "Dusun Kaliwon, Kecamatan Nusaherang, Kabupaten Kuningan, Jawa Barat";
+
+
         $data['tahun_ajaran'] = "Tahun Ajaran 2023 - Ganjil";
         $data['kelas'] = "-";
         $data['mata_ajar'] = "-";
@@ -48,7 +50,44 @@ class TcpdfController extends BaseController
         $data['bulan'] = "Agustus";
 
 
-        echo var_dump($data);die();
+        echo var_dump($data);
+        echo "<br>";
+        echo "<br>";
+        echo "-----------------------------------------------------------";
+        $lembaga_pendidikan_id = '32';
+        $th = $tahun_ajaran_id;
+
+        $postSiswa = [
+        'lembaga_pendidikan_id' => $lembaga_pendidikan_id,
+        'tahun_ajaran_id' => $th,
+        'kelas_id' => $kelas_id,
+        ];
+
+        $requestUrl = 'https://api.paylite.co.id/dataKelasWhere';
+
+        $ch = curl_init(); // Inisialisasi curl
+
+        // Set opsi permintaan
+        curl_setopt($ch, CURLOPT_URL, $requestUrl);
+        curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
+        curl_setopt($ch, CURLOPT_POST, 1);
+        curl_setopt($ch, CURLOPT_POSTFIELDS, json_encode($postSiswa));
+        curl_setopt($ch, CURLOPT_HTTPHEADER, [
+        'Content-Type: application/json',
+        ]);
+
+        $response = curl_exec($ch); // Eksekusi permintaan
+
+        if (curl_errno($ch)) {
+        echo 'Error: ' . curl_error($ch);
+        }
+
+        curl_close($ch); // Tutup koneksi cURL
+
+        $data = json_decode($response, true); // Menguraikan respons JSON
+
+        print_r($data);
+        die();
         // $html = view('invoice',$data);
 
 		$pdf = new TCPDF('L', 'mm', 'A4', true, 'UTF-8', false);
