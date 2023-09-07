@@ -74,8 +74,8 @@ class TcpdfController extends BaseController
         $dataCurl = json_decode($response, true); // Menguraikan respons JSON
 
         // print_r($data);
-        echo "<br>";
-        echo "-----------------------------------------------------------";
+        // echo "<br>";
+        // echo "-----------------------------------------------------------";
         $data['tahun_ajaran'] = $dataCurl["data"][0]["tahun_ajaran"]["nama_tahun_ajaran"];
         $data['kelas'] = $dataCurl["data"][0]["kelas"]["nama_kelas"];
         $data['mata_ajar'] = "-";
