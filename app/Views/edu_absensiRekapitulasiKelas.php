@@ -100,10 +100,6 @@
                     console.log(data.data);
                     let temp = '';
                     for(item of data.data){
-                      let icon = 'secondary';
-                      if(item.siswa.status == 'aktif'){
-                        icon = 'success';
-                      }
                       temp += `
                       <tr>
                       <td>
@@ -131,8 +127,8 @@
                     }
                     if(data.data.length > 0){
                       $("#list").html(temp);
-                      $("#titleKelas").html(item.kelas.nama_kelas);
-                      $("#titleTahunAjaran").html(item.tahun_ajaran.nama_tahun_ajaran);
+                      $("#titleKelas").html(item.data_kelas_id);
+                      $("#titleTahunAjaran").html(item.tahun_ajaran_id);
                     }
                     $('#example').DataTable();
                 }
