@@ -96,7 +96,7 @@
                   },
                   body: JSON.stringify(postSiswa), // Mengubah data menjadi bentuk JSON
                 };
-                    const data = await fetchData('https://api.paylite.co.id/jadwalPelajaranWhere',requestOptions);
+                    const data = await fetchData('https://api.paylite.co.id/jadwalPelajaranWhereGroup',requestOptions);
                     console.log(data.data);
                     let temp = '';
                     for(item of data.data){
