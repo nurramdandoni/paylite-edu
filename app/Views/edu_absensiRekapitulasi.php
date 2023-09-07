@@ -83,7 +83,6 @@
           let th = await getTahunAjaranAktif();
           const postSiswa = {
                   lembaga_pendidikan_id: lembaga_pendidikan_id,
-                  tahun_ajaran_id:th
                 }
           const requestOptions = {
                   method: 'POST', // Metode permintaan
