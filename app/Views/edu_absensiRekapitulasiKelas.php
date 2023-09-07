@@ -112,10 +112,10 @@
                           </div>
                         </div>
                       </td>
-                        <div class="d-flex flex-column justify-content-center">
-                            <h6 class="mb-0 text-sm">`+item.guru.guru_id+`</h6>
-                          </div>
                       <td>
+                        <div class="d-flex flex-column justify-content-center">
+                            <h6 class="mb-0 text-sm">`+item.guru.nama_guru+`</h6>
+                          </div>
                       </td>
                       <td class="align-middle">
                         <a style="cursor:pointer;" target="_blank" href="`+'<?= base_url(); ?>absensiMataAjar-tc/'+item.tahun_ajaran.tahun_ajaran_id+'/'+item.kelas.kelas_id+'/'+item.kurikulum.kurikulum_id+`" class="text-secondary font-weight-bold text-xs" data-toggle="tooltip" data-original-title="Edit user">
