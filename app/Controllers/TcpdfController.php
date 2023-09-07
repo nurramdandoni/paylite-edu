@@ -41,19 +41,6 @@ class TcpdfController extends BaseController
         $data['nama_sekolah'] = "SEKOLAH DASAR NEGERI 3 HAURKUNING";
         $data['alamat'] = "Dusun Kaliwon, Kecamatan Nusaherang, Kabupaten Kuningan, Jawa Barat";
 
-
-        $data['tahun_ajaran'] = "Tahun Ajaran 2023 - Ganjil";
-        $data['kelas'] = "-";
-        $data['mata_ajar'] = "-";
-        $data['pengajar'] = "-";
-        $data['wali_kelas'] = "Leni, S.Pd.";
-        $data['bulan'] = "Agustus";
-
-
-        echo var_dump($data);
-        echo "<br>";
-        echo "<br>";
-        echo "-----------------------------------------------------------";
         $lembaga_pendidikan_id = '32';
         $th = $tahun_ajaran_id;
 
@@ -87,6 +74,20 @@ class TcpdfController extends BaseController
         $data = json_decode($response, true); // Menguraikan respons JSON
 
         print_r($data);
+        echo "<br>";
+        echo "-----------------------------------------------------------";
+        $data['tahun_ajaran'] = $data[0]['tahun_ajaran']['nama_tahun_ajaran'];
+        $data['kelas'] = $data[0]['kelas']['nama_kelas'];
+        $data['mata_ajar'] = "-";
+        $data['pengajar'] = "-";
+        $data['wali_kelas'] = "Leni, S.Pd.";
+        $data['bulan'] = "Agustus";
+
+
+        echo var_dump($data);
+        echo "<br>";
+        echo "<br>";
+        echo "-----------------------------------------------------------";
         die();
         // $html = view('invoice',$data);
 
