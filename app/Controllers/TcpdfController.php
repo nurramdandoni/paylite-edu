@@ -34,7 +34,7 @@ class TcpdfController extends BaseController
 		//Close and output PDF document
 		$pdf->Output('Laporan_Absensi_Kelas.pdf', 'I');
     }
-    public function generateMataAjarPDF($tahun_ajaran_id,$kelas_id,$kurikulum_id)
+    public function generateMataAjarPDF($tahun_ajaran_id,$kelas_id,$kurikulum_id,$guru_id)
     {
         $data['logo'] = "https://edu.paylite.co.id/assets/img/logo_main.jpeg";
         $data['kabupaten'] = "KUNINGAN";
