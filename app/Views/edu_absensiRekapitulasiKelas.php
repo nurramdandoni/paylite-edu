@@ -84,7 +84,7 @@
           const postSiswa = {
                     lembaga_pendidikan_id: lembaga_pendidikan_id,
                     tahun_ajaran_id: tahun_ajaran_id,
-                    kelas_id: kelas_id
+                    data_kelas_id: kelas_id
                   
                 }
                 console.log("SENDERRRRv : ", postSiswa);
