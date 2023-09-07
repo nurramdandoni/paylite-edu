@@ -80,7 +80,7 @@ class TcpdfController extends BaseController
         $data['kelas'] = $dataCurl["data"][0]["kelas"]["nama_kelas"];
         $data['mata_ajar'] = "-";
         $data['pengajar'] = "-";
-        $data['wali_kelas'] = "Leni, S.Pd.";
+        $data['wali_kelas'] = $dataCurl["data"][0]["guru"]["nama_guru"];
         $data['bulan'] = "Agustus";
 
 
