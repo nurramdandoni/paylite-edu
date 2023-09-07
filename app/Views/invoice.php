@@ -63,11 +63,11 @@
             <?php }?>
         </tr>
         <!-- loop -->
-        <?php for($i=0;$i<50;$i++){?>
+        <?php for($i=0;$i<count($siswaList);$i++){?>
         <tr>
             <td style="width:20px;text-align:center;font-size:9px;"><?= $i+1; ?></td>
-            <td style="width: 70px;text-align:left;font-size:9px;">&nbsp;0123008741</td>
-            <td style="width: 200;text-align:left;font-size:9px;">&nbsp;Agung Rizki Nurhidayat Muhamad Soleh</td>
+            <td style="width: 70px;text-align:left;font-size:9px;">&nbsp;<?= $siswaList[$i]["nisn"]; ?></td>
+            <td style="width: 200;text-align:left;font-size:9px;">&nbsp;<?= $siswaList[$i]["nama_siswa"]; ?></td>
 
             <?php for($j=1;$j<32;$j++){?>
                 <td style="width: 16px;text-align:center;font-size:10px;">v</td>
