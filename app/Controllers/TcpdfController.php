@@ -46,7 +46,10 @@ class TcpdfController extends BaseController
         $data['pengajar'] = "-";
         $data['wali_kelas'] = "Leni, S.Pd.";
         $data['bulan'] = "Agustus";
-        $html = view('invoice',$data);
+
+
+        echo var_dump($data);die();
+        // $html = view('invoice',$data);
 
 		$pdf = new TCPDF('L', 'mm', 'A4', true, 'UTF-8', false);
 
