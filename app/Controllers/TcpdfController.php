@@ -76,7 +76,7 @@ class TcpdfController extends BaseController
         print_r($data);
         echo "<br>";
         echo "-----------------------------------------------------------";
-        $data['tahun_ajaran'] = $data->data[0]->tahun_ajaran->nama_tahun_ajaran;
+        $data['tahun_ajaran'] = $data["data"][0];
         $data['kelas'] = "";
         $data['mata_ajar'] = "-";
         $data['pengajar'] = "-";
