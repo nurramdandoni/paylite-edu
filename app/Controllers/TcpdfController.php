@@ -143,7 +143,7 @@ class TcpdfController extends BaseController
             }
 
 
-        print_r($dataCurlDataAbsensi);
+        print_r($dataCurlDataAbsensi["data"][0]["tanggal_absensi"]);
         echo "<br>";
         echo "-----------------------------------------------------------";
         echo "<br>";
