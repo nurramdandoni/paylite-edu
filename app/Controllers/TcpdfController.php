@@ -138,12 +138,13 @@ class TcpdfController extends BaseController
             $dataCurlDataAbsensi = json_decode($responseDataAbsensi, true); // Menguraikan respons JSON
             // get dataAbsensi
             $array_absensi = array();
-            for($j=0;$j<count($dataCurlDataAbsensi);$j++){
+            for($j=0;$j<count($dataCurlDataAbsensi["data"]);$j++){
 
                 // Mengambil tanggal pertama dari tanggal_absensi
                 $tanggalAbsensi = $dataCurlDataAbsensi["data"][$j]["tanggal_absensi"];
                 $tanggal = substr($tanggalAbsensi, 8, 1);
                 echo var_dump($tanggal);
+                echo "<br>";
                 echo "<br>";
 
                 // Jika tanggal kedua bukan '0', maka tambahkan karakter kedua juga
