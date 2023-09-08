@@ -62,6 +62,7 @@ class TcpdfController extends BaseController
         'kelas_id' => $kelas_id,
         ];
         $requestUrlDataKelas = 'https://api.paylite.co.id/dataKelasWhere';
+
         $chDataKelas = curl_init(); // Inisialisasi curl
         // Set opsi permintaan
         curl_setopt($chDataKelas, CURLOPT_URL, $requestUrlDataKelas);
@@ -81,6 +82,7 @@ class TcpdfController extends BaseController
 
         // get data kurikulum
         $requestUrlDataKurikulum = 'https://api.paylite.co.id/kurikulum/'.$kurikulum_id;
+
         $chDataKurikulum = curl_init(); // Inisialisasi curl
         // Set opsi permintaan
         curl_setopt($chDataKurikulum, CURLOPT_URL, $requestUrlDataKurikulum);
@@ -116,7 +118,7 @@ class TcpdfController extends BaseController
         // get dataAbsensi
         $postDataAbsensi = [
             'lembaga_pendidikan_id' => $_COOKIE['lembaga_pendidikan_id'],
-            "jadwal_pelajaran_id"   => 70,
+            "jadwal_pelajaran_id"   => $jadwal_pelajaran,
             "tanggal_absensi_start" => $tahun."-".$bulan."-01",
             "tanggal_absensi_end"   => $tahun."-".$bulan."-31"
             ];
@@ -143,9 +145,7 @@ class TcpdfController extends BaseController
                 // Mengambil tanggal pertama dari tanggal_absensi
                 $tanggalAbsensi = $dataCurlDataAbsensi["data"][$j]["tanggal_absensi"];
                 $tanggal = substr($tanggalAbsensi, 8, 1);
-                // echo var_dump($tanggal);
-                // echo "<br>";
-                // echo "<br>";
+
                 $tgl = '';
                 // Jika tanggal kedua bukan '0', maka tambahkan karakter kedua juga
                 if ($tanggalAbsensi[8] != '0') {
@@ -154,21 +154,9 @@ class TcpdfController extends BaseController
                     $tgl = $tanggalAbsensi[9];
                 }
 
-                // Output hasil
-                // echo $tanggal; // Output: 1
-                // echo $tanggalAbsensi[8].' - '.$tanggalAbsensi[9];
-                // echo "<br>";
-
                 $array_absensi["kehadiran"][$dataCurlDataAbsensi["data"][$j]["nisn"]][$tgl] = "hadir";
             }
 
-
-        // print_r($dataCurlDataAbsensi["data"]);
-        // echo "<br>";
-        // echo "-----------------------------------------------------------";
-        // echo "<br>";
-        // print_r($array_absensi);die;
-        // echo "-----------------------------------------------------------";
         $data['tahun_ajaran'] = $dataCurlDataKelas["data"][0]["tahun_ajaran"]["nama_tahun_ajaran"];
         $data['kelas'] = $dataCurlDataKelas["data"][0]["kelas"]["nama_kelas"];
         $data['mata_ajar'] = $dataCurlDataKurikulum["data"]["mata_ajar"]["nama_mata_ajar"];
@@ -182,12 +170,6 @@ class TcpdfController extends BaseController
         $data['siswaList'] = $list;
         $data['AbsensisiswaList'] = $array_absensi;
 
-
-        // echo var_dump($list);
-        // echo "<br>";
-        // echo "<br>";
-        // echo "-----------------------------------------------------------";
-        // die();
         $html = view('invoice',$data);
 
 		$pdf = new TCPDF('L', 'mm', 'A4', true, 'UTF-8', false);
