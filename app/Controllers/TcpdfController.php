@@ -143,6 +143,8 @@ class TcpdfController extends BaseController
                 // Mengambil tanggal pertama dari tanggal_absensi
                 $tanggalAbsensi = $dataCurlDataAbsensi["data"][$j]["tanggal_absensi"];
                 $tanggal = substr($tanggalAbsensi, 8, 1);
+                echo var_dump($tanggal);
+                echo "<br>";
 
                 // Jika tanggal kedua bukan '0', maka tambahkan karakter kedua juga
                 // if ($tanggalAbsensi[9] != '0') {
@@ -152,7 +154,7 @@ class TcpdfController extends BaseController
                 // Output hasil
                 // echo $tanggal; // Output: 1
 
-                $array_absensi["kehadiran"][$dataCurlDataAbsensi["data"][$j]["nisn"]][$tanggal] = "hadir";
+                // $array_absensi["kehadiran"][$dataCurlDataAbsensi["data"][$j]["nisn"]][$tanggal] = "hadir";
             }
 
 
