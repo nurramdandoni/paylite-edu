@@ -82,9 +82,26 @@
 
                             }
                         }else{
+
+                            // Mengambil tanggal pertama dari tanggal_absensi
+                            $realtime = date('Y-m-d');
+                            $tanggalN = substr($realtime, 8, 1);
+                            // echo var_dump($tanggal);
+                            // echo "<br>";
+                            // echo "<br>";
+                            $tglNow = '';
+                            // Jika tanggal kedua bukan '0', maka tambahkan karakter kedua juga
+                            if ($realtime[8] != '0') {
+                                $tglNow = $realtime[8].$realtime[9];
+                            }else{
+                                $tglNow = $realtime[9];
+                            }
+
+                            if($tglNow <= $j){
                             ?>
                             <span style="color:red;text-align:center;"><b>x&nbsp;</b></span>
                             <?php
+                            }
                         }
                     ?>
                 </td>
