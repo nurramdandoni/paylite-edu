@@ -82,15 +82,32 @@ class TcpdfController extends BaseController
         $dataCurlDataKurikulum = json_decode($responseDataKurikulum, true); // Menguraikan respons JSON
         // get data kurikulum
 
+        // get data guru
+        $requestUrlDataGuru = 'https://api.paylite.co.id/guru/'.$guru_id;
+        $chDataGuru = curl_init(); // Inisialisasi curl
+        // Set opsi permintaan
+        curl_setopt($chDataGuru, CURLOPT_URL, $requestUrlDataGuru);
+        curl_setopt($chDataGuru, CURLOPT_RETURNTRANSFER, 1);
+        curl_setopt($chDataGuru, CURLOPT_HTTPHEADER, [
+        'Content-Type: application/json',
+        ]);
+        $responseDataGuru = curl_exec($chDataGuru); // Eksekusi permintaan
+        if (curl_errno($chDataGuru)) {
+        echo 'Error: ' . curl_error($chDataGuru);
+        }
+        curl_close($chDataGuru); // Tutup koneksi cURL
+        $dataCurlDataGuru = json_decode($responseDataGuru, true); // Menguraikan respons JSON
+        // get data kurikulum
 
 
-        print_r($dataCurlDataKurikulum);die;
+
+        // print_r($dataCurlDataKurikulum);die;
         // echo "<br>";
         // echo "-----------------------------------------------------------";
         $data['tahun_ajaran'] = $dataCurlDataKelas["data"][0]["tahun_ajaran"]["nama_tahun_ajaran"];
         $data['kelas'] = $dataCurlDataKelas["data"][0]["kelas"]["nama_kelas"];
-        $data['mata_ajar'] = "-";
-        $data['pengajar'] = "-";
+        $data['mata_ajar'] = $dataCurlDataKurikulum["data"][0]["mata_ajar"]["nama_mata_ajar"];
+        $data['pengajar'] = $dataCurlDataGuru["data"]["nama_guru"];
         $data['wali_kelas'] = $dataCurlDataKelas["data"][0]["guru"]["nama_guru"];
         $data['bulan'] = "Agustus";
         $list = array();
