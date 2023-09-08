@@ -97,7 +97,7 @@
                                 $tglNow = $realtime[9];
                             }
 
-                            if($tglNow <= $j){
+                            if($tglNow >= $j){
                             ?>
                             <span style="color:red;text-align:center;"><b>x&nbsp;</b></span>
                             <?php
