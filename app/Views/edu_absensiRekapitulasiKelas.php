@@ -10,6 +10,8 @@ $tahun = date("Y");
 $Stringbulan = str_pad($bulan, 2, "0", STR_PAD_LEFT);
 $Stringtahun = $tahun;
 ?>
+<input type="text" id="gateBulan" value="<?= $Stringbulan; ?>">
+<input type="text" id="gateTahun" value="<?= $Stringtahun; ?>">
 <div class="row">
         <div class="col-12">
           <div class="card mb-4">
@@ -132,6 +134,8 @@ $Stringtahun = $tahun;
                     const data = await fetchData('https://api.paylite.co.id/jadwalPelajaranWhereGroup',requestOptions);
                     console.log(data.data);
                     let temp = '';
+                    let bln = $("#gateBulan").val();
+                    let thn = $("#gateTahun").val();
                     for(item of data.data){
                       temp += `
                       <tr>
@@ -151,7 +155,7 @@ $Stringtahun = $tahun;
                           </div>
                       </td>
                       <td class="align-middle">
-                        <a style="cursor:pointer;" target="_blank" href="`+'<?= base_url(); ?>absensiMataAjar-tc/'+item.tahun_ajaran.tahun_ajaran_id+'/'+item.kelas.kelas_id+'/'+item.kurikulum.kurikulum_id+'/'+item.guru.guru_id+'/'+item.jadwal_pelajaran_id+'/<?= $Stringbulan.'/'.$Stringtahun; ?>'+`" class="text-secondary font-weight-bold text-xs" data-toggle="tooltip" data-original-title="Edit user">
+                        <a style="cursor:pointer;" target="_blank" href="`+'<?= base_url(); ?>absensiMataAjar-tc/'+item.tahun_ajaran.tahun_ajaran_id+'/'+item.kelas.kelas_id+'/'+item.kurikulum.kurikulum_id+'/'+item.guru.guru_id+'/'+item.jadwal_pelajaran_id+'/'+bln+'/'+thn+`" class="text-secondary font-weight-bold text-xs" data-toggle="tooltip" data-original-title="Edit user">
                           Unduh
                         </a>
                       </td>
