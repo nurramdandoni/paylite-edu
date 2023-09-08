@@ -121,7 +121,7 @@ $Stringtahun = '2023';
                           </div>
                       </td>
                       <td class="align-middle">
-                        <a style="cursor:pointer;" target="_blank" href="`+'<?= base_url(); ?>absensiMataAjar-tc/'+item.tahun_ajaran.tahun_ajaran_id+'/'+item.kelas.kelas_id+'/'+item.kurikulum.kurikulum_id+'/'+item.guru.guru_id+'/'+item.jadwal_pelajaran_id+'<?= $Stringbulan.'/'.$Stringtahun; ?>'+`" class="text-secondary font-weight-bold text-xs" data-toggle="tooltip" data-original-title="Edit user">
+                        <a style="cursor:pointer;" target="_blank" href="`+'<?= base_url(); ?>absensiMataAjar-tc/'+item.tahun_ajaran.tahun_ajaran_id+'/'+item.kelas.kelas_id+'/'+item.kurikulum.kurikulum_id+'/'+item.guru.guru_id+'/'+item.jadwal_pelajaran_id+'/<?= $Stringbulan.'/'.$Stringtahun; ?>'+`" class="text-secondary font-weight-bold text-xs" data-toggle="tooltip" data-original-title="Edit user">
                           Unduh
                         </a>
                       </td>
