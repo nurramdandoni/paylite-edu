@@ -141,7 +141,7 @@ class TcpdfController extends BaseController
             for($j=0;$j<count($dataCurlDataAbsensi);$j++){
 
                 // Mengambil tanggal pertama dari tanggal_absensi
-                $tanggalAbsensi = $dataCurlDataAbsensi["data"][0]["tanggal_absensi"];
+                $tanggalAbsensi = $dataCurlDataAbsensi["data"][$j]["tanggal_absensi"];
                 $tanggal = substr($tanggalAbsensi, 8, 1);
 
                 // Jika tanggal kedua bukan '0', maka tambahkan karakter kedua juga
