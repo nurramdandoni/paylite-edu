@@ -145,9 +145,9 @@ class TcpdfController extends BaseController
                 $tanggal = substr($tanggalAbsensi, 8, 1);
 
                 // Jika tanggal kedua bukan '0', maka tambahkan karakter kedua juga
-                if ($tanggalAbsensi[9] != '0') {
-                    $tanggal .= $tanggalAbsensi[9];
-                }
+                // if ($tanggalAbsensi[9] != '0') {
+                //     $tanggal .= $tanggalAbsensi[9];
+                // }
 
                 // Output hasil
                 // echo $tanggal; // Output: 1
