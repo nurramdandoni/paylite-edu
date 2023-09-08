@@ -75,7 +75,7 @@
                         if(isset($AbsensisiswaList["kehadiran"][$siswaList[$i]["nisn"]][$j])){
                             if($AbsensisiswaList["kehadiran"][$siswaList[$i]["nisn"]][$j] == "hadir"){
                                 ?>
-                                <span style="font-color:green;">v</span>
+                                <span style="color:green;">v</span>
                                 <?php
                             }else{
                                 echo "-";
@@ -83,7 +83,7 @@
                             }
                         }else{
                             ?>
-                            <span style="font-color:red;">x</span>
+                            <span style="color:red;">x</span>
                             <?php
                         }
                     ?>
