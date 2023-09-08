@@ -1,8 +1,14 @@
 <?= $this->extend('layout/page_edu_layout') ?>
 
 <?= $this->section('content') ;
-$Stringbulan = '09';
-$Stringtahun = '2023';
+
+// Mendapatkan bulan dan tahun saat ini
+$bulan = date("m");
+$tahun = date("Y");
+
+// Mengonversi bulan dan tahun ke dalam format yang diinginkan (misalnya, 09 dan 2023)
+$Stringbulan = str_pad($bulan, 2, "0", STR_PAD_LEFT);
+$Stringtahun = $tahun;
 ?>
 <div class="row">
         <div class="col-12">
@@ -12,6 +18,18 @@ $Stringtahun = '2023';
             </div>
             <div class="card-body px-0 pt-0 pb-2">
               <div class="table-responsive p-0">
+              <div id="contentFormInputEdit">
+                  <div class="form-group">
+                    <label for="siswa">Bulan</label>
+                    <select class="form-control " id="DKBulan">
+                      <option value="01">Januari</option>
+                    </select>
+                    <label for="siswa">Tahun</label>
+                    <select class="form-control " id="DKTahun">
+                      <option value="2023">2023</option>
+                    </select>
+                  </div>
+                </div>
               <table id="example" class="table align-items-center mb-0">
                   <thead>
                     <tr>
