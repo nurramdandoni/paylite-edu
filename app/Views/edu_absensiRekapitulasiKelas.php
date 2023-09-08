@@ -10,8 +10,8 @@ $tahun = date("Y");
 $Stringbulan = str_pad($bulan, 2, "0", STR_PAD_LEFT);
 $Stringtahun = $tahun;
 ?>
-<input type="text" id="gateBulan" value="<?= $Stringbulan; ?>">
-<input type="text" id="gateTahun" value="<?= $Stringtahun; ?>">
+<input type="hidden" id="gateBulan" value="<?= $Stringbulan; ?>">
+<input type="hidden" id="gateTahun" value="<?= $Stringtahun; ?>">
 <div class="row">
         <div class="col-12">
           <div class="card mb-4">
