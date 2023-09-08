@@ -1,5 +1,6 @@
 <html>
 	<head>
+    <link rel="icon" href="https://paylite.co.id/assets/img/favicon.png">
 	</head>
 	<body>
         <div style="text-align:center;">
