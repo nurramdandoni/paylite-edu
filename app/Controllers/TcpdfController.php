@@ -34,7 +34,7 @@ class TcpdfController extends BaseController
 		//Close and output PDF document
 		$pdf->Output('Laporan_Absensi_Kelas.pdf', 'I');
     }
-    public function generateMataAjarPDF($tahun_ajaran_id,$kelas_id,$kurikulum_id,$guru_id,$jadwal_pelajaran)
+    public function generateMataAjarPDF($tahun_ajaran_id,$kelas_id,$kurikulum_id,$guru_id,$jadwal_pelajaran,$bulan,$tahun)
     {
         $data['logo'] = "https://edu.paylite.co.id/assets/img/logo_main.jpeg";
         $data['kabupaten'] = "KUNINGAN";
@@ -98,6 +98,31 @@ class TcpdfController extends BaseController
         curl_close($chDataGuru); // Tutup koneksi cURL
         $dataCurlDataGuru = json_decode($responseDataGuru, true); // Menguraikan respons JSON
         // get data kurikulum
+
+        // get dataAbsensi
+        $postDataAbsensi = [
+            'lembaga_pendidikan_id' => $_COOKIE['lembaga_pendidikan_id'],
+            "jadwal_pelajaran_id"   => 70,
+            "tanggal_absensi_start" => "2023-09-01",
+            "tanggal_absensi_end"   => "2023-09-30"
+            ];
+            $requestUrlDataAbsensi = 'https://api.paylite.co.id/absensiWhereTanggalRekap';
+            $chDataAbsensi = curl_init(); // Inisialisasi curl
+            // Set opsi permintaan
+            curl_setopt($chDataAbsensi, CURLOPT_URL, $requestUrlDataAbsensi);
+            curl_setopt($chDataAbsensi, CURLOPT_RETURNTRANSFER, 1);
+            curl_setopt($chDataAbsensi, CURLOPT_POST, 1);
+            curl_setopt($chDataAbsensi, CURLOPT_POSTFIELDS, json_encode($postDataAbsensi));
+            curl_setopt($chDataAbsensi, CURLOPT_HTTPHEADER, [
+            'Content-Type: application/json',
+            ]);
+            $responseDataAbsensi = curl_exec($chDataAbsensi); // Eksekusi permintaan
+            if (curl_errno($chDataAbsensi)) {
+            echo 'Error: ' . curl_error($chDataAbsensi);
+            }
+            curl_close($chDataAbsensi); // Tutup koneksi cURL
+            $dataCurlDataAbsensi = json_decode($responseDataAbsensi, true); // Menguraikan respons JSON
+            // get dataAbsensi
 
 
 
