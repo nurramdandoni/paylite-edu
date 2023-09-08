@@ -163,11 +163,11 @@ class TcpdfController extends BaseController
             }
 
 
-        print_r($dataCurlDataAbsensi["data"]);
-        echo "<br>";
-        echo "-----------------------------------------------------------";
-        echo "<br>";
-        print_r($array_absensi);die;
+        // print_r($dataCurlDataAbsensi["data"]);
+        // echo "<br>";
+        // echo "-----------------------------------------------------------";
+        // echo "<br>";
+        // print_r($array_absensi);die;
         // echo "-----------------------------------------------------------";
         $data['tahun_ajaran'] = $dataCurlDataKelas["data"][0]["tahun_ajaran"]["nama_tahun_ajaran"];
         $data['kelas'] = $dataCurlDataKelas["data"][0]["kelas"]["nama_kelas"];
@@ -180,6 +180,7 @@ class TcpdfController extends BaseController
             array_push($list,$dataCurlDataKelas["data"][$i]["siswa"]);
         }
         $data['siswaList'] = $list;
+        $data['AbsensisiswaList'] = $array_absensi;
 
 
         // echo var_dump($list);
