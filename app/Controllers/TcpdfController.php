@@ -41,50 +41,61 @@ class TcpdfController extends BaseController
         $data['nama_sekolah'] = "SEKOLAH DASAR NEGERI 3 HAURKUNING";
         $data['alamat'] = "Dusun Kaliwon, Kecamatan Nusaherang, Kabupaten Kuningan, Jawa Barat";
 
-        $lembaga_pendidikan_id = '32';
-        $th = $tahun_ajaran_id;
-
-        $postSiswa = [
-        'lembaga_pendidikan_id' => $lembaga_pendidikan_id,
-        'tahun_ajaran_id' => $th,
+        // get dataKelas
+        $postDataKelas = [
+        'lembaga_pendidikan_id' => '32',
+        'tahun_ajaran_id' => $tahun_ajaran_id,
         'kelas_id' => $kelas_id,
         ];
-
-        $requestUrl = 'https://api.paylite.co.id/dataKelasWhere';
-
-        $ch = curl_init(); // Inisialisasi curl
-
+        $requestUrlDataKelas = 'https://api.paylite.co.id/dataKelasWhere';
+        $chDataKelas = curl_init(); // Inisialisasi curl
         // Set opsi permintaan
-        curl_setopt($ch, CURLOPT_URL, $requestUrl);
-        curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
-        curl_setopt($ch, CURLOPT_POST, 1);
-        curl_setopt($ch, CURLOPT_POSTFIELDS, json_encode($postSiswa));
-        curl_setopt($ch, CURLOPT_HTTPHEADER, [
+        curl_setopt($chDataKelas, CURLOPT_URL, $requestUrlDataKelas);
+        curl_setopt($chDataKelas, CURLOPT_RETURNTRANSFER, 1);
+        curl_setopt($chDataKelas, CURLOPT_POST, 1);
+        curl_setopt($chDataKelas, CURLOPT_POSTFIELDS, json_encode($postDataKelas));
+        curl_setopt($chDataKelas, CURLOPT_HTTPHEADER, [
         'Content-Type: application/json',
         ]);
-
-        $response = curl_exec($ch); // Eksekusi permintaan
-
-        if (curl_errno($ch)) {
-        echo 'Error: ' . curl_error($ch);
+        $responseDataKelas = curl_exec($chDataKelas); // Eksekusi permintaan
+        if (curl_errno($chDataKelas)) {
+        echo 'Error: ' . curl_error($chDataKelas);
         }
+        curl_close($chDataKelas); // Tutup koneksi cURL
+        $dataCurlDataKelas = json_decode($responseDataKelas, true); // Menguraikan respons JSON
+        // get dataKelas
 
-        curl_close($ch); // Tutup koneksi cURL
+        // get data kurikulum
+        $requestUrlDataKurikulum = 'https://api.paylite.co.id/kurikulum/'.$kurikulum_id;
+        $chDataKurikulum = curl_init(); // Inisialisasi curl
+        // Set opsi permintaan
+        curl_setopt($chDataKurikulum, CURLOPT_URL, $requestUrlDataKurikulum);
+        curl_setopt($chDataKurikulum, CURLOPT_RETURNTRANSFER, 1);
+        curl_setopt($chDataKurikulum, CURLOPT_HTTPHEADER, [
+        'Content-Type: application/json',
+        ]);
+        $responseDataKurikulum = curl_exec($chDataKurikulum); // Eksekusi permintaan
+        if (curl_errno($chDataKurikulum)) {
+        echo 'Error: ' . curl_error($chDataKurikulum);
+        }
+        curl_close($chDataKurikulum); // Tutup koneksi cURL
+        $dataCurlDataKurikulum = json_decode($responseDataKurikulum, true); // Menguraikan respons JSON
+        // get data kurikulum
 
-        $dataCurl = json_decode($response, true); // Menguraikan respons JSON
 
-        // print_r($data);
+
+        print_r($dataCurlDataKurikulum);die;
         // echo "<br>";
         // echo "-----------------------------------------------------------";
-        $data['tahun_ajaran'] = $dataCurl["data"][0]["tahun_ajaran"]["nama_tahun_ajaran"];
-        $data['kelas'] = $dataCurl["data"][0]["kelas"]["nama_kelas"];
+        $data['tahun_ajaran'] = $dataCurlDataKelas["data"][0]["tahun_ajaran"]["nama_tahun_ajaran"];
+        $data['kelas'] = $dataCurlDataKelas["data"][0]["kelas"]["nama_kelas"];
         $data['mata_ajar'] = "-";
         $data['pengajar'] = "-";
-        $data['wali_kelas'] = $dataCurl["data"][0]["guru"]["nama_guru"];
+        $data['wali_kelas'] = $dataCurlDataKelas["data"][0]["guru"]["nama_guru"];
         $data['bulan'] = "Agustus";
         $list = array();
-        for($i=0;$i<count($dataCurl["data"]);$i++){
-            array_push($list,$dataCurl["data"][$i]["siswa"]);
+        for($i=0;$i<count($dataCurlDataKelas["data"]);$i++){
+            array_push($list,$dataCurlDataKelas["data"][$i]["siswa"]);
         }
         $data['siswaList'] = $list;
 
