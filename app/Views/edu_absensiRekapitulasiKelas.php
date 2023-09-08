@@ -24,11 +24,11 @@ $Stringtahun = $tahun;
                   <div class="col-md-8"></div>
                   <div class="form-group col-md-4">
                     <label for="tahun">Tahun</label>
-                    <select class="form-control " id="DKTahun">
+                    <select onchange="updatePeriode();" class="form-control " id="DKTahun">
                       <option value="2023">2023</option>
                     </select>
                     <label for="bulan">Bulan</label>
-                    <select class="form-control " id="DKBulan">
+                    <select onchange="updatePeriode();" class="form-control " id="DKBulan">
                       <option value="01">Januari</option>
                       <option value="02">Februari</option>
                       <option value="03">Maret</option>
@@ -77,8 +77,11 @@ $Stringtahun = $tahun;
       <script>
         const tahun_ajaran_id = '<?= $tahun_ajaran_id; ?>';
         const kelas_id = '<?= $kelas_id; ?>';
+        let pbln = $("#gateBulan").val();
+        let pthn = $("#gateTahun").val();
+        $("#DKTahun").val(pthn);
+        $("#DKBulan").val(pbln);
         getDataKrs();
-        
         $("#liDash").html("Data Report Absensi");
         $("#liDash2").html("Data Report Absensi");
         $("#dashboard").removeClass("active");
@@ -95,7 +98,14 @@ $Stringtahun = $tahun;
         $("#nilai").removeClass("active");
         $("#krs").removeClass("active");
         $("#absensiReport").addClass("active");
+        function updatePeriode(){
+          let tahunSelect = $("#DKTahun").val();
+          let bulanSelect = $("#DKBulan").val();
 
+          $("#gateBulan").val(bulanSelect);
+          $("#gateTahun").val(tahunSelect);
+          getDataKrs();
+        }
         async function getTahunAjaranAktif(){
                   const postDataTahunAjaranAktif = {
                   lembaga_pendidikan_id: lembaga_pendidikan_id,
