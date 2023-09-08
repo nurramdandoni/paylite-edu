@@ -55,7 +55,7 @@ $routes->get('/absensi-dompdf', 'PdfController::generatePDF');
 $routes->get('/absensi-fpdf', 'PdfController::generateFPDF');
 
 $routes->get('/absensiKelas-tc/(:num)/(:num)', 'TcpdfController::generatePDF/$1/$2');
-$routes->get('/absensiMataAjar-tc/(:num)/(:num)/(:num)/(:num)', 'TcpdfController::generateMataAjarPDF/$1/$2/$3/$4');
+$routes->get('/absensiMataAjar-tc/(:num)/(:num)/(:num)/(:num)/(:num)', 'TcpdfController::generateMataAjarPDF/$1/$2/$3/$4/$5');
 
 /*
  * --------------------------------------------------------------------
