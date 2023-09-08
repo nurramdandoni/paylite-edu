@@ -143,8 +143,11 @@ class TcpdfController extends BaseController
             }
 
 
-        print_r($dataCurlDataAbsensi);die;
-        // echo "<br>";
+        print_r($dataCurlDataAbsensi);
+        echo "<br>";
+        echo "-----------------------------------------------------------";
+        echo "<br>";
+        print_r($array_absensi);die;
         // echo "-----------------------------------------------------------";
         $data['tahun_ajaran'] = $dataCurlDataKelas["data"][0]["tahun_ajaran"]["nama_tahun_ajaran"];
         $data['kelas'] = $dataCurlDataKelas["data"][0]["kelas"]["nama_kelas"];
