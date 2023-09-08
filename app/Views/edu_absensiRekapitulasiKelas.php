@@ -18,13 +18,14 @@ $Stringtahun = $tahun;
             </div>
             <div class="card-body px-0 pt-0 pb-2">
               <div class="table-responsive p-0">
-              <div id="contentFormInputEdit">
-                  <div class="form-group">
-                    <label for="siswa">Bulan</label>
+                <div id="contentFormInputEdit" class="row">
+                  <div class="col-md-8"></div>
+                  <div class="form-group col-md-4">
+                    <label for="bulan">Bulan</label>
                     <select class="form-control " id="DKBulan">
                       <option value="01">Januari</option>
                     </select>
-                    <label for="siswa">Tahun</label>
+                    <label for="tahun">Tahun</label>
                     <select class="form-control " id="DKTahun">
                       <option value="2023">2023</option>
                     </select>
