@@ -138,9 +138,9 @@ class TcpdfController extends BaseController
             $dataCurlDataAbsensi = json_decode($responseDataAbsensi, true); // Menguraikan respons JSON
             // get dataAbsensi
             $array_absensi = array();
-            // for($j=0;$j<count($dataCurlDataAbsensi);$j++){
-            //     $array_absensi["kehadiran"][$dataCurlDataAbsensi["data"][$j]["nisn"]] = $dataCurlDataAbsensi["data"][$j]["status_absensi"];
-            // }
+            for($j=0;$j<count($dataCurlDataAbsensi);$j++){
+                $array_absensi["kehadiran"][$j] = $dataCurlDataAbsensi["data"][$j]["status_absensi"];
+            }
 
 
         print_r($dataCurlDataAbsensi);
