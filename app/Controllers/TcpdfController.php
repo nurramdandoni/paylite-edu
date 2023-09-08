@@ -139,7 +139,7 @@ class TcpdfController extends BaseController
             // get dataAbsensi
             $array_absensi = array();
             for($j=0;$j<count($dataCurlDataAbsensi);$j++){
-                $array_absensi["kehadiran"][$dataCurlDataAbsensi["data"][$j]["nisn"]][$dataCurlDataAbsensi["data"][$j]["tanggal_absensi"]] = $dataCurlDataAbsensi["data"][$j]["status_absensi"];
+                $array_absensi["kehadiran"][$dataCurlDataAbsensi["data"][$j]["nisn"]] = $dataCurlDataAbsensi["data"][$j]["status_absensi"];
             }
 
 
