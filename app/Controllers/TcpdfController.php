@@ -43,7 +43,7 @@ class TcpdfController extends BaseController
 
         // get dataKelas
         $postDataKelas = [
-        'lembaga_pendidikan_id' => '32',
+        'lembaga_pendidikan_id' => $_COOKIE['lembaga_pendidikan_id'],
         'tahun_ajaran_id' => $tahun_ajaran_id,
         'kelas_id' => $kelas_id,
         ];
