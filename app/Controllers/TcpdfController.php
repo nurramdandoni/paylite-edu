@@ -117,8 +117,8 @@ class TcpdfController extends BaseController
         $postDataAbsensi = [
             'lembaga_pendidikan_id' => $_COOKIE['lembaga_pendidikan_id'],
             "jadwal_pelajaran_id"   => 70,
-            "tanggal_absensi_start" => "2023-09-01",
-            "tanggal_absensi_end"   => "2023-09-30"
+            "tanggal_absensi_start" => $tahun."-".$bulan."-01",
+            "tanggal_absensi_end"   => $tahun."-".$bulan."-31"
             ];
             $requestUrlDataAbsensi = 'https://api.paylite.co.id/absensiWhereTanggalRekap';
             $chDataAbsensi = curl_init(); // Inisialisasi curl
@@ -140,7 +140,7 @@ class TcpdfController extends BaseController
 
 
 
-        // print_r($dataCurlDataKurikulum);die;
+        print_r($dataCurlDataAbsensi);die;
         // echo "<br>";
         // echo "-----------------------------------------------------------";
         $data['tahun_ajaran'] = $dataCurlDataKelas["data"][0]["tahun_ajaran"]["nama_tahun_ajaran"];
