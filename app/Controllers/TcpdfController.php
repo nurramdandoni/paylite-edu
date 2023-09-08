@@ -36,6 +36,20 @@ class TcpdfController extends BaseController
     }
     public function generateMataAjarPDF($tahun_ajaran_id,$kelas_id,$kurikulum_id,$guru_id,$jadwal_pelajaran,$bulan,$tahun)
     {
+        $array_bulan = array(
+            "01" => "Januari",
+            "02" => "Februari",
+            "03" => "Maret",
+            "04" => "April",
+            "05" => "Mei",
+            "06" => "Juni",
+            "07" => "Juli",
+            "08" => "Agustus",
+            "09" => "September",
+            "10" => "Oktober",
+            "11" => "November",
+            "12" => "Desember"
+        );
         $data['logo'] = "https://edu.paylite.co.id/assets/img/logo_main.jpeg";
         $data['kabupaten'] = "KUNINGAN";
         $data['nama_sekolah'] = "SEKOLAH DASAR NEGERI 3 HAURKUNING";
@@ -134,7 +148,7 @@ class TcpdfController extends BaseController
         $data['mata_ajar'] = $dataCurlDataKurikulum["data"]["mata_ajar"]["nama_mata_ajar"];
         $data['pengajar'] = $dataCurlDataGuru["data"]["nama_guru"];
         $data['wali_kelas'] = $dataCurlDataKelas["data"][0]["guru"]["nama_guru"];
-        $data['bulan'] = "Agustus";
+        $data['bulan'] = $array_bulan[$bulan];
         $list = array();
         for($i=0;$i<count($dataCurlDataKelas["data"]);$i++){
             array_push($list,$dataCurlDataKelas["data"][$i]["siswa"]);
