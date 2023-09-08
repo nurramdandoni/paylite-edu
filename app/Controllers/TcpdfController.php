@@ -101,9 +101,11 @@ class TcpdfController extends BaseController
 
 
 
-        // print_r($dataCurlDataKurikulum);die;
-        // echo "<br>";
-        // echo "-----------------------------------------------------------";
+        print_r($dataCurlDataKurikulum);
+        echo "<br>";
+        echo "-----------------------------------------------------------";
+        echo "<br>";
+        print_r($dataCurlDataGuru);die;
         $data['tahun_ajaran'] = $dataCurlDataKelas["data"][0]["tahun_ajaran"]["nama_tahun_ajaran"];
         $data['kelas'] = $dataCurlDataKelas["data"][0]["kelas"]["nama_kelas"];
         $data['mata_ajar'] = '';
