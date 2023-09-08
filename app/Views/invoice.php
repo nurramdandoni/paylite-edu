@@ -70,7 +70,19 @@
             <td style="width: 200;text-align:left;font-size:9px;">&nbsp;<?= $siswaList[$i]["nama_siswa"]; ?></td>
 
             <?php for($j=1;$j<32;$j++){?>
-                <td style="width: 16px;text-align:center;font-size:10px;">v</td>
+                <td style="width: 16px;text-align:center;font-size:10px;">
+                    <?php 
+                        if(isset($AbsensisiswaList["kehadiran"][$siswaList[$i]["nisn"]][$j])){
+                            if($AbsensisiswaList["kehadiran"][$siswaList[$i]["nisn"]][$j] == "hadir"){
+                                echo "v";
+                            }else{
+                                echo "-";
+                            }
+                        }else{
+                            echo "x";
+                        }
+                    ?>
+                </td>
             <?php }?>
         </tr>
         <?php } ?>
