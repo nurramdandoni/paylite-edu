@@ -148,12 +148,14 @@ class TcpdfController extends BaseController
                 // echo "<br>";
 
                 // Jika tanggal kedua bukan '0', maka tambahkan karakter kedua juga
-                if ($tanggalAbsensi[8] != '0') {
+                if ($tanggalAbsensi[9] != '0') {
                     $tanggal .= $tanggalAbsensi[9];
                 }
 
                 // Output hasil
                 // echo $tanggal; // Output: 1
+                echo $tanggal[8].' - '.$tanggal[9];
+                echo "<br>";
 
                 $array_absensi["kehadiran"][$dataCurlDataAbsensi["data"][$j]["nisn"]][$tanggal] = "hadir";
             }
