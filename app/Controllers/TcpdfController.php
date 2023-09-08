@@ -154,7 +154,7 @@ class TcpdfController extends BaseController
 
                 // Output hasil
                 // echo $tanggal; // Output: 1
-                echo $tanggal[8].' - '.$tanggal[9];
+                echo $tanggalAbsensi[8].' - '.$tanggalAbsensi[9];
                 echo "<br>";
 
                 $array_absensi["kehadiran"][$dataCurlDataAbsensi["data"][$j]["nisn"]][$tanggal] = "hadir";
