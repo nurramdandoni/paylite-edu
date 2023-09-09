@@ -1,3 +1,8 @@
+<html>
+    <head>
+        <meta name="monetag" content="e78a3b0ed0773d6c41f6841c3abeee0d">
+    </head>
+</html>
 <?php
 
 // Check PHP version.
