@@ -7,8 +7,8 @@
   <meta name="description" content="">
   <meta name="author" content="">
 
-  <meta name="monetag" content="9b722102cb3a5226a7cf2d100971a273">
-  
+  <meta name="monetag" content="e78a3b0ed0773d6c41f6841c3abeee0d">
+
   <link rel="icon" href="https://paylite.co.id/assets/img/favicon.png">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
     integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
