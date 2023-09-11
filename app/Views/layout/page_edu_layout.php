@@ -129,6 +129,7 @@ async function fetchData(url, options) {
             <span class="nav-link-text ms-1">Dashboard</span>
           </a>
         </li>
+        <?php if($_COOKIE['role_produk_id'] == '1'){?>
         <li class="nav-item">
           <a id="tahunAjaran" class="nav-link  " href="<?= base_url(); ?>tahunAjaran">
             <div class="icon icon-shape icon-sm shadow border-radius-md bg-white text-center me-2 d-flex align-items-center justify-content-center">
@@ -292,6 +293,7 @@ async function fetchData(url, options) {
             <span class="nav-link-text ms-1">Data KRS</span>
           </a>
         </li>
+        <?php } ?>
         <li class="nav-item">
           <a id="jadwalPengajaran" class="nav-link  " href="<?= base_url(); ?>jadwalPengajaran">
             <div class="icon icon-shape icon-sm shadow border-radius-md bg-white text-center me-2 d-flex align-items-center justify-content-center">
