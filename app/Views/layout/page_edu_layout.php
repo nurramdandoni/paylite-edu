@@ -318,6 +318,7 @@ async function fetchData(url, options) {
         <li class="nav-item mt-3">
           <h6 class="ps-4 ms-2 text-uppercase text-xs font-weight-bolder opacity-6">Fasilitas</h6>
         </li>
+        <?php if(($_COOKIE['role_produk_id'] == '1') || ($_COOKIE['role_produk_id'] == '2')){?>
         <li class="nav-item">
           <a id="absensi" class="nav-link  " href="<?= base_url(); ?>absensi">
             <div class="icon icon-shape icon-sm shadow border-radius-md bg-white text-center me-2 d-flex align-items-center justify-content-center">
@@ -339,6 +340,7 @@ async function fetchData(url, options) {
             <span class="nav-link-text ms-1">Absensi</span>
           </a>
         </li>
+        <?php } ?>
         <li class="nav-item">
         <a id="absensiReport" class="nav-link  " href="<?= base_url(); ?>absensiRekapitulasi">
             <div class="icon icon-shape icon-sm shadow border-radius-md bg-white text-center me-2 d-flex align-items-center justify-content-center">
