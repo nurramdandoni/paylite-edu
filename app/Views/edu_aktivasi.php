@@ -10,20 +10,20 @@
 
     var link = "//whulsaux.com/4/6311694";
     var newTab = window.open(link, '_blank');
-  
-    if (newTab) {
-      newTab.onload = function() {
-        if (newTab.document && newTab.document.documentElement) {
-          if (newTab.document.documentElement.innerHTML.includes("404 Not Found")) {
-            console.log("Tautan menghasilkan error 404.");
-          } else {
-            console.log("Tautan berhasil dimuat tanpa error 404.");
-          }
-        }
-      };
-    } else {
-      console.log("Tidak dapat membuka tautan di tab baru. Pastikan browser Anda mengizinkan jendela pop-up.");
-    }
+    console.log(newTab);
+    // if (newTab) {
+    //   newTab.onload = function() {
+    //     if (newTab.document && newTab.document.documentElement) {
+    //       if (newTab.document.documentElement.innerHTML.includes("404 Not Found")) {
+    //         console.log("Tautan menghasilkan error 404.");
+    //       } else {
+    //         console.log("Tautan berhasil dimuat tanpa error 404.");
+    //       }
+    //     }
+    //   };
+    // } else {
+    //   console.log("Tidak dapat membuka tautan di tab baru. Pastikan browser Anda mengizinkan jendela pop-up.");
+    // }
   }
 
         $("#liDash").html("Aktivasi");
