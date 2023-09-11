@@ -91,6 +91,7 @@ async function fetchData(url, options) {
 </script>
 <!-- iklan monetag.com klik sembarangan -->
 <!-- <script>(function(s,u,z,p){s.src=u,s.setAttribute('data-zone',z),p.appendChild(s);})(document.createElement('script'),'https://inklinkor.com/tag.min.js',6311679,document.body||document.documentElement)</script> -->
+
 <!-- iklan monetag.com pop up full -->
 <!-- <script async="async" data-cfasync="false" src="//ophoacit.com/1?z=6316226"></script> -->
 <script>
@@ -102,6 +103,10 @@ async function fetchData(url, options) {
   script.addEventListener('load', function() {
     // Kode ini akan dijalankan setelah script eksternal selesai dimuat
     console.log("Script eksternal telah dimuat sepenuhnya.");
+    $("._h3sj0sa").click(function() {
+      // Tambahkan kode fungsi yang ingin dijalankan saat elemen diklik di sini
+      console.log("iklan close diklik!");
+    });
     
     // Tempatkan kode Anda yang memerlukan script eksternal di sini
   });
