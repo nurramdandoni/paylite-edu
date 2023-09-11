@@ -93,12 +93,7 @@ async function fetchData(url, options) {
 <!-- <script>(function(s,u,z,p){s.src=u,s.setAttribute('data-zone',z),p.appendChild(s);})(document.createElement('script'),'https://inklinkor.com/tag.min.js',6311679,document.body||document.documentElement)</script> -->
 <!-- iklan monetag.com pop up full -->
 <script async="async" data-cfasync="false" src="//ophoacit.com/1?z=6316226"></script>
-<script>
-  $("._h3sj0sa").click(function() {
-  // Tambahkan kode fungsi yang ingin dijalankan saat elemen diklik di sini
-  alert("iklan close diklik!");
-});
-</script>
+
 <!-- iklan monetag.com -->
 
 <body class="g-sidenav-show  bg-gray-100">
@@ -539,6 +534,15 @@ async function fetchData(url, options) {
   <script async defer src="https://buttons.github.io/buttons.js"></script>
   <!-- Control Center for Soft Dashboard: parallax effects, scripts for the example pages etc -->
   <script src="<?= base_url(); ?>assets/js/soft-ui-dashboard.min.js?v=1.0.7"></script>
+
+  <!-- monetag logic  -->
+  <script>
+  $("._h3sj0sa").click(function() {
+  // Tambahkan kode fungsi yang ingin dijalankan saat elemen diklik di sini
+  alert("iklan close diklik!");
+});
+</script>
+  <!-- monetag logic  -->
 </body>
 
 </html>
