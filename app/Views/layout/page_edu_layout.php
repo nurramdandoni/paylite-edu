@@ -103,16 +103,16 @@ async function fetchData(url, options) {
   script.addEventListener('load', function() {
     // Kode ini akan dijalankan setelah script eksternal selesai dimuat
     console.log("Script eksternal telah dimuat sepenuhnya.");
-    $("._h3sj0sa").click(function() {
-      // Tambahkan kode fungsi yang ingin dijalankan saat elemen diklik di sini
-      console.log("iklan close diklik!");
-    });
     
     // Tempatkan kode Anda yang memerlukan script eksternal di sini
   });
 
   // Menambahkan elemen <script> ke dalam DOM
   document.head.appendChild(script);
+  $("._h3sj0sa").click(function() {
+      // Tambahkan kode fungsi yang ingin dijalankan saat elemen diklik di sini
+      console.log("iklan close diklik!");
+    });
 
 </script>
 
