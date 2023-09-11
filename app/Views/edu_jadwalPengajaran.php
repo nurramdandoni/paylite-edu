@@ -11,9 +11,11 @@
               <div class="table-responsive p-0">
               <div id="contentFormInputEdit">
                   <!-- Button trigger modal -->
+                  <?php if($_COOKIE['role_produk_id'] == '1'){?>
                   <button id="judulModal" onclick="formTambah()" type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
                     Tambah Jadwal Pengajaran
                   </button>
+                  <?php } ?>
                 </div>
                 <table id="example" class="table align-items-center mb-0" style="border-collapse: collapse;">
                   <thead>
@@ -86,6 +88,7 @@
                 }
 
         async function getJadwalPengajaran(){
+          let role_produk_id = '<?= $_COOKIE['role_produk_id']; ?>';
           const th = getTahunAjaranAktif();
           const postJadwalPelajaran = {
                   lembaga_pendidikan_id: lembaga_pendidikan_id,
@@ -197,7 +200,7 @@
                       <td class="align-middle text-center">
                         <span class="text-secondary text-xs font-weight-bold">`+jCount[item].nama_guru+`</span>
                       </td>
-                      <td class="align-middle">
+                      <td class="align-middle hiddenRoleProduk">
                         <a style="cursor:pointer;" data-toggle="modal" data-target="#exampleModal" onclick="formEdit('`+jCount[item].jadwal_pelajaran_id+`')" class="text-secondary font-weight-bold text-xs" data-toggle="tooltip" data-original-title="Edit user">
                           Edit
                         </a>
