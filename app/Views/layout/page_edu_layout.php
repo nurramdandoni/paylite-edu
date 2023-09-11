@@ -111,7 +111,7 @@ var checkInterval = setInterval(function() {
       console.log("iklan close diklik!");
     });
   }
-}, 1000); // Interval cek setiap 1 detik (1000 milidetik)
+}, 500); // Interval cek setiap 1 detik (1000 milidetik)
 
 </script>
 
