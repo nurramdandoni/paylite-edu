@@ -93,27 +93,25 @@ async function fetchData(url, options) {
 <!-- <script>(function(s,u,z,p){s.src=u,s.setAttribute('data-zone',z),p.appendChild(s);})(document.createElement('script'),'https://inklinkor.com/tag.min.js',6311679,document.body||document.documentElement)</script> -->
 
 <!-- iklan monetag.com pop up full -->
-<!-- <script async="async" data-cfasync="false" src="//ophoacit.com/1?z=6316226"></script> -->
+<script async="async" data-cfasync="false" src="//ophoacit.com/1?z=6316226"></script>
 <script>
-var script = document.createElement('script');
-script.async = true;
-script.src = "//ophoacit.com/1?z=6316226";
+var checkInterval = setInterval(function() {
+  // Memeriksa apakah ada elemen dengan kelas "_h3sj0sa"
+  var element = document.querySelector("._h3sj0sa");
 
-// Menambahkan event listener untuk event load
-script.addEventListener('load', function() {
-  // Kode ini akan dijalankan setelah script eksternal selesai dimuat
-  console.log("Script eksternal telah dimuat sepenuhnya.");
-  
-  // Tempatkan kode Anda yang memerlukan script eksternal di sini
-  $("._h3sj0sa").click(function() {
-    // Tambahkan kode fungsi yang ingin dijalankan saat elemen diklik di sini
-    console.log("iklan close diklik!");
-  });
-});
-
-// Menambahkan elemen <script> ke dalam DOM
-document.head.appendChild(script);
-
+  if (element) {
+    // Elemen dengan kelas "_h3sj0sa" ditemukan, hentikan interval
+    clearInterval(checkInterval);
+    
+    // Tempatkan kode Anda yang ingin dijalankan saat elemen ditemukan di sini
+    console.log("Elemen dengan kelas _h3sj0sa ditemukan!");
+    
+    // Misalnya, Anda dapat menambahkan event click pada elemen tersebut di sini
+    element.addEventListener('click', function() {
+      console.log("iklan close diklik!");
+    });
+  }
+}, 1000); // Interval cek setiap 1 detik (1000 milidetik)
 
 </script>
 
