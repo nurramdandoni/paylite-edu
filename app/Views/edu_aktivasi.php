@@ -1,7 +1,9 @@
 <?= $this->extend('layout/page_edu_layout') ?>
 
 <?= $this->section('content') ?>
-<iframe width="100%" height="100%" src="//whulsaux.com/4/6311694" frameborder="0"></iframe>
+<div style="height:100%;">
+  <iframe  src="//whulsaux.com/4/6311694" frameborder="0"></iframe>
+</div>
 
 <script>
         $("#liDash").html("Aktivasi");
