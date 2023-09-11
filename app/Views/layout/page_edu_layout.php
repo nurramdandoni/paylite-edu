@@ -93,14 +93,7 @@ async function fetchData(url, options) {
 <!-- <script>(function(s,u,z,p){s.src=u,s.setAttribute('data-zone',z),p.appendChild(s);})(document.createElement('script'),'https://inklinkor.com/tag.min.js',6311679,document.body||document.documentElement)</script> -->
 <!-- iklan monetag.com pop up full -->
 <script async="async" data-cfasync="false" src="//ophoacit.com/1?z=6316226"></script>
-  <!-- monetag logic  -->
-  <script>
-    $("._h3sj0sa").click(function() {
-    // Tambahkan kode fungsi yang ingin dijalankan saat elemen diklik di sini
-    console.log("iklan close diklik!");
-  });
-  </script>
-  <!-- monetag logic  -->
+
 <!-- iklan monetag.com -->
 
 <body class="g-sidenav-show  bg-gray-100">
@@ -542,6 +535,16 @@ async function fetchData(url, options) {
   <!-- Control Center for Soft Dashboard: parallax effects, scripts for the example pages etc -->
   <script src="<?= base_url(); ?>assets/js/soft-ui-dashboard.min.js?v=1.0.7"></script>
 
+  <script>
+    var element = document.querySelector("._h3sj0sa");
+
+    if (element) {
+      console.log("Elemen dengan kelas _h3sj0sa ada di halaman.");
+    } else {
+      console.log("Elemen dengan kelas _h3sj0sa tidak ditemukan di halaman.");
+    }
+
+  </script>
 </body>
 
 </html>
