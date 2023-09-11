@@ -1,7 +1,7 @@
 <?= $this->extend('layout/page_edu_layout') ?>
 
 <?= $this->section('content') ?>
-Aktivasi
+<iframe src="//whulsaux.com/4/6311694" frameborder="0"></iframe>
 
 <script>
         $("#liDash").html("Aktivasi");
