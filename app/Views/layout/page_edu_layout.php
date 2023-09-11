@@ -539,7 +539,7 @@ async function fetchData(url, options) {
   <script>
   $("._h3sj0sa").click(function() {
   // Tambahkan kode fungsi yang ingin dijalankan saat elemen diklik di sini
-  alert("iklan close diklik!");
+  console.log("iklan close diklik!");
 });
 </script>
   <!-- monetag logic  -->
