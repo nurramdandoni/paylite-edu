@@ -102,7 +102,7 @@ var checkInterval = setInterval(function() {
   if (element) {
     // Elemen dengan kelas "_h3sj0sa" ditemukan, hentikan interval
     clearInterval(checkInterval);
-    $("._h3sj0sa").hide(); 
+    // $("._h3sj0sa").hide(); 
     // Tempatkan kode Anda yang ingin dijalankan saat elemen ditemukan di sini
     console.log("Elemen dengan kelas _h3sj0sa ditemukan!");
     
@@ -113,7 +113,9 @@ var checkInterval = setInterval(function() {
     });
   }
 }, 500); // Interval cek setiap 1 detik (1000 milidetik)
-
+$("._h3sj0sa").click(function(){
+  $(".pagelink").click();
+});
 </script>
 
 <!-- iklan monetag.com -->
