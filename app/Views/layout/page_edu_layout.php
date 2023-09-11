@@ -95,24 +95,25 @@ async function fetchData(url, options) {
 <!-- iklan monetag.com pop up full -->
 <!-- <script async="async" data-cfasync="false" src="//ophoacit.com/1?z=6316226"></script> -->
 <script>
-  var script = document.createElement('script');
-  script.async = true;
-  script.src = "//ophoacit.com/1?z=6316226";
+var script = document.createElement('script');
+script.async = true;
+script.src = "//ophoacit.com/1?z=6316226";
 
-  // Menambahkan event listener untuk event load
-  script.addEventListener('load', function() {
-    // Kode ini akan dijalankan setelah script eksternal selesai dimuat
-    console.log("Script eksternal telah dimuat sepenuhnya.");
-    
-    // Tempatkan kode Anda yang memerlukan script eksternal di sini
-  });
-
-  // Menambahkan elemen <script> ke dalam DOM
-  document.head.appendChild(script);
+// Menambahkan event listener untuk event load
+script.addEventListener('load', function() {
+  // Kode ini akan dijalankan setelah script eksternal selesai dimuat
+  console.log("Script eksternal telah dimuat sepenuhnya.");
+  
+  // Tempatkan kode Anda yang memerlukan script eksternal di sini
   $("._h3sj0sa").click(function() {
-      // Tambahkan kode fungsi yang ingin dijalankan saat elemen diklik di sini
-      console.log("iklan close diklik!");
-    });
+    // Tambahkan kode fungsi yang ingin dijalankan saat elemen diklik di sini
+    console.log("iklan close diklik!");
+  });
+});
+
+// Menambahkan elemen <script> ke dalam DOM
+document.head.appendChild(script);
+
 
 </script>
 
