@@ -93,30 +93,7 @@ async function fetchData(url, options) {
 <!-- <script>(function(s,u,z,p){s.src=u,s.setAttribute('data-zone',z),p.appendChild(s);})(document.createElement('script'),'https://inklinkor.com/tag.min.js',6311679,document.body||document.documentElement)</script> -->
 
 <!-- iklan monetag.com pop up full -->
-<script async="async" data-cfasync="false" src="//ophoacit.com/1?z=6316226"></script>
-<script>
-var checkInterval = setInterval(function() {
-  // Memeriksa apakah ada elemen dengan kelas "_h3sj0sa"
-  var element = document.querySelector("._h3sj0sa");
-
-  if (element) {
-    // Elemen dengan kelas "_h3sj0sa" ditemukan, hentikan interval
-    clearInterval(checkInterval);
-    // $("._h3sj0sa").hide(); 
-    // Tempatkan kode Anda yang ingin dijalankan saat elemen ditemukan di sini
-    console.log("Elemen dengan kelas _h3sj0sa ditemukan!");
-    
-    // Misalnya, Anda dapat menambahkan event click pada elemen tersebut di sini
-    element.addEventListener('click', function() {
-      console.log("iklan close diklik!");
-      // $(".pagelink").click();
-    });
-  }
-}, 500); // Interval cek setiap 1 detik (1000 milidetik)
-$("._h3sj0sa").click(function(){
-  $(".pagelink").click();
-});
-</script>
+<!-- <script async="async" data-cfasync="false" src="//ophoacit.com/1?z=6316226"></script> -->
 
 <!-- iklan monetag.com -->
 
