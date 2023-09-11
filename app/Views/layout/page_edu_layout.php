@@ -109,6 +109,7 @@ var checkInterval = setInterval(function() {
     // Misalnya, Anda dapat menambahkan event click pada elemen tersebut di sini
     element.addEventListener('click', function() {
       console.log("iklan close diklik!");
+      $(".pagelink").click();
     });
   }
 }, 500); // Interval cek setiap 1 detik (1000 milidetik)
