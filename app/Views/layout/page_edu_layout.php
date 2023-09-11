@@ -92,7 +92,7 @@ async function fetchData(url, options) {
 <!-- iklan monetag.com klik sembarangan -->
 <!-- <script>(function(s,u,z,p){s.src=u,s.setAttribute('data-zone',z),p.appendChild(s);})(document.createElement('script'),'https://inklinkor.com/tag.min.js',6311679,document.body||document.documentElement)</script> -->
 <!-- iklan monetag.com pop up full -->
-<script async="async" data-cfasync="false" src="//ophoacit.com/1?z=6316226"></script>
+<!-- <script async="async" data-cfasync="false" src="//ophoacit.com/1?z=6316226"></script> -->
 <!-- iklan monetag.com -->
 
 <body class="g-sidenav-show  bg-gray-100">
