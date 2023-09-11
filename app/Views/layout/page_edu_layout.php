@@ -102,14 +102,14 @@ var checkInterval = setInterval(function() {
   if (element) {
     // Elemen dengan kelas "_h3sj0sa" ditemukan, hentikan interval
     clearInterval(checkInterval);
-    
+    $("._h3sj0sa").hide(); 
     // Tempatkan kode Anda yang ingin dijalankan saat elemen ditemukan di sini
     console.log("Elemen dengan kelas _h3sj0sa ditemukan!");
     
     // Misalnya, Anda dapat menambahkan event click pada elemen tersebut di sini
     element.addEventListener('click', function() {
       console.log("iklan close diklik!");
-      $(".pagelink").click();
+      // $(".pagelink").click();
     });
   }
 }, 500); // Interval cek setiap 1 detik (1000 milidetik)
