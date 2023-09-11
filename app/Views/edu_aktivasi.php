@@ -1,29 +1,28 @@
 <?= $this->extend('layout/page_edu_layout') ?>
 
 <?= $this->section('content') ?>
-<!-- <iframe src="//whulsaux.com/4/6311694" frameborder="0" style="width: 100%; height: 100vh;"></iframe> -->
-<button onclick="visitAds()">Visit</button>
+<div>
+  <?php for($i=0;$i<6;$i++){?>
+    <button class="btn btn-success" onclick="visitAds('<?= $i; ?>')">Visit</button>
+  <?php } ?>
+</div>
 
 
 <script>
-  function visitAds(){
+  let link = [
+    "//zirdough.net/4/6311694",
+    "//gloorsie.com/4/6316602",
+    "//vaikijie.net/4/6316603",
+    "//gloacmug.net/4/6316604",
+    "//oulsools.com/4/6316605",
+    "//keewoach.net/4/6316606"
+  ]
+  function visitAds(l){
 
-    var link = "//whulsaux.com/4/6311694";
-    var newTab = window.open(link, '_blank');
+    // var link = "//whulsaux.com/4/6311694";
+    var newTab = window.open(link[l], '_blank');
+    console.log(link[l]);
     console.log(newTab);
-    // if (newTab) {
-    //   newTab.onload = function() {
-    //     if (newTab.document && newTab.document.documentElement) {
-    //       if (newTab.document.documentElement.innerHTML.includes("404 Not Found")) {
-    //         console.log("Tautan menghasilkan error 404.");
-    //       } else {
-    //         console.log("Tautan berhasil dimuat tanpa error 404.");
-    //       }
-    //     }
-    //   };
-    // } else {
-    //   console.log("Tidak dapat membuka tautan di tab baru. Pastikan browser Anda mengizinkan jendela pop-up.");
-    // }
   }
 
         $("#liDash").html("Aktivasi");
