@@ -24,6 +24,16 @@
     console.log(link[l]);
     console.log(newTab);
   }
+  document.addEventListener("visibilitychange", function() {
+  if (document.hidden) {
+    // Pengguna telah beralih ke tab lain atau meninggalkan halaman
+    console.log("Pengguna telah meninggalkan tab.");
+  } else {
+    // Pengguna kembali ke tab ini
+    console.log("Pengguna kembali ke tab ini.");
+  }
+});
+
 
         $("#liDash").html("Aktivasi");
         $("#liDash2").html("Aktivasi");
