@@ -212,6 +212,10 @@
                     if(data.data.length > 0){
                       $("#list").html(temp);
                     }
+
+                    if(role_produk_id != '1'){
+                      $(".hiddenRoleProduk").remove();
+                    }
                 }
 
                 async function getExist(id){
