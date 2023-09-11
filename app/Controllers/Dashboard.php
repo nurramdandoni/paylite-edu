@@ -313,7 +313,7 @@ class Dashboard extends BaseController
     {
         setcookie("statusProduk","success",time() + (60 * 60 * 24),"/", ".paylite.co.id");
         echo "berhasil";
-            // return view('edu_preparation');
+            return view('edu_preparation');
     }
 
     public function calbackGoogle()
