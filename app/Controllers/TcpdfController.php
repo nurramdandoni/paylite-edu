@@ -117,7 +117,11 @@ class TcpdfController extends BaseController
 
         // get dataAbsensi
         $postDataAbsensi = [
-            'lembaga_pendidikan_id' => $_COOKIE['lembaga_pendidikan_id'],
+            "lembaga_pendidikan_id" => $_COOKIE['lembaga_pendidikan_id'],
+            "tahun_ajaran_id" => $tahun_ajaran_id,
+            "kurikulum_id" => $kurikulum_id,
+            "data_kelas_id" => $kelas_id,
+            "guru_id" => $guru_id,
             "jadwal_pelajaran_id"   => $jadwal_pelajaran,
             "tanggal_absensi_start" => $tahun."-".$bulan."-01",
             "tanggal_absensi_end"   => $tahun."-".$bulan."-31"
