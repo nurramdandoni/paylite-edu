@@ -550,7 +550,9 @@ async function fetchData(url, options) {
     }
 
     const data = await fetchData('https://api.paylite.co.id/lembagaPendidikan/'+lembaga_pendidikan_id+'');
+    console.log("HHHHH");
     console.log(data.data.nama_lembaga);
+    console.log("HHHHH");
     $("#namaBrand").html(data.data.nama_lembaga);
   </script>
 </body>
