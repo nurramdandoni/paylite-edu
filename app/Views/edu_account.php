@@ -111,7 +111,7 @@ getLembagaPendidikan();
 async function getLembagaPendidikan(){
     // jenjang pendidikan
         // Data yang akan dikirim dalam permintaan GET
-        fetch('https://api.paylite.co.id/jenjangPendidikan')
+        await fetch('https://api.paylite.co.id/jenjangPendidikan')
             .then(response => {
                 if (!response.ok) {
                 throw new Error('Network response was not ok');
