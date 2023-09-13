@@ -1,7 +1,7 @@
 <?= $this->extend('layout/page_edu_layout') ?>
 
 <?= $this->section('content') ?>
-<div class="row">
+<div class="row" style="background-color: #f0f0f0;border-radius: 30px;padding: 20px;">
     Informasi Sekolah
     <div class="form-group">
         <label for="formNpsn">Nomor Legalitas (NPSN)</label>
