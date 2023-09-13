@@ -105,5 +105,13 @@ $("#absensi").removeClass("active");
 $("#nilai").removeClass("active");
 $("#krs").removeClass("active");
 $("#absensiReport").removeClass("active");
+
+getLembagaPendidikan();
+
+async function getLembagaPendidikan(){
+    const data = await fetchData('https://api.paylite.co.id/lembagaPendidikan/'+lembaga_pendidikan_id+'');
+    console.log(data.data);
+    $("#formNpsn").val(data.data.nomor_legalitas);
+}
 </script>
 <?= $this->endSection() ?>
