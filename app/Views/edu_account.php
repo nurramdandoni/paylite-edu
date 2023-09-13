@@ -5,7 +5,7 @@
     Informasi Sekolah
     <div class="form-group">
         <label for="formNpsn">Nomor Legalitas (NPSN)</label>
-        <input type="text" class="form-control" id="formNpsn" aria-describedby="formNpsn" placeholder="NPSN">
+        <input readonly type="text" class="form-control" id="formNpsn" aria-describedby="formNpsn" placeholder="NPSN">
         <small id="formNpsntext" class="form-text text-muted">Masukan Nomor Legalitas Lembaga</small>
     </div>
     <div class="form-group">
@@ -109,9 +109,35 @@ $("#absensiReport").removeClass("active");
 getLembagaPendidikan();
 
 async function getLembagaPendidikan(){
+    // jenjang pendidikan
+        // Data yang akan dikirim dalam permintaan GET
+        fetch('https://api.paylite.co.id/jenjangPendidikan')
+            .then(response => {
+                if (!response.ok) {
+                throw new Error('Network response was not ok');
+                }
+                return response.json(); // Parse the response body as JSON
+            })
+            .then(data => {
+                // Handle the JSON data
+                console.log(data.data);
+                let jenjangPendidikan = '';
+                for (const item of data.data) {
+                    jenjangPendidikan += `<option value="`+item.jenjang_pendidikan_id+`">`+item.nama_jenjang+`</option>`;
+                }
+                $("#formJenjangPendidikan").html(jenjangPendidikan);
+
+            })
+            .catch(error => {
+                console.error('Fetch error:', error);
+                // Handle errors here
+            });
+        // akhir jenjang pendidikan
+
     const data = await fetchData('https://api.paylite.co.id/lembagaPendidikan/'+lembaga_pendidikan_id+'');
     console.log(data.data);
     $("#formNpsn").val(data.data.nomor_legalitas);
+    $("#formJenjangPendidikan").val(data.data.jenjang_pendidikan_id);
 }
 </script>
 <?= $this->endSection() ?>
