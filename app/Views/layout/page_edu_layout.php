@@ -548,10 +548,25 @@ async function fetchData(url, options) {
     }
 
     const data = await fetchData('https://api.paylite.co.id/lembagaPendidikan/'+lembaga_pendidikan_id+'');
-    $("#brandLogoLembaga").html(`
-    <img src="<?= base_url(); ?>assets/img/`+data.data.logo_sekolah+`" class="navbar-brand-img h-100" alt="logo">
-        <span class="ms-1 font-weight-bold">`+data.data.nama_lembaga+`</span>
-    `);
+    const $brandLogoLembaga = $("#brandLogoLembaga");
+
+    // Buat elemen <img> dan <span> menggunakan jQuery
+    const $img = $('<img>', {
+        src: '<?= base_url(); ?>assets/img/' + data.data.logo_sekolah,
+        class: 'navbar-brand-img h-100',
+        alt: 'logo'
+    });
+    const $span = $('<span>', {
+        class: 'ms-1 font-weight-bold',
+        text: data.data.nama_lembaga
+    });
+
+    // Bersihkan isi dari elemen #brandLogoLembaga
+    $brandLogoLembaga.empty();
+
+    // Tambahkan elemen <img> dan <span> ke dalam elemen #brandLogoLembaga
+    $brandLogoLembaga.append($img, $span);
+
   </script>
 </body>
 
