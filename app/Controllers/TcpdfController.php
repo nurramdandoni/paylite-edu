@@ -50,9 +50,27 @@ class TcpdfController extends BaseController
             "11" => "November",
             "12" => "Desember"
         );
-        $data['logo'] = "https://edu.paylite.co.id/assets/img/logo_main.jpeg";
+
+        // get data lembaga
+        $requestUrlDataLembaga = 'https://api.paylite.co.id/lembagaPendidikan/'.$_COOKIE['lembaga_pendidikan_id'];
+        $chDataLembaga = curl_init(); // Inisialisasi curl
+        // Set opsi permintaan
+        curl_setopt($chDataLembaga, CURLOPT_URL, $requestUrlDataLembaga);
+        curl_setopt($chDataLembaga, CURLOPT_RETURNTRANSFER, 1);
+        curl_setopt($chDataLembaga, CURLOPT_HTTPHEADER, [
+        'Content-Type: application/json',
+        ]);
+        $responseDataLembaga = curl_exec($chDataLembaga); // Eksekusi permintaan
+        if (curl_errno($chDataLembaga)) {
+        echo 'Error: ' . curl_error($chDataLembaga);
+        }
+        curl_close($chDataLembaga); // Tutup koneksi cURL
+        $dataCurlDataLembaga = json_decode($responseDataLembaga, true); // Menguraikan respons JSON
+        // get data lembaga
+
+        $data['logo'] = "https://edu.paylite.co.id/assets/img/".$dataCurlDataLembaga["data"]["logo_sekolah"];
         $data['kabupaten'] = "KUNINGAN";
-        $data['nama_sekolah'] = "SEKOLAH DASAR NEGERI 3 HAURKUNING";
+        $data['nama_sekolah'] = $dataCurlDataLembaga["data"]["nama_lembaga"];
         $data['alamat'] = "Dusun Kaliwon, Kecamatan Nusaherang, Kabupaten Kuningan, Jawa Barat";
 
         // get dataKelas
@@ -113,7 +131,7 @@ class TcpdfController extends BaseController
         }
         curl_close($chDataGuru); // Tutup koneksi cURL
         $dataCurlDataGuru = json_decode($responseDataGuru, true); // Menguraikan respons JSON
-        // get data kurikulum
+        // get data guru
 
         // get dataAbsensi
         $postDataAbsensi = [
