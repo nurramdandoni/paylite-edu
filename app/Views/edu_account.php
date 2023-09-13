@@ -10,7 +10,7 @@
     </div>
     <div class="form-group">
         <label for="formJenjangPendidikan">Jenjang Pendidikan</label>
-        <select type="text" class="form-control" id="formJenjangPendidikan" aria-describedby="formJenjangPendidikan" placeholder="Jenjang Pendidikan">
+        <select disabled type="text" class="form-control" id="formJenjangPendidikan" aria-describedby="formJenjangPendidikan" placeholder="Jenjang Pendidikan">
                       
         </select>
         <small id="formJenjangPendidikantext" class="form-text text-muted">Pilih Jenjang Pendidikan</small>
