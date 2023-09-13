@@ -101,7 +101,9 @@ async function fetchData(url, options) {
   <aside class="sidenav navbar navbar-vertical navbar-expand-xs border-0 border-radius-xl my-3 fixed-start ms-3 " id="sidenav-main">
     <div class="sidenav-header">
       <i class="fas fa-times p-3 cursor-pointer text-secondary opacity-5 position-absolute end-0 top-0 d-none d-xl-none" aria-hidden="true" id="iconSidenav"></i>
-      <a class="navbar-brand m-0" href="<?= base_url(); ?>" target="_blank" id="brandLogoLembaga">
+      <a class="navbar-brand m-0" href="<?= base_url(); ?>" target="_blank">
+        <img id="logoBrand" src="<?= base_url(); ?>assets/img/logo_main.jpeg" class="navbar-brand-img h-100" alt="logo">
+        <span id="namaBrand" class="ms-1 font-weight-bold">SD Negeri 3 Haurkuning</span>
       </a>
     </div>
     <hr class="horizontal dark mt-0">
@@ -548,25 +550,7 @@ async function fetchData(url, options) {
     }
 
     const data = await fetchData('https://api.paylite.co.id/lembagaPendidikan/'+lembaga_pendidikan_id+'');
-    const $brandLogoLembaga = $("#brandLogoLembaga");
-
-    // Buat elemen <img> dan <span> menggunakan jQuery
-    const $img = $('<img>', {
-        src: '<?= base_url(); ?>assets/img/' + data.data.logo_sekolah,
-        class: 'navbar-brand-img h-100',
-        alt: 'logo'
-    });
-    const $span = $('<span>', {
-        class: 'ms-1 font-weight-bold',
-        text: data.data.nama_lembaga
-    });
-
-    // Bersihkan isi dari elemen #brandLogoLembaga
-    $brandLogoLembaga.empty();
-
-    // Tambahkan elemen <img> dan <span> ke dalam elemen #brandLogoLembaga
-    $brandLogoLembaga.append($img, $span);
-
+    console.log(data.data);
   </script>
 </body>
 
