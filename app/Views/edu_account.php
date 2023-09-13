@@ -32,8 +32,8 @@
     </div>
     <div class="form-group">
         <label for="formWebsite">Website Sekolah</label>
-        <input type="text" class="form-control" id="formWebsite" aria-describedby="formWebsite" placeholder="Website Sekolah">
-        <small id="formWebsitetext" class="form-text text-muted">https://edu.paylite.co.id</small>
+        <input type="text" class="form-control" id="formWebsite" aria-describedby="formWebsite" placeholder="Website Sekolah" value="https://edu.paylite.co.id">
+        <small id="formWebsitetext" class="form-text text-muted">Masukan Website Sekolah</small>
     </div>
     <div class="form-group">
         <label for="formNoSekolah">Email Sekolah</label>
@@ -78,7 +78,7 @@
         <small id="formLongitudeSekolahtext" class="form-text text-muted">Masukan Longitude</small>
     </div>
     Logo Sekolah
-    <div>Logo</div>
+    <div id="logo">Logo</div>
     
     Informasi Admin Sekolah
     <div class="form-group">
@@ -138,6 +138,15 @@ async function getLembagaPendidikan(){
     console.log(data.data);
     $("#formNpsn").val(data.data.nomor_legalitas);
     $("#formJenjangPendidikan").val(data.data.jenjang_pendidikan_id);
+    $("#formSkAkreditasi").val(data.data.sk_akreditasi);
+    $("#formNamaLembaga").val(data.data.nama_lembaga);
+    $("#formNamaKepalaSekolah").val(data.data.nama_kepala_sekolah);
+    $("#formWebsite").val(data.data.website);
+    $("#formEmailSekolah").val(data.data.email_sekolah);
+    $("#formNoSekolah").val(data.data.nomor_telepon);
+    $("#formLatitudeSekolah").val(data.data.latitude);
+    $("#formLongitudeSekolah").val(data.data.longitude);
+    $("#logo").val(data.data.logo_sekolah);
 }
 </script>
 <?= $this->endSection() ?>
