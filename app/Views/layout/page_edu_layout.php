@@ -88,12 +88,6 @@ async function fetchData(url, options) {
         }
         let lembaga_pendidikan_id = '<?= $_COOKIE['lembaga_pendidikan_id']; ?>';
         console.log("ini id : ",lembaga_pendidikan_id);
-
-    const data = await fetchData('https://api.paylite.co.id/lembagaPendidikan/'+lembaga_pendidikan_id+'');
-    console.log("HHHHH");
-    console.log(data.data.nama_lembaga);
-    console.log("HHHHH");
-    // $("#namaBrand").html(data.data.nama_lembaga);
 </script>
 <!-- iklan monetag.com klik sembarangan -->
 <!-- <script>(function(s,u,z,p){s.src=u,s.setAttribute('data-zone',z),p.appendChild(s);})(document.createElement('script'),'https://inklinkor.com/tag.min.js',6311679,document.body||document.documentElement)</script> -->
@@ -540,6 +534,8 @@ async function fetchData(url, options) {
         // Batal logout
     }
     }
+
+    setHeader();
   </script>
   <!-- Github buttons -->
   <script async defer src="https://buttons.github.io/buttons.js"></script>
@@ -554,7 +550,13 @@ async function fetchData(url, options) {
     } else {
       console.log("Elemen dengan kelas _h3sj0sa tidak ditemukan di halaman.");
     }
-
+    async function setHeader(){
+      const data = await fetchData('https://api.paylite.co.id/lembagaPendidikan/'+lembaga_pendidikan_id+'');
+      console.log("HHHHH");
+      console.log(data.data.nama_lembaga);
+      console.log("HHHHH");
+      $("#namaBrand").html(data.data.nama_lembaga);
+    }
   </script>
 </body>
 
