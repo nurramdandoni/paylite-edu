@@ -146,7 +146,7 @@ async function getLembagaPendidikan(){
     $("#formNoSekolah").val(data.data.nomor_telepon);
     $("#formLatitudeSekolah").val(data.data.latitude);
     $("#formLongitudeSekolah").val(data.data.longitude);
-    $("#logo").html(`<img src="<?= base_url()?>`+data.data.logo_sekolah+`" style="width:200px;"/>`);
+    $("#logo").html(`<img src="<?= base_url()?>assets/img/`+data.data.logo_sekolah+`" style="width:200px;"/>`);
 }
 </script>
 <?= $this->endSection() ?>
