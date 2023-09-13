@@ -95,6 +95,7 @@ async function setHeader(){
       console.log(data.data.nama_lembaga);
       console.log("HHHHH");
       $("#namaBrand").html(data.data.nama_lembaga);
+      $("#logoBrand").attr('src',"https://edu.paylite.co.id/assets/img/"+data.data.logo_sekolah+"");
     }
 </script>
 <!-- iklan monetag.com klik sembarangan -->
