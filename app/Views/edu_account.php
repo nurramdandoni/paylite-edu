@@ -78,7 +78,7 @@
         <small id="formLongitudeSekolahtext" class="form-text text-muted">Masukan Longitude</small>
     </div>
     Logo Sekolah
-    <div id="logo">Logo</div>
+    <div id="logo"></div>
     
     Informasi Admin Sekolah
     <div class="form-group">
@@ -146,7 +146,7 @@ async function getLembagaPendidikan(){
     $("#formNoSekolah").val(data.data.nomor_telepon);
     $("#formLatitudeSekolah").val(data.data.latitude);
     $("#formLongitudeSekolah").val(data.data.longitude);
-    $("#logo").val(data.data.logo_sekolah);
+    $("#logo").html(`<img src="<?= base_url()?>`+data.data.logo_sekolah+`" style="width:200px;"/>`);
 }
 </script>
 <?= $this->endSection() ?>
