@@ -205,11 +205,27 @@
       }
     }
     async function inputAbsensi(id_jadwal,id_siswa) {
+      // Mendapatkan tanggal dan jam saat ini dalam zona waktu lokal perangkat
+      const currentDate = new Date();
+
+      // Mendapatkan offset zona waktu lokal dalam menit
+      const timeZoneOffsetInMinutes = currentDate.getTimezoneOffset();
+
+      // Menghitung offset zona waktu dalam milidetik
+      const timeZoneOffsetInMilliseconds = timeZoneOffsetInMinutes * 60 * 1000;
+
+      // Menghitung tanggal dan jam yang sesuai dengan zona waktu lokal
+      const adjustedDate = new Date(currentDate.getTime() - timeZoneOffsetInMilliseconds);
+
+      // Mengubah tanggal dan jam menjadi format yang sesuai dengan ISO 8601
+      const iso8601Date = adjustedDate.toISOString();
+
       const postAbsensi = {
         lembaga_pendidikan_id: lembaga_pendidikan_id,
         jadwal_pelajaran_id: id_jadwal,
         siswa_id: id_siswa,
-        status_kehadiran: "hadir"
+        status_kehadiran: "hadir",
+        tanggal_absensi: iso8601Date
       };
       
       const requestOptions = {
